@@ -1,0 +1,36 @@
+#!/bin/bash
+
+. /etc/init.d/functions.sh
+
+set -e
+
+einfo "Keep in mind, this script is just for live SVN users"
+
+if ! type -P qlist > /dev/null ; then
+	einfo "Installing app-portage/portage-utils ..."
+	emerge app-portage/portage-utils || exit 1
+fi
+
+cd ${0%/*}
+
+ebegin "Building complete list of all E17 packages"
+pkgs=$(sed \
+	-e 's:#.*::' \
+	-e 's:[[:space:]]*$::' \
+	-e '/^$/d' \
+	-e 's:[[:space:]].*::' \
+	package.keywords.snapshots)
+eend $?
+
+ebegin "Building list of all installed E17 packages"
+ipkgs=$(qlist -C -I -e ${pkgs})
+eend $?
+
+einfo "Installed packages:"
+einfo ${ipkgs}
+
+einfo "Punting all installed packages"
+emerge -Cq ${ipkgs}
+
+einfo "Starting new install of packages ... hold on to your pants"
+exec emerge -a ${ipkgs}

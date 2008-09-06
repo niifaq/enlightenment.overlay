@@ -1,0 +1,106 @@
+# List all snapshot ebuilds here for the lazy.
+#
+# Symlink this file into your /etc/portage/package.keywords/ directory:
+# mkdir -p /etc/portage/package.keywords
+# ln -s \
+#	/usr/portage/local/layman/enlightenment/scripts/package.keywords.snapshots \
+#	/etc/portage/package.keywords/enlightenment
+#
+# To regen in overlay:
+# find -mindepth 2 -maxdepth 2 -type d '!' -wholename '*.svn*' -printf '%P ~*\n' | sort
+
+app-admin/empower ~*
+app-editors/enscribe ~*
+app-laptop/epbb ~*
+app-misc/entropy ~*
+app-misc/evidence ~*
+app-misc/examine ~*
+app-text/epdf ~*
+dev-db/edb ~*
+dev-libs/eet ~*
+dev-libs/efreet ~*
+dev-libs/embryo ~*
+dev-libs/engrave ~*
+dev-libs/evolve ~*
+dev-libs/exml ~*
+dev-util/e_utils ~*
+dev-util/edje_editor ~*
+dev-util/edje_viewer ~*
+dev-util/enhance ~*
+games-misc/elitaire ~*
+mail-client/embrace ~*
+media-gfx/elicit ~*
+media-gfx/ephoto ~*
+media-gfx/exhibit ~*
+media-gfx/imlib2_tools ~*
+media-gfx/retina ~*
+media-libs/edje ~*
+media-libs/emotion ~*
+media-libs/epeg ~*
+media-libs/epsilon ~*
+media-libs/imlib2 ~*
+media-libs/imlib2_loaders ~*
+media-sound/emphasis ~*
+media-sound/extrackt ~*
+media-video/eclair ~*
+media-video/elation ~*
+media-video/envision ~*
+media-video/rage ~*
+net-im/express ~*
+sci-calculators/equate ~*
+sci-misc/engycad ~*
+sys-fs/evfs ~*
+x11-apps/elapse ~*
+x11-libs/e_dbus ~*
+x11-libs/ecore ~*
+x11-libs/esmart ~*
+x11-libs/etk ~*
+x11-libs/evas ~*
+x11-libs/ewl ~*
+x11-misc/emprint ~*
+x11-misc/engage ~*
+x11-misc/enity ~*
+x11-misc/enotes ~*
+x11-misc/entrance ~*
+x11-misc/entrance_edit_gui ~*
+x11-misc/eosd ~*
+x11-misc/estickies ~*
+x11-misc/expedite ~*
+x11-misc/iconbar ~*
+x11-plugins/e_modules ~*
+x11-plugins/e_modules-alarm ~*
+x11-plugins/e_modules-bling ~*
+x11-plugins/e_modules-calendar ~*
+x11-plugins/e_modules-cpu ~*
+x11-plugins/e_modules-deskshow ~*
+x11-plugins/e_modules-echo ~*
+x11-plugins/e_modules-efm_nav ~*
+x11-plugins/e_modules-efm_path ~*
+x11-plugins/e_modules-emu ~*
+x11-plugins/e_modules-execwatch ~*
+x11-plugins/e_modules-flame ~*
+x11-plugins/e_modules-forecasts ~*
+x11-plugins/e_modules-language ~*
+x11-plugins/e_modules-mail ~*
+x11-plugins/e_modules-mem ~*
+x11-plugins/e_modules-mixer ~*
+x11-plugins/e_modules-moon ~*
+x11-plugins/e_modules-mpdule ~*
+x11-plugins/e_modules-net ~*
+x11-plugins/e_modules-news ~*
+x11-plugins/e_modules-notification ~*
+x11-plugins/e_modules-penguins ~*
+x11-plugins/e_modules-photo ~*
+x11-plugins/e_modules-rain ~*
+x11-plugins/e_modules-screenshot ~*
+x11-plugins/e_modules-slideshow ~*
+x11-plugins/e_modules-snow ~*
+x11-plugins/e_modules-taskbar ~*
+x11-plugins/e_modules-tclock ~*
+x11-plugins/e_modules-uptime ~*
+x11-plugins/e_modules-weather ~*
+x11-plugins/e_modules-winselector ~*
+x11-plugins/e_modules-wlan ~*
+x11-terms/enterminus ~*
+x11-themes/gtk2-E17-bling ~*
+x11-wm/e ~*

@@ -1,0 +1,17 @@
+#!/bin/bash -e
+
+# force consistent sorting order
+export LC_ALL=C
+
+dir=${0%/*}
+cd ${dir}/..
+
+rm -f scripts/package.keywords.*.tmp
+for f in scripts/package.keywords.* ; do
+	cmd=$(grep '^# find ' ${f} | sed 's:^# ::')
+	echo "Regenerating ${f}"
+	echo "  -> ${cmd}"
+	egrep '^(#|$)' ${f} > ${f}.tmp
+	eval "${cmd}" >> ${f}.tmp
+	mv ${f}.tmp ${f}
+done

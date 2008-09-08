@@ -11,7 +11,6 @@ DEPEND="x11-plugins/e_modules-alarm
 	x11-plugins/e_modules-calendar
 	x11-plugins/e_modules-cpu
 	x11-plugins/e_modules-deskshow
-	x11-plugins/e_modules-echo
 	x11-plugins/e_modules-efm_nav
 	x11-plugins/e_modules-efm_path
 	x11-plugins/e_modules-emu

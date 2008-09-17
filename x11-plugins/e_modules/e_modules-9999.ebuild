@@ -20,7 +20,6 @@ DEPEND="x11-plugins/e_modules-alarm
 	x11-plugins/e_modules-language
 	x11-plugins/e_modules-mail
 	x11-plugins/e_modules-mem
-	x11-plugins/e_modules-mixer
 	x11-plugins/e_modules-moon
 	x11-plugins/e_modules-mpdule
 	x11-plugins/e_modules-net

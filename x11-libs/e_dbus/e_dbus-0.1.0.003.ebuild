@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-ESVN_MODULE="e_dbus"
+EVCS_MODULE="e_dbus"
 inherit enlightenment
 
 DESCRIPTION="enlightenment interface to dbus"

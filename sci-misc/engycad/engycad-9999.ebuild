@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-ESVN_MODULE="OLD/${PN}"
+EVCS_MODULE="OLD/${PN}"
 inherit enlightenment
 
 DESCRIPTION="CAD program built on the EFL"

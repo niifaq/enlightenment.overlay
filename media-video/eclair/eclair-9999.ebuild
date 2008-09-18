@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/media-video/eclair/eclair-9999.ebuild,v 1.6 2005/09/06 03:34:09 vapier Exp $
 
-ESVN_MODULE="OLD/${PN}"
+EVCS_MODULE="OLD/${PN}"
 inherit enlightenment
 
 DESCRIPTION="EFL powered media player"

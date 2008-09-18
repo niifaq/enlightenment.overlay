@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header$
 
-ESVN_MODULE="${PN}"
+EVCS_MODULE="${PN}"
 inherit enlightenment
 
 DESCRIPTION="Video frontend using the EFL"

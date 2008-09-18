@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/sys-fs/evfs/evfs-9999.ebuild,v 1.3 2006/08/06 15:50:23 vapier Exp $
 
-ESVN_MODULE="OLD/${PN}"
+EVCS_MODULE="OLD/${PN}"
 inherit enlightenment
 
 DESCRIPTION="Enlightenment File Daemon"

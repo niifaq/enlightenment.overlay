@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/app-misc/entropy/entropy-9999.ebuild,v 1.1 2006/01/17 00:47:22 vapier Exp $
 
-ESVN_MODULE="OLD/${PN}"
+EVCS_MODULE="OLD/${PN}"
 inherit enlightenment
 
 DESCRIPTION="a File Manager For e17"

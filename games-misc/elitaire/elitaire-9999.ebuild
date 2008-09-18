@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header$
 
-ESVN_MODULE="elitaire"
+EVCS_MODULE="elitaire"
 inherit enlightenment games
 
 DESCRIPTION="EFL based solitaire game"

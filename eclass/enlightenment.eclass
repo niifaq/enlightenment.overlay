@@ -6,7 +6,7 @@
 
 inherit eutils libtool
 
-# ESVN_STATE's:
+# E_STATE's:
 #	release      [default]
 #		KEYWORDS arch
 #		SRC_URI  $P.tar.gz
@@ -20,31 +20,52 @@ inherit eutils libtool
 #	live         $PV has a 9999 marker
 #		KEYWORDS ""
 #		SRC_URI  `svn update`
-#		S        $WORKDIR/$ESVN_MODULE
+#		S        $WORKDIR/$EVCS_MODULE
 #
 # Overrides:
 #	KEYWORDS    EKEY_STATE
 #	SRC_URI     EURI_STATE
 #	S           EURI_STATE
+# ############
+#
+# We do not support default CVS servers - all legacy CVS ebuilds must explicitly
+# specify their server.
+#
 
-#E17_DEFAULT_CVS="cvs.sourceforge.net:/cvsroot/enlightenment"
 E17_DEFAULT_SVN="http://svn.enlightenment.org/svn/e/trunk"
 
-ESVN_STATE="release"
+E_STATE="release"
 
-: ${ESVN_MODULE:=${PN}}
 
 if [[ ${PV/9999} != ${PV} ]] ; then
-	[ -z "${ESVN_PROJECT}" ] && ESVN_PROJECT="e17/${ESVN_MODULE}"
-
-	: ${ESVN_REPO_URI:=${E17_ESVN_URI:-${ESVN_REPO_URI:-${E17_DEFAULT_SVN}}}/${ESVN_MODULE}}
-	ESVN_STATE="live"
+	E_STATE="live"
 	WANT_AUTOTOOLS="yes"
-	inherit subversion
+
+	if [ -n "${ECVS_SERVER}" -o "${E17_ECVS_SERVER}" ]; then
+		if [[ ${PV/9999} != ${PV} ]] ; then
+			if [ -z "${VCS_MODULE}" ]; then
+				EVCS_MODULE="${PN}"
+			elif [[ ${CATEGORY/libs} != ${CATEGORY} ]] ; then
+				EVCS_MODULE="e17/libs/${PN}"
+			else
+				EVCS_MODULE="e17/apps/${PN}"
+			fi
+		fi
+
+		ECVS_MODULE=${EVCS_MODULE}
+		ECVS_SERVER=${E17_ECVS_SERVER:-${ECVS_SERVER}}
+		inherit cvs
+	else
+		: ${EVCS_MODULE:=${PN}}
+		: ${ESVN_PROJECT:="e17/${EVCS_MODULE}"}
+
+		ESVN_REPO_URI=${E17_ESVN_URI:-${ESVN_REPO_URI:-${E17_DEFAULT_SVN}/${EVCS_MODULE}}}
+		inherit subversion
+	fi
 elif [[ ${PV/.200[3-9][0-1][0-9][0-3][0-9]/} != ${PV} ]] ; then
-	ESVN_STATE="snap"
+	E_STATE="snap"
 elif [[ ${PV%%.[0-9][0-9][0-9]} != ${PV} ]] ; then
-	ESVN_STATE="snap"
+	E_STATE="snap"
 	EURI_STATE="release"
 fi
 if [[ ${WANT_AUTOTOOLS} == "yes" ]] ; then
@@ -55,7 +76,7 @@ fi
 
 DESCRIPTION="A DR17 production"
 HOMEPAGE="http://www.enlightenment.org/"
-case ${EURI_STATE:-${ESVN_STATE}} in
+case ${EURI_STATE:-${E_STATE}} in
 	release) SRC_URI="http://enlightenment.freedesktop.org/files/${P}.tar.gz mirror://sourceforge/enlightenment/${P}.tar.gz";;
 	snap)    SRC_URI="mirror://gentoo/${P}.tar.bz2";;
 	live)    SRC_URI="";;
@@ -63,7 +84,7 @@ esac
 
 LICENSE="BSD"
 SLOT="0"
-case ${EKEY_STATE:-${ESVN_STATE}} in
+case ${EKEY_STATE:-${E_STATE}} in
 	release) KEYWORDS="alpha amd64 arm hppa ia64 mips ppc ppc64 sh sparc x86 ~x86-fbsd";;
 	snap)    KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sh ~sparc ~x86 ~x86-fbsd";;
 	live)    KEYWORDS="";;
@@ -73,22 +94,34 @@ IUSE="nls doc"
 DEPEND="doc? ( app-doc/doxygen )"
 RDEPEND="nls? ( sys-devel/gettext )"
 
-case ${EURI_STATE:-${ESVN_STATE}} in
+case ${EURI_STATE:-${E_STATE}} in
 	release) S=${WORKDIR}/${P};;
 	snap)    S=${WORKDIR}/${PN};;
-	live)    S=${WORKDIR}/${ESVN_MODULE};;
+	live)    S=${WORKDIR}/${EVCS_MODULE};;
 esac
 
 enlightenment_warning_msg() {
+	local evcs_category=$(echo ${EVCS_MODULE%%/*} | tr A-Z a-z);
+
 	if [[ -n ${E17_ESVN_SERVER} ]] ; then
 		einfo "Using user svn server: ${E17_ESVN_SERVER}"
 	fi
-	if [[ ${ESVN_STATE} == "snap" ]] ; then
+
+	if [[ "${evcs_category}" == "broken" ]]; then
+		eerror "You're trying to merge stuff marked as BROKEN by upstream"
+		eerror "You WILL have problems with it"
+	elif [[ "${evcs_category}" == "old" ]]; then
+		ewarn "You're trying to merge stuff marked as OLD by upstream"
+		ewarn "It is outdated, badly supported or don't work at all."
+		ewarn "You have been warned!"
+	fi
+
+	if [[ ${E_STATE} == "snap" ]] ; then
 		ewarn "Please do not contact the E team about bugs in Gentoo."
 		ewarn "Only contact vapier@gentoo.org via e-mail or bugzilla."
 		ewarn "Remember, this stuff is SVN only code so dont cry when"
 		ewarn "I break you :)."
-	elif [[ ${ESVN_STATE} == "live" ]] ; then
+	elif [[ ${E_STATE} == "live" ]] ; then
 		eerror "This is a LIVE SVN ebuild."
 		eerror "That means there are NO promises it will work."
 		eerror "If it fails to build, FIX THE CODE YOURSELF"
@@ -115,8 +148,12 @@ gettext_modify() {
 }
 
 enlightenment_src_unpack() {
-	if [[ ${ESVN_STATE} == "live" ]] ; then
-		subversion_src_unpack
+	if [[ ${E_STATE} == "live" ]] ; then
+		if [[ -n "${ECVS_MODULE}" ]]; then
+			cvs_src_unpack
+		else
+			subversion_src_unpack
+		fi
 	else
 		unpack ${A}
 	fi

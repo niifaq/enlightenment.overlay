@@ -3,7 +3,7 @@
 # $Header: $
 
 ESVN_REPO_URI="http://itask-module.googlecode.com/svn/trunk/${PN}"
-inherit enlightenment subversion
+inherit enlightenment
 
 DESCRIPTION="${PN} plugin for e17"
 HOMEPAGE="http://code.google.com/p/itask-module"

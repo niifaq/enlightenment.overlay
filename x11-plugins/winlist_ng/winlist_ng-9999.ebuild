@@ -5,7 +5,7 @@
 ESVN_REPO_URI="http://itask-module.googlecode.com/svn/trunk/${PN}"
 inherit enlightenment
 
-DESCRIPTION="${PN} plugin for e17"
+DESCRIPTION="This module - different e17 winlist"
 HOMEPAGE="http://code.google.com/p/itask-module"
 
 DEPEND=">=x11-wm/e-0.16.999.039

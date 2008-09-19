@@ -5,7 +5,7 @@
 EVCS_MODULE="E-MODULES-EXTRA/${PN#e_modules-}"
 inherit enlightenment
 
-DESCRIPTION="e17 ${PN#e_modules-} module"
+DESCRIPTION="Moon Clock module for e17"
 
 DEPEND=">=dev-libs/eet-0.9.10
 	>=x11-libs/evas-0.9.9

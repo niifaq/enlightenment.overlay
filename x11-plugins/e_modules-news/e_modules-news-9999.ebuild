@@ -5,7 +5,7 @@
 EVCS_MODULE="E-MODULES-EXTRA/${PN#e_modules-}"
 inherit enlightenment
 
-DESCRIPTION="e17 ${PN#e_modules-} module"
+DESCRIPTION="Module to display information feeds like RSS"
 
 DEPEND=">=media-libs/edje-0.5.0
 	>=x11-wm/e-0.16.999"

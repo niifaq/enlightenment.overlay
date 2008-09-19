@@ -5,7 +5,7 @@
 EVCS_MODULE="E-MODULES-EXTRA/${PN#e_modules-}"
 inherit enlightenment
 
-DESCRIPTION="e17 ${PN#e_modules-} module"
+DESCRIPTION="This module is a port of the e16 epplet E-Screenshot by Tom Gilbert"
 
 DEPEND="media-libs/edje
 	x11-wm/e

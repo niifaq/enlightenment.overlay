@@ -17,6 +17,7 @@ DEPEND="x11-plugins/e_modules-alarm
 	x11-plugins/e_modules-execwatch
 	x11-plugins/e_modules-flame
 	x11-plugins/e_modules-forecasts
+	x11-plugins/e_modules-iiirk
 	x11-plugins/e_modules-language
 	x11-plugins/e_modules-mail
 	x11-plugins/e_modules-mem
@@ -33,6 +34,7 @@ DEPEND="x11-plugins/e_modules-alarm
 	x11-plugins/e_modules-snow
 	x11-plugins/e_modules-taskbar
 	x11-plugins/e_modules-tclock
+	x11-plugins/e_modules-tiling
 	x11-plugins/e_modules-uptime
 	x11-plugins/e_modules-weather
 	x11-plugins/e_modules-winselector

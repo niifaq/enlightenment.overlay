@@ -57,7 +57,11 @@ if [[ ${PV/9999} != ${PV} ]] ; then
 		inherit cvs
 	else
 		: ${EVCS_MODULE:=${PN}}
-		: ${ESVN_PROJECT:="e17/${EVCS_MODULE}"}
+		: ${ESVN_PROJECT:="e17"}
+
+		if [[ ${EVCS_MODULE%/*} != ${EVCS_MODULE} ]]; then
+			ESVN_PROJECT="${ESVN_PROJECT%/}/${EVCS_MODULE%/*}"
+		fi
 
 		ESVN_REPO_URI=${E17_ESVN_URI:-${ESVN_REPO_URI:-${E17_DEFAULT_SVN}/${EVCS_MODULE}}}
 		inherit subversion

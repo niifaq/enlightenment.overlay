@@ -4,4 +4,4 @@
 
 inherit enlightenment
 
-DESCRIPTION="multi-platform library that provides optimized data types and a few tools that could be used for projects"
+DESCRIPTION="library that provides optimized data types and a few tools"

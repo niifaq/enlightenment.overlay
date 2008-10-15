@@ -15,7 +15,7 @@ DEPEND=">=x11-libs/evas-0.9.9.041
 	>=x11-libs/ecore-0.9.9.041
 	xine? ( >=media-libs/xine-lib-1.1.1 )
 	!gstreamer? ( !xine? ( >=media-libs/xine-lib-1.1.1 ) )
-	gstreamer? ( 
+	gstreamer? (
 		=media-libs/gstreamer-0.10*
 		=media-libs/gst-plugins-good-0.10*
 		=media-plugins/gst-plugins-ffmpeg-0.10*

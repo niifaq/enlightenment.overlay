@@ -1,4 +1,4 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -12,4 +12,5 @@ IUSE="X"
 #	X? ( x11-libs/ewl dev-libs/efreet )
 DEPEND=">=x11-libs/ecore-9999
 	sys-apps/dbus
-	sys-apps/hal"
+	sys-apps/hal
+	dev-libs/eina"

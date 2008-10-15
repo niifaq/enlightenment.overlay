@@ -1,4 +1,4 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/x11-wm/e/e-9999.ebuild,v 1.7 2006/10/22 05:44:35 vapier Exp $
 
@@ -19,7 +19,8 @@ RDEPEND=">=x11-libs/ecore-9999
 	dbus? ( x11-libs/e_dbus )"
 DEPEND="${RDEPEND}
 	x11-proto/xproto
-	sys-devel/libtool"
+	sys-devel/libtool
+	dev-libs/eina"
 
 pkg_setup() {
 	if ! built_with_use x11-libs/evas png ; then

@@ -19,6 +19,7 @@ app-text/epdf * ~* **
 dev-db/edb * ~* **
 dev-libs/eet * ~* **
 dev-libs/efreet * ~* **
+dev-libs/eina **
 dev-libs/embryo * ~* **
 dev-libs/engrave * ~* **
 dev-libs/evolve * ~* **
@@ -73,6 +74,7 @@ x11-plugins/e_modules-bling * ~* **
 x11-plugins/e_modules-calendar * ~* **
 x11-plugins/e_modules-cpu * ~* **
 x11-plugins/e_modules-deskshow * ~* **
+x11-plugins/e_modules-diskio **
 x11-plugins/e_modules-echo * ~* **
 x11-plugins/e_modules-efm_nav * ~* **
 x11-plugins/e_modules-efm_path * ~* **
@@ -80,6 +82,7 @@ x11-plugins/e_modules-emu * ~* **
 x11-plugins/e_modules-execwatch * ~* **
 x11-plugins/e_modules-flame * ~* **
 x11-plugins/e_modules-forecasts * ~* **
+x11-plugins/e_modules-iiirk **
 x11-plugins/e_modules-language * ~* **
 x11-plugins/e_modules-mail * ~* **
 x11-plugins/e_modules-mem * ~* **
@@ -97,10 +100,13 @@ x11-plugins/e_modules-slideshow * ~* **
 x11-plugins/e_modules-snow * ~* **
 x11-plugins/e_modules-taskbar * ~* **
 x11-plugins/e_modules-tclock * ~* **
+x11-plugins/e_modules-tiling **
 x11-plugins/e_modules-uptime * ~* **
 x11-plugins/e_modules-weather * ~* **
 x11-plugins/e_modules-winselector * ~* **
 x11-plugins/e_modules-wlan * ~* **
+x11-plugins/itask-ng **
+x11-plugins/winlist_ng **
 x11-terms/enterminus * ~* **
 x11-themes/gtk2-E17-bling * ~* **
 x11-wm/e * ~* **

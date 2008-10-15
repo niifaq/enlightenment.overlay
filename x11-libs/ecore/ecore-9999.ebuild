@@ -1,4 +1,4 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/x11-libs/ecore/ecore-9999.ebuild,v 1.14 2006/10/29 03:27:50 vapier Exp $
 
@@ -32,6 +32,7 @@ DEPEND="${RDEPEND}
 		x11-proto/printproto
 		x11-proto/xineramaproto
 		x11-proto/scrnsaverproto
+		dev-libs/eina
 	)"
 
 src_compile() {

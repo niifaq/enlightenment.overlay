@@ -7,17 +7,19 @@ inherit enlightenment
 DESCRIPTION="graphical layout and animation library"
 HOMEPAGE="http://www.enlightenment.org/pages/edje.html"
 
-IUSE="vim"
+IUSE="vim-syntax"
 
 DEPEND=">=x11-libs/evas-9999
 	>=x11-libs/ecore-9999
 	>=dev-libs/eet-9999
 	>=dev-libs/embryo-9999
-	vim? ( app-editors/vim-core )"
+	>=dev-libs/eina-9999
+	vim-syntax? ( app-editors/vim-core )
+"
 
 src_compile() {
 	export MY_ECONF="
-		$(use_with vim vim /usr/share/vim)
+		$(use_with vim-syntax vim /usr/share/vim)
 	"
 	enlightenment_src_compile
 }

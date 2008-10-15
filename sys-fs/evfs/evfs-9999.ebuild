@@ -7,7 +7,7 @@ inherit enlightenment
 
 DESCRIPTION="Enlightenment File Daemon"
 
-IUSE="samba curl bzip2 id3 debug"
+IUSE="samba curl bzip2 taglib debug"
 
 DEPEND="x11-libs/ecore
 	dev-libs/eet
@@ -17,7 +17,7 @@ DEPEND="x11-libs/ecore
 	dev-libs/libxml2
 	>=dev-db/sqlite-3
 	media-libs/libextractor
-	id3? ( media-libs/taglib )
+	taglib? ( media-libs/taglib )
 	bzip2? ( app-arch/bzip2 )
 	curl? ( net-misc/curl )
 	samba? ( net-fs/samba )"

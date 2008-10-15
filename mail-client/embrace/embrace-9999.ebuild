@@ -9,13 +9,14 @@ DESCRIPTION="mail-checker which is based on the EFL"
 
 IUSE="ssl mbox maildir imap"
 
-DEPEND="dev-db/edb
+DEPEND="
+	dev-db/edb
 	>=x11-libs/ecore-0.9.9
 	>=x11-libs/evas-0.9.9
 	>=media-libs/edje-0.5.0
 	>=x11-libs/esmart-0.9.0
 	ssl? ( dev-libs/openssl )
-	sys-devel/libtool"
+"
 
 src_compile() {
 	export MY_ECONF="

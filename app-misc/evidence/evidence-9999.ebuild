@@ -12,7 +12,7 @@ HOMEPAGE="http://evidence.sourceforge.net/"
 LICENSE="GPL-2"
 IUSE="X debug gnome kde vorbis perl truetype xine mpeg"
 
-RDEPEND=">=dev-util/pkgconfig-0.5
+RDEPEND="
 	=x11-libs/gtk+-2*
 	vorbis? ( media-libs/libvorbis media-libs/libogg )
 	perl? ( dev-libs/libpcre )

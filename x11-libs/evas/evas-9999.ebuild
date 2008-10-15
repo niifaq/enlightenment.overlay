@@ -12,7 +12,6 @@ RDEPEND="X? ( x11-libs/libXrender )
 	opengl? ( virtual/opengl )
 	>=dev-libs/eet-9999
 	edb? ( >=dev-db/edb-9999 )
-	dev-util/pkgconfig
 	media-libs/fontconfig
 	cairo? ( >=x11-libs/cairo-1.2 )
 	directfb? ( >=dev-libs/DirectFB-0.9.16 )

@@ -7,5 +7,7 @@ inherit enlightenment
 
 DESCRIPTION="The forecasts gadget will display the current weather conditions plus a few days forecast"
 
+IUSE=""
+
 DEPEND=">=x11-wm/e-0.16.999
 	>=media-libs/edje-0.5.0"

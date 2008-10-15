@@ -7,5 +7,7 @@ inherit enlightenment
 DESCRIPTION="E file chunk reading/writing library"
 HOMEPAGE="http://www.enlightenment.org/pages/eet.html"
 
+IUSE=""
+
 DEPEND="media-libs/jpeg
 	sys-libs/zlib"

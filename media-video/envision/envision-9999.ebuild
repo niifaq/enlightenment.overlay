@@ -7,6 +7,8 @@ inherit enlightenment
 
 DESCRIPTION="an e17 video player"
 
+IUSE=""
+
 DEPEND="x11-libs/ecore
 	x11-libs/evas
 	media-libs/edje

@@ -7,5 +7,7 @@ inherit enlightenment
 
 DESCRIPTION="Simple TEXT Clock module for e17"
 
+IUSE=""
+
 DEPEND=">=x11-wm/e-0.16.999
 	>=media-libs/edje-0.5.0"

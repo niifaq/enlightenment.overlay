@@ -8,6 +8,8 @@ inherit enlightenment games
 DESCRIPTION="EFL based solitaire game"
 HOMEPAGE="http://www.mowem.de/elitaire"
 
+IUSE=""
+
 DEPEND="x11-libs/ewl
 	media-libs/edje
 	dev-libs/eet

@@ -7,6 +7,8 @@ inherit enlightenment
 
 DESCRIPTION="sticky notes system based on the EFL"
 
+IUSE=""
+
 DEPEND=">=x11-libs/ewl-0.0.4
 	>=x11-libs/evas-0.9.9
 	>=x11-libs/ecore-0.9.9

@@ -5,3 +5,5 @@
 inherit enlightenment
 
 DESCRIPTION="library that provides optimized data types and a few tools"
+
+IUSE=""

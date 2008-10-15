@@ -7,5 +7,7 @@ inherit enlightenment
 
 DESCRIPTION="Module to display snow on the desktop"
 
+IUSE=""
+
 DEPEND=">=x11-wm/e-0.16.999
 	>=media-libs/edje-0.5.0"

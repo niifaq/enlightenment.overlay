@@ -7,6 +7,8 @@ inherit enlightenment
 
 DESCRIPTION="Gadget to control active keyboard, keyboard layout, and layout variant"
 
+IUSE=""
+
 RDEPEND=">=x11-wm/e-0.16.999
 	>=media-libs/edje-0.5.0
 	dev-libs/exml"

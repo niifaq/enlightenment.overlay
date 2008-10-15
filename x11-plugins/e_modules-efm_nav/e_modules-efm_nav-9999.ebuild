@@ -7,5 +7,7 @@ inherit enlightenment
 
 DESCRIPTION="A module that allows a user to navigate the filemanager module"
 
+IUSE=""
+
 DEPEND=">=x11-wm/e-0.16.999
 	>=media-libs/edje-0.5.0"

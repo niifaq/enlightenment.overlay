@@ -7,6 +7,8 @@ inherit enlightenment
 
 DESCRIPTION="Emu is an exercise in Zen programming"
 
+IUSE=""
+
 DEPEND=">=x11-wm/e-0.16.999
 	media-libs/edje
 	x11-libs/ecore

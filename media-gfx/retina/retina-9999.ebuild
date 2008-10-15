@@ -7,6 +7,8 @@ inherit enlightenment
 
 DESCRIPTION="Evas powered image viewer"
 
+IUSE=""
+
 DEPEND="x11-libs/ecore
 	x11-libs/evas
 	media-libs/imlib2"

@@ -6,6 +6,8 @@ inherit enlightenment
 
 DESCRIPTION="utility for taking screenshots of the entire screen"
 
+IUSE=""
+
 RDEPEND="x11-libs/libX11
 	>=x11-libs/ecore-9999
 	>=x11-libs/evas-9999

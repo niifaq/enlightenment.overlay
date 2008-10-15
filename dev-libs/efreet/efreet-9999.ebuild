@@ -6,5 +6,7 @@ inherit enlightenment
 
 DESCRIPTION="library for handling of freedesktop.org specs (desktop/icon/theme/etc...)"
 
+IUSE=""
+
 DEPEND=">=x11-libs/ecore-9999
 		>=dev-libs/eina-9999"

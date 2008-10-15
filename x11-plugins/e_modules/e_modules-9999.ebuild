@@ -6,6 +6,8 @@ inherit enlightenment
 
 DESCRIPTION="e_modules meta package - merge this to pull in all e_modules"
 
+IUSE=""
+
 DEPEND="x11-plugins/e_modules-alarm
 	x11-plugins/e_modules-bling
 	x11-plugins/e_modules-calendar

@@ -7,6 +7,8 @@ inherit enlightenment
 
 DESCRIPTION="collection of utils for e17"
 
+IUSE=""
+
 DEPEND=">=dev-libs/eet-0.9.10
 	x11-wm/e
 	>=x11-libs/esmart-0.9.0.002

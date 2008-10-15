@@ -7,6 +7,8 @@ inherit enlightenment
 
 DESCRIPTION="CAD program built on the EFL"
 
+IUSE=""
+
 RDEPEND="media-libs/imlib2
 	dev-db/edb
 	x11-libs/evas

@@ -7,5 +7,7 @@ inherit enlightenment
 
 DESCRIPTION="Taskbar Module. It gives you a taskbar!"
 
+IUSE=""
+
 DEPEND=">=x11-wm/e-0.16.999
 	>=media-libs/edje-0.5.0"

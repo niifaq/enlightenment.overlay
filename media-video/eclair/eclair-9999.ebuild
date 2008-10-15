@@ -7,6 +7,8 @@ inherit enlightenment
 
 DESCRIPTION="EFL powered media player"
 
+IUSE=""
+
 RDEPEND="media-libs/taglib
 	x11-libs/evas
 	x11-libs/ecore

@@ -5,3 +5,5 @@
 inherit enlightenment
 
 DESCRIPTION="load and control programs compiled in small"
+
+IUSE=""

@@ -6,6 +6,8 @@ inherit enlightenment
 
 DESCRIPTION="ETK interface building language and GUI frontend"
 
+IUSE=""
+
 DEPEND="
 	>=dev-libs/eet-0.9.10
 	>=x11-libs/evas-0.9.9

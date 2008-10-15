@@ -7,6 +7,8 @@ inherit enlightenment
 
 DESCRIPTION="Video frontend using the EFL"
 
+IUSE=""
+
 DEPEND=">=dev-libs/eet-9999
 	>=x11-libs/evas-9999
 	>=media-libs/edje-9999

@@ -7,6 +7,8 @@ inherit enlightenment
 
 DESCRIPTION="configuration library for applications based on the EFL"
 
+IUSE=""
+
 DEPEND=">=dev-libs/eet-0.9.0
 	>=dev-db/edb-1.0.5
 	>=x11-libs/ewl-0.0.4

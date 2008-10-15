@@ -7,6 +7,8 @@ inherit enlightenment
 
 DESCRIPTION="a File Manager For e17"
 
+IUSE=""
+
 DEPEND="media-libs/epsilon
 	x11-libs/ewl
 	x11-libs/etk

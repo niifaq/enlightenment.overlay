@@ -7,6 +7,8 @@ inherit enlightenment
 
 DESCRIPTION="Simple text editor using EFL and Esmart_Textarea"
 
+IUSE=""
+
 DEPEND="x11-libs/evas
 	x11-libs/ecore
 	media-libs/edje

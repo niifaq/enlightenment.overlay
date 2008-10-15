@@ -7,5 +7,7 @@ inherit enlightenment
 
 DESCRIPTION="Notification Daemon libnotify alternative. Popup if an event occur"
 
+IUSE=""
+
 DEPEND=">=x11-wm/e-0.16.999
 	>=media-libs/edje-0.5.0"

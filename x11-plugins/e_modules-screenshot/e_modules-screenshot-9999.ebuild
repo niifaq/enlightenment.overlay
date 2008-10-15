@@ -7,6 +7,8 @@ inherit enlightenment
 
 DESCRIPTION="This module is a port of the e16 epplet E-Screenshot by Tom Gilbert"
 
+IUSE=""
+
 DEPEND="media-libs/edje
 	x11-wm/e
 	x11-misc/emprint

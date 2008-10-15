@@ -7,4 +7,6 @@ inherit enlightenment
 
 DESCRIPTION="wicked fast jpeg thumbnail generator"
 
+IUSE=""
+
 DEPEND="media-libs/jpeg"

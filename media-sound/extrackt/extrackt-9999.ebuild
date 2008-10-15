@@ -7,6 +7,8 @@ inherit enlightenment
 
 DESCRIPTION="an audio CD ripper and encoder"
 
+IUSE=""
+
 DEPEND="dev-libs/eet
 	x11-libs/ecore
 	x11-libs/evas

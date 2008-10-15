@@ -7,6 +7,8 @@ inherit enlightenment
 
 DESCRIPTION="EFL powered clock"
 
+IUSE=""
+
 DEPEND="media-libs/edje
 	x11-libs/esmart"
 

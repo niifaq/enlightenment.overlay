@@ -8,6 +8,8 @@ inherit enlightenment
 DESCRIPTION="This module - different e17 winlist"
 HOMEPAGE="http://code.google.com/p/itask-module"
 
+IUSE=""
+
 DEPEND=">=x11-wm/e-0.16.999.039
 	media-libs/edje
 	dev-libs/efreet"

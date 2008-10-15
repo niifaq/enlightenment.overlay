@@ -8,6 +8,8 @@ inherit enlightenment
 DESCRIPTION="e17 iconbar as a standalone package"
 HOMEPAGE="http://www.rephorm.com/rephorm/code/iconbar/"
 
+IUSE=""
+
 DEPEND=">=dev-libs/eet-0.9.9
 	>=x11-libs/evas-0.9.9
 	>=media-libs/imlib2-1.2.0

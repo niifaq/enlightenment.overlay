@@ -8,6 +8,8 @@ inherit enlightenment
 DESCRIPTION="Application launcher and taskbar based on the good old engage"
 HOMEPAGE="http://code.google.com/p/itask-module"
 
+IUSE=""
+
 DEPEND=">=x11-wm/e-0.16.999.039
 	media-libs/edje
 	dev-libs/efreet"

@@ -41,14 +41,22 @@ if [[ ${PV/9999} != ${PV} ]] ; then
 	E_STATE="live"
 	WANT_AUTOTOOLS="yes"
 
-	if [ -n "${ECVS_SERVER}" -o "${E17_ECVS_SERVER}" ]; then
+	if	[[ -n "${ECVS_SERVER}" || -n "${E17_ECVS_SERVER}" || \
+			-n "${ESVN_REPO_URI}" || -n "${E17_ESVN_URI}" ]]; then
+
+		EVCS_COPY_ROOT="e17-external"
+	else
+		EVCS_COPY_ROOT="e17"
+	fi
+
+	if [[ -n "${ECVS_SERVER}" || -n "${E17_ECVS_SERVER}" ]]; then
 		if [[ ${PV/9999} != ${PV} ]] ; then
 			if [ -z "${VCS_MODULE}" ]; then
 				EVCS_MODULE="${PN}"
 			elif [[ ${CATEGORY/libs} != ${CATEGORY} ]] ; then
-				EVCS_MODULE="e17/libs/${PN}"
+				EVCS_MODULE="${EVCS_COPY_ROOT}/libs/${PN}"
 			else
-				EVCS_MODULE="e17/apps/${PN}"
+				EVCS_MODULE="${EVCS_COPY_ROOT}/apps/${PN}"
 			fi
 		fi
 
@@ -57,7 +65,7 @@ if [[ ${PV/9999} != ${PV} ]] ; then
 		inherit cvs
 	else
 		: ${EVCS_MODULE:=${PN}}
-		: ${ESVN_PROJECT:="e17"}
+		: ${ESVN_PROJECT:=${EVCS_COPY_ROOT}}
 
 		if [[ ${EVCS_MODULE%/*} != ${EVCS_MODULE} ]]; then
 			ESVN_PROJECT="${ESVN_PROJECT%/}/${EVCS_MODULE%/*}"

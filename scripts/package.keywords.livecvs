@@ -110,5 +110,5 @@ x11-plugins/winlist_ng **
 x11-terms/enterminus * ~* **
 x11-themes/gtk2-E17-bling * ~* **
 x11-wm/e * ~* **
-
+x11-misc/edje_player **
 # vim: nobackup filetype=gentoo-package-keywords

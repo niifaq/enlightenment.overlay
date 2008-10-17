@@ -15,5 +15,4 @@ DEPEND="
 	>=media-libs/epsilon-9999
 	>=media-libs/imlib2-9999
 	>=dev-libs/eina-9999
-	>=x11-libs/esmart-9999
 "

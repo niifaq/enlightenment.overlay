@@ -7,7 +7,7 @@ inherit enlightenment
 
 DESCRIPTION="graphical sudo application"
 
-IUSE="nls"
+IUSE=""
 
 DEPEND="dev-libs/eet
 	x11-libs/ecore

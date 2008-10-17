@@ -6,7 +6,7 @@ inherit enlightenment
 
 DESCRIPTION="A sticky notes application based on ETK"
 
-IUSE="nls"
+IUSE=""
 
 DEPEND="x11-libs/etk
 	dev-libs/eet"

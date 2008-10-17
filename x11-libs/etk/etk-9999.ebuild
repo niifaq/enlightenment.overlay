@@ -6,7 +6,7 @@ inherit enlightenment
 
 DESCRIPTION="toolkit based on the EFL"
 
-IUSE="nls X fbcon"
+IUSE="X fbcon"
 
 DEPEND=">=x11-libs/evas-9999
 	>=media-libs/edje-9999

@@ -80,6 +80,7 @@ elif [[ ${PV%%.[0-9][0-9][0-9]} != ${PV} ]] ; then
 	E_STATE="snap"
 	EURI_STATE="release"
 fi
+
 if [[ ${WANT_AUTOTOOLS} == "yes" ]] ; then
 	WANT_AUTOCONF=${E17_WANT_AUTOCONF:-latest}
 	WANT_AUTOMAKE=${E17_WANT_AUTOMAKE:-latest}
@@ -112,6 +113,13 @@ case ${EURI_STATE:-${E_STATE}} in
 	live)    S=${WORKDIR}/${EVCS_MODULE};;
 esac
 
+enlightenment_contact() {
+	echo "
+			* e17@conference.gentoo.ru (XMPP-MUC, mostly Russian)\n
+			* Night Nord <NightNord@gmail.com>\n
+	"
+}
+
 enlightenment_warning_msg() {
 	local evcs_category=$(echo ${EVCS_MODULE%%/*} | tr A-Z a-z);
 
@@ -130,20 +138,24 @@ enlightenment_warning_msg() {
 
 	if [[ ${E_STATE} == "snap" ]] ; then
 		ewarn "Please do not contact the E team about bugs in Gentoo."
-		ewarn "Only contact vapier@gentoo.org via e-mail or bugzilla."
-		ewarn "Remember, this stuff is SVN only code so dont cry when"
-		ewarn "I break you :)."
+		ewarn "Send reports using this ways:"
+		ewarn $(enlightenment_contact)
+		ewarn "Remember, that this is live code, so there is a high probability"
+		ewarn "of problems"
 	elif [[ ${E_STATE} == "live" ]] ; then
-		eerror "This is a LIVE SVN ebuild."
-		eerror "That means there are NO promises it will work."
-		eerror "If it fails to build, FIX THE CODE YOURSELF"
+		eerror "This is a *LIVE* ebuild."
+		eerror "That means there are *NO* promises it will work."
+		eerror "If something fails - *FIX THE CODE YOURSELF*"
 		eerror "before reporting any issues."
 	fi
 }
 
 enlightenment_die() {
 	enlightenment_warning_msg
-	die "$@"$'\n'"!!! SEND BUG REPORTS TO vapier@gentoo.org NOT THE E TEAM"
+	die "$@"$'\n\n'"Do *NOT* send reports to E or Gentoo teams!\n
+		Send them to:\n
+$(enlightenment_contact)
+	"
 }
 
 enlightenment_pkg_setup() {
@@ -169,42 +181,35 @@ enlightenment_src_unpack() {
 	else
 		unpack ${A}
 	fi
+
 	gettext_modify
-	[[ -s gendoc ]] && chmod a+rx gendoc
+	grep -q GETTEXT_VERSION configure.* && autopoint -f &> /dev/null
+
+	eautoreconf			|| enlightenment_die "eautoreconf failed"
+	epunt_cxx
 }
 
 enlightenment_src_compile() {
 	# gstreamer sucks, work around it doing stupid stuff
 	export GST_REGISTRY="${S}/registry.xml"
 
-	if [[ ! -e configure ]] ; then
-		env \
-			PATH="${T}:${PATH}" \
-			NOCONFIGURE=yes \
-			USER=blah \
-			./autogen.sh \
-			|| enlightenment_die "autogen failed"
-		# symlinked files will cause sandbox violation
-		local x
-		for x in config.{guess,sub} ; do
-			[[ ! -L ${x} ]] && continue
-			rm -f ${x}
-			touch ${x}
-		done
-	elif [[ ${WANT_AUTOTOOLS} == "yes" ]] ; then
-		eautoreconf
+	econf ${MY_ECONF}	|| enlightenment_die "econf failed"
+	emake				|| enlightenment_die "emake failed"
+
+	if use doc && [[ -s gendoc ]]; then
+		chmod a+rx gendoc
+
+		./gendoc		|| enlightenment_die "gendoc failed"
 	fi
-	epunt_cxx
-	elibtoolize
-	econf ${MY_ECONF} || enlightenment_die "econf failed"
-	emake || enlightenment_die "emake failed"
-	use doc && [[ -x ./gendoc ]] && { ./gendoc || enlightenment_die "gendoc failed" ; }
 }
 
 enlightenment_src_install() {
 	emake install DESTDIR="${D}" || enlightenment_die
+
 	find "${D}" -name '.svn' -type d -exec rm -rf '{}' \; 2>/dev/null
-	dodoc AUTHORS ChangeLog NEWS README TODO ${EDOCS}
+
+	dodoc AUTHORS ChangeLog NEWS README TODO ${EDOCS}; 
+
 	use doc && [[ -d doc ]] && dohtml -r doc/*
 }
 

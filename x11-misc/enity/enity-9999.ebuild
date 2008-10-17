@@ -6,7 +6,7 @@ inherit enlightenment
 
 DESCRIPTION="Tool to display ETK dialogs from the command line and shell scripts"
 
-IUSE="nls"
+IUSE=""
 
 DEPEND="x11-libs/etk"
 

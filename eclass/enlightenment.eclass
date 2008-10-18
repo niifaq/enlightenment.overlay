@@ -184,7 +184,9 @@ enlightenment_src_unpack() {
 
 	gettext_modify
 	grep -q GETTEXT_VERSION configure.* && autopoint -f &> /dev/null
-
+	# someone forgot these very useful files...
+	touch README
+	touch ABOUT-NLS
 	eautoreconf			|| enlightenment_die "eautoreconf failed"
 	epunt_cxx
 }

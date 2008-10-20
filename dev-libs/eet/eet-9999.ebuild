@@ -9,5 +9,8 @@ HOMEPAGE="http://www.enlightenment.org/pages/eet.html"
 
 IUSE=""
 
-DEPEND="media-libs/jpeg
-	sys-libs/zlib"
+DEPEND="
+		media-libs/jpeg
+		sys-libs/zlib
+		dev-libs/eina
+	"

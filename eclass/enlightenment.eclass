@@ -183,11 +183,21 @@ enlightenment_src_unpack() {
 	fi
 
 	gettext_modify
-	grep -q GETTEXT_VERSION configure.* && autopoint -f &> /dev/null
+
+	if grep -q GETTEXT_VERSION configure.*; then
+		ebegin "Running autopoint"
+
+			autopoint -f &> /dev/null
+
+		eend $? || enlightnement_die "Autopoint failed"
+	fi
+
 	# someone forgot these very useful files...
-	touch README
-	touch ABOUT-NLS
-	eautoreconf			|| enlightenment_die "eautoreconf failed"
+
+	touch README ABOUT-NLS
+
+	AT_M4DIR="m4" eautoreconf			|| enlightenment_die "eautoreconf failed"
+
 	epunt_cxx
 }
 

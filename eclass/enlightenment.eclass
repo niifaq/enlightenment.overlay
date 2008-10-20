@@ -196,7 +196,8 @@ enlightenment_src_unpack() {
 
 	touch README ABOUT-NLS
 
-	AT_M4DIR="m4" eautoreconf			|| enlightenment_die "eautoreconf failed"
+	[ -d "m4" ] && AT_M4DIR="m4"
+	eautoreconf			|| enlightenment_die "eautoreconf failed"
 
 	epunt_cxx
 }

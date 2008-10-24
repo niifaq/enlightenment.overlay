@@ -185,11 +185,16 @@ enlightenment_src_unpack() {
 	gettext_modify
 
 	if grep -q GETTEXT_VERSION configure.*; then
+		local autopoint_log_file="${T}/autopoint.$$"
+
 		ebegin "Running autopoint"
 
-			autopoint -f &> /dev/null
+			autopoint -f &> "${autopoint_log_file}"
 
-		eend $? || enlightnement_die "Autopoint failed"
+		eend $? || enlightenment_die "
+			Autopoint failed
+			Log in ${autopoint_log_file}
+		"
 	fi
 
 	# someone forgot these very useful files...

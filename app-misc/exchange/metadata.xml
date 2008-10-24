@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>no-herd</herd>
+
+	<maintainer>
+		<email>NightNord@gmail.com</email>
+	</maintainer>
+
+	<longdescription>
+		Exchange - advanced tool for uploading/downloading and managing user-contributed stuff from official enlightenment site.
+	</longdescription>
+
+	<use>
+		<flag name="ewl">
+			Support stuff specific for programs based on <pkg>x11-libs/ewl</pkg>
+			library
+		</flag>
+		<flag name="etk">
+			Support stuff specific for programs based on <pkg>x11-libs/etk</pkg>
+			library
+		</flag>
+	</use>
+</pkgmetadata>

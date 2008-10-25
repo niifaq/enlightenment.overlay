@@ -1,0 +1,17 @@
+dev-libs/eina
+media-libs/imlib2
+dev-db/edb
+dev-libs/eet
+media-libs/imlib2_loaders
+x11-libs/evas
+x11-libs/ecore
+media-libs/epeg
+dev-libs/embryo
+media-libs/edje
+media-libs/epsilon
+x11-libs/esmart
+media-libs/emotion
+x11-libs/ewl
+dev-libs/engrave
+dev-libs/efreet
+x11-libs/e_dbus

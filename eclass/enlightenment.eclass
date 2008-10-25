@@ -184,17 +184,18 @@ enlightenment_src_unpack() {
 
 	gettext_modify
 
-	if grep -q GETTEXT_VERSION configure.*; then
+	if grep -q AM_GNU_GETTEXT_VERSION *.am *.in; then
 		local autopoint_log_file="${T}/autopoint.$$"
 
 		ebegin "Running autopoint"
 
 			autopoint -f &> "${autopoint_log_file}"
 
-		eend $? || enlightenment_die "
-			Autopoint failed
-			Log in ${autopoint_log_file}
-		"
+		if ! eend $?; then
+			ewarn "Autopoint failed"
+			ewarn "Log in ${autopoint_log_file}"
+			ewarn "(it makes sense only when compile fails afterwards)"
+		fi
 	fi
 
 	# someone forgot these very useful files...

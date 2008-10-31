@@ -6,18 +6,20 @@ inherit enlightenment
 
 DESCRIPTION="enlightenment interface to dbus"
 
-IUSE="hal"
+IUSE=""
 
 # Removed EWL GUI due to lack of updated code in SVN
 #	X? ( x11-libs/ewl dev-libs/efreet )
 DEPEND=">=x11-libs/ecore-9999
+	dev-libs/eina
 	sys-apps/dbus
-	hal? ( sys-apps/hal )
-	dev-libs/eina"
-
-src_compile() {
-	export MY_ECONF="
-		$(use_enable hal ehal)
+	sys-apps/hal
+	X? ( x11-libs/ewl dev-libs/efreet )
 	"
-	enlightenment_src_compile
-}
+
+#src_compile() {
+#	export MY_ECONF="
+#		$(use_enable X build-test-gui)
+#	"
+#	enlightenment_src_compile
+#}

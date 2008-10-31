@@ -184,7 +184,7 @@ enlightenment_src_unpack() {
 
 	gettext_modify
 
-	if grep -q AM_GNU_GETTEXT_VERSION *.am *.ac; then
+	if grep -q AM_GNU_GETTEXT_VERSION configure.*; then
 		local autopoint_log_file="${T}/autopoint.$$"
 
 		ebegin "Running autopoint"

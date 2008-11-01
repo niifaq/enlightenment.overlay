@@ -1,0 +1,14 @@
+[Desktop Entry]
+Hidden=false
+Name[en_US]=Edje_calculator
+NoDisplay=false
+Icon[en_US]=/usr/share/pixmaps/edje_calculator.png
+Exec=edje_player -g e/calculator /opt/edje_calculator/edje_calculator.edje
+Type=Application
+Version=1.0
+StartupNotify=false
+Name=Edje_calculator
+Terminal=false
+Comment=just edje file started by edje player
+Comment[en_US]=Just edje file started by edje player
+Icon=/usr/share/pixmaps/edje_calculator.png

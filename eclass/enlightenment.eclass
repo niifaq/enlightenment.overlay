@@ -201,6 +201,9 @@ enlightenment_src_unpack() {
 	# someone forgot these very useful files...
 
 	touch README ABOUT-NLS
+	for bad_file in autom4te.cache aclocal.m4 ltmain.sh; do
+		[ -e "${bad_file}" ] && rm -Rf "${bad_file}"
+	done
 
 	[ -d "m4" ] && AT_M4DIR="m4"
 	eautoreconf			|| enlightenment_die "eautoreconf failed"

@@ -195,6 +195,13 @@ enlightenment_src_unpack() {
 			ewarn "Autopoint failed"
 			ewarn "Log in ${autopoint_log_file}"
 			ewarn "(it makes sense only when compile fails afterwards)"
+
+			if grep -qi 'cvs program not found' "${autopoint_log_file}"; then
+				ewarn "This error seems to be due missing CVS"
+				ewarn "(it's usage hardcoded into autopoint code)"
+				ewarn "Please 'emerge cvs' if compilation will fail"
+				ebeep 3
+			fi
 		fi
 	fi
 

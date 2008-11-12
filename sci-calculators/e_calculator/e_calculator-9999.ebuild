@@ -16,7 +16,9 @@ SLOT="0"
 KEYWORDS="~x86 ~amd64"
 IUSE=""
 
-DEPEND=""
+DEPEND="media-libs/edje
+		dev-libs/embryo"
+
 RDEPEND="x11-plugins/edgar"
 
 src_compile() {

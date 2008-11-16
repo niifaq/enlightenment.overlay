@@ -13,7 +13,6 @@ DEPEND=">=media-libs/imlib2-9999
 	>=media-libs/edje-9999
 	>=x11-libs/evas-9999
 	>=x11-libs/ecore-9999
-	>=media-libs/epeg-9999
 	dev-lang/perl
 	xine? ( >=media-libs/xine-lib-1.1.1 )"
 

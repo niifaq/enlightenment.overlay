@@ -1,0 +1,4 @@
+# <NightNord@gmail.com> ( 17 Nov 2008 )
+# epeg was obsoleted by moving all thumbnails fast-generation algorithms
+# to evas. May be deleted afterwards. Thanks to Daniel Plaza for this note.
+media-libs/epeg

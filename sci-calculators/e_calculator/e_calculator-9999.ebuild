@@ -11,9 +11,9 @@ DESCRIPTION="Functional calculator completly made in edje"
 HOMEPAGE="http://e17mods.googlecode.com/svn/trunk/GADGETS/calculator"
 SRC_URI=""
 
-LICENSE=""
+LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS=""
 IUSE=""
 
 DEPEND="media-libs/edje
@@ -22,7 +22,6 @@ DEPEND="media-libs/edje
 RDEPEND="x11-plugins/edgar"
 
 src_compile() {
-		cd "${S}"
 		emake || die "emake failed"
 }
 

@@ -8,10 +8,12 @@ inherit enlightenment
 DESCRIPTION="E17 module to add extra menus to the main menu"
 HOMEPAGE="http://code.google.com/p/e17mods/wiki/ExtraMenu"
 
-LICENSE=""
+LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS=""
 IUSE=""
 
-DEPEND=">=x11-wm/e-0.16.999.050
-	media-libs/edje"
+DEPEND="
+	x11-wm/e
+	media-libs/edje
+"

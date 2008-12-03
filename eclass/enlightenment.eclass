@@ -41,15 +41,15 @@ if [[ ${PV/9999} != ${PV} ]] ; then
 	E_STATE="live"
 	WANT_AUTOTOOLS="yes"
 
-	if	[[ -n "${ECVS_SERVER}" || -n "${E17_ECVS_SERVER}" || \
-			-n "${ESVN_REPO_URI}" || -n "${E17_ESVN_URI}" ]]; then
+	if	[[ -n "${ECVS_SERVER}" || \
+			-n "${ESVN_REPO_URI}" ]]; then
 
 		EVCS_COPY_ROOT="e17-external"
 	else
 		EVCS_COPY_ROOT="e17"
 	fi
 
-	if [[ -n "${ECVS_SERVER}" || -n "${E17_ECVS_SERVER}" ]]; then
+	if [[ -n "${ECVS_SERVER}" ]]; then
 		if [[ ${PV/9999} != ${PV} ]] ; then
 			if [ -z "${VCS_MODULE}" ]; then
 				EVCS_MODULE="${PN}"
@@ -61,7 +61,6 @@ if [[ ${PV/9999} != ${PV} ]] ; then
 		fi
 
 		ECVS_MODULE=${EVCS_MODULE}
-		ECVS_SERVER=${E17_ECVS_SERVER:-${ECVS_SERVER}}
 		inherit cvs
 	else
 		: ${EVCS_MODULE:=${PN}}
@@ -71,7 +70,7 @@ if [[ ${PV/9999} != ${PV} ]] ; then
 			ESVN_PROJECT="${ESVN_PROJECT%/}/${EVCS_MODULE%/*}"
 		fi
 
-		ESVN_REPO_URI=${E17_ESVN_URI:-${ESVN_REPO_URI:-${E17_DEFAULT_SVN}/${EVCS_MODULE}}}
+		: ${ESVN_REPO_URI:=${E17_DEFAULT_SVN}/${EVCS_MODULE}}
 		inherit subversion
 	fi
 elif [[ ${PV/.200[3-9][0-1][0-9][0-3][0-9]/} != ${PV} ]] ; then

@@ -85,6 +85,7 @@
 =x11-plugins/e_modules-notification-9999 **
 =x11-plugins/e_modules-penguins-9999 **
 =x11-plugins/e_modules-photo-9999 **
+=x11-plugins/e_modules-places-9999 **
 =x11-plugins/e_modules-rain-9999 **
 =x11-plugins/e_modules-screenshot-9999 **
 =x11-plugins/e_modules-slideshow-9999 **
@@ -98,7 +99,6 @@
 =x11-plugins/e_modules-wlan-9999 **
 =x11-plugins/extramenu-9999 **
 =x11-plugins/itask-ng-9999 **
-=x11-plugins/places-9999 **
 =x11-plugins/trash-9999 **
 =x11-plugins/winlist_ng-9999 **
 =x11-terms/enterminus-9999 **

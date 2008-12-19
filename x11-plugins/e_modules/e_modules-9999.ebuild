@@ -32,6 +32,7 @@ DEPEND="x11-plugins/e_modules-alarm
 	x11-plugins/e_modules-notification
 	x11-plugins/e_modules-penguins
 	x11-plugins/e_modules-photo
+	x11-plugins/e_modules-places
 	x11-plugins/e_modules-rain
 	x11-plugins/e_modules-screenshot
 	x11-plugins/e_modules-slideshow

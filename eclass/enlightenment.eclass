@@ -36,10 +36,8 @@ E17_DEFAULT_SVN="http://svn.enlightenment.org/svn/e/trunk"
 
 E_STATE="release"
 
-
 if [[ ${PV/9999} != ${PV} ]] ; then
 	E_STATE="live"
-	WANT_AUTOTOOLS="yes"
 
 	if	[[ -n "${ECVS_SERVER}" || \
 			-n "${ESVN_REPO_URI}" ]]; then
@@ -50,14 +48,12 @@ if [[ ${PV/9999} != ${PV} ]] ; then
 	fi
 
 	if [[ -n "${ECVS_SERVER}" ]]; then
-		if [[ ${PV/9999} != ${PV} ]] ; then
-			if [ -z "${VCS_MODULE}" ]; then
-				EVCS_MODULE="${PN}"
-			elif [[ ${CATEGORY/libs} != ${CATEGORY} ]] ; then
-				EVCS_MODULE="${EVCS_COPY_ROOT}/libs/${PN}"
-			else
-				EVCS_MODULE="${EVCS_COPY_ROOT}/apps/${PN}"
-			fi
+		if [ -z "${VCS_MODULE}" ]; then
+			EVCS_MODULE="${PN}"
+		elif [[ ${CATEGORY/libs} != ${CATEGORY} ]] ; then
+			EVCS_MODULE="${EVCS_COPY_ROOT}/libs/${PN}"
+		else
+			EVCS_MODULE="${EVCS_COPY_ROOT}/apps/${PN}"
 		fi
 
 		ECVS_MODULE=${EVCS_MODULE}
@@ -80,14 +76,10 @@ elif [[ ${PV%%.[0-9][0-9][0-9]} != ${PV} ]] ; then
 	EURI_STATE="release"
 fi
 
-if [[ ${WANT_AUTOTOOLS} == "yes" ]] ; then
-	WANT_AUTOCONF=${E17_WANT_AUTOCONF:-latest}
-	WANT_AUTOMAKE=${E17_WANT_AUTOMAKE:-latest}
-	inherit autotools
-fi
 
 DESCRIPTION="A DR17 production"
 HOMEPAGE="http://www.enlightenment.org/"
+
 case ${EURI_STATE:-${E_STATE}} in
 	release) SRC_URI="http://enlightenment.freedesktop.org/files/${P}.tar.gz mirror://sourceforge/enlightenment/${P}.tar.gz";;
 	snap)    SRC_URI="mirror://gentoo/${P}.tar.bz2";;
@@ -96,11 +88,13 @@ esac
 
 LICENSE="BSD"
 SLOT="0"
+
 case ${EKEY_STATE:-${E_STATE}} in
 	release) KEYWORDS="alpha amd64 arm hppa ia64 mips ppc ppc64 sh sparc x86 ~x86-fbsd";;
 	snap)    KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sh ~sparc ~x86 ~x86-fbsd";;
 	live)    KEYWORDS="";;
 esac
+
 IUSE="nls doc"
 
 DEPEND="doc? ( app-doc/doxygen )"
@@ -112,12 +106,9 @@ case ${EURI_STATE:-${E_STATE}} in
 	live)    S=${WORKDIR}/${EVCS_MODULE};;
 esac
 
-enlightenment_contact() {
-	echo "
-			* e17@conference.gentoo.ru (XMPP-MUC, mostly Russian)\n
-			* Night Nord <NightNord@gmail.com>\n
-	"
-}
+WANT_AUTOCONF=${E17_WANT_AUTOCONF:-latest}
+WANT_AUTOMAKE=${E17_WANT_AUTOMAKE:-latest}
+inherit autotools
 
 enlightenment_warning_msg() {
 	local evcs_category=$(echo ${EVCS_MODULE%%/*} | tr A-Z a-z);
@@ -136,9 +127,8 @@ enlightenment_warning_msg() {
 	fi
 
 	if [[ ${E_STATE} == "snap" ]] ; then
-		ewarn "Please do not contact the E team about bugs in Gentoo."
-		ewarn "Send reports using this ways:"
-		ewarn $(enlightenment_contact)
+		ewarn "Please do not contact the E or Gentoo team about bugs in this overlay."
+		ewarn "Send reports to NightNord@gmail.com"
 		ewarn "Remember, that this is live code, so there is a high probability"
 		ewarn "of problems"
 	elif [[ ${E_STATE} == "live" ]] ; then
@@ -151,10 +141,7 @@ enlightenment_warning_msg() {
 
 enlightenment_die() {
 	enlightenment_warning_msg
-	die "$@"$'\n\n'"Do *NOT* send reports to E or Gentoo teams!\n
-		Send them to:\n
-$(enlightenment_contact)
-	"
+	die "$@"$'\n\n'"Do *NOT* send reports to E or Gentoo teams! Send them to NightNord@gmail.com instead"
 }
 
 enlightenment_pkg_setup() {
@@ -162,13 +149,13 @@ enlightenment_pkg_setup() {
 }
 
 # the stupid gettextize script prevents non-interactive mode, so we hax it
-gettext_modify() {
-	use nls || return 0
-	cp $(type -P gettextize) "${T}"/ || die "could not copy gettextize"
-	sed -i \
-		-e 's:read dummy < /dev/tty::' \
-		"${T}"/gettextize
-}
+#gettext_modify() {
+#	use nls || return 0
+#	cp $(type -P gettextize) "${T}"/ || die "could not copy gettextize"
+#	sed -i \
+#		-e 's:read dummy < /dev/tty::' \
+#		"${T}"/gettextize
+#}
 
 enlightenment_src_unpack() {
 	if [[ ${E_STATE} == "live" ]] ; then
@@ -180,9 +167,9 @@ enlightenment_src_unpack() {
 	else
 		unpack ${A}
 	fi
-
-	gettext_modify
-
+#
+#	gettext_modify
+#
 	if grep -q AM_GNU_GETTEXT_VERSION configure.*; then
 		local autopoint_log_file="${T}/autopoint.$$"
 

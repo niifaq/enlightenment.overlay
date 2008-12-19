@@ -16,7 +16,9 @@ RDEPEND=">=x11-libs/ecore-9999
 	>=dev-libs/embryo-9999
 	>=x11-libs/evas-9999
 	!x86-fbsd? ( pam? ( sys-libs/pam ) )
-	>=x11-libs/e_dbus-9999"
+	>=x11-libs/e_dbus-9999
+	app-misc/exchange
+"
 
 DEPEND="${RDEPEND}
 	x11-proto/xproto

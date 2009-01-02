@@ -5,7 +5,6 @@ dev-libs/eet
 media-libs/imlib2_loaders
 x11-libs/evas
 x11-libs/ecore
-media-libs/epeg
 dev-libs/embryo
 media-libs/edje
 media-libs/epsilon

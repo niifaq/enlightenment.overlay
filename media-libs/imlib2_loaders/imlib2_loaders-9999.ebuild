@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/imlib2_loaders/imlib2_loaders-9999.ebuild,v 1.3 2005/04/10 03:43:09 vapier Exp $
+# $Header: $
 
 inherit enlightenment
 

@@ -1,8 +1,9 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/etk/etk-9999.ebuild,v 1.1 2005/11/09 00:03:22 vapier Exp $
+# $Header: $
 
-EVCS_MODULE="OLD/${PN}"
+ESVN_SUB_PROJECT="OLD"
+ESVN_URI_APPEND="${PN}"
 inherit enlightenment
 
 DESCRIPTION="entrance configuration editor based on etk"

@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EVCS_MODULE="exquisite"
+ESVN_URI_APPEND="exquisite"
 inherit enlightenment
 
 DESCRIPTION="Exquisite - EFL based psplash replacement"

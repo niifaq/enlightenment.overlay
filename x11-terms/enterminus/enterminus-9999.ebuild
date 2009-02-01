@@ -1,8 +1,9 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-terms/enterminus/enterminus-9999.ebuild,v 1.1 2005/09/07 03:52:46 vapier Exp $
+# $Header: $
 
-EVCS_MODULE="PROTO/${PN}"
+ESVN_SUB_PROJECT="PROTO"
+ESVN_URI_APPEND="${PN}"
 inherit enlightenment
 
 DESCRIPTION="An EFL Based Terminal"

@@ -9,11 +9,10 @@ DESCRIPTION="E17 Freedesktop compliant trash module"
 HOMEPAGE="http://code.google.com/p/e17mods/wiki/Trash"
 
 LICENSE="GPL-2"
-SLOT="0"
-KEYWORDS=""
+
 IUSE=""
 
 DEPEND="
-	x11-wm/e
+	x11-wm/enlightenment
 	media-libs/edje
 	"

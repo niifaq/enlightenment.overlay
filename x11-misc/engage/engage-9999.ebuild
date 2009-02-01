@@ -1,8 +1,9 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/engage/engage-9999.ebuild,v 1.5 2005/04/10 21:02:56 vapier Exp $
+# $Header: $
 
-EVCS_MODULE="MISC/engage"
+ESVN_SUB_PROJECT="MISC"
+ESVN_URI_APPEND="engage"
 inherit enlightenment
 
 DESCRIPTION="nice bar thingy"

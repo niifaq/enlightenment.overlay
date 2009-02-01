@@ -1,8 +1,9 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/examine/examine-9999.ebuild,v 1.3 2005/04/10 20:39:34 vapier Exp $
+# $Header: $
 
-EVCS_MODULE="OLD/${PN}"
+ESVN_SUB_PROJECT="OLD"
+ESVN_URI_APPEND="${PN}"
 inherit enlightenment
 
 DESCRIPTION="configuration library for applications based on the EFL"

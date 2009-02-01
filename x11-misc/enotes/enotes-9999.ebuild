@@ -1,8 +1,9 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/enotes/enotes-9999.ebuild,v 1.1 2006/08/28 06:19:15 vapier Exp $
+# $Header: $
 
-EVCS_MODULE="OLD/${PN}"
+ESVN_SUB_PROJECT="MISC"
+ESVN_URI_APPEND="${PN}"
 inherit enlightenment
 
 DESCRIPTION="sticky notes system based on the EFL"

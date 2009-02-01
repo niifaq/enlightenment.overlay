@@ -14,6 +14,6 @@ KEYWORDS=""
 IUSE=""
 
 DEPEND="
-	x11-wm/e
+	x11-wm/enlightenment
 	media-libs/edje
 "

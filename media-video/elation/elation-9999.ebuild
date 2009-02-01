@@ -1,8 +1,9 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/elation/elation-9999.ebuild,v 1.2 2005/04/10 20:38:57 vapier Exp $
+# $Header: $
 
-EVCS_MODULE="OLD/${PN}"
+ESVN_SUB_PROJECT="OLD"
+ESVN_URI_APPEND="${PN}"
 inherit enlightenment
 
 DESCRIPTION="an e17 media player"

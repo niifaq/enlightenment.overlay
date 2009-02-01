@@ -1,8 +1,9 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/envision/envision-9999.ebuild,v 1.2 2005/02/22 23:01:59 vapier Exp $
+# $Header: $
 
-EVCS_MODULE="MISC/envision"
+ESVN_SUB_PROJECT="MISC"
+ESVN_URI_APPEND="envision"
 inherit enlightenment
 
 DESCRIPTION="an e17 video player"

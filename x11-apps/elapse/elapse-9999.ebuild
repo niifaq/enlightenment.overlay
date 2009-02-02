@@ -3,7 +3,6 @@
 # $Header: $
 
 ESVN_SUB_PROJECT="MISC"
-ESVN_URI_APPEND="elapse"
 inherit enlightenment
 
 DESCRIPTION="EFL powered clock"

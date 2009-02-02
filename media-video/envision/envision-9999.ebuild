@@ -3,7 +3,6 @@
 # $Header: $
 
 ESVN_SUB_PROJECT="MISC"
-ESVN_URI_APPEND="envision"
 inherit enlightenment
 
 DESCRIPTION="an e17 video player"

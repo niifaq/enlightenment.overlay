@@ -3,7 +3,6 @@
 # $Header: $
 
 ESVN_SUB_PROJECT="OLD"
-ESVN_URI_APPEND="${PN}"
 inherit enlightenment
 
 DESCRIPTION="EFL powered media player"

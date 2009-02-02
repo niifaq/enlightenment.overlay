@@ -3,7 +3,6 @@
 # $Header: $
 
 ESVN_SUB_PROJECT="MISC"
-ESVN_URI_APPEND="epbb"
 inherit enlightenment
 
 DESCRIPTION="a pbbuttonsd client using the EFL"

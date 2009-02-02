@@ -3,7 +3,6 @@
 # $Header: $
 
 ESVN_SUB_PROJECT="MISC"
-ESVN_URI_APPEND="retina"
 inherit enlightenment
 
 DESCRIPTION="Evas powered image viewer"

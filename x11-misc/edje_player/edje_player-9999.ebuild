@@ -3,7 +3,6 @@
 # $Header: $
 
 ESVN_SUB_PROJECT="PROTO"
-ESVN_URI_APPEND="edje_player"
 inherit enlightenment
 
 DESCRIPTION="EdjePlayer is a application to play standalone Edje files."

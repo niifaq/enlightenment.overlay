@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-ESVN_REPO_URI="http://itask-module.googlecode.com/svn/trunk/${PN}"
+ESVN_SERVER="http://itask-module.googlecode.com/svn/trunk"
 inherit enlightenment
 
 DESCRIPTION="This module - different e17 winlist"

@@ -2,7 +2,6 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-ESVN_URI_APPEND="edje_viewer"
 inherit enlightenment
 
 DESCRIPTION="edje viewer based on etk"

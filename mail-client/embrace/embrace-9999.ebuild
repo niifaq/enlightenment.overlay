@@ -3,7 +3,6 @@
 # $Header: $
 
 ESVN_SUB_PROJECT="MISC"
-ESVN_URI_APPEND="embrace"
 inherit enlightenment
 
 DESCRIPTION="mail-checker which is based on the EFL"

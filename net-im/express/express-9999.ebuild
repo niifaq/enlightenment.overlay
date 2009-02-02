@@ -3,7 +3,6 @@
 # $Header: $
 
 ESVN_SUB_PROJECT="BROKEN"
-ESVN_URI_APPEND="${PN}"
 inherit enlightenment
 
 DESCRIPTION="EFL based instant messaging program"

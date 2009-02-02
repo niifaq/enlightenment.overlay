@@ -3,7 +3,6 @@
 # $Header: $
 
 ESVN_SUB_PROJECT="OLD"
-ESVN_URI_APPEND="edb"
 inherit enlightenment flag-o-matic
 
 DESCRIPTION="Enlightenment Data Base"

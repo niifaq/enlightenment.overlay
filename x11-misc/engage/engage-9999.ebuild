@@ -3,7 +3,6 @@
 # $Header: $
 
 ESVN_SUB_PROJECT="MISC"
-ESVN_URI_APPEND="engage"
 inherit enlightenment
 
 DESCRIPTION="nice bar thingy"

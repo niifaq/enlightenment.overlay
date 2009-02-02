@@ -2,7 +2,6 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-ESVN_URI_APPEND="enhance"
 inherit enlightenment
 
 DESCRIPTION="GUI developer for E17 using GLADE, EXML, and ETK"

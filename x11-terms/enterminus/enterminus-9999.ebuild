@@ -3,7 +3,6 @@
 # $Header: $
 
 ESVN_SUB_PROJECT="PROTO"
-ESVN_URI_APPEND="${PN}"
 inherit enlightenment
 
 DESCRIPTION="An EFL Based Terminal"

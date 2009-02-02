@@ -2,7 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-ESVN_REPO_URI="http://e17mods.googlecode.com/svn/trunk/MODULES/${PN}"
+ESVN_SERVER="http://e17mods.googlecode.com/svn/trunk"
+ESVN_SUB_PROJECT="MODULES"
 inherit enlightenment
 
 DESCRIPTION="E17 Freedesktop compliant trash module"

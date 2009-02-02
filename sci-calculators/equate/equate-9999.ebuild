@@ -3,7 +3,6 @@
 # $Header: $
 
 ESVN_SUB_PROJECT="MISC"
-ESVN_URI_APPEND="equate"
 inherit enlightenment
 
 DESCRIPTION="simple themeable calculator built off of ewl"

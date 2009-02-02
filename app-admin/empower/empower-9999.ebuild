@@ -2,7 +2,6 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-ESVN_URI_APPEND="empower"
 inherit enlightenment
 
 DESCRIPTION="graphical sudo application"

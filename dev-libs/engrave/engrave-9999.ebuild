@@ -3,7 +3,6 @@
 # $Header: $
 
 ESVN_SUB_PROJECT="OLD"
-ESVN_URI_APPEND="${PN}"
 inherit enlightenment
 
 DESCRIPTION="library for editing the contents of edje files"

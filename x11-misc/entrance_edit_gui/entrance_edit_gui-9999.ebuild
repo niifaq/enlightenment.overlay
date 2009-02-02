@@ -3,7 +3,6 @@
 # $Header: $
 
 ESVN_SUB_PROJECT="OLD"
-ESVN_URI_APPEND="${PN}"
 inherit enlightenment
 
 DESCRIPTION="entrance configuration editor based on etk"

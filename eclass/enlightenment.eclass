@@ -160,7 +160,7 @@ enlightenment_src_unpack() {
                                 ebeep 3
                         fi
                 fi
-        fi
+	fi
 
         # someone forgot these very useful files... 
         touch README ABOUT-NLS
@@ -188,7 +188,9 @@ enlightenment_src_compile() {
 enlightenment_src_install() {
 	emake install DESTDIR="${D}" || enlightenment_die
 	find "${D}" '(' -name CVS -o -name .svn -o -name .git ')' -type d -exec rm -rf '{}' \; 2>/dev/null
-	dodoc AUTHORS ChangeLog NEWS README TODO ${EDOCS}
+	for d in AUTHORS ChangeLog NEWS README TODO ${EDOCS}; do
+		[[ -f ${d} ]] && dodoc ${d}
+	done
 	use doc && [[ -d doc ]] && dohtml -r doc/*
 }
 

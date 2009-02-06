@@ -21,11 +21,17 @@ pkg_setup() {
 	enlightenment_pkg_setup
 }
 
+src_unpack() {
+	# explicially call enlightenment_src_unpack to prevent any
+	# misunderstand by portage
+	enlightenment_src_unpack
+}
+
 src_compile() {
 	export MY_ECONF="
 		--with-scores-group=${GAMES_GROUP}
 		--with-scores-user=${GAMES_USER}
-		--localstatedir=\"${GAMES_STATEDIR}\"
+		--localstatedir=${GAMES_STATEDIR}
 	"
 	enlightenment_src_compile
 }

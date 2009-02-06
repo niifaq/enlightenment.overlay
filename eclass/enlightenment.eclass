@@ -35,7 +35,6 @@ E_STATE="release"
 if [[ ${PV/9999} != ${PV} ]] ; then
 	E_LIVE_SERVER=${E_LIVE_SERVER:-${E_LIVE_SERVER_DEFAULT_SVN}}
 	E_STATE="live"
-	WANT_AUTOTOOLS="yes"
 
 	# force people to opt-in to legacy cvs
 	if [[ -n ${ECVS_MODULE} ]] ; then
@@ -56,11 +55,10 @@ elif [[ -n ${E_SNAP_DATE} ]] ; then
 else
 	E_STATE="release"
 fi
-if [[ ${WANT_AUTOTOOLS} == "yes" ]] ; then
-	WANT_AUTOCONF=${E_WANT_AUTOCONF:-latest}
-	WANT_AUTOMAKE=${E_WANT_AUTOMAKE:-latest}
-	inherit autotools
-fi
+
+WANT_AUTOCONF=${E_WANT_AUTOCONF:-latest}
+WANT_AUTOMAKE=${E_WANT_AUTOMAKE:-latest}
+inherit autotools
 
 DESCRIPTION="A DR17 production"
 HOMEPAGE="http://www.enlightenment.org/"
@@ -135,45 +133,45 @@ enlightenment_src_unpack() {
 		esac
 	else
 		unpack ${A}
+		cd "${S}"
 	fi
 
 	gettext_modify
 
 	[[ -s gendoc ]] && chmod a+rx gendoc
 
-        if grep -q AM_GNU_GETTEXT_VERSION configure.*; then
-                local autopoint_log_file="${T}/autopoint.$$"
-                
-                ebegin "Running autopoint"
-          
-                        autopoint -f &> "${autopoint_log_file}"
-                
-                if ! eend $?; then
-                        ewarn "Autopoint failed"
-                        ewarn "Log in ${autopoint_log_file}"
-                        ewarn "(it makes sense only when compile fails afterwards)"
+	if grep -q AM_GNU_GETTEXT_VERSION configure.*; then
+		local autopoint_log_file="${T}/autopoint.$$"
 
-                        if grep -qi 'cvs program not found' "${autopoint_log_file}"; then
-                                ewarn "This error seems to be due missing CVS"
-                                ewarn "(it's usage hardcoded into autopoint code)"
-                                ewarn "Please 'emerge cvs' if compilation will fail"
-                                ebeep 3
-                        fi
-                fi
+		ebegin "Running autopoint"
+
+		autopoint -f &> "${autopoint_log_file}"
+
+		if ! eend $?; then
+			ewarn "Autopoint failed"
+			ewarn "Log in ${autopoint_log_file}"
+			ewarn "(it makes sense only when compile fails afterwards)"
+
+			if grep -qi 'cvs program not found' "${autopoint_log_file}"; then
+				ewarn "This error seems to be due missing CVS"
+				ewarn "(it's usage hardcoded into autopoint code)"
+				ewarn "Please 'emerge cvs' if compilation will fail"
+				ebeep 3
+			fi
+		fi
 	fi
 
-        # someone forgot these very useful files... 
-        touch README ABOUT-NLS
+	# someone forgot these very useful files... 
+	touch README ABOUT-NLS
 
-#        for bad_file in autom4te.cache aclocal.m4 ltmain.sh; do
-#                [ -e "${bad_file}" ] && rm -Rf "${bad_file}"
-#        done
+#	for bad_file in autom4te.cache aclocal.m4 ltmain.sh; do
+#		[ -e "${bad_file}" ] && rm -Rf "${bad_file}"
+#	done
 
-        [ -d "m4" ] && AT_M4DIR="m4"
-        eautoreconf                     || enlightenment_die "eautoreconf failed"
+	[ -d "m4" ] && AT_M4DIR="m4"
+	eautoreconf                     || enlightenment_die "eautoreconf failed"
 
-        epunt_cxx
-
+	epunt_cxx
 }
 
 enlightenment_src_compile() {
@@ -187,10 +185,13 @@ enlightenment_src_compile() {
 
 enlightenment_src_install() {
 	emake install DESTDIR="${D}" || enlightenment_die
-	find "${D}" '(' -name CVS -o -name .svn -o -name .git ')' -type d -exec rm -rf '{}' \; 2>/dev/null
-	for d in AUTHORS ChangeLog NEWS README TODO ${EDOCS}; do
-		[[ -f ${d} ]] && dodoc ${d}
+
+	find "${D}" '(' -name 'CVS' -o -name '.svn' -o -name '.git' ')' -type d -exec rm -rf '{}' \; 2> /dev/null
+
+	for doc in AUTHORS ChangeLog NEWS README TODO ${EDOCS}; do
+		[[ -f ${doc} ]] && dodoc ${doc}
 	done
+
 	use doc && [[ -d doc ]] && dohtml -r doc/*
 }
 

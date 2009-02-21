@@ -13,3 +13,15 @@ IUSE=""
 DEPEND="x11-libs/ecore
 	x11-libs/evas
 	media-libs/edje"
+
+src_unpack() {
+	enlightenment_src_unpack
+}
+
+#src_compile() {
+#	python_src_compile
+#}
+
+#src_install() {
+#	python_src_install
+#}

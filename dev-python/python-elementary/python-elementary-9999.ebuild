@@ -10,9 +10,8 @@ DESCRIPTION="Python bindigs for elementary"
 
 IUSE="examples"
 
-DEPEND=">=x11-libs/elementary-9999"
-
-RDEPEND=">=dev-python/setuptools-0.6_rc9"
+DEPEND=">=dev-python/setuptools-0.6_rc9
+	>=x11-libs/elementary-9999"
 
 src_unpack() {
 	enlightenment_src_unpack

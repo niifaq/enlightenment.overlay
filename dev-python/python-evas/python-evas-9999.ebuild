@@ -4,15 +4,14 @@
 
 NEED_PYTHON="2.4"
 ESVN_SUB_PROJECT="BINDINGS/python"
-inherit enlightenment python distutils 
+inherit enlightenment python distutils
 
 DESCRIPTION="Python bindings for evas"
 
 IUSE="examples"
 
-DEPEND=">=dev-python/cython-0.9.8"
-
-RDEPEND=">=dev-python/setuptools-0.6_rc9"
+DEPEND=">=dev-python/setuptools-0.6_rc9
+	>=dev-python/cython-0.9.8"
 
 src_unpack() {
 	enlightenment_src_unpack

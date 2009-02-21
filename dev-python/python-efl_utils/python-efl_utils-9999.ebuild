@@ -10,10 +10,9 @@ DESCRIPTION="utilities to work with EFL"
 
 IUSE="examples"
 
-DEPEND=">=dev-python/python-ecore-9999
+DEPEND=">=dev-python/setuptools-0.6_rc9
+	>=dev-python/python-ecore-9999
 	>=dev-python/python-evas-9999"
-
-RDEPEND=">=dev-python/setuptools-0.6_rc9"
 
 src_unpack() {
 	enlightenment_src_unpack

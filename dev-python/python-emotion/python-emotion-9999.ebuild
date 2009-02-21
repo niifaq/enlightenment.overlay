@@ -10,11 +10,10 @@ DESCRIPTION="Python bindings for emotion"
 
 IUSE="examples"
 
-DEPEND=">=dev-python/cython-0.9.8
+DEPEND=">=dev-python/setuptools-0.6_rc9
+	>=dev-python/cython-0.9.8
 	>=dev-python/python-evas-9999
 	>=media-libs/emotion-9999"
-
-RDEPEND=">=dev-python/setuptools-0.6_rc9"
 
 src_unpack() {
 	enlightenment_src_unpack

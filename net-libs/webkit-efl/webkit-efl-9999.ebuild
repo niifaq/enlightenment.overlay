@@ -1,21 +1,18 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/webkit-gtk/webkit-gtk-0_p40220.ebuild,v 1.2 2009/01/31 21:51:04 jokey Exp $
-
-inherit autotools
-
-DESCRIPTION="Open source web browser engine"
-HOMEPAGE="http://www.webkit.org/"
-
-LICENSE="LGPL-2 LGPL-2.1 BSD"
-SLOT="0"
-KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~sparc ~x86"
-IUSE="coverage debug gstreamer pango soup sqlite svg"
+# $Header: $
 
 EGIT_REPO_URI="git://code.staikos.net/webkit"
 EGIT_BRANCH="kenneth/efl-port"
 
-inherit git
+inherit autotools git
+
+DESCRIPTION="Open source web browser engine"
+HOMEPAGE="http://codeposts.blogspot.com"
+
+LICENSE="LGPL-2 LGPL-2.1 BSD"
+SLOT="0"
+IUSE="coverage debug gstreamer pango soup sqlite svg"
 
 RDEPEND="
 		=x11-libs/evas-9999

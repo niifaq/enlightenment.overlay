@@ -9,4 +9,5 @@ DESCRIPTION="EFL Physics Engine"
 
 IUSE=""
 
-DEPEND=">=x11-libs/ewl-9999"
+DEPEND=">=x11-libs/ecore-9999
+	>=x11-libs/evas-9999"

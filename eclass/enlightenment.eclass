@@ -165,10 +165,6 @@ enlightenment_src_unpack() {
 		# someone forgot these very useful files... 
 		touch README ABOUT-NLS
 
-#		for bad_file in autom4te.cache aclocal.m4 ltmain.sh; do
-#			[ -e "${bad_file}" ] && rm -Rf "${bad_file}"
-#		done
-
 		[ -d "m4" ] && AT_M4DIR="m4"
 		eautoreconf                     || enlightenment_die "eautoreconf failed"
 
@@ -180,8 +176,12 @@ enlightenment_src_compile() {
 	# gstreamer sucks, work around it doing stupid stuff
 	export GST_REGISTRY="${S}/registry.xml"
 
-	econf ${MY_ECONF} || enlightenment_die "econf failed"
+	if [[ -e configure ]]; then
+		econf ${MY_ECONF} || enlightenment_die "econf failed"
+	fi
+
 	emake || enlightenment_die "emake failed"
+
 	use doc && [[ -x ./gendoc ]] && { ./gendoc || enlightenment_die "gendoc failed" ; }
 }
 

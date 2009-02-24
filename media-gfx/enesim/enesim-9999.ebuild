@@ -5,7 +5,7 @@
 ESVN_SUB_PROJECT="PROTO"
 inherit enlightenment
 
-DESCRIPTION="Enesim"
+DESCRIPTION="Enesim is a direct rendering graphics library"
 
 IUSE=""
 

@@ -1,0 +1,7 @@
+# ChangeLog for net-misc/exalt
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  27 Feb 2009; evadim <evadim@evadim.ru> +metadata.xml, +exalt-9999.ebuild:
+  initial commit. for compile remove our eclass, compile, revert
+

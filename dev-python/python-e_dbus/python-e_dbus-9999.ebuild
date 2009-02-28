@@ -4,6 +4,7 @@
 
 NEED_PYTHON="2.4"
 ESVN_SUB_PROJECT="BINDINGS/python"
+
 inherit enlightenment python distutils
 
 DESCRIPTION="D-Bus Python intergation for ecore"
@@ -11,7 +12,8 @@ DESCRIPTION="D-Bus Python intergation for ecore"
 IUSE="examples"
 
 DEPEND=">=dev-python/setuptools-0.6_rc9
-	>=sys-apps/dbus-9999"
+	>=dev-python/python-evas-9999
+	>=media-libs/edje-9999"
 
 src_unpack() {
 	enlightenment_src_unpack

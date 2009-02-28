@@ -4,6 +4,7 @@
 
 NEED_PYTHON="2.4"
 ESVN_SUB_PROJECT="BINDINGS/python"
+
 inherit enlightenment python distutils
 
 DESCRIPTION="Python bindings for emotion"

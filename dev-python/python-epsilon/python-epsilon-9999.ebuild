@@ -4,6 +4,7 @@
 
 NEED_PYTHON="2.4"
 ESVN_SUB_PROJECT="BINDINGS/python"
+
 inherit enlightenment python distutils
 
 DESCRIPTION="Python bindings for epsilon"
@@ -12,7 +13,6 @@ IUSE="examples"
 
 DEPEND=">=dev-python/setuptools-0.6_rc9
 	>=dev-python/cython-0.9.8
-	>=dev-python/python-evas-9999
 	>=dev-python/python-ecore-9999
 	>=media-libs/epsilon-9999"
 

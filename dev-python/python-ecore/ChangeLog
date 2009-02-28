@@ -1,0 +1,7 @@
+# ChangeLog for dev-python/python-ecore
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  28 Feb 2009; evadim <evadim@evadim.ru> python-ecore-9999.ebuild:
+  fix python bindings
+

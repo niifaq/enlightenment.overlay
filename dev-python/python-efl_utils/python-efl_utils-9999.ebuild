@@ -4,6 +4,7 @@
 
 NEED_PYTHON="2.4"
 ESVN_SUB_PROJECT="BINDINGS/python"
+
 inherit enlightenment python distutils
 
 DESCRIPTION="utilities to work with EFL"
@@ -11,8 +12,7 @@ DESCRIPTION="utilities to work with EFL"
 IUSE="examples"
 
 DEPEND=">=dev-python/setuptools-0.6_rc9
-	>=dev-python/python-ecore-9999
-	>=dev-python/python-evas-9999"
+	>=dev-python/python-ecore-9999"
 
 src_unpack() {
 	enlightenment_src_unpack

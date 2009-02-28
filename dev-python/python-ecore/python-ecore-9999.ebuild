@@ -4,6 +4,7 @@
 
 NEED_PYTHON="2.4"
 ESVN_SUB_PROJECT="BINDINGS/python"
+
 inherit enlightenment python distutils
 
 DESCRIPTION="Python bindings for ecore"
@@ -14,7 +15,6 @@ DEPEND=">=dev-python/setuptools-0.6_rc9
 	>=dev-python/python-evas-9999
 	>=dev-python/cython-0.9.8
 	>=x11-libs/ecore-9999
-	>=x11-libs/evas-9999
 	>=media-libs/edje-9999"
 
 src_unpack() {

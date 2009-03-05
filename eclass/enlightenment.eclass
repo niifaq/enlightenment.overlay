@@ -166,7 +166,7 @@ enlightenment_src_unpack() {
 		touch README ABOUT-NLS
 
 		[ -d "m4" ] && AT_M4DIR="m4"
-		eautoreconf                     || enlightenment_die "eautoreconf failed"
+		eautoreconf
 
 		epunt_cxx
 	fi
@@ -177,7 +177,7 @@ enlightenment_src_compile() {
 	export GST_REGISTRY="${S}/registry.xml"
 
 	if [[ -e configure ]]; then
-		econf ${MY_ECONF} || enlightenment_die "econf failed"
+		econf ${MY_ECONF}
 	fi
 
 	emake || enlightenment_die "emake failed"

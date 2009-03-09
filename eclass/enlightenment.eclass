@@ -112,7 +112,7 @@ enlightenment_die() {
 }
 
 enlightenment_pkg_setup() {
-	enlightenment_warning_msg
+	: enlightenment_warning_msg
 }
 
 # the stupid gettextize script prevents non-interactive mode, so we hax it
@@ -133,14 +133,15 @@ enlightenment_src_unpack() {
 		esac
 	else
 		unpack ${A}
-		cd "${S}"
 	fi
+
+	cd "${S}"
 
 	gettext_modify
 
 	[[ -s gendoc ]] && chmod a+rx gendoc
 
-	if [[ -e "configure.ac" || -e "configure.in" ]]; then
+	if [[ -e configure.ac || -e configure.in ]]; then
 		if grep -q AM_GNU_GETTEXT_VERSION configure.*; then
 			local autopoint_log_file="${T}/autopoint.$$"
 
@@ -162,13 +163,12 @@ enlightenment_src_unpack() {
 			fi
 		fi
 
-		# someone forgot these very useful files... 
-		touch README ABOUT-NLS
+		# someone forgot these very useful file... 
+		touch README
 
-		[ -d "m4" ] && AT_M4DIR="m4"
+#		[ -d "m4" ] && AT_M4DIR="m4"
 		eautoreconf
 
-		epunt_cxx
 	fi
 }
 
@@ -198,7 +198,7 @@ enlightenment_src_install() {
 }
 
 enlightenment_pkg_postinst() {
-	enlightenment_warning_msg
+	: enlightenment_warning_msg
 }
 
 EXPORT_FUNCTIONS pkg_setup src_unpack src_compile src_install pkg_postinst

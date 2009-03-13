@@ -12,22 +12,23 @@ HOMEPAGE="http://codeposts.blogspot.com"
 
 LICENSE="LGPL-2 LGPL-2.1 BSD"
 SLOT="0"
-IUSE="coverage debug gstreamer pango soup sqlite svg"
+IUSE="coverage debug gstreamer pango soup sqlite svg xslt"
 
-RDEPEND="
-		=x11-libs/evas-9999
-		=x11-libs/ecore-9999
-		=media-libs/edje-9999
-		>=x11-libs/cairo-1.6.4
-		>=media-libs/fontconfig-2.4.2
-		media-libs/freetype
-		sqlite? ( >=dev-db/sqlite-3 )
-		gstreamer? (
-				>=media-libs/gst-plugins-base-0.10
-			)
-		soup? ( >=net-libs/libsoup-2.23.1 )
-		xslt? ( >=dev-libs/libxslt-1.1.7 )
-		pango? ( >=x11-libs/pango-1.0 )
+RDEPEND=">=x11-libs/evas-9999
+	>=x11-libs/ecore-9999
+	>=media-libs/edje-9999
+	>=x11-libs/cairo-1.6.4
+	>=media-libs/fontconfig-2.4.2
+	media-libs/freetype
+	dev-libs/libxml2
+	sqlite? ( >=dev-db/sqlite-3 )
+	gstreamer? (
+		    >=media-libs/gst-plugins-base-0.10
+		)
+	soup? ( >=net-libs/libsoup-2.23.1 )
+	xslt? ( >=dev-libs/libxslt-1.1.7 )
+	pango? ( >=x11-libs/pango-1.0 )
+	!net-libs/webkit-gtk
 	"
 
 DEPEND="${RDEPEND}
@@ -58,15 +59,13 @@ src_compile() {
 		$(use_enable sqlite icon-database) \
 		$(use_enable sqlite dom-storage) \
 		$(use_enable sqlite offline-web-applications) \
-		$(use_enable gstreamer video) \
 		$(use_enable svg) \
 		$(use_enable debug) \
+		$(use_enable xslt) \
 		$(use_enable coverage) \
 		${myconf} \
 		|| die "configure failed"
-
-# Don't work with efl-port - need libxml, but not checks for it.
-#		$(use_enable xslt) \
+#		$(use_enable gstreamer video) \
 
 	emake || die "emake failed"
 }

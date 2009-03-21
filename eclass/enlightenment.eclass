@@ -32,6 +32,11 @@ E_LIVE_SERVER_DEFAULT_CVS="anoncvs.enlightenment.org:/var/cvs/e"
 E_LIVE_SERVER_DEFAULT_SVN="http://svn.enlightenment.org/svn/e/trunk"
 
 E_STATE="release"
+
+# We want to use eautoreconf by default, only broken packages must
+# define "no" here
+: ${WANT_AUTOMAKE:=yes}
+
 if [[ ${PV/9999} != ${PV} ]] ; then
 	E_LIVE_SERVER=${E_LIVE_SERVER:-${E_LIVE_SERVER_DEFAULT_SVN}}
 	E_STATE="live"
@@ -56,9 +61,17 @@ else
 	E_STATE="release"
 fi
 
-WANT_AUTOCONF=${E_WANT_AUTOCONF:-latest}
-WANT_AUTOMAKE=${E_WANT_AUTOMAKE:-latest}
-inherit autotools
+# Some packages may not work with eautoreconf, make them possible to disable it
+# by defining WANT_AUTOMAKE=no. Any other value will be used as actual version
+# of automake to use.
+if [[ "${WANT_AUTOMAKE}" != "no" ]]; then
+	if [[ "${WANT_AUTOMAKE}" == "yes" ]]; then
+		WANT_AUTOCONF=${E_WANT_AUTOCONF:-latest}
+		WANT_AUTOMAKE=${E_WANT_AUTOMAKE:-latest}
+	fi
+
+	inherit autotools
+fi
 
 DESCRIPTION="A DR17 production"
 HOMEPAGE="http://www.enlightenment.org/"
@@ -141,7 +154,7 @@ enlightenment_src_unpack() {
 
 	[[ -s gendoc ]] && chmod a+rx gendoc
 
-	if [[ -e configure.ac || -e configure.in ]]; then
+	if [[ -e configure.ac || -e configure.in ]] && [[ "${WANT_AUTOMAKE}" != "no" ]]; then
 		if grep -q AM_GNU_GETTEXT_VERSION configure.*; then
 			local autopoint_log_file="${T}/autopoint.$$"
 
@@ -168,7 +181,6 @@ enlightenment_src_unpack() {
 
 #		[ -d "m4" ] && AT_M4DIR="m4"
 		eautoreconf
-
 	fi
 }
 

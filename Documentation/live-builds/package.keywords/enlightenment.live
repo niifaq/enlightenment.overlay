@@ -39,6 +39,8 @@ x11-plugins/e_modules-photo **
 x11-plugins/extramenu **
 x11-plugins/e_modules-slideshow **
 x11-plugins/e_modules-penguins **
+x11-plugins/e_modules-systray **
+x11-plugins/e_modules-exalt-client **
 x11-plugins/winlist_ng **
 x11-apps/elapse **
 x11-libs/etk **
@@ -67,6 +69,7 @@ app-misc/entropy **
 app-misc/examine **
 app-misc/evidence **
 app-misc/exchange **
+net-misc/exalt **
 app-text/epdf **
 sci-calculators/equate **
 sci-calculators/e_calculator **
@@ -78,11 +81,14 @@ media-gfx/elicit **
 media-gfx/ephoto **
 media-gfx/imlib2_tools **
 media-gfx/retina **
+media-gfx/enesim **
 media-libs/edje **
 media-libs/emotion **
 media-libs/epsilon **
 media-libs/imlib2 **
 media-libs/imlib2_loaders **
+media-libs/etch **
+media-libs/e_phys **
 net-im/express **
 net-libs/webkit-efl **
 app-laptop/epbb **

@@ -38,7 +38,6 @@ E_STATE="release"
 : ${WANT_AUTOMAKE:=yes}
 
 if [[ ${PV/9999} != ${PV} ]] ; then
-	E_LIVE_SERVER=${E_LIVE_SERVER:-${E_LIVE_SERVER_DEFAULT_SVN}}
 	E_STATE="live"
 
 	# force people to opt-in to legacy cvs

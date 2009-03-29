@@ -39,6 +39,7 @@ E_STATE="release"
 
 if [[ ${PV/9999} != ${PV} ]] ; then
 	E_STATE="live"
+	[[ -n ${E_LIVE_OFFLINE} ]] && ESCM_OFFLINE="yes"
 
 	# force people to opt-in to legacy cvs
 	if [[ -n ${ECVS_MODULE} ]] ; then
@@ -102,9 +103,6 @@ case ${EURI_STATE:-${E_STATE}} in
 esac
 
 enlightenment_warning_msg() {
-	if [[ -n ${E_LIVE_SERVER} ]] ; then
-		einfo "Using user server for live sources: ${E_LIVE_SERVER}"
-	fi
 	if [[ ${E_STATE} == "snap" ]] ; then
 		ewarn "Please do not contact the E team about bugs in Gentoo."
 		ewarn "Only contact enlightenment@gentoo.org via e-mail or bugzilla."

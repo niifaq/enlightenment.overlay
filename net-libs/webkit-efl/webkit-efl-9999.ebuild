@@ -12,7 +12,7 @@ HOMEPAGE="http://codeposts.blogspot.com"
 
 LICENSE="LGPL-2 LGPL-2.1 BSD"
 SLOT="0"
-IUSE="coverage debug gstreamer pango soup sqlite svg xslt"
+IUSE="coverage debug gstreamer sqlite svg xslt"
 
 RDEPEND=">=x11-libs/evas-9999
 	>=x11-libs/ecore-9999
@@ -39,6 +39,8 @@ DEPEND="${RDEPEND}
 src_unpack() {
 	git_src_unpack
 
+	epatch "${FILESDIR}/${PN}-configure-missing-dependencies.patch"
+
 	AT_M4DIR="autotools"
 
 	eautoreconf
@@ -47,10 +49,6 @@ src_unpack() {
 src_compile() {
 	# It doesn't compile on alpha without this LDFLAGS
 	use alpha && append-ldflags "-Wl,--no-relax"
-
-	local myconf=
-		use pango && myconf="${myconf} --with-font-backend=pango"
-		use soup && myconf="${myconf} --with-http-backend=soup"
 
 	econf \
 		--with-port=efl \
@@ -63,9 +61,9 @@ src_compile() {
 		$(use_enable debug) \
 		$(use_enable xslt) \
 		$(use_enable coverage) \
+		$(use_enable gstreamer video) \
 		${myconf} \
 		|| die "configure failed"
-#		$(use_enable gstreamer video) \
 
 	emake || die "emake failed"
 }

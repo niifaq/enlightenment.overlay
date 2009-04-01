@@ -1,0 +1,13 @@
+# ChangeLog for net-libs/webkit-efl
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  01 Apr 2009; Night Nord <NightNord@gmail.com>
+  +files/webkit-efl-configure-missing-dependencies.patch,
+  webkit-efl-9999.ebuild:
+  Patch for broken build system. Now it will not fail on configure
+  	due to strange gstreamer checks.
+  Also some use-flags cleanup: pango and soup are used only in gtk-port
+  metadata.xml fixes:
+  	a) mantainer changed to enlightenment@gentoo.org
+  	b) use flags descriptions added

@@ -12,5 +12,6 @@ DESCRIPTION="System Tray"
 IUSE=""
 
 DEPEND="x11-libs/ecore
-	x11-libs/evas
-	media-libs/edje"
+		x11-libs/evas
+		x11-wm/enlightment
+		media-libs/edje"

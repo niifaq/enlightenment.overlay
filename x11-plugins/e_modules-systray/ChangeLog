@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  05 Apr 2009; Alexey Shvetsov <alexxy@gentoo.org>
+  e_modules-systray-9999.ebuild:
+  Ajust deps
+
   22 Mar 2009; evadim <evadim@evadim.ru>
   -x11-plugins/e_modules-systray/ChangeLog:
   initial commit

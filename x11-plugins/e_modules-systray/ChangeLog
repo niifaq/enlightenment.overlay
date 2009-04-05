@@ -4,6 +4,10 @@
 
   05 Apr 2009; Alexey Shvetsov <alexxy@gentoo.org>
   e_modules-systray-9999.ebuild:
+  Fix typo
+
+  05 Apr 2009; Alexey Shvetsov <alexxy@gentoo.org>
+  e_modules-systray-9999.ebuild:
   Ajust deps
 
   22 Mar 2009; evadim <evadim@evadim.ru>

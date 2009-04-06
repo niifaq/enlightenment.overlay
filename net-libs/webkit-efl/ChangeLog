@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  06 Apr 2009; Night Nord <NightNord@gmail.com> webkit-efl-9999.ebuild:
+  Fixed missing cd "${S}" in src_unpack making epatch fail with new
+  git.eclass
+
   01 Apr 2009; Night Nord <NightNord@gmail.com>
   +files/webkit-efl-configure-missing-dependencies.patch,
   webkit-efl-9999.ebuild:

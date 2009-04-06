@@ -39,6 +39,8 @@ DEPEND="${RDEPEND}
 src_unpack() {
 	git_src_unpack
 
+	cd "${S}"
+
 	epatch "${FILESDIR}/${PN}-configure-missing-dependencies.patch"
 
 	AT_M4DIR="autotools"

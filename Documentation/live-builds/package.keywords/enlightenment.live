@@ -79,12 +79,14 @@ media-gfx/exhibit **
 media-gfx/exquisite **
 media-gfx/elicit **
 media-gfx/ephoto **
+media-gfx/image-viewer **
 media-gfx/imlib2_tools **
 media-gfx/retina **
 media-gfx/enesim **
 media-libs/edje **
 media-libs/emotion **
 media-libs/epsilon **
+media-libs/ethumb **
 media-libs/imlib2 **
 media-libs/imlib2_loaders **
 media-libs/etch **

@@ -9,19 +9,21 @@ DESCRIPTION="hardware-accelerated canvas API"
 IUSE="altivec cairo directfb edb gif fbcon jpeg mmx opengl png sdl sse svg threads tiff X xpm"
 
 RDEPEND="X? ( x11-libs/libXrender )
-	opengl? ( virtual/opengl )
-	>=dev-libs/eet-9999
-	edb? ( >=dev-db/edb-9999 )
-	media-libs/fontconfig
-	cairo? ( >=x11-libs/cairo-1.2 )
-	directfb? ( >=dev-libs/DirectFB-0.9.16 )
-	gif? ( media-libs/giflib )
-	jpeg? ( media-libs/jpeg )
-	png? ( media-libs/libpng )
-	tiff? ( media-libs/tiff )
-	xpm? ( x11-libs/libXpm )
-	svg? ( >=gnome-base/librsvg-2.14.0 x11-libs/cairo x11-libs/libsvg-cairo )
-	sdl? ( media-libs/libsdl )"
+		opengl? ( virtual/opengl )
+		>=dev-libs/eet-9999
+		edb? ( >=dev-db/edb-9999 )
+		media-libs/fontconfig
+		cairo? ( >=x11-libs/cairo-1.2 )
+		directfb? ( >=dev-libs/DirectFB-0.9.16 )
+		gif? ( media-libs/giflib )
+		jpeg? ( media-libs/jpeg )
+		png? ( media-libs/libpng )
+		tiff? ( media-libs/tiff )
+		xpm? ( x11-libs/libXpm )
+		svg? ( >=gnome-base/librsvg-2.14.0 x11-libs/cairo x11-libs/libsvg-cairo )
+		sdl? ( media-libs/libsdl )
+		nls? ( <dev-libs/fribidi-0.19.1 )
+	"
 DEPEND="${RDEPEND}
 	X? (
 		x11-proto/xextproto

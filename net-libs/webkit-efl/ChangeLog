@@ -2,6 +2,11 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  13 Apr 2009; Night Nord <NightNord@niifaq.ru>
+  +files/webkit-efl-default.edj-wrong-declaration.patch,
+  webkit-efl-9999.ebuild:
+  Fixing undefined target for default.edj
+
   06 Apr 2009; Night Nord <NightNord@gmail.com> webkit-efl-9999.ebuild:
   Fixed missing cd "${S}" in src_unpack making epatch fail with new
   git.eclass

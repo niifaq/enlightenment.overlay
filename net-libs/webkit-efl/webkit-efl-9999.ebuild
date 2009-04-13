@@ -42,6 +42,7 @@ src_unpack() {
 	cd "${S}"
 
 	epatch "${FILESDIR}/${PN}-configure-missing-dependencies.patch"
+	epatch "${FILESDIR}/${PN}-default.edj-wrong-declaration.patch"
 
 	AT_M4DIR="autotools"
 
@@ -67,7 +68,7 @@ src_compile() {
 		${myconf} \
 		|| die "configure failed"
 
-	emake || die "emake failed"
+	emake -f GNUmakefile || die "emake failed"
 }
 
 src_install() {

@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  16 Apr 2009; evadim <evadim@evadim.ru>
+  media-gfx/image-viewer/image-viewer-9999.ebuild:
+  add media-libs/ethumb to deps, still broken
+
   12 Apr 2009; evadim <evadim@evadim.ru>
   +media-gfx/image-viewer/metadata.xml, +media-libs/ethumb/metadata.xml:
   initial commit, currently broken

@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  16 Apr 2009; evadim <evadim@evadim.ru>
+  -net-libs/webkit-efl/files/webkit-efl-default.edj-wrong-declaration.patch:
+  remove patch
+
   13 Apr 2009; Night Nord <NightNord@niifaq.ru>
   +files/webkit-efl-default.edj-wrong-declaration.patch,
   webkit-efl-9999.ebuild:

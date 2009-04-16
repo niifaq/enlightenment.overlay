@@ -42,7 +42,6 @@ src_unpack() {
 	cd "${S}"
 
 	epatch "${FILESDIR}/${PN}-configure-missing-dependencies.patch"
-	epatch "${FILESDIR}/${PN}-default.edj-wrong-declaration.patch"
 
 	AT_M4DIR="autotools"
 

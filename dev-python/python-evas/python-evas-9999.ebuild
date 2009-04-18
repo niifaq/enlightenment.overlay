@@ -11,23 +11,25 @@ DESCRIPTION="Python bindings for evas"
 
 IUSE="examples"
 
-DEPEND=">=dev-python/setuptools-0.6_rc9
-	>=dev-python/cython-0.9.8
+RDEPEND=">=dev-python/cython-0.9.8
 	dev-python/pyrex
 	>=x11-libs/evas-9999"
+
+DEPEND=">=dev-python/setuptools-0.6_rc9
+	${RDEPEND}"
+
+
 
 src_unpack() {
 	enlightenment_src_unpack
 }
 
 src_compile() {
-	 distutils_src_compile
+	distutils_src_compile
 }
 
 src_install() {
-	python_version
-
-	${python} setup.py install --root="${D}" install_headers --install-dir "${D}/usr/include/python${PYVER}/"
+	distutils_src_install
 
 	if use examples; then
 		insinto /usr/share/doc/${PF}/examples

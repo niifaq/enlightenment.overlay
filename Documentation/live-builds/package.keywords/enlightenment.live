@@ -84,6 +84,7 @@ media-gfx/imlib2_tools **
 media-gfx/retina **
 media-gfx/enesim **
 media-libs/edje **
+media-libs/emage **
 media-libs/emotion **
 media-libs/epsilon **
 media-libs/ethumb **

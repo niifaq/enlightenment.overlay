@@ -1,0 +1,7 @@
+# ChangeLog for media-libs/emage
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  18 Apr 2009; evadim <evadim@evadim.ru> +media-libs/emage/metadata.xml:
+  initial commit
+

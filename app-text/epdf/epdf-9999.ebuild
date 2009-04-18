@@ -16,3 +16,6 @@ DEPEND=">=app-text/poppler-0.5.9
 	>=x11-libs/etk-0.1
 	>=media-libs/imlib2-1.4
 	>=media-libs/epsilon-0.3"
+
+RDEPEND="${DEPEND}"
+

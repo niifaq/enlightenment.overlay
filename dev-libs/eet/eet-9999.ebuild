@@ -19,6 +19,9 @@ DEPEND="
 		cipher? ( || ( dev-libs/openssl net-libs/gnutls ) )
 	"
 
+RDEPEND="${DEPEND}"
+
+
 src_compile() {
 	MY_ECONF=""
 

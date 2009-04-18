@@ -14,6 +14,9 @@ DEPEND="x11-libs/ecore
 	x11-libs/evas
 	media-libs/edje"
 
+RDEPEND="${DEPEND}"
+
+
 #src_unpack() {
 #	enlightenment_src_unpack
 #}

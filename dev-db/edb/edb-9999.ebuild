@@ -13,6 +13,9 @@ IUSE="gtk ncurses"
 DEPEND="gtk? ( =x11-libs/gtk+-1* )
 	ncurses? ( sys-libs/ncurses )"
 
+RDEPEND="${DEPEND}"
+
+
 src_compile() {
 	export MY_ECONF="
 		--enable-compat185

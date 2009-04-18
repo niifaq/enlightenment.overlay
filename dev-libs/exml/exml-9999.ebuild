@@ -11,3 +11,6 @@ IUSE=""
 DEPEND=">=dev-libs/libxml2-2.6.13
 	>=dev-libs/libxslt-1.1.10
 	>=x11-libs/ecore-0.9.9"
+
+RDEPEND="${DEPEND}"
+

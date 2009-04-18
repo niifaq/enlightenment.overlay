@@ -14,6 +14,9 @@ DEPEND="
 		=dev-libs/embryo-9999
 		=media-libs/edje-9999
 "
+
+RDEPEND="${DEPEND}"
+
 src_install() {
 	    dodoc README AUTHORS
 

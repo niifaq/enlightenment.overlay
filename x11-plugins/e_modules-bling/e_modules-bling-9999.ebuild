@@ -17,3 +17,6 @@ DEPEND=">=x11-wm/enlightenment-0.16.999
 	x11-libs/esmart
 	dev-libs/eet
 	x11-libs/libXcomposite"
+
+RDEPEND="${DEPEND}"
+

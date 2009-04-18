@@ -17,4 +17,7 @@ DEPEND="net-misc/networkmanager
 	>=media-libs/edje-9999
 	>=x11-libs/elementary-9999"
 
+RDEPEND="${DEPEND}"
+
+
 AM_OPTS="--gnu"

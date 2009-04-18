@@ -12,6 +12,9 @@ DEPEND=">=x11-libs/evas-9999
 	>=media-libs/edje-9999
 	>=x11-libs/ecore-9999"
 
+RDEPEND="${DEPEND}"
+
+
 pkg_setup() {
 	if ! built_with_use x11-libs/evas png ; then
 		eerror "Re-emerge evas with USE=png"

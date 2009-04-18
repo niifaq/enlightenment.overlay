@@ -17,3 +17,6 @@ DEPEND=">=dev-libs/eet-0.9.9
 	>=media-libs/edje-0.5.0
 	>=x11-libs/esmart-0.9.0
 	>=x11-libs/ewl-0.0.4"
+
+RDEPEND="${DEPEND}"
+

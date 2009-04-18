@@ -11,3 +11,6 @@ IUSE=""
 
 DEPEND=">=x11-libs/ecore-9999
 	>=media-libs/imlib2-9999"
+
+RDEPEND="${DEPEND}"
+

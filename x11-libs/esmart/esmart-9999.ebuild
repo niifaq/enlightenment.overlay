@@ -16,3 +16,6 @@ DEPEND="
 	>=media-libs/imlib2-9999
 	>=dev-libs/eina-9999
 "
+
+RDEPEND="${DEPEND}"
+

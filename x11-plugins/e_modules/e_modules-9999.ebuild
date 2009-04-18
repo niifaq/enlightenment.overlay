@@ -45,6 +45,9 @@ DEPEND="x11-plugins/e_modules-alarm
 	x11-plugins/e_modules-winselector
 	x11-plugins/e_modules-wlan"
 
+RDEPEND="${DEPEND}"
+
+
 src_unpack() { :; }
 src_compile() { :; }
 src_install() { :; }

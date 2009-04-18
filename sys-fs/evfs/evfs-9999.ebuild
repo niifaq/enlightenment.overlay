@@ -22,6 +22,9 @@ DEPEND="x11-libs/ecore
 	curl? ( net-misc/curl )
 	samba? ( net-fs/samba )"
 
+RDEPEND="${DEPEND}"
+
+
 src_compile() {
 	export MY_ECONF="
 		$(use_enable samba)

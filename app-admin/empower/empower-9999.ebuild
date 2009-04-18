@@ -13,3 +13,5 @@ DEPEND="dev-libs/eet
 	x11-libs/evas
 	media-libs/edje
 	x11-libs/ewl"
+
+RDEPEND="${DEPEND}"

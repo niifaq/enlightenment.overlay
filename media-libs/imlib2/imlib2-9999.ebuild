@@ -20,6 +20,9 @@ DEPEND="=media-libs/freetype-2*
 	X? ( x11-libs/libXext x11-proto/xextproto )
 	mp3? ( media-libs/libid3tag )"
 
+RDEPEND="${DEPEND}"
+
+
 src_compile() {
 	# imlib2 has diff configure options for x86/amd64 mmx
 	local myconf=""

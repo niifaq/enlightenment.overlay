@@ -14,3 +14,6 @@ IUSE=""
 DEPEND=">=x11-wm/enlightenment-0.16.999.039
 	media-libs/edje
 	dev-libs/efreet"
+
+RDEPEND="${DEPEND}"
+

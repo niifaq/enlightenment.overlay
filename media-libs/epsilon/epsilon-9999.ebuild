@@ -16,6 +16,9 @@ DEPEND=">=media-libs/imlib2-9999
 	dev-lang/perl
 	xine? ( >=media-libs/xine-lib-1.1.1 )"
 
+RDEPEND="${DEPEND}"
+
+
 src_compile() {
 	export MY_ECONF="
 		$(use_enable xine thumbnailer-xine) \

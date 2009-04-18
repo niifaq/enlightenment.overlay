@@ -18,6 +18,9 @@ DEPEND=">=dev-python/python-ecore-9999
 	>=dev-python/python-epsilon-9999
 	>=dev-python/python-etk-9999"
 
+RDEPEND="${DEPEND}"
+
+
 src_unpack() { :; }
 src_compile() { :; }
 src_install() { :; }

@@ -12,3 +12,6 @@ IUSE=""
 DEPEND="x11-libs/ecore
 	x11-libs/evas
 	media-libs/edje"
+
+RDEPEND="${DEPEND}"
+

@@ -15,3 +15,6 @@ DEPEND="x11-libs/evas
 	media-libs/epsilon
 	media-libs/libexif
 	>=dev-db/sqlite-3"
+
+RDEPEND="${DEPEND}"
+

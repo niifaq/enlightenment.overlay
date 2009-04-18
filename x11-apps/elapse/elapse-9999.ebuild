@@ -12,4 +12,7 @@ IUSE=""
 DEPEND="media-libs/edje
 	x11-libs/esmart"
 
+RDEPEND="${DEPEND}"
+
+
 EDOCS="BEER"

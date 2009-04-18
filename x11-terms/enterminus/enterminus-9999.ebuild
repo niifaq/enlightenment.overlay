@@ -13,3 +13,6 @@ DEPEND="x11-libs/ecore
 	x11-libs/evas
 	media-libs/imlib2
 	net-misc/curl"
+
+RDEPEND="${DEPEND}"
+

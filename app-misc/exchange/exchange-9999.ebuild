@@ -19,6 +19,9 @@ DEPEND="
 		etk? ( x11-libs/etk )
 "
 
+RDEPEND="${DEPEND}"
+
+
 src_compile() {
 	MY_ECONF="
 		$(use_enable etk)

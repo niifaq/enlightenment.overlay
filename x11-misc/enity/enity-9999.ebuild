@@ -12,6 +12,9 @@ DEPEND="x11-libs/etk"
 
 src_compile() {
 	export MY_ECONF="
+
+RDEPEND="${DEPEND}"
+
 		$(use_enable nls)
 	"
 	enlightenment_src_compile

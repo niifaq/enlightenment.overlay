@@ -11,11 +11,15 @@ DESCRIPTION="Python bindings for ETK"
 
 IUSE="examples"
 
-DEPEND=">=dev-python/setuptools-0.6_rc9
-	>=dev-python/cython-0.9.8
+RDEPEND=">=dev-python/cython-0.9.8
 	dev-python/pyrex
 	>=dev-python/python-ecore-9999
 	>=x11-libs/etk-9999"
+
+DEPEND=">=dev-python/setuptools-0.6_rc9
+	${RDEPEND}"
+
+
 
 src_unpack() {
 	enlightenment_src_unpack

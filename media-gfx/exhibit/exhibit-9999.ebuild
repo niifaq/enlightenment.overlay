@@ -17,3 +17,6 @@ DEPEND=">=x11-libs/evas-0.9.9
 	x11-wm/enlightenment
 	dev-libs/engrave
 	dev-libs/efreet"
+
+RDEPEND="${DEPEND}"
+

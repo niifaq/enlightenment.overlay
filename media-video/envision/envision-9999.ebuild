@@ -13,3 +13,6 @@ DEPEND="x11-libs/ecore
 	x11-libs/evas
 	media-libs/edje
 	>=media-libs/emotion-0.0.1"
+
+RDEPEND="${DEPEND}"
+

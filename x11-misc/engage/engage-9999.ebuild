@@ -17,6 +17,9 @@ DEPEND=">=media-libs/imlib2-1.2.0
 	dev-libs/embryo
 	x11-libs/esmart"
 
+RDEPEND="${DEPEND}"
+
+
 src_compile() {
 	export MY_ECONF="$(use_enable xinerama)"
 	enlightenment_src_compile

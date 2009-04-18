@@ -10,3 +10,5 @@ DESCRIPTION="Eve - a web browser using the EFL and Webkit"
 IUSE=""
 
 DEPEND="media-libs/edje"
+
+RDEPEND="${DEPEND}"

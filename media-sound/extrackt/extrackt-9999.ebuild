@@ -14,3 +14,6 @@ DEPEND="dev-libs/eet
 	x11-libs/evas
 	x11-libs/etk
 	dev-util/enhance"
+
+RDEPEND="${DEPEND}"
+

@@ -15,3 +15,6 @@ DEPEND="
 	>=media-libs/edje-0.5.0
 	>=x11-libs/etk-0.1.0
 "
+
+RDEPEND="${DEPEND}"
+

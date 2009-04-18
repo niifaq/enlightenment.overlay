@@ -16,3 +16,6 @@ DEPEND=">=dev-libs/eet-0.9.10
 	>=dev-libs/embryo-0.5.0
 	>=media-libs/edje-0.5.0
 	>=x11-wm/enlightenment-0.16.999"
+
+RDEPEND="${DEPEND}"
+

@@ -13,3 +13,6 @@ DEPEND="x11-libs/ecore
 	media-libs/libmpd
 	media-sound/mpd
 	dev-util/enhance"
+
+RDEPEND="${DEPEND}"
+

@@ -15,3 +15,6 @@ DEPEND="x11-libs/ecore
 	x11-wm/enlightenment
 	media-libs/ethumb
 	x11-libs/elementary"
+
+RDEPEND="${DEPEND}"
+

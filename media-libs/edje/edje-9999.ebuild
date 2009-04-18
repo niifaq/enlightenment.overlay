@@ -17,6 +17,9 @@ DEPEND=">=x11-libs/evas-9999
 	vim-syntax? ( app-editors/vim-core )
 "
 
+RDEPEND="${DEPEND}"
+
+
 src_compile() {
 	export MY_ECONF="
 		$(use_with vim-syntax vim /usr/share/vim)

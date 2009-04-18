@@ -13,3 +13,6 @@ IUSE=""
 DEPEND=">=x11-wm/enlightenment-0.16.999
 	>=media-libs/edje-0.5.0
 	media-libs/libmpd"
+
+RDEPEND="${DEPEND}"
+

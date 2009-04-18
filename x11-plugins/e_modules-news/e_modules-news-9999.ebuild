@@ -12,3 +12,6 @@ IUSE=""
 
 DEPEND=">=media-libs/edje-0.5.0
 	>=x11-wm/enlightenment-0.16.999"
+
+RDEPEND="${DEPEND}"
+

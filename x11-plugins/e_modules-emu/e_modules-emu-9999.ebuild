@@ -16,3 +16,6 @@ DEPEND=">=x11-wm/enlightenment-0.16.999
 	x11-libs/evas
 	x11-libs/esmart
 	dev-libs/eet"
+
+RDEPEND="${DEPEND}"
+

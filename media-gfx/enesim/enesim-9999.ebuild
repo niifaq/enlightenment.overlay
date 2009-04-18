@@ -10,3 +10,5 @@ DESCRIPTION="Enesim is a direct rendering graphics library"
 IUSE=""
 
 DEPEND=">=dev-libs/eina-9999"
+
+RDEPEND="${DEPEND}"

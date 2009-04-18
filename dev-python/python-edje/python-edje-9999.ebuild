@@ -11,10 +11,14 @@ DESCRIPTION="Python bindings for edje"
 
 IUSE="examples"
 
-DEPEND=">=dev-python/setuptools-0.6_rc9
-	>=dev-python/cython-0.9.8
+RDEPEND=">=dev-python/cython-0.9.8
 	>=dev-python/python-evas-9999
 	>=media-libs/edje-9999"
+
+DEPEND=">=dev-python/setuptools-0.6_rc9
+	${RDEPEND}"
+
+
 
 src_unpack() {
 	enlightenment_src_unpack

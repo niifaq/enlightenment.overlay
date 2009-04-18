@@ -13,3 +13,6 @@ DEPEND="x11-libs/evas
 	x11-libs/ecore
 	media-libs/edje
 	x11-libs/esmart"
+
+RDEPEND="${DEPEND}"
+

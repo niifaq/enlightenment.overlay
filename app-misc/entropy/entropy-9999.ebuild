@@ -18,6 +18,9 @@ DEPEND="media-libs/epsilon
 	>=media-libs/libpng-1.2.8
 	>=x11-libs/ecore-0.9.9"
 
+RDEPEND="${DEPEND}"
+
+
 src_compile() {
 	export MY_ECONF="
 		--enable-plugin-extractor

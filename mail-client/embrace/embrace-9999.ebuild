@@ -18,6 +18,9 @@ DEPEND="
 	ssl? ( dev-libs/openssl )
 "
 
+RDEPEND="${DEPEND}"
+
+
 src_compile() {
 	export MY_ECONF="
 		$(use_enable ssl) \

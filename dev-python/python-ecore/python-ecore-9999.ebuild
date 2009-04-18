@@ -11,11 +11,14 @@ DESCRIPTION="Python bindings for ecore"
 
 IUSE="examples"
 
+RDEPEND=">=dev-python/python-evas-9999
+		>=dev-python/cython-0.9.8
+		>=x11-libs/ecore-9999
+		>=media-libs/edje-9999"
+
 DEPEND=">=dev-python/setuptools-0.6_rc9
-	>=dev-python/python-evas-9999
-	>=dev-python/cython-0.9.8
-	>=x11-libs/ecore-9999
-	>=media-libs/edje-9999"
+		${RDEPEND}"
+
 
 src_unpack() {
 	enlightenment_src_unpack

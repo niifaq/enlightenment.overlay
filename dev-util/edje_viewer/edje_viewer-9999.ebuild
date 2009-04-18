@@ -13,3 +13,6 @@ DEPEND="x11-libs/ecore
 	media-libs/edje
 	x11-libs/etk
 	x11-wm/enlightenment"
+
+RDEPEND="${DEPEND}"
+

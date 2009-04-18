@@ -15,3 +15,6 @@ DEPEND=">=dev-libs/eet-0.9.9
 	>=x11-libs/ecore-0.9.9
 	>=dev-libs/embryo-0.9.0
 	>=media-libs/emotion-0.0.1"
+
+RDEPEND="${DEPEND}"
+

@@ -9,3 +9,5 @@ DESCRIPTION="command line programs to utilize Imlib2"
 IUSE=""
 
 DEPEND=">=media-libs/imlib2-1.1.0"
+
+RDEPEND="${DEPEND}"

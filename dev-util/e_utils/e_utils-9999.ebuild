@@ -16,3 +16,6 @@ DEPEND=">=dev-libs/eet-0.9.10
 	>=dev-libs/engrave-0.1.0
 	>=x11-libs/ecore-0.9.9
 	>=x11-libs/evas-0.9.9"
+
+RDEPEND="${DEPEND}"
+

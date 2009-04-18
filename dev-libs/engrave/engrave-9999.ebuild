@@ -13,3 +13,6 @@ DEPEND="
 	>=x11-libs/ecore-0.9.9
 	>=x11-libs/evas-0.9.9
 "
+
+RDEPEND="${DEPEND}"
+

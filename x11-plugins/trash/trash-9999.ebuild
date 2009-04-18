@@ -17,3 +17,6 @@ DEPEND="
 	x11-wm/enlightenment
 	media-libs/edje
 	"
+
+RDEPEND="${DEPEND}"
+

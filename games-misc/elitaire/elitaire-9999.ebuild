@@ -16,6 +16,9 @@ DEPEND="x11-libs/ewl
 	x11-libs/ecore
 	x11-libs/esmart"
 
+RDEPEND="${DEPEND}"
+
+
 pkg_setup() {
 	games_pkg_setup
 	enlightenment_pkg_setup
@@ -31,7 +34,7 @@ src_compile() {
 	export MY_ECONF="
 		--with-scores-group=${GAMES_GROUP}
 		--with-scores-user=${GAMES_USER}
-		--localstatedir=${GAMES_STATEDIR}
 	"
+	MY_ECONF="${MY_ECONF} --localstatedir=${GAMES_STATEDIR}"
 	enlightenment_src_compile
 }

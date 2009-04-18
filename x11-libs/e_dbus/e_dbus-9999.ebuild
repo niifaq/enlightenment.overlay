@@ -17,6 +17,9 @@ DEPEND=">=x11-libs/ecore-9999
 	X? ( x11-libs/ewl dev-libs/efreet )
 	"
 
+RDEPEND="${DEPEND}"
+
+
 #src_compile() {
 #	export MY_ECONF="
 #		$(use_enable X build-test-gui)

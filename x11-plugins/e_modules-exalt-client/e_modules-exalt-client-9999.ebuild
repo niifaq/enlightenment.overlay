@@ -13,3 +13,6 @@ IUSE=""
 DEPEND=">=x11-wm/enlightenment-0.16.999
 	>=media-libs/edje-9999
 	>=net-misc/exalt-9999"
+
+RDEPEND="${DEPEND}"
+

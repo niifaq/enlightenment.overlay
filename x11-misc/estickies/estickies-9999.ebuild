@@ -11,6 +11,9 @@ IUSE=""
 DEPEND="x11-libs/etk
 	dev-libs/eet"
 
+RDEPEND="${DEPEND}"
+
+
 src_compile() {
 	export MY_ECONF="
 		$(use_enable nls)

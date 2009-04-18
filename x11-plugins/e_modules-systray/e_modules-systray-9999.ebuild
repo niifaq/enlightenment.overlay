@@ -15,3 +15,6 @@ DEPEND="x11-libs/ecore
 		x11-libs/evas
 		x11-wm/enlightenment
 		media-libs/edje"
+
+RDEPEND="${DEPEND}"
+

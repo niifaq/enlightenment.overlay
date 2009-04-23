@@ -47,6 +47,7 @@ DEPEND="x11-plugins/e_modules-alarm
 
 RDEPEND="${DEPEND}"
 
+PROPERTIES="set"
 
 src_unpack() { :; }
 src_compile() { :; }

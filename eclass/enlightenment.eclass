@@ -2,7 +2,10 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/eclass/enlightenment.eclass,v 1.78 2008/12/08 11:55:31 pva Exp $
 #
-# Author: vapier@gentoo.org
+# Original Author:	vapier@gentoo.org
+# Modified by:		Night Nord <nightnord@niifaq.ru>
+# Modified by:		Vadim Efimov <evadim@evadim.ru>
+# Modified by:		Peter Volkov <pva@gentoo.org>
 
 inherit eutils libtool
 
@@ -152,8 +155,8 @@ enlightenment_src_unpack() {
 
 	[[ -s gendoc ]] && chmod a+rx gendoc
 
-	if [[ -e configure.ac || -e configure.in ]] && [[ "${WANT_AUTOMAKE}" != "no" ]]; then
-		if grep -q AM_GNU_GETTEXT_VERSION configure.*; then
+	if [[ -f configure.ac || -f configure.in ]] && [[ "${WANT_AUTOMAKE}" != "no" ]]; then
+		if [[ -n $(autotools_check_macro "AM_GNU_GETTEXT_VERSION") ]]; then
 			local autopoint_log_file="${T}/autopoint.$$"
 
 			ebegin "Running autopoint"
@@ -177,7 +180,6 @@ enlightenment_src_unpack() {
 		# someone forgot these very useful file... 
 		touch README
 
-#		[ -d "m4" ] && AT_M4DIR="m4"
 		eautoreconf
 	fi
 }

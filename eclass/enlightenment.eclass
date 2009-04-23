@@ -155,8 +155,8 @@ enlightenment_src_unpack() {
 
 	[[ -s gendoc ]] && chmod a+rx gendoc
 
-	if [[ -f configure.ac || -f configure.in ]] && [[ "${WANT_AUTOMAKE}" != "no" ]]; then
-		if [[ -n $(autotools_check_macro "AM_GNU_GETTEXT_VERSION") ]]; then
+	if [[ -e configure.ac || -e configure.in ]] && [[ "${WANT_AUTOMAKE}" != "no" ]]; then
+		if grep -q AM_GNU_GETTEXT_VERSION configure.*; then
 			local autopoint_log_file="${T}/autopoint.$$"
 
 			ebegin "Running autopoint"

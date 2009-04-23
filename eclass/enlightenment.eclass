@@ -39,6 +39,7 @@ E_STATE="release"
 
 if [[ ${PV/9999} != ${PV} ]] ; then
 	E_STATE="live"
+	PROPERTIES="live"
 	[[ -n ${E_LIVE_OFFLINE} ]] && ESCM_OFFLINE="yes"
 
 	# force people to opt-in to legacy cvs

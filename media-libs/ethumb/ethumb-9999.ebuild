@@ -22,8 +22,8 @@ RDEPEND="${DEPEND}"
 src_compile() {
 
 	export MY_ECONF="
-                $(use_enable pdf epdf) \
-                $(use_enable emotion emotion) \
+		$(use_enable pdf epdf) \
+		$(use_enable emotion emotion) \
 		"
 	enlightenment_src_compile
 }

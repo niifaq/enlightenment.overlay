@@ -10,7 +10,7 @@ DESCRIPTION="Enthrall - screen capture application, built on Ecore and Imlib2"
 
 IUSE=""
 
-DEPEND=">=media-video/ffmpeg-0.5
+DEPEND=">=media-video/ffmpeg-9999
 	>=x11-libs/ecore-9999
 	>=media-libs/imlib2-9999"
 

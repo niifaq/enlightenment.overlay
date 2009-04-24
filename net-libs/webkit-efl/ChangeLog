@@ -2,6 +2,11 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  24 Apr 2009; evadim <evadim@evadim.ru>
+  -files/webkit-efl-configure-missing-dependencies.patch,
+  webkit-efl-9999.ebuild:
+  remove patch, add xslt USE by default
+
   16 Apr 2009; evadim <evadim@evadim.ru>
   -net-libs/webkit-efl/files/webkit-efl-default.edj-wrong-declaration.patch:
   remove patch

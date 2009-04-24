@@ -2,6 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI=1
 EGIT_REPO_URI="git://code.staikos.net/webkit"
 EGIT_BRANCH="kenneth/efl-port"
 
@@ -12,7 +13,7 @@ HOMEPAGE="http://codeposts.blogspot.com"
 
 LICENSE="LGPL-2 LGPL-2.1 BSD"
 SLOT="0"
-IUSE="coverage debug gstreamer sqlite svg xslt"
+IUSE="coverage debug gstreamer sqlite svg +xslt"
 
 RDEPEND=">=x11-libs/evas-9999
 	>=x11-libs/ecore-9999
@@ -41,8 +42,6 @@ src_unpack() {
 
 	cd "${S}"
 
-	epatch "${FILESDIR}/${PN}-configure-missing-dependencies.patch"
-
 	AT_M4DIR="autotools"
 
 	eautoreconf
@@ -67,7 +66,7 @@ src_compile() {
 		${myconf} \
 		|| die "configure failed"
 
-	emake -f GNUmakefile || die "emake failed"
+	emake -f GNUmakefile || ewebkit_die "emake failed"
 }
 
 src_install() {

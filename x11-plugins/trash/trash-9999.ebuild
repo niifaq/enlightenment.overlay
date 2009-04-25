@@ -14,9 +14,16 @@ LICENSE="GPL-2"
 IUSE=""
 
 DEPEND="
-	x11-wm/enlightenment
-	media-libs/edje
+	>=x11-wm/enlightenment-9999
+	>=media-libs/edje-9999
 	"
 
 RDEPEND="${DEPEND}"
 
+src_unpack() {
+
+	AT_M4DIR="-I m4"
+
+	enlightenment_src_unpack
+
+}

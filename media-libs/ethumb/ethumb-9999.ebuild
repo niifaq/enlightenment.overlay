@@ -7,13 +7,13 @@ inherit enlightenment
 
 DESCRIPTION="Thumbnailing Library"
 
-IUSE="pdf emotion"
+IUSE="pdf video"
 
 DEPEND=">=dev-libs/eina-9999
 	>=x11-libs/ecore-9999
 	>=x11-libs/evas-9999
 	>=media-libs/edje-9999
-	emotion? ( >=media-libs/emotion-9999 )
+	video? ( >=media-libs/emotion-9999 )
 	pdf? ( >=app-text/epdf-9999 )
 	"
 

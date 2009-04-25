@@ -2,7 +2,17 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 <herd>no-herd</herd>
-<maintainer>
- <email>enlightenment@gentoo.org</email>
-</maintainer>
+    <maintainer>
+	<email>enlightenment@gentoo.org</email>
+    </maintainer>
+
+    <use>
+	<flag name="pdf">
+	    Support thumbnailing PDF files via <pkg>app-text/epdf</pkg>
+	</flag>
+	<flag name="video">
+	    Support thumbnailing video files via <pkg>media-libs/emotion</pkg>
+	</flag>
+    </use>
+
 </pkgmetadata>

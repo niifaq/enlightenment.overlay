@@ -16,6 +16,7 @@ x11-plugins/e_modules-emu **
 x11-plugins/e_modules-mem **
 x11-plugins/e_modules-net **
 x11-plugins/e_modules-calendar **
+x11-plugins/e_modules-configmenu **
 x11-plugins/e_modules-forecasts **
 x11-plugins/e_modules-execwatch **
 x11-plugins/e_modules-notification **

@@ -11,6 +11,7 @@ IUSE=""
 DEPEND="x11-plugins/e_modules-alarm
 	x11-plugins/e_modules-bling
 	x11-plugins/e_modules-calendar
+	x11-plugins/e_modules-configmenu
 	x11-plugins/e_modules-cpu
 	x11-plugins/e_modules-deskshow
 	x11-plugins/e_modules-diskio

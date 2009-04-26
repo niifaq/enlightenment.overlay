@@ -22,7 +22,7 @@ RDEPEND="X? ( x11-libs/libXrender )
 		xpm? ( x11-libs/libXpm )
 		svg? ( >=gnome-base/librsvg-2.14.0 x11-libs/cairo x11-libs/libsvg-cairo )
 		sdl? ( media-libs/libsdl )
-		nls? ( <dev-libs/fribidi-0.19.1 )
+		nls? ( dev-libs/fribidi )
 	"
 DEPEND="${RDEPEND}
 	X? (

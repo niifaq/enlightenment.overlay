@@ -2,6 +2,9 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  26 Apr 2009; Night Nord <nightnord@niifaq.ru> evas-9999.ebuild:
+  Removed strict dependancy for dev-libs/fribidi =). Upstream fixed.
+
   13 Apr 2009; Night Nord <NightNord@niifaq.ru> evas-9999.ebuild:
   Added strict dependacy for dev-libs/fribidi, which needed for intl aka 'nls',
   but newer (0.19*) versions breaks API, which leads to linking failtures.

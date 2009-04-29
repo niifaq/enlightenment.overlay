@@ -1,6 +1,10 @@
 # ChangeLog for x11-wm/enlightenment
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  29 Apr 2009; Night Nord <nightnord@niifaq.ru> enlightenment-9999.ebuild:
+  Revert vapier's "fix" about exchange. Switching the whole conf_theme module isn't a good idea.
+  That's a upstream bug, and must be fixed by upstream. Untill that we'll use automagick.
 
   22 Dec 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   enlightenment-0.16.999.050.ebuild, enlightenment-9999.ebuild:

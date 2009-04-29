@@ -6,14 +6,13 @@ inherit enlightenment
 
 DESCRIPTION="hardware-accelerated canvas API"
 
-IUSE="altivec cairo directfb edb gif fbcon jpeg mmx opengl png sdl sse svg threads tiff X xpm"
+IUSE="altivec directfb edb gif fbcon jpeg mmx opengl png sdl sse svg threads tiff X xpm"
 
 RDEPEND="X? ( x11-libs/libXrender )
 		opengl? ( virtual/opengl )
 		>=dev-libs/eet-9999
 		edb? ( >=dev-db/edb-9999 )
 		media-libs/fontconfig
-		cairo? ( >=x11-libs/cairo-1.2 )
 		directfb? ( >=dev-libs/DirectFB-0.9.16 )
 		gif? ( media-libs/giflib )
 		jpeg? ( media-libs/jpeg )
@@ -39,14 +38,13 @@ src_compile() {
 	#  --enable-scale-smooth           enable sampling scaler code
 	#  --enable-pthreads               enable threaded renderer
 	export MY_ECONF="
-		$(use_enable cairo cairo-x11) \
 		$(use_enable mmx cpu-mmx) \
 		$(use_enable sse cpu-mmx) \
 		$(use_enable sse cpu-sse) \
 		$(use_enable X software-x11) \
 		$(use_enable X software-16-x11) \
 		$(use_enable X xrender-x11) \
-		$(use_enable sdl sdl) \
+		$(use_enable sdl software-sdl) \
 		$(use_enable opengl gl-x11) \
 		$(use_enable directfb) \
 		$(use_enable fbcon fb) \

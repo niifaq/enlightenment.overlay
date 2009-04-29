@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  29 Apr 2009; Night Nord <nightnord@niifaq.ru> evas-9999.ebuild:
+  1) sdl support renamed to software-sdl. It required for ecore's sdl support
+  2) cairo engine "disabled for this release", as stated into configure.ac. Removing flag untill fixed
+
   26 Apr 2009; Night Nord <nightnord@niifaq.ru> evas-9999.ebuild:
   Removed strict dependancy for dev-libs/fribidi =). Upstream fixed.
 

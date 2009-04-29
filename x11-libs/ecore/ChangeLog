@@ -1,0 +1,9 @@
+# ChangeLog for x11-libs/ecore
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  29 Apr 2009; Night Nord <nightnord@niifaq.ru> ecore-9999.ebuild:
+  Revert vapier's 'fixes' - ecore actually needs --enable-ecore-{fb,directfb,sdl},
+  even if not listed into configure --help, for some reason,
+  to make corresponding --enable-ecore-evas-* modules work - this is some kind of frontend/backend.
+

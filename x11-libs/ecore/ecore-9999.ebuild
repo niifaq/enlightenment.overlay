@@ -6,7 +6,7 @@ inherit enlightenment
 
 DESCRIPTION="core event abstraction layer and X abstraction layer (nice convenience library)"
 
-IUSE="curl directfb fbcon inotify opengl sdl ssl X"
+IUSE="curl directfb fbcon gnutls inotify opengl sdl ssl X"
 
 RDEPEND=">=x11-libs/evas-9999
 	X? (

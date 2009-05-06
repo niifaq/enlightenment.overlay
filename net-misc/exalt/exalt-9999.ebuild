@@ -17,7 +17,7 @@ DEPEND=">=dev-libs/eet-9999
 	>=media-libs/edje-9999
 	>=x11-libs/elementary-9999
 	net-wireless/wpa_supplicant
-	hdcp? ( net-misc/dhcp )
+	dhcp? ( net-misc/dhcp )
 	vpnc? ( net-misc/vpnc )
 	"
 

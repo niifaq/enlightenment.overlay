@@ -1,0 +1,4 @@
+# Andrian "Night" Nord <nightnord@niifaq.ru>
+# Masked due to merge into main x11-wm/enlightenment tree.
+# Just remove it now - it will be availible after x11-wm enlightenment remerge.
+x11-plugins/e_modules-systray

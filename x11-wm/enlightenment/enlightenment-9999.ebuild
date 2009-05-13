@@ -27,6 +27,11 @@ DEPEND="${RDEPEND}
 		x11-proto/xproto
 		sys-devel/libtool"
 
+# Masked modules due to theirs merge into 'e' tree, forcing against them, to
+# prevent any collisions
+DEPEND="${DEPEND}
+		!x11-plugins/e_modules-systray"
+
 pkg_setup() {
 	enlightenment_pkg_setup
 }

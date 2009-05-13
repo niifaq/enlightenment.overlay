@@ -1,0 +1,7 @@
+# ChangeLog for dev-util/edje_editor
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  04 May 2009; evadim <evadim@evadim.ru> edje_editor-9999.ebuild:
+  drop useless dep - engrave
+

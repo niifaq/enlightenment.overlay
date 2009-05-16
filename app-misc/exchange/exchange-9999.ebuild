@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI="2"
+
 ESVN_SUB_PROJECT="PROTO"
 inherit enlightenment
 
@@ -10,13 +12,13 @@ DESCRIPTION="Enlightenment way to exchange contributed stuff"
 IUSE="etk ewl"
 
 DEPEND="
-		dev-libs/eina
-		x11-libs/ecore
-		media-libs/edje
+		>=dev-libs/eina-9999
+		>=x11-libs/ecore-9999[curl]
+		>=media-libs/edje-9999
 		dev-libs/libxml2
 
-		ewl? ( x11-libs/ewl )
-		etk? ( x11-libs/etk )
+		ewl? ( >=x11-libs/ewl-9999 )
+		etk? ( >=x11-libs/etk-9999 )
 "
 
 RDEPEND="${DEPEND}"

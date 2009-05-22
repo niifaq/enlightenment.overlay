@@ -1,0 +1,8 @@
+# ChangeLog for x11-libs/elementary
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  22 May 2009; Night Nord <NightNord@niifaq.ru> elementary-9999.ebuild:
+  Hack around stupid -I m4 only_in_autogen.sh added. Waiting for vapier's respond.
+  Don't use autogen.sh, guys, use autoreconf instead!
+

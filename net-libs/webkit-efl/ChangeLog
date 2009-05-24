@@ -2,6 +2,13 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  23 May 2009; Night Nord <NightNord@niifaq.ru> webkit-efl-9999.ebuild,
+  +files/webkit-efl-configure-missing-dependencies.patch:
+  Revert prevous commit. Patch is still needed. Removing +xslt EAPI=1 defaulting
+  Now ebuild will notify user ONLY if build fails about 'working' build flags.
+  Maybe it should be done before compilation, to save user's time, but there is no
+  warranty that it wiil not build with other flags someday.
+
   24 Apr 2009; evadim <evadim@evadim.ru>
   -files/webkit-efl-configure-missing-dependencies.patch,
   webkit-efl-9999.ebuild:

@@ -15,9 +15,3 @@ DEPEND=">=x11-libs/ecore-9999
 
 RDEPEND="${DEPEND}"
 
-src_unpack() {
-
-	AT_M4DIR="-I m4"
-
-	enlightenment_src_unpack
-}

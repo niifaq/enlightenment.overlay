@@ -2,6 +2,9 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  24 May 2009; Night Nord <NightNord@niifaq.ru> epdf-9999.ebuild:
+  Poppler dependancy could be also stable app-text/poppler version. Implementing via || ( ... ... )
+
   23 May 2009; Night Nord <NightNord@niifaq.ru> epdf-9999.ebuild:
   Poppler dependancy actualised to dev-libs/poppler-glib[cairo]. Thanks to Rahul Jain <rahul@schmizz.net>
 

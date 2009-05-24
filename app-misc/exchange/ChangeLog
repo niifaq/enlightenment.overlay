@@ -2,6 +2,6 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
-  16 May 2009; Night Nord <NightNord@niifaq.ru> exchange-9999.ebuild:
+  16 May 2009; Andrian Nord <NightNord@niifaq.ru> exchange-9999.ebuild:
   Move to EAPI=2, add use-depend on ecore[curl]. Reported by Cedric OLLIVIER <ollivier.cedric@gmail.com>.
 

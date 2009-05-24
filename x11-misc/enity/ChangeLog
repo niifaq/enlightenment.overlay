@@ -2,5 +2,5 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
-  20 Apr 2009; Night Nord <NightNord@niifaq.ru> enity-9999.ebuild:
+  20 Apr 2009; Andrian Nord <NightNord@niifaq.ru> enity-9999.ebuild:
   Fixed bug created by automated RDEPEND addition in wrong place

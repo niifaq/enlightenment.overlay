@@ -2,6 +2,6 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
-  03 May 2009; Night Nord <nightnord@niifaq.ru> eve-9999.ebuild:
+  03 May 2009; Andrian Nord <nightnord@niifaq.ru> eve-9999.ebuild:
   net-libs/webkit-efl dependency added
 

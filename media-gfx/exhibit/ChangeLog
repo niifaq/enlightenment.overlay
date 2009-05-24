@@ -2,6 +2,6 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
-  06 May 2009; Night Nord <nightnord@niifaq.ru> exhibit-9999.ebuild:
+  06 May 2009; Andrian Nord <nightnord@niifaq.ru> exhibit-9999.ebuild:
   Update dependancies to >=...-9999
 

@@ -2,7 +2,7 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
-  23 May 2009; Night Nord <NightNord@niifaq.ru> webkit-efl-9999.ebuild,
+  23 May 2009; Andrian Nord <NightNord@niifaq.ru> webkit-efl-9999.ebuild,
   +files/webkit-efl-configure-missing-dependencies.patch:
   Revert prevous commit. Patch is still needed. Removing +xslt EAPI=1 defaulting
   Now ebuild will notify user ONLY if build fails about 'working' build flags.
@@ -18,16 +18,16 @@
   -net-libs/webkit-efl/files/webkit-efl-default.edj-wrong-declaration.patch:
   remove patch
 
-  13 Apr 2009; Night Nord <NightNord@niifaq.ru>
+  13 Apr 2009; Andrian Nord <NightNord@niifaq.ru>
   +files/webkit-efl-default.edj-wrong-declaration.patch,
   webkit-efl-9999.ebuild:
   Fixing undefined target for default.edj
 
-  06 Apr 2009; Night Nord <NightNord@gmail.com> webkit-efl-9999.ebuild:
+  06 Apr 2009; Andrian Nord <NightNord@gmail.com> webkit-efl-9999.ebuild:
   Fixed missing cd "${S}" in src_unpack making epatch fail with new
   git.eclass
 
-  01 Apr 2009; Night Nord <NightNord@gmail.com>
+  01 Apr 2009; Andrian Nord <NightNord@gmail.com>
   +files/webkit-efl-configure-missing-dependencies.patch,
   webkit-efl-9999.ebuild:
   Patch for broken build system. Now it will not fail on configure

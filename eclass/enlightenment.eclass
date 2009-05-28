@@ -1,9 +1,9 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/enlightenment.eclass,v 1.78 2008/12/08 11:55:31 pva Exp $
+# $Header: $
 #
 # Original Author:	vapier@gentoo.org
-# Modified by:		Night Nord <nightnord@niifaq.ru>
+# Modified by:		Andrian Nord <nightnord@niifaq.ru>
 # Modified by:		Vadim Efimov <evadim@evadim.ru>
 # Modified by:		Peter Volkov <pva@gentoo.org>
 
@@ -36,13 +36,14 @@ E_LIVE_SERVER_DEFAULT_SVN="http://svn.enlightenment.org/svn/e/trunk"
 
 E_STATE="release"
 
-# We want to use eautoreconf by default, only broken packages must
-# define "no" here
-: ${WANT_AUTOMAKE:=yes}
-
 if [[ ${PV/9999} != ${PV} ]] ; then
 	E_STATE="live"
 	PROPERTIES="live"
+
+	# Force live package's to use autotools by default, because there is no
+	# warranty, that configure will be up-to-date, if it will be, anyway
+	: ${WANT_AUTOMAKE:=yes}
+
 	[[ -n ${E_LIVE_OFFLINE} ]] && ESCM_OFFLINE="yes"
 
 	# force people to opt-in to legacy cvs
@@ -65,9 +66,13 @@ else
 	E_STATE="release"
 fi
 
+# We should use autotools only when there is need for this
+# Only exception live packages (look above)
+: ${WANT_AUTOMAKE:=no}
+
 # Some packages may not work with eautoreconf, make them possible to disable it
-# by defining WANT_AUTOMAKE=no. Any other value will be used as actual version
-# of automake to use.
+# by defining WANT_AUTOMAKE=no. Otherwise any other value then "yes" will be used
+# as actual version of automake to use.
 if [[ "${WANT_AUTOMAKE}" != "no" ]]; then
 	if [[ "${WANT_AUTOMAKE}" == "yes" ]]; then
 		WANT_AUTOCONF=${E_WANT_AUTOCONF:-latest}
@@ -188,7 +193,7 @@ enlightenment_src_compile() {
 	# gstreamer sucks, work around it doing stupid stuff
 	export GST_REGISTRY="${S}/registry.xml"
 
-	if [[ -e configure ]]; then
+	if [[ "${EAPI}" != 2 ]] && [[ -x ${ECONF_SOURCE:-.}/configure ]]; then
 		econf ${MY_ECONF}
 	fi
 
@@ -213,4 +218,16 @@ enlightenment_pkg_postinst() {
 	: enlightenment_warning_msg
 }
 
-EXPORT_FUNCTIONS pkg_setup src_unpack src_compile src_install pkg_postinst
+EXPORT="pkg_setup src_unpack src_compile src_install pkg_postinst "
+
+if [[ "${EAPI}" == "2" ]]; then
+	enlightenment_src_configure() {
+		if [[ -x ${ECONF_SOURCE:-.}/configure ]]; then
+			econf ${MY_ECONF}
+		fi
+	}
+
+	EXPORT="${EXPORT} src_configure"
+fi
+
+EXPORT_FUNCTIONS ${EXPORT}

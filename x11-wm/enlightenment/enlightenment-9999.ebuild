@@ -29,8 +29,7 @@ DEPEND="${RDEPEND}
 
 # Masked modules due to theirs merge into 'e' tree, forcing against them, to
 # prevent any collisions
-DEPEND="${DEPEND}
-		!x11-plugins/e_modules-systray"
+# DEPEND="${DEPEND}"
 
 pkg_setup() {
 	enlightenment_pkg_setup

@@ -15,3 +15,12 @@ DEPEND="
 "
 
 RDEPEND="${DEPEND}"
+
+src_unpack() {
+
+	enlightenment_src_unpack
+
+	epatch "${FILESDIR}/${PN}_load_signal.patch" || die
+	epatch "${FILESDIR}/${PN}_scroll_removed.patch" || die
+
+}

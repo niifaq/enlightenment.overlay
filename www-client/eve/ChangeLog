@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  07 Jun 2009; evadim <evadim@evadim.ru> eve-9999.ebuild,
+  -files/eve_load_signal.patch, -files/eve_scroll_removed.patch:
+  remove pahces - commited by upstream
+
   05 Jun 2009; evadim <evadim@evadim.ru> +files/eve_load_signal.patch,
   +files/eve_scroll_removed.patch:
   eve: patch from ML - it works!

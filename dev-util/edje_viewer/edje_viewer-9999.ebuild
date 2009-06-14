@@ -4,14 +4,14 @@
 
 inherit enlightenment
 
-DESCRIPTION="edje viewer based on etk"
+DESCRIPTION="edje viewer based on elementary"
 
 IUSE=""
 
 DEPEND="x11-libs/ecore
 	x11-libs/evas
 	media-libs/edje
-	x11-libs/etk
+	x11-libs/elementary
 	x11-wm/enlightenment"
 
 RDEPEND="${DEPEND}"

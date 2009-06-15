@@ -21,3 +21,10 @@ DEPEND="
 
 RDEPEND="${DEPEND}"
 
+src_unpack() {
+
+	AT_M4DIR="-I m4"
+
+	enlightenment_src_unpack
+
+}

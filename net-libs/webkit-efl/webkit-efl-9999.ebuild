@@ -28,6 +28,7 @@ RDEPEND=">=x11-libs/evas-9999
 	soup? ( >=net-libs/libsoup-2.23.1 )
 	xslt? ( >=dev-libs/libxslt-1.1.7 )
 	pango? ( >=x11-libs/pango-1.0 )
+	dev-libs/icu
 	!net-libs/webkit-gtk
 	"
 

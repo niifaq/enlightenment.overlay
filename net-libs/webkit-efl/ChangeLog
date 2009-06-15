@@ -2,6 +2,9 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  14 Jun 2009; Andrian Nord <NightNord@niifaq.ru> webkit-efl-9999.ebuild:
+  dev-libs/icu dependency added, thanks to migel
+
   23 May 2009; Andrian Nord <NightNord@niifaq.ru> webkit-efl-9999.ebuild,
   +files/webkit-efl-configure-missing-dependencies.patch:
   Revert prevous commit. Patch is still needed. Removing +xslt EAPI=1 defaulting

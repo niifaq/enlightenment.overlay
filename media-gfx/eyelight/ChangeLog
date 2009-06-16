@@ -2,6 +2,9 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  16 Jun 2009; evadim <evadim@evadim.ru> eyelight-9999.ebuild:
+  fix deps, desc & it work!
+
 *eyelight-9999 (15 Jun 2009)
 
   15 Jun 2009; evadim <evadim@evadim.ru> +eyelight-9999.ebuild,

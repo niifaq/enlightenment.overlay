@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<layman>
+	<overlay
+		type = "git" 
+		src  = "git://vcs.niifaq.ru/e17" 
+		contact = "xmpp:e17@conference.gentoo.ru" 
+		name = "enlightenment-niifaq">
+			<link>https://projects.niifaq.ru/projects/enlightenment</link>
+			<description>Enlightenment DR17 NIIFAQ overlay</description>
+	</overlay>
+</layman>

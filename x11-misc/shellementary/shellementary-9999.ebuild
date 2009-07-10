@@ -3,11 +3,10 @@
 # $Header: $
 
 NEED_PYTHON="2.4"
-ESVN_SUB_PROJECT="BINDINGS/python"
 ESVN_SUB_PROJECT="PROTO"
 inherit enlightenment python distutils
 
-DESCRIPTION="Easy GUI dialog for scripts, similar to xdialog"
+DESCRIPTION="Tool to display Elementary dialogs from the command line and shell scripts"
 
 IUSE=""
 
@@ -17,22 +16,19 @@ RDEPEND=">=dev-python/cython-0.9.8
 	>=x11-libs/elementary-9999
 	>=media-libs/edje-9999"
 
-DEPEND=">=dev-python/setuptools-0.6_rc9
-	${RDEPEND}"
+DEPEND="${RDEPEND}"
 
 src_unpack() {
 	enlightenment_src_unpack
 }
 
 src_compile() {
-	 distutils_src_compile
+	#distutils_src_compile
+	${python} setup.py build --prefix="${T}/usr"
+
 }
 
 src_install() {
-	distutils_src_install
-
-#        if use examples; then
-#                insinto /usr/share/doc//examples
-#                doins -r examples/*
-#        fi
+	#distutils_src_install
+	${python} setup.py install --prefix="${D}/usr"
 }

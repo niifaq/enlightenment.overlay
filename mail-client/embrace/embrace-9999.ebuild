@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-ESVN_SUB_PROJECT="MISC"
+ESVN_SUB_PROJECT="OLD"
 inherit enlightenment
 
 DESCRIPTION="mail-checker which is based on the EFL"

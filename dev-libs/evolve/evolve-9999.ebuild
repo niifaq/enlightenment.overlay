@@ -2,6 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+ESVN_SUB_PROJECT="OLD"
 inherit enlightenment
 
 DESCRIPTION="ETK interface building language and GUI frontend"

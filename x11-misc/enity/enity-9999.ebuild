@@ -4,6 +4,8 @@
 
 inherit enlightenment
 
+ESVN_SUB_PROJECT="OLD"
+
 DESCRIPTION="Tool to display ETK dialogs from the command line and shell scripts"
 
 IUSE=""

@@ -14,6 +14,7 @@ DEPEND=">=dev-python/python-ecore-9999
 	>=dev-python/python-edje-9999
 	>=dev-python/python-efl_utils-9999
 	>=dev-python/python-elementary-9999
+	>=dev-python/python-ethumb-9999
 	>=dev-python/python-emotion-9999
 	>=dev-python/python-epsilon-9999
 	>=dev-python/python-etk-9999"

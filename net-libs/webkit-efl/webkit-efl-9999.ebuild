@@ -5,8 +5,6 @@
 #EGIT_REPO_URI="git://code.staikos.net/webkit"
 #EGIT_BRANCH="kenneth/efl-port"
 EGIT_REPO_URI="git://gitorious.org/webkit-efl/webkit-efl.git"
-EGIT_BRANCH="webkit-efl"
-
 inherit autotools git flag-o-matic
 
 DESCRIPTION="Open source web browser engine"
@@ -55,7 +53,7 @@ src_unpack() {
 
 	cd "${S}"
 
-	epatch "${FILESDIR}/${PN}-configure-missing-dependencies.patch"
+#	epatch "${FILESDIR}/${PN}-configure-missing-dependencies.patch"
 
 	AT_M4DIR="autotools"
 

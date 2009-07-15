@@ -2,6 +2,9 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  15 Jul 2009; evadim <evadim@evadim.ru> python-ethumb-9999.ebuild:
+  fix examples
+
 *python-ethumb-9999 (14 Jul 2009)
 
   14 Jul 2009; evadim <evadim@evadim.ru> +python-ethumb-9999.ebuild,

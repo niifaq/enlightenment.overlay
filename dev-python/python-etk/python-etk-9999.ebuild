@@ -33,7 +33,7 @@ src_install() {
 	distutils_src_install
 
 	if use examples; then
-		insinto /usr/share/doc//examples
-		doins -r examples/*
+		insinto /usr/share/doc/${PF}
+		doins -r examples
 	fi
 }

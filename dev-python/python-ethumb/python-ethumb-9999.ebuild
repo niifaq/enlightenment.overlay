@@ -9,7 +9,7 @@ inherit enlightenment python distutils
 
 DESCRIPTION=" Python bindings for Ethumb thumbnailing library"
 
-IUSE=""
+IUSE="examples"
 
 RDEPEND=">=dev-python/python-evas-9999
 	>=media-libs/edje-9999"
@@ -28,8 +28,8 @@ src_compile() {
 src_install() {
 	distutils_src_install
 
-#	if use examples; then
-#		insinto /usr/share/doc//examples
-#		doins -r examples/*
-#	fi
+	if use examples; then
+		insinto /usr/share/doc/${PF}
+		doins -r examples
+	fi
 }

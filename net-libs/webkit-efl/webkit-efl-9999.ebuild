@@ -2,8 +2,10 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EGIT_REPO_URI="git://code.staikos.net/webkit"
-EGIT_BRANCH="kenneth/efl-port"
+#EGIT_REPO_URI="git://code.staikos.net/webkit"
+#EGIT_BRANCH="kenneth/efl-port"
+EGIT_REPO_URI="git://gitorious.org/webkit-efl/webkit-efl.git"
+EGIT_BRANCH="webkit-efl"
 
 inherit autotools git flag-o-matic
 

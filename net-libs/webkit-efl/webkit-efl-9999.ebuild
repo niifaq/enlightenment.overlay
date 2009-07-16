@@ -2,8 +2,6 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-#EGIT_REPO_URI="git://code.staikos.net/webkit"
-#EGIT_BRANCH="kenneth/efl-port"
 EGIT_REPO_URI="git://gitorious.org/webkit-efl/webkit-efl.git"
 inherit autotools git flag-o-matic
 
@@ -49,11 +47,14 @@ webkit_die() {
 }
 
 src_unpack() {
+	ewarn
+	ewarn "webkit-efl have BIG repo - ~650 Mb, so hit Ctrl+C now if you have less than 1.5 Mbit link"
+	ewarn
+	ebeep 5
+	
 	git_src_unpack
 
-	cd "${S}"
-
-#	epatch "${FILESDIR}/${PN}-configure-missing-dependencies.patch"
+	cd ${S}
 
 	AT_M4DIR="autotools"
 

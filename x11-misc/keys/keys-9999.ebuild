@@ -12,7 +12,8 @@ IUSE=""
 
 DEPEND="x11-libs/ecore
 	x11-libs/evas
-	media-libs/edje"
+	media-libs/edje
+	dev-python/virtkey"
 
 RDEPEND="${DEPEND}"
 

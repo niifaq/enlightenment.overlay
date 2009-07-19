@@ -29,11 +29,3 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 }
-
-#src_compile() {
-#	distutils_src_compile
-#}
-
-#src_install() {
-#	distutils_src_install
-#}

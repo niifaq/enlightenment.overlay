@@ -27,5 +27,5 @@ src_unpack() {
 }
 
 src_install() {
-        emake DESTDIR="${D}" install || die "install failed"
+	emake DESTDIR="${D}" install || die "install failed"
 }

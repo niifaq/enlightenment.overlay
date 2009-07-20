@@ -27,7 +27,7 @@ RDEPEND="dev-db/sqlite
 src_unpack() {
 	git_src_unpack
 
-	cd ${S}
+	cd "${S}"
 
 	AT_M4DIR="-I m4"
 

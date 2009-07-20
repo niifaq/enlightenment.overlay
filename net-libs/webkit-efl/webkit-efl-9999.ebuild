@@ -51,10 +51,10 @@ src_unpack() {
 	ewarn "webkit-efl have BIG repo - ~650 Mb, so hit Ctrl+C now if you have less than 1.5 Mbit link"
 	ewarn
 	ebeep 5
-	
+
 	git_src_unpack
 
-	cd ${S}
+	cd "${S}"
 
 	AT_M4DIR="autotools"
 

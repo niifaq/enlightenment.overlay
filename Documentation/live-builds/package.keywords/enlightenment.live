@@ -1,6 +1,7 @@
 =app-admin/empower-9999 **
 =app-editors/enscribe-9999 **
 =app-laptop/epbb-9999 **
+=app-misc/canola-daemon-9999 **
 =app-misc/entropy-9999 **
 =app-misc/evidence-9999 **
 =app-misc/examine-9999 **
@@ -25,6 +26,8 @@
 =dev-python/python-ethumb-9999 **
 =dev-python/python-etk-9999 **
 =dev-python/python-evas-9999 **
+=dev-python/python-lightmediascanner-9999 **
+=dev-python/terra-9999 **
 =dev-util/edje_editor-9999 **
 =dev-util/edje_viewer-9999 **
 =dev-util/enhance-9999 **
@@ -40,6 +43,7 @@
 =media-gfx/image-viewer-9999 **
 =media-gfx/imlib2_tools-9999 **
 =media-gfx/retina-9999 **
+=media-libs/atabake-9999 **
 =media-libs/edje-9999 **
 =media-libs/emage-9999 **
 =media-libs/emotion-9999 **
@@ -49,8 +53,10 @@
 =media-libs/ethumb-9999 **
 =media-libs/imlib2-9999 **
 =media-libs/imlib2_loaders-9999 **
+=media-libs/lightmediascanner-9999 **
 =media-sound/emphasis-9999 **
 =media-sound/extrackt-9999 **
+=media-video/canola-9999 **
 =media-video/eclair-9999 **
 =media-video/elation-9999 **
 =media-video/envision-9999 **
@@ -58,6 +64,7 @@
 =net-im/express-9999 **
 =net-libs/webkit-efl-9999 **
 =net-misc/exalt-9999 **
+=net-misc/python-downloadmanager-9999 **
 =sci-calculators/e_calculator-9999 **
 =sci-calculators/equate-9999 **
 =sci-misc/engycad-9999 **

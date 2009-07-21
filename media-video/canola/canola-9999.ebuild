@@ -17,7 +17,7 @@ IUSE=""
 RDEPEND="dev-python/dbus-python
 	dev-python/pygobject
 	dev-python/pydispatcher
-	>=sys-apps/dbus-9999
+	sys-apps/dbus
 	>=dev-libs/eet-9999
 	>=dev-libs/eina-9999
 	>=x11-libs/evas-9999
@@ -36,7 +36,7 @@ RDEPEND="dev-python/dbus-python
 	>=dev-python/python-efl_utils-9999
 	>=media-libs/lightmediascanner-9999
 	>=dev-python/python-lightmediascanner-9999
-	>=app-misc/canolad-9999
+	>=app-misc/canola-daemon-9999
 	>=media-libs/atabake-9999
 	>=net-misc/python-downloadmanager-9999
 	>=dev-python/terra-9999
@@ -52,9 +52,16 @@ src_unpack() {
 }
 
 src_compile() {
-setup.sh --help
+	./setup.sh \
+	--prefix=/usr \
+	--sysconfdir=/etc \
+	compile || die "compile failed"
 }
 
 src_install() {
-setup.sh install
+	DESTDIR="${D}" \
+	./setup.sh \
+	--prefix=/usr \
+	--sysconfdir=/etc \
+	install || die "install failed"
 }

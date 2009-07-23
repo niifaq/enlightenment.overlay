@@ -2,7 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit enlightenment
+EGIT_REPO_URI="git://github.com/rephorm/elicit.git"
+inherit git enlightenment
 
 DESCRIPTION="tool for examining images on your desktop"
 HOMEPAGE="http://enlightenment.org/pages/elicit.html"
@@ -17,3 +18,10 @@ DEPEND=">=x11-libs/evas-0.9.9
 
 RDEPEND="${DEPEND}"
 
+src_unpack() {
+	git_src_unpack
+
+	cd "${S}"
+
+	eautoreconf
+}

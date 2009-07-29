@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-ESVN_SUB_PROJECT="PROTO"
+ESVN_SUB_PROJECT="OLD/PROTO"
 inherit enlightenment
 
 DESCRIPTION="an audio CD ripper and encoder"

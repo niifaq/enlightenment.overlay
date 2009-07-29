@@ -1,0 +1,7 @@
+# ChangeLog for media-sound/extrackt
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  29 Jul 2009; evadim <evadim@evadim.ru> extrackt-9999.ebuild:
+  move to OLD
+

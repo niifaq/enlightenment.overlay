@@ -1,0 +1,7 @@
+# ChangeLog for sci-calculators/equate
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  30 Jul 2009; evadim <evadim@evadim.ru> equate-9999.ebuild:
+  move to OLD
+

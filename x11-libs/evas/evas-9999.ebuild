@@ -41,7 +41,7 @@ src_compile() {
 		$(use_enable mmx cpu-mmx) \
 		$(use_enable sse cpu-mmx) \
 		$(use_enable sse cpu-sse) \
-		$(use_enable X software-x11) \
+		$(use_enable X software-xlib) \
 		$(use_enable X software-16-x11) \
 		$(use_enable X xrender-x11) \
 		$(use_enable sdl software-sdl) \

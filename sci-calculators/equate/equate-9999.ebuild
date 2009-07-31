@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-ESVN_SUB_PROJECT="OLD"
+ESVN_SUB_PROJECT="OLD/MISC"
 inherit enlightenment
 
 DESCRIPTION="simple themeable calculator built off of ewl"

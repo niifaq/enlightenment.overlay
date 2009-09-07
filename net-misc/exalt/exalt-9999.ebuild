@@ -3,7 +3,6 @@
 # $Header: $
 
 EAPI=1
-ESVN_SUB_PROJECT="PROTO"
 inherit enlightenment
 
 DESCRIPTION="EFL based front end network manager"

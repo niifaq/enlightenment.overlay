@@ -16,4 +16,3 @@ DEPEND=">=x11-wm/enlightenment-0.16.999.039
 	dev-libs/efreet"
 
 RDEPEND="${DEPEND}"
-

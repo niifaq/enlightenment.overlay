@@ -14,4 +14,3 @@ DEPEND="x11-libs/ecore
 	media-libs/edje"
 
 RDEPEND="${DEPEND}"
-

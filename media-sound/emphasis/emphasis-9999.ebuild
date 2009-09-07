@@ -16,4 +16,3 @@ DEPEND="x11-libs/ecore
 	dev-util/enhance"
 
 RDEPEND="${DEPEND}"
-

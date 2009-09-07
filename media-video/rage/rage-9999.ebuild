@@ -15,4 +15,3 @@ DEPEND=">=dev-libs/eet-9999
 	>=media-libs/emotion-9999"
 
 RDEPEND="${DEPEND}"
-

@@ -27,4 +27,3 @@ src_compile() {
 	"
 	enlightenment_src_compile
 }
-

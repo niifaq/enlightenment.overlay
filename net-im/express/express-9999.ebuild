@@ -15,4 +15,3 @@ DEPEND=">=x11-libs/esmart-0.9.0
 	>=media-libs/edje-0.5.0"
 
 RDEPEND="${DEPEND}"
-

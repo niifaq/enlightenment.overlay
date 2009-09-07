@@ -18,4 +18,3 @@ DEPEND=">=dev-libs/eet-0.9.10
 	>=x11-wm/enlightenment-0.16.999"
 
 RDEPEND="${DEPEND}"
-

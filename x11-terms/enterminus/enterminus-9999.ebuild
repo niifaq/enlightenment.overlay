@@ -15,4 +15,3 @@ DEPEND="x11-libs/ecore
 	net-misc/curl"
 
 RDEPEND="${DEPEND}"
-

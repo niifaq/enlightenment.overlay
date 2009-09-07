@@ -18,4 +18,3 @@ DEPEND=">=dev-libs/eet-0.9.10
 	>=x11-libs/evas-0.9.9"
 
 RDEPEND="${DEPEND}"
-

@@ -19,4 +19,3 @@ DEPEND=">=dev-libs/eet-0.9.9
 	>=x11-libs/ewl-0.0.4"
 
 RDEPEND="${DEPEND}"
-

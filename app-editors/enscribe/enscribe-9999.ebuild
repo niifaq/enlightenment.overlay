@@ -15,4 +15,3 @@ DEPEND="x11-libs/evas
 	x11-libs/esmart"
 
 RDEPEND="${DEPEND}"
-

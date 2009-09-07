@@ -15,4 +15,3 @@ DEPEND=">=media-video/ffmpeg-9999
 	>=media-libs/imlib2-9999"
 
 RDEPEND="${DEPEND}"
-

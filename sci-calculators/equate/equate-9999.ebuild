@@ -14,4 +14,3 @@ DEPEND=">=x11-libs/ewl-0.0.4
 	>=x11-libs/ecore-0.9.9"
 
 RDEPEND="${DEPEND}"
-

@@ -16,4 +16,3 @@ DEPEND="media-libs/edje
 	|| ( media-gfx/imagemagick media-gfx/scrot )"
 
 RDEPEND="${DEPEND}"
-

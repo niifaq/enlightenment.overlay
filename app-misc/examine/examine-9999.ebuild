@@ -16,4 +16,3 @@ DEPEND=">=dev-libs/eet-0.9.0
 	sys-libs/readline"
 
 RDEPEND="${DEPEND}"
-

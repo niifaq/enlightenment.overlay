@@ -16,4 +16,3 @@ DEPEND="dev-libs/eet
 	dev-util/enhance"
 
 RDEPEND="${DEPEND}"
-

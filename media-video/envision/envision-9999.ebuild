@@ -15,4 +15,3 @@ DEPEND="x11-libs/ecore
 	>=media-libs/emotion-0.0.1"
 
 RDEPEND="${DEPEND}"
-

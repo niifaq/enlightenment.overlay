@@ -20,4 +20,3 @@ DEPEND=">=x11-libs/evas-9999
 	>=dev-libs/efreet-9999"
 
 RDEPEND="${DEPEND}"
-

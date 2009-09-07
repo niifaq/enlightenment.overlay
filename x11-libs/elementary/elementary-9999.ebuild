@@ -14,4 +14,3 @@ DEPEND=">=x11-libs/ecore-9999
 	>=media-libs/edje-9999"
 
 RDEPEND="${DEPEND}"
-

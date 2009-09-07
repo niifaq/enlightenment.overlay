@@ -17,4 +17,3 @@ DEPEND="x11-libs/evas
 	>=dev-db/sqlite-3"
 
 RDEPEND="${DEPEND}"
-

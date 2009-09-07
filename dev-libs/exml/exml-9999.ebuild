@@ -13,4 +13,3 @@ DEPEND=">=dev-libs/libxml2-2.6.13
 	>=x11-libs/ecore-0.9.9"
 
 RDEPEND="${DEPEND}"
-

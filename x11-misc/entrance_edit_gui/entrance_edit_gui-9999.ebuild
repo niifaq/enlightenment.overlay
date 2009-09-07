@@ -17,4 +17,3 @@ DEPEND=">=x11-libs/ecore-0.9.9.037
 	>=x11-misc/entrance-0.9.0.008"
 
 RDEPEND="${DEPEND}"
-

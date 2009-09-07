@@ -14,4 +14,3 @@ DEPEND=">=dev-libs/exml-0.1.1
 	>=x11-libs/etk-0.1.0"
 
 RDEPEND="${DEPEND}"
-

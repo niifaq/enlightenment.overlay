@@ -15,4 +15,3 @@ DEPEND="x11-libs/ecore
 	x11-wm/enlightenment"
 
 RDEPEND="${DEPEND}"
-

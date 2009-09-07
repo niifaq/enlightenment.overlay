@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  07 Sep 2009; Andrian Nord <NightNord@niifaq.ru> exalt-9999.ebuild:
+  insert missing dbus configuration file exalt.conf.
+  Detection and initial implementation by evadim.
+
   26 Apr 2009; evadim <evadim@evadim.ru> metadata.xml, exalt-9999.ebuild:
   add init-script, vpnc & DHCP use-flags. works now.
 

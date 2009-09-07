@@ -22,20 +22,20 @@ DEPEND=">=dev-libs/eet-9999
 
 RDEPEND="${DEPEND}"
 
-src_compile() {
-#		$(use_with dhcp) \
+S="${WORKDIR}/${PN}"
 
-	export MY_ECONF="
-		$(use_with vpnc) \
-		"
+src_compile() {
+	export MY_ECONF="$(use_with vpnc)"
+
 	enlightenment_src_compile
 }
 
-
 src_install() {
+	sed 's|/usr/local/sbin|/usr/sbin|' -i data/daemon/init.d/gentoo || die "sed filed"
+	newinitd data/daemon/init.d/gentoo ${PN}
 
-	sed 's|/usr/local/sbin|/usr/sbin|' -i "${WORKDIR}/exalt/data/daemon/init.d/gentoo" || die "sed filed"
-	newinitd "${WORKDIR}/exalt/data/daemon/init.d/gentoo" ${PN}
+	insinto /etc/dbus-1/system.d/
+	doins data/daemon/dbus/exalt.conf
 
 	enlightenment_src_install
 }

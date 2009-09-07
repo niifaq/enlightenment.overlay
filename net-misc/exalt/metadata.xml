@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-<herd>no-herd</herd>
-    <maintainer>
-	<email>enlightenment@gentoo.org</email>
-    </maintainer>
-
+	<herd>no-herd</herd>
+	<maintainer>
+		<email>enlightenment@gentoo.org</email>
+	</maintainer>
+	<longdescription lang="en">
+		Exalt is a NetworkManager-type daemon allowing easy network
+		configuration from GUI, tightly integrated into enlightenment WM.
+	</longdescription>
     <use>
-        <flag name="dhcp">
-	    Build with <pkg>net-misc/dhcp</pkg> to enable DHCP support
-	</flag>
-        <flag name="vpnc">
-	    Build with <pkg>net-misc/vpnc</pkg> to enable Cisco VPN support
-	</flag>
+		<flag name="dhcp">
+			Enable dependency over dhcp, as it is only supported dhcp client and
+			dependency is automagical
+		</flag>
+		<flag name="vpnc">
+			Build with <pkg>net-misc/vpnc</pkg> to enable Cisco VPN support
+		</flag>
     </use>
-
 </pkgmetadata>

@@ -21,7 +21,6 @@ DEPEND=">=dev-python/python-ecore-9999
 
 RDEPEND="${DEPEND}"
 
-
 src_unpack() { :; }
 src_compile() { :; }
 src_install() { :; }

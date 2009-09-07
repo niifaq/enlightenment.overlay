@@ -17,8 +17,6 @@ RDEPEND=">=dev-python/python-evas-9999
 DEPEND=">=dev-python/setuptools-0.6_rc9
 	${RDEPEND}"
 
-
-
 src_unpack() {
 	enlightenment_src_unpack
 }

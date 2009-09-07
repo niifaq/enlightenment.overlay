@@ -14,5 +14,4 @@ DEPEND="media-libs/edje
 
 RDEPEND="${DEPEND}"
 
-
 EDOCS="BEER"

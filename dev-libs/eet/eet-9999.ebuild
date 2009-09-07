@@ -21,7 +21,6 @@ DEPEND="
 
 RDEPEND="${DEPEND}"
 
-
 src_compile() {
 	MY_ECONF=""
 

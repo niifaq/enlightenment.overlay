@@ -18,7 +18,6 @@ DEPEND="x11-libs/ewl
 
 RDEPEND="${DEPEND}"
 
-
 pkg_setup() {
 	games_pkg_setup
 	enlightenment_pkg_setup

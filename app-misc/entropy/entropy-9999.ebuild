@@ -20,7 +20,6 @@ DEPEND="media-libs/epsilon
 
 RDEPEND="${DEPEND}"
 
-
 src_compile() {
 	export MY_ECONF="
 		--enable-plugin-extractor

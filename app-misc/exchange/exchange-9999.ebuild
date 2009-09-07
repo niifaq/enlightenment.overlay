@@ -23,7 +23,6 @@ DEPEND="
 
 RDEPEND="${DEPEND}"
 
-
 src_compile() {
 	MY_ECONF="
 		$(use_enable etk)

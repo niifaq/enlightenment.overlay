@@ -22,7 +22,6 @@ DEPEND="=media-libs/freetype-2*
 
 RDEPEND="${DEPEND}"
 
-
 src_compile() {
 	# imlib2 has diff configure options for x86/amd64 mmx
 	local myconf=""

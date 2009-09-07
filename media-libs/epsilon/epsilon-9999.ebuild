@@ -18,7 +18,6 @@ DEPEND=">=media-libs/imlib2-9999
 
 RDEPEND="${DEPEND}"
 
-
 src_compile() {
 	export MY_ECONF="
 		$(use_enable xine thumbnailer-xine) \

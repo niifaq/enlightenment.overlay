@@ -25,7 +25,6 @@ DEPEND="
 
 RDEPEND="${DEPEND}"
 
-
 pkg_setup() {
 	if ! use xine && ! use gstreamer; then
 		edie "You must select xine or gstreamer"

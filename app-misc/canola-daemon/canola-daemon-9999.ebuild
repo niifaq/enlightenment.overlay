@@ -23,8 +23,6 @@ RDEPEND="dev-python/dbus-python
 DEPEND=">=dev-python/setuptools-0.6_rc9
 	${RDEPEND}"
 
-
-
 src_unpack() {
 	git_src_unpack
 }

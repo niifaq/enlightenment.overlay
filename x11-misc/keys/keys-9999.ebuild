@@ -17,7 +17,6 @@ DEPEND="x11-libs/ecore
 
 RDEPEND="${DEPEND}"
 
-
 src_unpack() {
 	enlightenment_src_unpack
 }

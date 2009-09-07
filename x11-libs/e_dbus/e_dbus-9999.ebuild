@@ -19,7 +19,6 @@ DEPEND=">=x11-libs/ecore-9999
 
 RDEPEND="${DEPEND}"
 
-
 #src_compile() {
 #	export MY_ECONF="
 #		$(use_enable X build-test-gui)

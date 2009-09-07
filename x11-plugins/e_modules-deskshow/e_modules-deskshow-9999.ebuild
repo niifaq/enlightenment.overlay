@@ -2,8 +2,11 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI="2"
+
 ESVN_SUB_PROJECT="E-MODULES-EXTRA"
 ESVN_URI_APPEND="${PN#e_modules-}"
+
 inherit enlightenment
 
 DESCRIPTION="Gadget to allow you to quickly uncover your desktop"
@@ -15,3 +18,8 @@ DEPEND=">=x11-wm/enlightenment-0.16.999
 
 RDEPEND="${DEPEND}"
 
+src_prepare() {
+	epatch "${FILESDIR}"/remove_aclocal_amflags.patch
+
+	enlightenment_src_prepare
+}

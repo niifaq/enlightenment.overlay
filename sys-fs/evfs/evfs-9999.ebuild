@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI=2
+
 ESVN_SUB_PROJECT="OLD"
 inherit enlightenment
 
@@ -24,11 +26,17 @@ DEPEND="x11-libs/ecore
 
 RDEPEND="${DEPEND}"
 
+src_prepare() {
+	mv debian/changelog debian/changelog.in
 
-src_compile() {
+	enlightenment_src_prepare
+}
+
+src_configure() {
 	export MY_ECONF="
 		$(use_enable samba)
 		--enable-plugin-extractor
 	"
-	enlightenment_src_compile
+
+	enlightenment_src_configure
 }

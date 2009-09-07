@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-<herd>no-herd</herd>
-<maintainer>
- <email>enlightenment@gentoo.org</email>
-</maintainer>
+	<herd>no-herd</herd>
+	<maintainer>
+		<email>enlightenment@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		Module adds sub-menu to main menu, which allows you to switch between
+		windows via menu.
+	</longdescription>
 </pkgmetadata>

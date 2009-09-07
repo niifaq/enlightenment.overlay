@@ -160,6 +160,16 @@ enlightenment_src_unpack() {
 
 	[[ -s gendoc ]] && chmod a+rx gendoc
 
+	[[ "${EAPI}" -lt 2 ]] && process_autotools
+}
+
+if [[ "${EAPI}" -ge 2 ]]; then
+	enlightenment_src_prepare() {
+		process_autotools
+	}
+fi
+
+process_autotools() {
 	if [[ -e configure.ac || -e configure.in ]] && [[ "${WANT_AUTOMAKE}" != "no" ]]; then
 		if grep -qE '^[[:space:]]*AM_GNU_GETTEXT_VERSION' configure.*; then
 			local autopoint_log_file="${T}/autopoint.$$"
@@ -227,7 +237,7 @@ if [[ "${EAPI}" == "2" ]]; then
 		fi
 	}
 
-	EXPORT="${EXPORT} src_configure"
+	EXPORT="${EXPORT} src_configure src_prepare"
 fi
 
 EXPORT_FUNCTIONS ${EXPORT}

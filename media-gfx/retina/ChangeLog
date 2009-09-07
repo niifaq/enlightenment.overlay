@@ -1,0 +1,8 @@
+# ChangeLog for media-gfx/retina
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  07 Sep 2009; Andrian Nord <NightNord@niifaq.ru> retina-9999.ebuild,
+  metadata.xml:
+  Moved to OLD/MISC. Metadata indenting
+

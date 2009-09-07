@@ -2,9 +2,9 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit enlightenment
-
 ESVN_SUB_PROJECT="OLD"
+
+inherit enlightenment
 
 DESCRIPTION="Tool to display ETK dialogs from the command line and shell scripts"
 

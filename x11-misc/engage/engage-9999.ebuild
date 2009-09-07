@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-ESVN_SUB_PROJECT="MISC"
+ESVN_SUB_PROJECT="OLD/MISC"
 inherit enlightenment
 
 DESCRIPTION="nice bar thingy"
@@ -18,7 +18,6 @@ DEPEND=">=media-libs/imlib2-1.2.0
 	x11-libs/esmart"
 
 RDEPEND="${DEPEND}"
-
 
 src_compile() {
 	export MY_ECONF="$(use_enable xinerama)"

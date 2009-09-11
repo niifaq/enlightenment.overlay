@@ -11,7 +11,7 @@ DESCRIPTION="PDF viewer with widgets for EWL, ETK, and Evas"
 
 IUSE=""
 
-DEPEND="|| ( >=app-text/poppler-bindings-0.10.4[cairo] >=dev-libs/poppler-glib-0.10.6[cairo] )
+DEPEND="|| ( >=dev-libs/poppler-glib-0.10.6[cairo] >=app-text/poppler-bindings-0.10.4[cairo] )
 		>=x11-libs/evas-0.9.9
 		>=x11-libs/ecore-0.9.9
 		>=x11-libs/ewl-0.5

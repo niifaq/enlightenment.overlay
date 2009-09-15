@@ -4,7 +4,7 @@
 
 EAPI="2"
 
-inherit git enlightenment
+inherit git enlightenment multilib
 
 EGIT_REPO_URI="git://github.com/jeffdameth/${PN}.git"
 
@@ -23,4 +23,19 @@ src_unpack() {
 	git_src_unpack
 
 	cd "${S}"
+}
+
+src_prepare() {
+	epatch "${FILESDIR}/${PN}-fix-ecomp-lancher-name.patch"
+
+	enlightenment_src_prepare
+}
+
+src_install() {
+	sed -r -e "s:/usr/lib/xorg:/usr/$(get_libdir)/xorg:" \
+		-e 's:\(lspci:\(/usr/sbin/lspci:' \
+		-e 's:/usr/lib/[^/]+/libGL.*":/usr/lib/libGL.so":' \
+		-i scripts/ecomp.sh
+
+	enlightenment_src_install
 }

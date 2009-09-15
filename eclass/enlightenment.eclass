@@ -159,12 +159,6 @@ enlightenment_src_unpack() {
 	[[ "${EAPI}" -lt 2 ]] && prepare_sources
 }
 
-if [[ "${EAPI}" -ge 2 ]]; then
-	enlightenment_src_prepare() {
-		prepare_sources
-	}
-fi
-
 prepare_sources() {
 	gettext_modify
 
@@ -228,13 +222,17 @@ enlightenment_pkg_postinst() {
 	: enlightenment_warning_msg
 }
 
-EXPORT="pkg_setup src_unpack src_compile src_install pkg_postinst "
+EXPORT="pkg_setup src_unpack src_compile src_install pkg_postinst"
 
-if [[ "${EAPI}" == "2" ]]; then
+if [[ "${EAPI}" -ge 2 ]]; then
 	enlightenment_src_configure() {
 		if [[ -x ${ECONF_SOURCE:-.}/configure ]]; then
 			econf ${MY_ECONF}
 		fi
+	}
+
+	enlightenment_src_prepare() {
+		prepare_sources
 	}
 
 	EXPORT="${EXPORT} src_configure src_prepare"

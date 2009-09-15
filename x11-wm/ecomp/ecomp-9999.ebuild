@@ -4,7 +4,7 @@
 
 EAPI="2"
 
-inherit git enlightenment
+inherit git enlightenment flag-o-matic
 
 EGIT_REPO_URI="git://github.com/jeffdameth/${PN}.git"
 
@@ -41,7 +41,10 @@ src_unpack() {
 	cd "${S}"
 }
 
+
 src_configure() {
+	filter-ldflags "-Wl,--as-needed"
+
 	export MY_ECONF="
 		$(use_enable dbus)
 		$(use_enable inotify)

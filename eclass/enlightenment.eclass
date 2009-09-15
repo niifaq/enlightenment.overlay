@@ -156,20 +156,20 @@ enlightenment_src_unpack() {
 
 	cd "${S}"
 
-	gettext_modify
-
-	[[ -s gendoc ]] && chmod a+rx gendoc
-
-	[[ "${EAPI}" -lt 2 ]] && process_autotools
+	[[ "${EAPI}" -lt 2 ]] && prepare_sources
 }
 
 if [[ "${EAPI}" -ge 2 ]]; then
 	enlightenment_src_prepare() {
-		process_autotools
+		prepare_sources
 	}
 fi
 
-process_autotools() {
+prepare_sources() {
+	gettext_modify
+
+	[[ -s gendoc ]] && chmod a+rx gendoc
+
 	if [[ -e configure.ac || -e configure.in ]] && [[ "${WANT_AUTOMAKE}" != "no" ]]; then
 		if grep -qE '^[[:space:]]*AM_GNU_GETTEXT_VERSION' configure.*; then
 			local autopoint_log_file="${T}/autopoint.$$"

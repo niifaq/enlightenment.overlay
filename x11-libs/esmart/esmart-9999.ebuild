@@ -12,7 +12,6 @@ DEPEND="
 	>=x11-libs/evas-9999
 	>=x11-libs/ecore-9999
 	>=media-libs/edje-9999
-	>=media-libs/epsilon-9999
 	>=media-libs/imlib2-9999
 	>=dev-libs/eina-9999
 "

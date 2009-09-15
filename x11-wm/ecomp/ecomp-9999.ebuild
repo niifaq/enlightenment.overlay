@@ -41,7 +41,6 @@ src_unpack() {
 	cd "${S}"
 }
 
-
 src_configure() {
 	filter-ldflags "-Wl,--as-needed"
 

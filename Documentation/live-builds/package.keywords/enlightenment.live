@@ -92,6 +92,7 @@
 =x11-misc/iconbar-9999 **
 =x11-misc/keys-9999 **
 =x11-misc/shellementary-9999 **
+=x11-plugins/ecomorph-9999 **
 =x11-plugins/edgar-9999 **
 =x11-plugins/e_modules-9999 **
 =x11-plugins/e_modules-alarm-9999 **
@@ -138,4 +139,5 @@
 =x11-plugins/trash-9999 **
 =x11-plugins/winlist_ng-9999 **
 =x11-terms/enterminus-9999 **
+=x11-wm/ecomp-9999 **
 =x11-wm/enlightenment-9999 **

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>no-herd</herd>
+	<maintainer>
+		<email>enlightenment@gentoo.org</email>
+	</maintainer>
+	<use>
+		<flag name="max-desktops">Limits number of possible virtual desktops to maximal reasonable value (currently: 36)</flag>
+		<flag name="inotify">Build inotify plug-in</flag>
+	</use>
+	<longdescription lang="en">
+		Ecomp is patched version of compiz, which can be used with ecomorph to
+		integrate compiz into enlightenment wm.
+	</longdescription>
+</pkgmetadata>
+

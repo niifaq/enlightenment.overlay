@@ -7,7 +7,7 @@ EGIT_REPO_URI="git://code.openbossa.org/${PN}/mainline.git"
 inherit git python distutils
 
 DESCRIPTION="Media Engine Framework to help media applications playing contents"
-HOMEPAGE="http://code.openbossa.org/projects/${PN}/repos/mainline"
+HOMEPAGE="http://code.openbossa.org/projects/canola/repos/mainline"
 
 LICENSE="GPL-3"
 SLOT="0"
@@ -41,27 +41,45 @@ RDEPEND="dev-python/dbus-python
 	>=net-misc/python-downloadmanager-9999
 	>=dev-python/terra-9999
 	>=media-libs/canola-thumbnailer-9999
-	"
+"
 
 DEPEND=">=dev-python/setuptools-0.6_rc9
 	${RDEPEND}"
 
 src_unpack() {
 	git_src_unpack
+
 	cd "${S}"
 }
 
 src_compile() {
 	./setup.sh \
-	--prefix=/usr \
-	--sysconfdir=/etc \
-	compile || die "compile failed"
+		--prefix=/usr \
+		--sysconfdir=/etc \
+		compile || die "compile failed"
 }
 
 src_install() {
 	DESTDIR="${D}" \
 	./setup.sh \
-	--prefix=/usr \
-	--sysconfdir=/etc \
-	install || die "install failed"
+		--prefix=/usr \
+		--sysconfdir=/etc \
+		install || die "install failed"
+}
+
+pkg_postinst() {
+	local temp=$(mktemp -d);
+	local wrapper="/usr/bin/cnl-wrapper"
+
+	einfo "Creating system-wide plugins database"
+
+	"${wrapper}" rescan-collections
+
+	einfo "Replacing 'Maemo System' plug-in with 'Linux System'"
+
+	env HOME="${temp}" "${wrapper}" get-prefs 'asd' &> /dev/null
+	env HOME="${temp}" "${wrapper}" disable-plugin 'Maemo System'
+	env HOME="${temp}" "${wrapper}" enable-plugin 'Linux System'
+
+	cp -f "${temp}"/.canola/plugins.pickle /usr/share/${PN}/plugins.pickle
 }

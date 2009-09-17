@@ -7,6 +7,8 @@
 =app-misc/examine-9999 **
 =app-misc/exchange-9999 **
 =app-text/epdf-9999 **
+=dev-cpp/eflxx-9999 **
+=dev-cpp/evasxx-9999 **
 =dev-db/edb-9999 **
 =dev-libs/eet-9999 **
 =dev-libs/efreet-9999 **
@@ -15,6 +17,7 @@
 =dev-libs/engrave-9999 **
 =dev-libs/evolve-9999 **
 =dev-libs/exml-9999 **
+=dev-python/python-dispatcher-9999 **
 =dev-python/python-ecore-9999 **
 =dev-python/python-e_dbus-9999 **
 =dev-python/python-edje-9999 **

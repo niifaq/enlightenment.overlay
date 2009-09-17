@@ -16,7 +16,8 @@ IUSE=""
 
 RDEPEND="dev-python/dbus-python
 	dev-python/pygobject
-	dev-python/pydispatcher
+	dev-python/python-dispatcher
+	dev-python/feedparser
 	sys-apps/dbus
 	>=dev-libs/eet-9999
 	>=dev-libs/eina-9999

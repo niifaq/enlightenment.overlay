@@ -16,7 +16,6 @@ DEPEND=">=x11-libs/evas-9999
 	>=dev-libs/eet-9999
 	>=media-libs/epsilon-9999
 	>=x11-wm/enlightenment-9999
-	>=dev-libs/engrave-9999
 	>=dev-libs/efreet-9999"
 
 RDEPEND="${DEPEND}"

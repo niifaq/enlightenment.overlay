@@ -2,6 +2,9 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  18 Sep 2009; Andrian Nord <NightNord@niifaq.ru> exhibit-9999.ebuild:
+  Dependency on engrave removed as reported by 'Christoph Gysin'
+
   06 May 2009; Andrian Nord <nightnord@niifaq.ru> exhibit-9999.ebuild:
   Update dependancies to >=...-9999
 

@@ -25,12 +25,6 @@ src_unpack() {
 	cd "${S}"
 }
 
-src_prepare() {
-	epatch "${FILESDIR}/${PN}-fix-ecomp-lancher-name.patch"
-
-	enlightenment_src_prepare
-}
-
 src_install() {
 	sed -r -e "s:/usr/lib/xorg:/usr/$(get_libdir)/xorg:" \
 		-e 's:\(lspci:\(/usr/sbin/lspci:' \

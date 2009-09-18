@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  17 Sep 2009; evadim <evadim@evadim.ru> canola-9999.ebuild:
+  Canola depend on other dispatcher. Add feedparser to deps,
+  Canola finally works as expected now.
+
   16 Sep 2009; Andrian Nord <NightNord@niifaq.ru> canola-9999.ebuild:
   Added hack-around to generate plugins database and swap Maemo/Linux
   plug-ins

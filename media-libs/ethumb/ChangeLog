@@ -2,6 +2,9 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  18 Sep 2009; Andrian Nord <NightNord@niifaq.ru> ethumb-9999.ebuild:
+  Moved to mainstream
+
   25 Apr 2009; evadim <evadim@evadim.ru> metadata.xml, ethumb-9999.ebuild:
   fix USE desc
 

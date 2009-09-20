@@ -3,7 +3,7 @@
 # $Header: $
 
 NEED_PYTHON="2.4"
-ESVN_SUB_PROJECT="BINDINGS/python"
+ESVN_SUB_PROJECT="OLD/BINDINGS/python"
 
 inherit enlightenment python distutils
 

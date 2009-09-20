@@ -4,16 +4,18 @@
 
 NEED_PYTHON="2.5"
 EGIT_REPO_URI="git://git.profusion.mobi/users/ulisses/python-dispatcher.git"
+
 inherit git python distutils
 
 DESCRIPTION="Python utilities to work with threads"
-HOMEPAGE=""
+HOMEPAGE="I HAVE NO HOME =("
 
 LICENSE="python-dispatcher"
 SLOT="0"
 KEYWORDS=""
 IUSE=""
 
+RDEPEND=""
 DEPEND=">=dev-python/setuptools-0.6_rc9
 	${RDEPEND}"
 

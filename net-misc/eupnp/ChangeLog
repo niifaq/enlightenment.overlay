@@ -1,0 +1,9 @@
+# ChangeLog for net-misc/eupnp
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*eupnp-9999 (25 Sep 2009)
+
+  25 Sep 2009; evadim <evadim@evadim.ru> +eupnp-9999.ebuild, +metadata.xml:
+  initial import
+

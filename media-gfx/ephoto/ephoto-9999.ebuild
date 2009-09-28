@@ -4,7 +4,7 @@
 
 inherit enlightenment
 
-DESCRIPTION="EFL-based slideshow creator"
+DESCRIPTION="Ephoto Image Viewer/Editor/Manipulator/Slideshow creator"
 
 IUSE=""
 

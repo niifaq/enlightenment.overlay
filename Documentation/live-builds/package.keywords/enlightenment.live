@@ -7,6 +7,8 @@
 =app-misc/examine-9999 **
 =app-misc/exchange-9999 **
 =app-text/epdf-9999 **
+=dev-cpp/eflxx-9999 **
+=dev-cpp/evasxx-9999 **
 =dev-db/edb-9999 **
 =dev-libs/eet-9999 **
 =dev-libs/efreet-9999 **
@@ -38,6 +40,7 @@
 =media-gfx/elicit-9999 **
 =media-gfx/enesim-9999 **
 =media-gfx/ephoto-9999 **
+=media-gfx/ephoto_manager-9999 **
 =media-gfx/exhibit-9999 **
 =media-gfx/exquisite-9999 **
 =media-gfx/eyelight-9999 **
@@ -66,6 +69,7 @@
 =net-im/apathy-9999 **
 =net-im/express-9999 **
 =net-libs/webkit-efl-9999 **
+=net-misc/eupnp-9999 **
 =net-misc/exalt-9999 **
 =net-misc/python-downloadmanager-9999 **
 =sci-calculators/e_calculator-9999 **

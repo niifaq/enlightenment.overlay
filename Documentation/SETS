@@ -1,0 +1,41 @@
+Dynamic sets:
+
+@enlightenment-rebuild	= rebuilds all installed packages from this overlay.
+				nice for rebuilding, as it will rebuild also
+				enlightenment-specific dependencies (simple
+				rerun of emerge on some static set will not)
+
+@enlightenment-all	= all ebuilds from overlay, excluding those listed
+				into @enlightenment-broken (see below). Still
+				broken ebuild might be fetched as
+				dependencies. Use it, if you want to install
+				and try all known packages of enlightenment.
+
+Static sets:
+	Meta sets:
+
+		@enlightenment = @enlightenment-modules + @enlightenment-wm
+		@enlightenment-extended = @enlightenment + @enlightenment-misc
+
+@enlightenment-wm	= Pure wm install with deps, no modules, no others.
+@enlightenment-modules	= All e-modules and all known to developers
+						third-party working modules.
+@enlightenment-misc	= Additional programs considered to be especially
+						useful.
+@enlightenment-proto	= Programs considered to be prototypes or some testing
+				ground. Sometimes it will just not compile,
+				but sometimes it may contains something
+				geniuos and awesome.
+
+Developer sets:
+
+@enlightenment-old	= Programs that are not updated for a long time. Most
+				probably would fail to compile. Keeped for
+				archiving and for testing if some old program
+				suddenly will became new =)
+
+@enlightenment-broken	= List of programs known to be broken for a long time
+				Used by @enlightenment-all script for
+				excluding and filtering them out
+
+# vim: ft=text textwidth=78

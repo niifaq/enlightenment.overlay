@@ -31,6 +31,7 @@
 =dev-python/python-evas-9999 **
 =dev-python/python-lightmediascanner-9999 **
 =dev-python/terra-9999 **
+=dev-util/editje-9999 **
 =dev-util/edje_editor-9999 **
 =dev-util/edje_viewer-9999 **
 =dev-util/enhance-9999 **
@@ -145,5 +146,6 @@
 =x11-plugins/trash-9999 **
 =x11-plugins/winlist_ng-9999 **
 =x11-terms/enterminus-9999 **
+=x11-terms/eterm-9999 **
 =x11-wm/ecomp-9999 **
 =x11-wm/enlightenment-9999 **

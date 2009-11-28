@@ -7,6 +7,8 @@
 =app-misc/examine-9999 **
 =app-misc/exchange-9999 **
 =app-text/epdf-9999 **
+=dev-cpp/eflxx-9999 **
+=dev-cpp/evasxx-9999 **
 =dev-db/edb-9999 **
 =dev-libs/eet-9999 **
 =dev-libs/efreet-9999 **
@@ -69,6 +71,7 @@
 =net-im/express-9999 **
 =net-libs/webkit-efl-9999 **
 =net-misc/eupnp-9999 **
+=net-misc/eweather-9999 **
 =net-misc/exalt-9999 **
 =net-misc/python-downloadmanager-9999 **
 =sci-calculators/e_calculator-9999 **
@@ -112,6 +115,7 @@
 =x11-plugins/e_modules-efm_path-9999 **
 =x11-plugins/e_modules-efm_pathbar-9999 **
 =x11-plugins/e_modules-emu-9999 **
+=x11-plugins/e_modules-eweather-9999 **
 =x11-plugins/e_modules-exalt-client-9999 **
 =x11-plugins/e_modules-execwatch-9999 **
 =x11-plugins/e_modules-flame-9999 **

@@ -2,6 +2,9 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  11 Dec 2009; evadim <evadim@evadim.ru> e_modules-eweather-9999.ebuild:
+  move eweather -> libeweather
+
 *e_modules-eweather-9999 (28 Nov 2009)
 
   28 Nov 2009; evadim <evadim@evadim.ru> +e_modules-eweather-9999.ebuild,

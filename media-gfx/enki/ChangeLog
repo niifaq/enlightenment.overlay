@@ -1,6 +1,11 @@
-# ChangeLog for media-gfx/ephoto_manager
+# ChangeLog for media-gfx/enki
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+*enki-9999 (13 Dec 2009)
+
+  13 Dec 2009; evadim <evadim@evadim.ru> +enki-9999.ebuild, +metadata.xml:
+  rename to Enki
 
 *ephoto_manager-9999 (28 Sep 2009)
 

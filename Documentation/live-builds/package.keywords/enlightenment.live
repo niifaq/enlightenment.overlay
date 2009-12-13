@@ -7,6 +7,8 @@
 =app-misc/examine-9999 **
 =app-misc/exchange-9999 **
 =app-text/epdf-9999 **
+=dev-cpp/eflxx-9999 **
+=dev-cpp/evasxx-9999 **
 =dev-db/edb-9999 **
 =dev-libs/eet-9999 **
 =dev-libs/efreet-9999 **
@@ -38,8 +40,8 @@
 =mail-client/embrace-9999 **
 =media-gfx/elicit-9999 **
 =media-gfx/enesim-9999 **
+=media-gfx/enki-9999 **
 =media-gfx/ephoto-9999 **
-=media-gfx/ephoto_manager-9999 **
 =media-gfx/exhibit-9999 **
 =media-gfx/exquisite-9999 **
 =media-gfx/eyelight-9999 **
@@ -51,6 +53,7 @@
 =media-libs/edje-9999 **
 =media-libs/emage-9999 **
 =media-libs/emotion-9999 **
+=media-libs/enlil-9999 **
 =media-libs/e_phys-9999 **
 =media-libs/epsilon-9999 **
 =media-libs/etch-9999 **

@@ -11,9 +11,11 @@ HOMEPAGE="http://watchwolf.fr/wiki/doku.php?id=enki"
 
 IUSE=""
 
-DEPEND=">=dev-libs/eet-9999
+DEPEND=">=dev-libs/eina-9999
+	>=dev-libs/eet-9999
 	>=x11-libs/ecore-9999
-	>=media-libs/enlil-9999"
+	>=media-libs/enlil-9999
+	>=x11-libs/elementary-9999"
 
 RDEPEND="${DEPEND}"
 
@@ -24,4 +26,19 @@ src_unpack() {
 src_prepare() {
 	cd "${S}/${PN}"
 	enlightenment_src_prepare
+}
+
+src_configure() {
+	cd "${S}/${PN}"
+	enlightenment_src_configure
+}
+
+src_compile() {
+	cd "${S}/${PN}"
+	enlightenment_src_compile
+}
+
+src_install() {
+	cd "${S}/${PN}"
+	enlightenment_src_install
 }

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>no-herd</herd>
+	<maintainer>
+		<email>enlightenment@gentoo.org</email>
+	</maintainer>
+	<longdescription lang="en">
+	Enna is a Media Center application. Featuring a simple user interface,
+	Enna is based on the powerful Enlightenment Foundations Libraries (EFL)
+	as for its graphical user interface and GeeXboX libraries as for multimedia
+	playback and information retrieval.
+	</longdescription>
+	<use>
+		<flag name="upnp">Enable UPnP/DLNA Browser Module via <pkg>net-libs/gupnp</pkg></flag>
+	</use>
+</pkgmetadata>

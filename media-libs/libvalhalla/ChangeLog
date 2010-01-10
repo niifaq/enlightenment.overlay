@@ -1,0 +1,11 @@
+# ChangeLog for media-libs/libvalhalla
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*libvalhalla-1.0.0 (10 Jan 2010)
+
+  10 Jan 2010; evadim <evadim@evadim.ru> +libvalhalla-1.0.0.ebuild,
+  +files/libvalhalla-1.0.0-fix-configure-exit-on-unknown-option.patch,
+  +metadata.xml:
+  initial import
+

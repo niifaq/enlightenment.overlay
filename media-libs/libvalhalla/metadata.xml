@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>no-herd</herd>
+	<maintainer>
+		<email>enlightenment@gentoo.org</email>
+	</maintainer>
+	<longdescription lang="en">
+		libvalhalla is a library written in C. It is a media scanner,
+		that stores various information in an SQLite database and relies on
+		FFmpeg (libavformat and libavutil) and libcurl. It features many
+		Internet grabbers that allows automatic download of covers, lyrics,
+		informations on media files, tags retrival in video and music files
+		and so on.
+	</longdescription>
+</pkgmetadata>

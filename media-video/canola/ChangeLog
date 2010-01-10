@@ -1,6 +1,10 @@
 # ChangeLog for media-video/canola
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  10 Jan 2010; evadim <evadim@evadim.ru> canola-9999.ebuild,
+  +files/canola_disable_NM.patch:
+  fix canola without Network Manager
 
   17 Sep 2009; evadim <evadim@evadim.ru> canola-9999.ebuild:
   Canola depend on other dispatcher. Add feedparser to deps,

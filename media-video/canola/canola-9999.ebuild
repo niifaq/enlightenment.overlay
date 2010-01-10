@@ -1,4 +1,4 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -49,8 +49,8 @@ DEPEND=">=dev-python/setuptools-0.6_rc9
 
 src_unpack() {
 	git_src_unpack
-
 	cd "${S}"
+	epatch "${FILESDIR}/${PN}_disable_NM.patch" || die
 }
 
 src_compile() {

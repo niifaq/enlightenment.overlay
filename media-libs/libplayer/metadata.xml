@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>no-herd</herd>
+	<maintainer>
+		<email>enlightenment@gentoo.org</email>
+	</maintainer>
+	<longdescription lang="en">
+		libplayer is a multimedia A/V abstraction layer API.
+		Its goal is to interact with Enna Media Center. libplayer provides
+		a generic A/V API that relies on various multimedia player for Linux
+		systems. It currently supports MPlayer, xine VLC and GStreamer only.
+		Its main goal is to provide an unique API that player frontends can
+		use to control any kind of multimedia player underneath. For example,
+		it provides a library to easily control MPlayer famous slave-mode.
+	</longdescription>
+	<use>
+		<flag name="vlc">Enables <pkg>media-video/vlc</pkg> support as backend</flag>
+	</use>
+</pkgmetadata>

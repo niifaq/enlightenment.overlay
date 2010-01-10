@@ -1,0 +1,13 @@
+--- configure.old	2009-12-06 17:27:55.000000000 +0300
++++ configure	2010-01-09 16:40:14.000000000 +0300
+@@ -547,9 +547,7 @@
+   --help) show_help
+   ;;
+   *)
+-  echo "Unknown option \"$opt\"."
+-  echo "See $0 --help for available options."
+-  exit 1
++  echo "Warning: Unknown option \"$opt\"."
+   ;;
+   esac
+ done

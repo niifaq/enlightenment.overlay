@@ -39,7 +39,7 @@ DEPEND="${RDEPEND}"
 #an interface to VDR via SVDRP protocol
 #libsvdrp (http://hg.geexbox.org/libsvdrp/)
 
-LICENSE="LGPL-2"
+LICENSE="LGPL-2.1"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
 

@@ -6,21 +6,15 @@ EAPI="2"
 
 inherit eutils flag-o-matic
 
-DESCRIPTION="A media scanner library written in C"
-HOMEPAGE="http://libvalhalla.geexbox.org/"
+IUSE="doc debug"
+
+DESCRIPTION="An NFO file parser/writer library"
+HOMEPAGE="http://libnfo.geexbox.org/"
 SRC_URI="http://${PN}.geexbox.org/releases/${P}.tar.bz2"
 
-IUSE="curl exif doc debug ffmpeg"
+RDEPEND="dev-libs/libxml2"
 
-RDEPEND=""
-
-DEPEND="	doc? ( >=app-doc/doxygen-1.5.5 )
-		exif? ( media-libs/libexif )
-		ffmpeg? ( media-video/ffmpeg )
-		net-misc/curl
-		dev-db/sqlite:3
-		media-libs/libnfo
-		dev-libs/libgcrypt
+DEPEND="doc?	( >=app-doc/doxygen-1.5.5 )
 		${RDEPEND}"
 
 LICENSE="LGPL-2.1"
@@ -37,8 +31,6 @@ src_configure() {
 	local myconf="
 		$(use_enable doc)
 		$(use_enable debug)
-		$(use_enable exif grabber-exif)
-		$(use_enable ffmpeg grabber-ffmpeg)
 	"
 	econf ${myconf} || die "configure failed"
 }

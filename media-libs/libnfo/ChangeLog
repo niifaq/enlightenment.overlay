@@ -1,0 +1,11 @@
+# ChangeLog for media-libs/libnfo
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*libnfo-1.0.0 (12 Jan 2010)
+
+  12 Jan 2010; evadim <evadim@evadim.ru> +libnfo-1.0.0.ebuild,
+  +files/libnfo-1.0.0-fix-configure-exit-on-unknown-option.patch,
+  +metadata.xml:
+  initial import
+

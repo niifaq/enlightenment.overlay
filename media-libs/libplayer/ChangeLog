@@ -2,6 +2,9 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  14 Jan 2010; evadim <evadim@evadim.ru> metadata.xml:
+  fix metadata.xml
+
 *libplayer-1.0.0 (10 Jan 2010)
 
   10 Jan 2010; evadim <evadim@evadim.ru> +libplayer-1.0.0.ebuild,

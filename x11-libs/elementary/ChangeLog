@@ -1,0 +1,7 @@
+# ChangeLog for x11-libs/elementary
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  16 Jan 2010; evadim <evadim@evadim.ru> elementary-9999.ebuild:
+  fix deps
+

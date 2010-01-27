@@ -56,7 +56,5 @@ src_compile() {
 }
 
 src_install() {
-	enlightenment_src_install
-	docinto samples
-	dodoc demo/*.c
+	MAKEOPTS="-j1" enlightenment_src_install
 }

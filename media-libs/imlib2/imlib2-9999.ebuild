@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI="2"
+
 inherit enlightenment toolchain-funcs
 
 MY_P=${P/_/-}
@@ -21,6 +23,12 @@ DEPEND="=media-libs/freetype-2*
 	mp3? ( media-libs/libid3tag )"
 
 RDEPEND="${DEPEND}"
+
+src_prepare() {
+	sed -i '/ACLOCAL_AMFLAGS/ d' Makefile.am
+
+	enlightenment_src_prepare
+}
 
 src_compile() {
 	# imlib2 has diff configure options for x86/amd64 mmx

@@ -1,6 +1,8 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
+
+EAPI="2"
 
 inherit enlightenment toolchain-funcs
 
@@ -21,6 +23,12 @@ DEPEND="=media-libs/freetype-2*
 	mp3? ( media-libs/libid3tag )"
 
 RDEPEND="${DEPEND}"
+
+src_prepare() {
+	sed -i '/ACLOCAL_AMFLAGS/ d' Makefile.am
+
+	enlightenment_src_prepare
+}
 
 src_compile() {
 	# imlib2 has diff configure options for x86/amd64 mmx
@@ -48,7 +56,5 @@ src_compile() {
 }
 
 src_install() {
-	enlightenment_src_install
-	docinto samples
-	dodoc demo/*.c
+	MAKEOPTS="-j1" enlightenment_src_install
 }

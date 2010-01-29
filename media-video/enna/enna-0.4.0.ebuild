@@ -41,7 +41,7 @@ DEPEND="${RDEPEND}"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS=""
 
 src_configure() {
 	local myconf="

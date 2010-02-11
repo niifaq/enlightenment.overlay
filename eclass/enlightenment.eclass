@@ -30,9 +30,7 @@ inherit eutils libtool
 #	SRC_URI     EURI_STATE
 #	S           EURI_STATE
 
-#E_LIVE_DEFAULT_CVS="cvs.sourceforge.net:/cvsroot/enlightenment"
-E_LIVE_SERVER_DEFAULT_CVS="anoncvs.enlightenment.org:/var/cvs/e"
-E_LIVE_SERVER_DEFAULT_SVN="http://svn.enlightenment.org/svn/e/trunk"
+E_LIVE_SERVER_DEFAULT="http://svn.enlightenment.org/svn/e"
 
 E_STATE="release"
 
@@ -40,44 +38,27 @@ if [[ ${PV/9999} != ${PV} ]] ; then
 	E_STATE="live"
 	PROPERTIES="live"
 
-	# Force live package's to use autotools by default, because there is no
-	# warranty, that configure will be up-to-date, if it will be, anyway
-	: ${WANT_AUTOMAKE:=yes}
+	: ${WANT_AUTOTOOLS:=yes}
 
 	[[ -n ${E_LIVE_OFFLINE} ]] && ESCM_OFFLINE="yes"
 
-	# force people to opt-in to legacy cvs
-	if [[ -n ${ECVS_MODULE} ]] ; then
-		ECVS_SERVER=${ECVS_SERVER:-${E_LIVE_SERVER_DEFAULT_CVS}}
-		E_LIVE_SOURCE="cvs"
-		E_S_APPEND=${ECVS_MODULE}
-		inherit cvs
-	else
-		ESVN_URI_APPEND=${ESVN_URI_APPEND:-${PN}}
-		ESVN_PROJECT="enlightenment/${ESVN_SUB_PROJECT}"
-		ESVN_REPO_URI=${ESVN_SERVER:-${E_LIVE_SERVER_DEFAULT_SVN}}/${ESVN_SUB_PROJECT}/${ESVN_URI_APPEND}
-		E_S_APPEND=${ESVN_URI_APPEND}
-		E_LIVE_SOURCE="svn"
-		inherit subversion
-	fi
+	: ${ESVN_URI_APPEND:=${PN}}
+	: ${ESVN_BRANCH:=trunk}
+
+	ESVN_PROJECT="enlightenment/${ESVN_BRANCH}/${ESVN_SUB_PROJECT}"
+	ESVN_REPO_URI=${ESVN_SERVER:-${E_LIVE_SERVER_DEFAULT}}/${ESVN_BRANCH%/}/${ESVN_SUB_PROJECT}/${ESVN_URI_APPEND}
+
+	E_S_APPEND=${ESVN_URI_APPEND}
+	inherit subversion
 elif [[ -n ${E_SNAP_DATE} ]] ; then
 	E_STATE="snap"
 else
 	E_STATE="release"
 fi
 
-# We should use autotools only when there is need for this
-# Only exception live packages (look above)
-: ${WANT_AUTOMAKE:=no}
-
-# Some packages may not work with eautoreconf, make them possible to disable it
-# by defining WANT_AUTOMAKE=no. Otherwise any other value then "yes" will be used
-# as actual version of automake to use.
-if [[ "${WANT_AUTOMAKE}" != "no" ]]; then
-	if [[ "${WANT_AUTOMAKE}" == "yes" ]]; then
-		WANT_AUTOCONF=${E_WANT_AUTOCONF:-latest}
-		WANT_AUTOMAKE=${E_WANT_AUTOMAKE:-latest}
-	fi
+if [[ "${WANT_AUTOTOOLS}" == "yes" ]]; then
+	WANT_AUTOCONF=${E_WANT_AUTOCONF:-latest}
+	WANT_AUTOMAKE=${E_WANT_AUTOMAKE:-latest}
 
 	inherit autotools
 fi
@@ -130,10 +111,6 @@ enlightenment_die() {
 	die "$@"$'\n'"!!! SEND BUG REPORTS TO enlightenment@gentoo.org NOT THE E TEAM"
 }
 
-enlightenment_pkg_setup() {
-	: enlightenment_warning_msg
-}
-
 # the stupid gettextize script prevents non-interactive mode, so we hax it
 gettext_modify() {
 	use nls || return 0
@@ -145,11 +122,7 @@ gettext_modify() {
 
 enlightenment_src_unpack() {
 	if [[ ${E_STATE} == "live" ]] ; then
-		case ${E_LIVE_SOURCE} in
-			cvs) cvs_src_unpack;;
-			svn) subversion_src_unpack;;
-			*)   die "eek!";;
-		esac
+		subversion_src_unpack
 	else
 		unpack ${A}
 	fi
@@ -164,7 +137,7 @@ prepare_sources() {
 
 	[[ -s gendoc ]] && chmod a+rx gendoc
 
-	if [[ -e configure.ac || -e configure.in ]] && [[ "${WANT_AUTOMAKE}" != "no" ]]; then
+	if [[ -e configure.ac || -e configure.in ]] && [[ "${WANT_AUTOTOOLS}" == "yes" ]]; then
 		if grep -qE '^[[:space:]]*AM_GNU_GETTEXT_VERSION' configure.*; then
 			local autopoint_log_file="${T}/autopoint.$$"
 
@@ -209,7 +182,7 @@ enlightenment_src_compile() {
 enlightenment_src_install() {
 	emake install DESTDIR="${D}" || enlightenment_die
 
-	find "${D}" '(' -name 'CVS' -o -name '.svn' -o -name '.git' ')' -type d -exec rm -rf '{}' \; 2> /dev/null
+	find "${D}" -name '.svn' -type d -exec rm -rf '{}' \; 2> /dev/null
 
 	for doc in AUTHORS ChangeLog NEWS README TODO ${EDOCS}; do
 		[[ -f ${doc} ]] && dodoc ${doc}
@@ -218,11 +191,7 @@ enlightenment_src_install() {
 	use doc && [[ -d doc ]] && dohtml -r doc/*
 }
 
-enlightenment_pkg_postinst() {
-	: enlightenment_warning_msg
-}
-
-EXPORT="pkg_setup src_unpack src_compile src_install pkg_postinst"
+EXPORT="src_unpack src_compile src_install"
 
 if [[ "${EAPI}" -ge 2 ]]; then
 	enlightenment_src_configure() {

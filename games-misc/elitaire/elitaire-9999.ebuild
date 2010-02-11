@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header$
 
+EAPI="2"
+
 inherit enlightenment games
 
 DESCRIPTION="EFL based solitaire game"
@@ -20,7 +22,6 @@ RDEPEND="${DEPEND}"
 
 pkg_setup() {
 	games_pkg_setup
-	enlightenment_pkg_setup
 }
 
 src_unpack() {

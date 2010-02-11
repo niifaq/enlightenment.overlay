@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI="2"
+
 NEED_PYTHON="2.5"
 EGIT_REPO_URI="git://code.openbossa.org/${PN}/mainline.git"
 inherit git python distutils
@@ -50,6 +52,9 @@ DEPEND=">=dev-python/setuptools-0.6_rc9
 src_unpack() {
 	git_src_unpack
 	cd "${S}"
+}
+
+src_prepare() {
 	epatch "${FILESDIR}/${PN}_disable_NM.patch" || die
 }
 

@@ -26,15 +26,3 @@ RDEPEND=">=x11-libs/ecore-9999
 DEPEND="${RDEPEND}
 		x11-proto/xproto
 		sys-devel/libtool"
-
-# Masked modules due to theirs merge into 'e' tree, forcing against them, to
-# prevent any collisions
-# DEPEND="${DEPEND}"
-
-pkg_setup() {
-	enlightenment_pkg_setup
-}
-
-src_compile() {
-	enlightenment_src_compile
-}

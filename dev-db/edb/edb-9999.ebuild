@@ -2,6 +2,9 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI="2"
+
+ESVN_BRANCH="/"
 ESVN_SUB_PROJECT="OLD"
 inherit enlightenment flag-o-matic
 

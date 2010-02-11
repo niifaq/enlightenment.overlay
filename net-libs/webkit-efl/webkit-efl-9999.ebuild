@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI="2"
+
 EGIT_REPO_URI="git://gitorious.org/webkit-efl/webkit-efl.git"
 inherit autotools git flag-o-matic
 
@@ -55,16 +57,15 @@ src_unpack() {
 	git_src_unpack
 
 	cd "${S}"
+}
 
+src_prepare() {
 	AT_M4DIR="autotools"
 
 	eautoreconf
 }
 
-src_compile() {
-	# It doesn't compile on alpha without this LDFLAGS
-	use alpha && append-ldflags "-Wl,--no-relax"
-
+src_configure() {
 	econf \
 		--with-port=efl \
 		--disable-web-workers \
@@ -79,6 +80,11 @@ src_compile() {
 		$(use_enable gstreamer video) \
 		${myconf} \
 		|| webkit_die die "configure failed"
+}
+
+src_compile() {
+	# It doesn't compile on alpha without this LDFLAGS
+	use alpha && append-ldflags "-Wl,--no-relax"
 
 	emake -f GNUmakefile || webkit_die "emake failed"
 }

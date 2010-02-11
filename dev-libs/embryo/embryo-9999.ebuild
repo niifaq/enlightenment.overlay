@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI="2"
+
 inherit enlightenment flag-o-matic
 
 DESCRIPTION="Load and control programs compiled in small"

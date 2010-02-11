@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI="2"
+
 inherit enlightenment eutils
 
 DESCRIPTION="next generation of Elogin, a login/display manager for X"

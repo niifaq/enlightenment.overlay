@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI="2"
+
 ESVN_SERVER="http://e17mods.googlecode.com/svn/trunk"
 ESVN_SUB_PROJECT="MODULES"
 inherit enlightenment

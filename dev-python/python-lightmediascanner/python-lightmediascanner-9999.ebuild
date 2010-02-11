@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI="2"
+
 NEED_PYTHON="2.4"
 EGIT_REPO_URI="git://git.profusion.mobi/python-lightmediascanner.git"
 inherit git python distutils

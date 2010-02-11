@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI="2"
+
 inherit enlightenment
 
 DESCRIPTION="Python Enlightenment Foundation Libraries (EFL) metapackage"
@@ -16,7 +18,6 @@ DEPEND=">=dev-python/python-ecore-9999
 	>=dev-python/python-elementary-9999
 	>=dev-python/python-ethumb-9999
 	>=dev-python/python-emotion-9999
-	>=dev-python/python-epsilon-9999
 	>=dev-python/python-etk-9999"
 
 RDEPEND="${DEPEND}"

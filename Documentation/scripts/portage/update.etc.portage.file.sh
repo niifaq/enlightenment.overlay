@@ -17,7 +17,7 @@ usage() {
 		echo
 	fi
 
-	cat <<USAGE
+	cat <<USAGE | expand -t 8
 ${GOOD}Usage:${NORMAL} $0 ${HILITE}-o|--output${NORMAL}=FILE [options]
 ${GOOD}Options:${NORMAL}
 	${HILITE}-h|--help${NORMAL}			- this message
@@ -30,7 +30,7 @@ ${GOOD}Options:${NORMAL}
 	${HILITE}-v|--version${NORMAL}=VERSION		- collect packages with this ${HILITE}VERSION${NORMAL} (default: 9999)
 	${HILITE}-l|--live${NORMAL}			- same as --version=9999
 
-	${HILITE}--overlay${NORMAL}=NAME			- produce output for overlay with repo_name ${HILITE}NAME${NORMAL}
+	${HILITE}--overlay${NORMAL}=NAME		- produce output for overlay with repo_name ${HILITE}NAME${NORMAL}
 USAGE
 
 	exit 1;
@@ -87,13 +87,11 @@ main() {
 	local format=
 	einfo "${HILITE}Type:${NORMAL} ${type}"
 
-	if [[ "${type}" == "unmask" ]]; then
-		format="=\1/\2"
-	elif [[ "${type}" == "keywords" ]]; then
-		format="=\1/\2 **"
-	else
-		usage "File type '${type}' not supported":
-	fi
+	case ${type} in
+		unmask) format="=\1/\2";;
+		keywords) format="=\1/\2 **";;
+		*) usage "File type '${type}' not supported"
+	esac
 
 	einfo $(echo "${HILITE}Output format:${NORMAL} '${format}'" | sed 's/\\1/<category>/; s/\\2/<package>-<version>/')
 	einfo "${HILITE}Version:${NORMAL} ${version}"

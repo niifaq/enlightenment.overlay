@@ -3,44 +3,51 @@
 # $Header: $
 
 EAPI="2"
+E_NO_NLS="1"
+inherit efl
 
-inherit enlightenment
+DESCRIPTION="Enlightenment's (Ecore/Evas) video integration."
+HOMEPAGE="http://trac.enlightenment.org/e/wiki/Emotion"
 
-DESCRIPTION="video libraries for e17"
+# vlc support is buggy, do not even expose it here
+IUSE="gstreamer xine static-modules"
 
-IUSE="gstreamer +xine"
-
-DEPEND="
-	>=x11-libs/evas-9999
+# TODO: remove edje dependency as soon as emotion is fixed to not build its test
+RDEPEND="
+	>=dev-libs/eina-9999
+	>=dev-libs/ecore-9999
+	>=media-libs/evas-9999
 	>=media-libs/edje-9999
-	>=x11-libs/ecore-9997
-	!sh? ( !mips? ( xine? ( >=media-libs/xine-lib-1.1.1 ) ) )
-
+	xine? ( >=media-libs/xine-lib-1.1.1 )
 	gstreamer? (
 		=media-libs/gstreamer-0.10*
 		=media-libs/gst-plugins-good-0.10*
-		!sh? ( =media-plugins/gst-plugins-ffmpeg-0.10* )
-	)
-"
+		=media-plugins/gst-plugins-ffmpeg-0.10*
+	)"
+DEPEND="${RDEPEND}"
 
-RDEPEND="${DEPEND}"
-
-pkg_setup() {
+src_configure() {
 	if ! use xine && ! use gstreamer; then
-		edie "You must select xine or gstreamer"
+		die "Emotion needs at least one media system to be useful!"
+		die "Compile media-libs/emotion with USE=xine or gstreamer."
 	fi
-}
 
-src_compile() {
+	if use static-modules; then
+		MODULE_ARGUMENT="static"
+	else
+		MODULE_ARGUMENT="yes"
+	fi
+
 	export MY_ECONF="
-		$(use_enable xine) \
-		$(use_enable gstreamer) \
+	  ${MY_ECONF}
+	  $(use_enable xine xine $MODULE_ARGUMENT)
+	  $(use_enable gstreamer gstreamer $MODULE_ARGUMENT)
 	"
 
-	if use gstreamer ; then
-		addpredict "/root/.gconfd"
-		addpredict "/root/.gconf"
-	fi
+	# work around GStreamer's desire to check registry, which by default
+	# results in sandbox access violation.
+	export GST_REGISTRY="${T}"/registry.xml
+	export GST_PLUGIN_SYSTEM_PATH="${T}"
 
-	enlightenment_src_compile
+	efl_src_configure
 }

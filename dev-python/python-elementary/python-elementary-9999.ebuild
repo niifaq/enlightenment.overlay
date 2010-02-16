@@ -3,34 +3,19 @@
 # $Header: $
 
 EAPI="2"
-
-NEED_PYTHON="2.4"
+E_CYTHON="1"
+E_NO_NLS="1"
+E_NO_DOC="1"
 ESVN_SUB_PROJECT="BINDINGS/python"
 
-inherit enlightenment python distutils
+inherit efl
 
-DESCRIPTION="Python bindigs for elementary"
-
+DESCRIPTION="Python bindigs for Elementary"
 IUSE="examples"
 
-RDEPEND=">=x11-libs/elementary-9999"
+RDEPEND=">=media-libs/elementary-9999"
 
-DEPEND=">=dev-python/setuptools-0.6_rc9
+# python-evas is just required to build as it includes some useful header files
+DEPEND="
+	>=dev-python/python-evas-9999
 	${RDEPEND}"
-
-src_unpack() {
-	enlightenment_src_unpack
-}
-
-src_compile() {
-	distutils_src_compile
-}
-
-src_install() {
-	distutils_src_install
-
-	if use examples; then
-		insinto /usr/share/doc/${PF}
-		doins -r examples
-	fi
-}

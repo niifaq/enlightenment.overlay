@@ -4,5 +4,9 @@
 <herd>no-herd</herd>
 <maintainer>
  <email>enlightenment@gentoo.org</email>
+ <name>Enlightenment-Gentoo maintainers</name>
 </maintainer>
+<longdescription>
+Integrates Python-DBus with Ecore's main loop using E_DBus.
+</longdescription>
 </pkgmetadata>

@@ -3,28 +3,41 @@
 # $Header: $
 
 EAPI="2"
+E_NO_NLS="1"
+inherit efl
 
-inherit enlightenment
+DESCRIPTION="Enlightenment's thumbnailing library"
+HOMEPAGE="http://trac.enlightenment.org/e/wiki/Ethumb"
 
-DESCRIPTION="Thumbnailing Library"
+LICENSE="LGPL-3"
 
-IUSE="pdf video"
+IUSE="+dbus emotion epdf debug"
 
-DEPEND=">=dev-libs/eina-9999
-	>=x11-libs/ecore-9999
-	>=x11-libs/evas-9999
+RDEPEND="
+	>=dev-libs/eina-9999
+	>=dev-libs/ecore-9999[evas]
 	>=media-libs/edje-9999
-	video? ( >=media-libs/emotion-9999 )
-	pdf? ( >=app-text/epdf-9999 )
-	"
+	>=media-libs/evas-9999
+	dbus? ( >=dev-libs/e_dbus-9999 )
+	emotion? ( >=media-libs/emotion-9999 )
+	epdf? ( >=app-text/epdf-9999 )"
 
-RDEPEND="${DEPEND}"
+DEPEND="${RDEPEND}"
 
-src_compile() {
+src_configure() {
+	local DEBUG_FLAGS=""
+
+	if ! use debug; then
+		DEBUG_FLAGS="--with-internal-maximum-log-level=2"
+	fi
 
 	export MY_ECONF="
-		$(use_enable pdf epdf) \
-		$(use_enable emotion emotion) \
-		"
-	enlightenment_src_compile
+	  ${MY_ECONF}
+	  --with-dbus-services=/etc/dbus-1/session.d
+	  $(use_enable dbus ethumbd)
+	  $(use_enable emotion)
+	  $(use_enable epdf)
+	  ${DEBUG_FLAGS}"
+
+	efl_src_configure
 }

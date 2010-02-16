@@ -3,25 +3,22 @@
 # $Header: $
 
 EAPI="2"
+E_NO_NLS="1"
+E_NO_DOC="1"
+E_NO_VISIBILITY="1"
+E_NO_DISABLE_STATIC="1"
+inherit efl
 
-NEED_PYTHON="2.5"
-inherit python enlightenment
-
-DESCRIPTION="Editje a nice tool to graphically edit edje files"
-
+DESCRIPTION="View and edit Edje (EDC/EDJ) files."
+HOMEPAGE="http://trac.enlightenment.org/e/wiki/Editje"
 LICENSE="GPL-3"
 IUSE=""
 
-DEPEND=">=dev-libs/eina-9999
-	>=dev-libs/eet-9999
-	>=x11-libs/ecore-9999
-	>=x11-libs/evas-9999
-	>=dev-libs/embryo-9999
-	>=media-libs/edje-9999
-	>=x11-libs/elementary-9999
+RDEPEND="
 	>=dev-python/python-evas-9999
+	>=dev-python/python-ecore-9999
 	>=dev-python/python-edje-9999
-	>=dev-python/python-elementary-9999
-	"
+	>=dev-python/python-elementary-9999"
 
-RDEPEND="${DEPEND}"
+DEPEND="
+	>=media-libs/edje-9999"

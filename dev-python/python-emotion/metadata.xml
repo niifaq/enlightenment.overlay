@@ -4,5 +4,14 @@
 <herd>no-herd</herd>
 <maintainer>
  <email>enlightenment@gentoo.org</email>
+ <name>Enlightenment-Gentoo maintainers</name>
 </maintainer>
+<longdescription>
+Exposes EFL/Emotion library as Python module.
+
+Emotion encapsulates media libraries such as GStreamer and Xine to
+work witin EFL applications using Evas and Ecore.
+
+See media-libs/emotion.
+</longdescription>
 </pkgmetadata>

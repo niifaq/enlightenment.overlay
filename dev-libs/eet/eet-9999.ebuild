@@ -3,37 +3,79 @@
 # $Header: $
 
 EAPI="2"
-
-inherit enlightenment
+E_NO_NLS="1"
+inherit efl
 
 DESCRIPTION="E file chunk reading/writing library"
-HOMEPAGE="http://www.enlightenment.org/pages/eet.html"
+HOMEPAGE="http://trac.enlightenment.org/e/wiki/Eet"
 
-IUSE="+signature +cipher"
+IUSE="+threads debug test gnutls ssl"
 
-DEPEND="
-		media-libs/jpeg
-		sys-libs/zlib
-		dev-libs/eina
-		signature? ( || ( dev-libs/openssl ) )
-		cipher? ( || ( dev-libs/openssl net-libs/gnutls ) )
-	"
+RDEPEND="media-libs/jpeg
+	>=dev-libs/eina-9999
+	sys-libs/zlib
+	gnutls? ( net-libs/gnutls )
+	!gnutls? ( ssl? ( dev-libs/openssl ) )"
+DEPEND="${RDEPEND}
+	test? ( dev-libs/check )"
 
-RDEPEND="${DEPEND}"
+src_configure() {
+	local SSL_FLAGS="" DEBUG_FLAGS="" TEST_FLAGS=""
 
-src_compile() {
-	MY_ECONF=""
-
-	if use signature || use cipher; then
-		has_version dev-libs/openssl && MY_ECONF="${MY_ECONF} --enable-openssl"
-		has_version net-libs/gnutls && MY_ECONF="${MY_ECONF} --enable-gnutls"
-
-		MY_ECONF="
-			${MY_ECONF}
-			$(use_enable signature)
-			$(use_enable cipher)
+	# ???: should we use 'use_enable' for these as well?
+	if use debug; then
+		DEBUG_FLAGS="
+		  --disable-amalgamation
+		  --enable-assert
+		"
+	else
+		DEBUG_FLAGS="
+		  --enable-amalgamation
+		  --disable-assert
 		"
 	fi
 
-	enlightenment_src_compile
+	if use test; then
+		TEST_FLAGS="
+		  --enable-tests
+		  --enable-coverage
+		"
+	fi
+
+	if use gnutls; then
+		if use ssl; then
+			ewarn "You have enabled both 'ssl' and 'gnutls', so we will use"
+			ewarn "gnutls and not openssl for cipher and signature support"
+		fi
+		SSL_FLAGS="
+		  --enable-cipher
+		  --enable-signature
+		  --disable-openssl
+		  --enable-gnutls
+		"
+	elif use ssl; then
+		SSL_FLAGS="
+		  --enable-cipher
+		  --enable-signature
+		  --enable-openssl
+		  --disable-gnutls
+		"
+	else
+		SSL_FLAGS="
+		  --disable-cipher
+		  --disable-signature
+		  --disable-openssl
+		  --disable-gnutls
+		"
+	fi
+
+	export MY_ECONF="
+	  ${MY_ECONF}
+	  $(use_enable threads pthread)
+	  ${SSL_FLAGS}
+	  ${DEBUG_FLAGS}
+	  ${TEST_FLAGS}
+	"
+
+	efl_src_configure
 }

@@ -3,14 +3,14 @@
 # $Header: $
 
 EAPI="2"
-
-inherit enlightenment
+E_NO_NLS="1"
+inherit efl
 
 DESCRIPTION="library for handling of freedesktop.org specs (desktop/icon/theme/etc...)"
-
+HOMEPAGE="http://trac.enlightenment.org/e/wiki/Efreet"
 IUSE=""
 
-DEPEND=">=x11-libs/ecore-9999
-		>=dev-libs/eina-9999"
-
-RDEPEND="${DEPEND}"
+RDEPEND="
+	>=dev-libs/ecore-9999
+	>=dev-libs/eina-9999"
+DEPEND="${RDEPEND}"

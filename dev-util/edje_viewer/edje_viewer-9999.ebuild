@@ -3,17 +3,15 @@
 # $Header: $
 
 EAPI="2"
+E_NO_NLS="1"
+E_NO_DOC="1"
+E_NO_DISABLE_STATIC="1"
+inherit efl
 
-inherit enlightenment
-
-DESCRIPTION="edje viewer based on elementary"
-
+DESCRIPTION="Edje viewer based on Elementary"
+HOMEPAGE="http://trac.enlightenment.org/e/wiki/Edje_Viewer"
 IUSE=""
 
-DEPEND="x11-libs/ecore
-	x11-libs/evas
-	media-libs/edje
-	x11-libs/elementary
-	x11-wm/enlightenment"
+DEPEND=">=media-libs/elementary-9999"
 
 RDEPEND="${DEPEND}"

@@ -3,31 +3,29 @@
 # $Header: $
 
 EAPI="2"
-
 ESVN_SUB_PROJECT="PROTO"
-inherit enlightenment
+E_NO_NLS="1"
+E_NO_DOC="1"
+inherit efl
 
 DESCRIPTION="Enlightenment way to exchange contributed stuff"
-
-IUSE="etk ewl"
+IUSE=""
 
 DEPEND="
-		>=dev-libs/eina-9999
-		>=x11-libs/ecore-9999[curl]
-		>=media-libs/edje-9999
-		dev-libs/libxml2
-
-		ewl? ( >=x11-libs/ewl-9999 )
-		etk? ( >=x11-libs/etk-9999 )
+	>=dev-libs/eina-9999
+	>=dev-libs/ecore-9999[curl,evas]
+	>=media-libs/edje-9999
+	dev-libs/libxml2
 "
 
 RDEPEND="${DEPEND}"
 
-src_compile() {
-	MY_ECONF="
-		$(use_enable etk)
-		$(use_enable ewl)
+src_configure() {
+	export MY_ECONF="
+	  ${MY_ECONF}
+	  --disable-etk
+	  --disable-ewl
 	"
 
-	enlightenment_src_compile
+	efl_src_configure
 }

@@ -3,37 +3,73 @@
 # $Header: $
 
 EAPI="2"
-
-NEED_PYTHON="2.4"
+E_CYTHON="1"
+E_NO_NLS="1"
+E_NO_DOC="1"
 ESVN_SUB_PROJECT="BINDINGS/python"
 
-inherit enlightenment python distutils
+inherit efl
 
-DESCRIPTION="Python bindings for ecore"
+DESCRIPTION="Python bindings for Ecore"
+IUSE="+evas +X +xscreensaver examples"
 
-IUSE="examples"
+RDEPEND=">=dev-libs/ecore-9999[evas?,X?,xscreensaver?]"
 
-RDEPEND=">=dev-python/python-evas-9999
-		>=dev-python/cython-0.9.8
-		>=x11-libs/ecore-9999
-		>=media-libs/edje-9999"
+# python-evas is just required to build as it includes some useful header files
+DEPEND="
+	evas? ( >=dev-python/python-evas-9999 )
+	${RDEPEND}"
 
-DEPEND=">=dev-python/setuptools-0.6_rc9
-		${RDEPEND}"
+src_configure() {
+	if use evas; then
+		export ECORE_BUILD_EVAS=1
+	else
+		export ECORE_BUILD_EVAS=0
+	fi
 
-src_unpack() {
-	enlightenment_src_unpack
-}
+	if use X; then
+		export ECORE_BUILD_X=1
 
-src_compile() {
-	 distutils_src_compile
+		if use xscreensaver; then
+			export ECORE_BUILD_XSCREENSAVER=1
+		else
+			export ECORE_BUILD_XSCREENSAVER=0
+		fi
+	else
+		export ECORE_BUILD_X=0
+
+		if use xscreensaver; then
+			ewarn "USE=xscreensaver has no meaning without X use flag!"
+		fi
+	fi
+
+	efl_src_configure
 }
 
 src_install() {
-	distutils_src_install
-
-	if use examples; then
-		insinto /usr/share/doc/${PF}
-		doins -r examples
+	if use evas; then
+		export ECORE_BUILD_EVAS=1
+	else
+		export ECORE_BUILD_EVAS=0
 	fi
+
+	if use evas; then
+		export ECORE_BUILD_EVAS=1
+	else
+		export ECORE_BUILD_EVAS=0
+	fi
+
+	if use X; then
+		export ECORE_BUILD_X=1
+
+		if use xscreensaver; then
+			export ECORE_BUILD_XSCREENSAVER=1
+		else
+			export ECORE_BUILD_XSCREENSAVER=0
+		fi
+	else
+		export ECORE_BUILD_X=0
+	fi
+
+	efl_src_install
 }

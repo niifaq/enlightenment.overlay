@@ -3,35 +3,36 @@
 # $Header: $
 
 EAPI="2"
-
-NEED_PYTHON="2.4"
+E_CYTHON="1"
+E_NO_NLS="1"
+E_NO_DOC="1"
 ESVN_SUB_PROJECT="BINDINGS/python"
 
-inherit enlightenment python distutils
+inherit efl
 
-DESCRIPTION=" Python bindings for Ethumb thumbnailing library"
+DESCRIPTION="Python bindings for Ethumb thumbnailing library"
+IUSE="+dbus examples"
 
-IUSE="examples"
+RDEPEND=">=media-libs/ethumb-9999[dbus?]"
 
-RDEPEND=">=dev-python/python-evas-9999
-	>=media-libs/edje-9999"
+DEPEND="${RDEPEND}"
 
-DEPEND=">=dev-python/setuptools-0.6_rc9
-	${RDEPEND}"
+src_configure() {
+	if use dbus; then
+		export ETHUMB_BUILD_CLIENT=1
+	else
+		export ETHUMB_BUILD_CLIENT=0
+	fi
 
-src_unpack() {
-	enlightenment_src_unpack
-}
-
-src_compile() {
-	 distutils_src_compile
+	efl_src_configure
 }
 
 src_install() {
-	distutils_src_install
-
-	if use examples; then
-		insinto /usr/share/doc/${PF}
-		doins -r examples
+	if use dbus; then
+		export ETHUMB_BUILD_CLIENT=1
+	else
+		export ETHUMB_BUILD_CLIENT=0
 	fi
+
+	efl_src_install
 }

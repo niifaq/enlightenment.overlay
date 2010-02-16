@@ -4,5 +4,15 @@
 <herd>no-herd</herd>
 <maintainer>
  <email>enlightenment@gentoo.org</email>
+ <name>Enlightenment-Gentoo maintainers</name>
 </maintainer>
+<use>
+ <flag name="dbus">Enable client to DBus server ethumbd. Server is automatically executed on demand by on session bus.</flag>
+</use>
+<longdescription>
+Exposes EThumb thumbnailing library as Python module.
+
+Optionally provides access to DBus server through ethumb.client
+module, if "dbus" flag is used.
+</longdescription>
 </pkgmetadata>

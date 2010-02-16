@@ -3,20 +3,20 @@
 # $Header: $
 
 EAPI="2"
-
 ESVN_SUB_PROJECT="TMP/st"
-inherit enlightenment
+inherit efl
 
-DESCRIPTION="Basic widget set, based on EFL for mobile touch-screen devices."
+DESCRIPTION="Basic widget set, based on EFL with focus mobile touch-screen devices."
+HOMEPAGE="http://trac.enlightenment.org/e/wiki/Elementary"
 
-IUSE=""
+IUSE="directfb fbcon opengl sdl X dbus xdg weather"
 
-DEPEND=">=x11-libs/ecore-9999
-	>=x11-libs/evas-9999
+RDEPEND="
+	>=dev-libs/ecore-9999[evas]
+	>=media-libs/evas-9999[directfb?,fbcon?,opengl?,sdl?,X?,xcb?]
 	>=media-libs/edje-9999
-	>=x11-libs/e_dbus-9999
-	>=dev-libs/efreet-9999
-	>=net-libs/libeweather-9999
-"
-
-RDEPEND="${DEPEND}"
+	dbus? ( >=dev-libs/e_dbus-9999 )
+	xdg? ( >=dev-libs/efreet-9999 )
+	weather? ( >=net-libs/libeweather-9999 )
+	"
+DEPEND="${RDEPEND}"

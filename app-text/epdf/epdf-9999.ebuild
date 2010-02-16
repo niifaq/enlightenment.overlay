@@ -3,20 +3,16 @@
 # $Header: $
 
 EAPI="2"
-
 ESVN_SUB_PROJECT="PROTO"
-inherit enlightenment
+E_NO_NLS="1"
+E_NO_VISIBILITY="1"
+inherit efl
 
-DESCRIPTION="PDF viewer with widgets for EWL, ETK, and Evas"
-
+DESCRIPTION="View PDF files using EFL applications."
 IUSE=""
 
-DEPEND="|| ( >=dev-libs/poppler-glib-0.10.6[cairo] >=app-text/poppler-bindings-0.10.4[cairo] )
-		>=x11-libs/evas-0.9.9
-		>=x11-libs/ecore-0.9.9
-		>=x11-libs/ewl-0.5
-		>=x11-libs/etk-0.1
-		>=media-libs/imlib2-1.4
-		>=media-libs/epsilon-0.3"
-
-RDEPEND="${DEPEND}"
+RDEPEND="
+	>=virtual/poppler-0.12
+	>=media-libs/evas-9999
+	>=dev-libs/ecore-9999[evas]"
+DEPEND="${RDEPEND}"

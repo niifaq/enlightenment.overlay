@@ -3,27 +3,30 @@
 # $Header: $
 
 EAPI="2"
+E_NO_NLS="1"
+inherit efl
 
-inherit enlightenment
+DESCRIPTION="Enlightenment's (Ecore) integration to DBus"
+HOMEPAGE="http://trac.enlightenment.org/e/wiki/E_Dbus"
 
-DESCRIPTION="enlightenment interface to dbus"
+IUSE="hal connman libnotify bluetooth"
 
-IUSE=""
-
-# Removed EWL GUI due to lack of updated code in SVN
-#	X? ( x11-libs/ewl dev-libs/efreet )
-DEPEND=">=x11-libs/ecore-9999
-	dev-libs/eina
+RDEPEND="
+	>=dev-libs/eina-9999
+	>=dev-libs/ecore-9999
 	sys-apps/dbus
-	sys-apps/hal
-	X? ( x11-libs/ewl dev-libs/efreet )
+	libnotify? ( >=media-libs/evas-9999 )"
+DEPEND="${RDEPEND}"
+
+src_configure() {
+	export MY_ECONF="
+	  ${MY_ECONF}
+	  --disable-enm
+	  --disable-build-test-gui
+	  $(use_enable hal ehal)
+	  $(use_enable connman econnman)
+	  $(use_enable libnotify enotify)
+	  $(use_enable bluetooth ebluez)
 	"
-
-RDEPEND="${DEPEND}"
-
-#src_compile() {
-#	export MY_ECONF="
-#		$(use_enable X build-test-gui)
-#	"
-#	enlightenment_src_compile
-#}
+	efl_src_configure
+}

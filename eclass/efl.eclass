@@ -22,13 +22,14 @@ inherit eutils libtool flag-o-matic
 #	live         $PV has a 9999 marker
 #		KEYWORDS ""
 #		SRC_URI  svn/etc... up
-#		S        $WORKDIR/$E_S_APPEND
+#		S        $WORKDIR/$ESVN_URI_APPEND
 #
 # Overrides:
 #	KEYWORDS    EKEY_STATE
 #	SRC_URI     EURI_STATE
 #	S           EURI_STATE
 #
+# E_OLD_PROJECT: if defined, fetch from OLD outside trunk
 # E_NO_NLS: if defined, the package do not support NLS (gettext)
 # E_NO_DOC: if defined, the package do not support documentation (doxygen)
 # E_NO_VISIBILITY: if defined, the package do not support -fvisibility=hidden
@@ -39,7 +40,7 @@ inherit eutils libtool flag-o-matic
 # E_CYTHON: if defined, the package is Cython bindings (implies E_PYTHON)
 # E_NO_EXAMPLES: if defined, the Python package does not provide examples
 
-E_LIVE_SERVER_DEFAULT_SVN="http://svn.enlightenment.org/svn/e/trunk"
+E_LIVE_SERVER_DEFAULT="http://svn.enlightenment.org/svn/e"
 
 E_STATE="release"
 
@@ -51,12 +52,21 @@ if [[ ${PV/9999} != ${PV} ]] ; then
 
 	[[ -n ${E_LIVE_OFFLINE} ]] && ESCM_OFFLINE="yes"
 
-	E_LIVE_SERVER=${E_LIVE_SERVER:-${E_LIVE_SERVER_DEFAULT_SVN}}
-	ESVN_URI_APPEND=${ESVN_URI_APPEND:-${PN}}
-	ESVN_PROJECT="enlightenment/${ESVN_SUB_PROJECT}"
-	ESVN_REPO_URI=${E_LIVE_SERVER}/${ESVN_SUB_PROJECT}/${ESVN_URI_APPEND}
+	: ${E_LIVE_SERVER:=${E_LIVE_SERVER_DEFAULT}}
 
-	E_S_APPEND=${ESVN_URI_APPEND}
+	if [[ -z "${E_OLD_PROJECT}" ]]; then
+		ESVN_BRANCH="trunk"
+	else
+		ESVN_BRANCH=""
+	fi
+
+	ESVN_URI_BASE="${E_LIVE_SERVER}/${ESVN_BRANCH}"
+	ESVN_URI_APPEND=${ESVN_URI_APPEND:-${PN}}
+
+	ESVN_PROJECT="enlightenment/${ESVN_BRANCH}/${ESVN_SUB_PROJECT}"
+
+	ESVN_REPO_URI=${ESVN_URI_BASE}/${ESVN_SUB_PROJECT}/${ESVN_URI_APPEND}
+
 	inherit subversion
 elif [[ -n ${E_SNAP_DATE} ]] ; then
 	E_STATE="snap"
@@ -65,15 +75,13 @@ else
 fi
 
 if [[ ! -z "${E_CYTHON}" ]]; then
-	E_PYTHON="1"
+	E_PYTHON="yes"
 fi
 
 if [[ ! -z "${E_PYTHON}" ]]; then
 	WANT_AUTOTOOLS="no"
-	WANT_AUTOCONF="no"
-	WANT_AUTOMAKE="no"
 
-	E_NO_VISIBILITY="1"
+	E_NO_VISIBILITY="yes"
 
 	NEED_PYTHON="2.4"
 
@@ -103,8 +111,6 @@ case ${EKEY_STATE:-${E_STATE}} in
 	live)    KEYWORDS="";;
 esac
 
-DEPEND="${DEPEND} dev-util/pkgconfig"
-
 if [[ -z "${E_NO_NLS}" ]]; then
 	IUSE="${IUSE} nls"
 	DEPEND="${DEPEND} nls? ( sys-devel/gettext )"
@@ -130,6 +136,8 @@ if [[ ! -z "${E_PYTHON}" ]]; then
 	if [[ -z "${E_NO_EXAMPLES}" ]]; then
 		IUSE="${IUSE} examples"
 	fi
+else
+	DEPEND="${DEPEND} dev-util/pkgconfig"
 fi
 
 if [[ -z "${E_NO_VISIBILITY}" ]] && [[ $(gcc-major-version) -ge 4 ]]; then
@@ -137,14 +145,14 @@ if [[ -z "${E_NO_VISIBILITY}" ]] && [[ $(gcc-major-version) -ge 4 ]]; then
 fi
 
 case ${EURI_STATE:-${E_STATE}} in
-	release) S=${WORKDIR}/${P};;
-	snap)    S=${WORKDIR}/${P};;
-	live)    S=${WORKDIR}/${E_S_APPEND};;
+	release) S="${WORKDIR}"/${P};;
+	snap)    S="${WORKDIR}"/${P};;
+	live)    S="${WORKDIR}"/${ESVN_URI_APPEND};;
 esac
 
 efl_warning_msg() {
-	if [[ -n ${E_LIVE_SERVER} ]] ; then
-		einfo "Using user server for live sources: ${E_LIVE_SERVER}"
+	if [[ "${E_LIVE_SERVER}" != "${E_LIVE_SERVER_DEFAULT}" ]] ; then
+		ewarn "Using user server for live sources: ${E_LIVE_SERVER}"
 	fi
 
 	if [[ ${E_STATE} == "snap" ]] ; then
@@ -166,17 +174,14 @@ efl_die() {
 }
 
 efl_src_test() {
-	if [[ -z "${E_PYTHON}" ]]; then
-		if use test; then
-			emake -j1 check || die "Make check failed. see above for details"
-		fi
-	fi
+	emake -j1 check || die "Make check failed. see above for details"
 }
 
 # the stupid gettextize script prevents non-interactive mode, so we hax it
 gettext_modify() {
 	[[ -z "${E_NO_NLS}" ]] || return 0
 	use nls || return 0
+	
 	cp $(type -P gettextize) "${T}"/ || die "could not copy gettextize"
 	sed -i \
 		-e 's:read dummy < /dev/tty::' \
@@ -200,35 +205,18 @@ efl_src_prepare() {
 
 	if [[ -z "${E_PYTHON}" ]]; then
 		if [[ -e configure.ac || -e configure.in ]] && \
-			[[ "${WANT_AUTOTOOLS}" == "yes" ]]; then
-			if [[ -z "${E_NO_NLS}" ]] && \
-				grep -qE '^[[:space:]]*AM_GNU_GETTEXT_VERSION' configure.{ac,in}; then
-				local autopoint_log_file="${T}/autopoint.$$"
+									[[ "${WANT_AUTOTOOLS}" == "yes" ]]; then
+			local macro_regex='^[[:space:]]*AM_GNU_GETTEXT_VERSION'
 
-				ebegin "Running autopoint"
-
-				eautopoint -f &> "${autopoint_log_file}"
-
-				if ! eend $?; then
-					ewarn "Autopoint failed"
-					ewarn "Log in ${autopoint_log_file}"
-					ewarn "(it makes sense only when compile fails afterwards)"
-				fi
-
-				if grep -qi 'cvs program not found' "${autopoint_log_file}"; then
-					ewarn "This error seems to be due missing CVS"
-					ewarn "(it's usage hardcoded into autopoint code)"
-					ewarn "Please 'emerge cvs' if compilation will fail"
-					ebeep 3
-				fi
-			fi
+			[[ -z "${E_NO_NLS}" ]] && \
+				grep -qE "${macro_regex}" configure.{ac,in}	&& \
+					eautopoint -f
 
 			# autotools expect README, when README.in is around, but README
 			# is created later in configure step
 			[[ -f README.in ]] && touch README
 
 			eautoreconf
-			local x
 		fi
 
 		epunt_cxx
@@ -237,14 +225,12 @@ efl_src_prepare() {
 }
 
 efl_src_configure() {
-	if [[ -z "${E_PYTHON}" ]]; then
-		if [[ -x ${ECONF_SOURCE:-.}/configure ]]; then
-			[[ -z "${E_NO_NLS}" ]] && MY_ECONF="${MY_ECONF} $(use_enable nls)"
-			[[ -z "${E_NO_DOC}" ]] && MY_ECONF="${MY_ECONF} $(use_enable doc)"
-			[[ -z "${E_NO_DISABLE_STATIC}" ]] && MY_ECONF="${MY_ECONF} --disable-static"
+	if [[ -z "${E_PYTHON}" ]] && [[ -x ${ECONF_SOURCE:-.}/configure ]]; then
+		[[ -z "${E_NO_NLS}" ]] && MY_ECONF+=" $(use_enable nls)"
+		[[ -z "${E_NO_DOC}" ]] && MY_ECONF+=" $(use_enable doc)"
+		[[ -z "${E_NO_DISABLE_STATIC}" ]] && MY_ECONF+=" --disable-static"
 
-			econf ${MY_ECONF} || efl_die "configure failed"
-		fi
+		econf ${MY_ECONF} || efl_die "configure failed"
 	fi
 }
 
@@ -252,33 +238,28 @@ efl_src_compile() {
 	if [[ -z "${E_PYTHON}" ]]; then
 		emake || efl_die "emake failed"
 
-		if [[ -z "${E_NO_DOC}" ]] && use doc; then
-			if [[ -x ./gendoc ]]; then
-				./gendoc || efl_die "gendoc failed"
-			else
-				emake doc
-			fi
+		if [[ -z "${E_NO_DOC}" ]] && use doc && ! [[ -x ./gendoc ]]; then
+			emake doc || efl_die "emake doc failed"
 		fi
 	else
 		distutils_src_compile
-		if [[ -z "${E_NO_DOC}" ]] && use doc; then
-			if [[ -x ./gendoc ]]; then
-				./gendoc || efl_die "gendoc failed"
-			fi
-		fi
+	fi
+
+	if [[ -z "${E_NO_DOC}" ]] && use doc && [[ -x ./gendoc ]]; then
+		./gendoc || efl_die "gendoc failed"
 	fi
 }
 
 efl_src_install() {
 	if [[ -z "${E_PYTHON}" ]]; then
-
 		emake install DESTDIR="${D}" || efl_die
 
-		find "${D}" -name .svn -type d -exec rm -rf '{}' \; 2>/dev/null
 		find "${D}" -name '*.la' -delete
 
-		for d in AUTHORS ChangeLog NEWS README TODO ${EDOCS}; do
-			[[ -f ${d} ]] && dodoc ${d}
+		local doc
+
+		for doc in AUTHORS ChangeLog NEWS README TODO ${EDOCS}; do
+			[[ -f ${doc} ]] && dodoc ${doc}
 		done
 	else
 		distutils_src_install
@@ -286,8 +267,6 @@ efl_src_install() {
 		if [[ -z "${E_NO_EXAMPLES}" ]] && use examples; then
 			insinto /usr/share/doc/${PF}
 			doins -r examples
-
-			find "${D}/usr/share/doc/${PF}" -name .svn -type d -exec rm -rf '{}' \; 2>/dev/null
 		fi
 	fi
 
@@ -297,8 +276,9 @@ efl_src_install() {
 		else
 			dohtml -r doc/*
 		fi
-		find "${D}/usr/share/doc/${PF}" -name .svn -type d -exec rm -rf '{}' \; 2>/dev/null
 	fi
+
+	find "${D}" -name .svn -type d -exec rm -rf '{}' \; 2>/dev/null
 }
 
 EXPORT_FUNCTIONS src_unpack src_prepare src_configure src_compile src_install src_test

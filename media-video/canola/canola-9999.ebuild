@@ -23,13 +23,13 @@ RDEPEND="dev-python/dbus-python
 	sys-apps/dbus
 	>=dev-libs/eet-9999
 	>=dev-libs/eina-9999
-	>=x11-libs/evas-9999
-	>=x11-libs/ecore-9999
+	>=media-libs/evas-9999
+	>=dev-libs/ecore-9999
 	>=dev-libs/embryo-9999
 	>=media-libs/edje-9999
 	>=media-libs/epsilon-9999
 	>=x11-libs/etk-9999
-	>=x11-libs/e_dbus-9999
+	>=dev-libs/e_dbus-9999
 	>=dev-python/python-evas-9999
 	>=dev-python/python-ecore-9999
 	>=dev-python/python-edje-9999

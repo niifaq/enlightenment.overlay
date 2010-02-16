@@ -12,8 +12,8 @@ DESCRIPTION="an image viewer that uses Etk as its toolkit"
 
 IUSE=""
 
-DEPEND=">=x11-libs/evas-9999
-	>=x11-libs/ecore-9999
+DEPEND=">=media-libs/evas-9999
+	>=dev-libs/ecore-9999
 	>=media-libs/edje-9999
 	>=x11-libs/etk-9999
 	>=dev-libs/eet-9999

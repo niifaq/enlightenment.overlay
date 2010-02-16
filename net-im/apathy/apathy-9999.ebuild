@@ -18,7 +18,7 @@ LICENSE="GPL-3"
 SLOT="0"
 
 RDEPEND="
-	>=x11-libs/elementary-9999
+	>=media-libs/elementary-9999
 	>=dev-python/python-e_dbus-9999
 	>=dev-python/python-evas-9999
 	>=dev-python/python-ecore-9999

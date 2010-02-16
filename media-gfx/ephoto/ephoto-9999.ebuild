@@ -10,8 +10,8 @@ DESCRIPTION="Ephoto Image Viewer/Editor/Manipulator/Slideshow creator"
 
 IUSE=""
 
-DEPEND="x11-libs/evas
-	x11-libs/ecore
+DEPEND="media-libs/evas
+	dev-libs/ecore
 	x11-libs/ewl
 	media-libs/edje
 	media-libs/epsilon

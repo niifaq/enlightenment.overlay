@@ -11,8 +11,8 @@ DESCRIPTION="Etch is an abstract time based animation library"
 
 IUSE=""
 
-DEPEND="x11-libs/ecore
-	x11-libs/evas
+DEPEND="dev-libs/ecore
+	media-libs/evas
 	media-libs/edje"
 
 RDEPEND="${DEPEND}"

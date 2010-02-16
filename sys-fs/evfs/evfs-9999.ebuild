@@ -12,11 +12,11 @@ DESCRIPTION="Enlightenment File Daemon"
 
 IUSE="samba curl bzip2 taglib debug"
 
-DEPEND="x11-libs/ecore
+DEPEND="dev-libs/ecore
 	dev-libs/eet
-	x11-libs/evas
+	media-libs/evas
 	dev-libs/efreet
-	x11-libs/ecore
+	dev-libs/ecore
 	dev-libs/libxml2
 	>=dev-db/sqlite-3
 	media-libs/libextractor

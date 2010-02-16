@@ -11,8 +11,8 @@ DESCRIPTION="simple-to-use general purpose widget library"
 IUSE="X fbcon opengl"
 
 RDEPEND=">=media-libs/edje-9999
-	>=x11-libs/evas-9999[png]
-	>=x11-libs/ecore-9999[fbcon?,opengl?,X?]
+	>=media-libs/evas-9999[png]
+	>=dev-libs/ecore-9999[fbcon?,opengl?,X?]
 	>=media-libs/epsilon-9999
 	>=media-libs/emotion-9999
 	>=dev-libs/efreet-9999"

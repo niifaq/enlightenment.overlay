@@ -16,13 +16,13 @@ RDEPEND=">=media-libs/libplayer-1.0.0
 	>=media-libs/libvalhalla-1.0.0
 	>=dev-libs/eina-0.9.9.063
 	>=dev-libs/eet-1.2.2
-	>=x11-libs/evas-0.9.9.063
-	>=x11-libs/ecore-0.9.9.063
+	>=media-libs/evas-0.9.9.063
+	>=dev-libs/ecore-0.9.9.063
 	>=dev-libs/embryo-0.9.9.063
 	>=media-libs/edje-0.9.93.063
-	>=x11-libs/elementary-0.6.0.063
+	>=media-libs/elementary-0.6.0.063
 	>=dev-libs/efreet-0.5.0.063
-	>=x11-libs/e_dbus-0.5.0.063
+	>=dev-libs/e_dbus-0.5.0.063
 	nls? ( sys-devel/gettext )
 	cddb? ( media-libs/libcddb )
 	xrandr? ( x11-libs/libXrandr )

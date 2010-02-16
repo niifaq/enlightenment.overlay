@@ -10,5 +10,5 @@ DESCRIPTION="Comprehensive test suite for Evas"
 
 IUSE="X opengl sdl"
 
-RDEPEND=">=x11-libs/evas-9999[X?,opengl?,sdl?]"
+RDEPEND=">=media-libs/evas-9999[X?,opengl?,sdl?]"
 DEPEND="${RDEPEND}"

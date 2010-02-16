@@ -13,8 +13,8 @@ IUSE="pam"
 
 RDEPEND="x11-libs/libXau
 	pam? ( virtual/pam )
-	>=x11-libs/evas-9999
-	>=x11-libs/ecore-9999
+	>=media-libs/evas-9999
+	>=dev-libs/ecore-9999
 	>=media-libs/edje-9999
 	>=x11-libs/esmart-9999
 	>=dev-libs/efreet-9999"

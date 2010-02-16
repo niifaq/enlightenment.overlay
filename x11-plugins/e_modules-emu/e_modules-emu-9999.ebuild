@@ -14,8 +14,8 @@ IUSE=""
 
 DEPEND=">=x11-wm/enlightenment-0.16.999
 	media-libs/edje
-	x11-libs/ecore
-	x11-libs/evas
+	dev-libs/ecore
+	media-libs/evas
 	x11-libs/esmart
 	dev-libs/eet"
 

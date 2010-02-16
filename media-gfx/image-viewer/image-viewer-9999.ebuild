@@ -12,12 +12,12 @@ DESCRIPTION="An light-weight image viewer based on Elementary"
 
 IUSE="ethumb experimental"
 
-DEPEND=">=x11-libs/ecore-9999
-	>=x11-libs/evas-9999
+DEPEND=">=dev-libs/ecore-9999
+	>=media-libs/evas-9999
 	>=media-libs/edje-9999
 	>=x11-wm/enlightenment-9999
 	ethumb? ( >=media-libs/ethumb-9999 )
-	>=x11-libs/elementary-9999"
+	>=media-libs/elementary-9999"
 
 RDEPEND="${DEPEND}"
 

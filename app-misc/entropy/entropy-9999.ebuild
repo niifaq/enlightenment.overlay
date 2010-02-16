@@ -19,7 +19,7 @@ DEPEND="media-libs/epsilon
 	media-libs/libextractor
 	>=media-libs/imlib2-1.2.1
 	>=media-libs/libpng-1.2.8
-	>=x11-libs/ecore-0.9.9"
+	>=dev-libs/ecore-0.9.9"
 
 RDEPEND="${DEPEND}"
 

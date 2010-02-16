@@ -14,6 +14,6 @@ IUSE=""
 
 RDEPEND="media-libs/imlib2
 	dev-db/edb
-	x11-libs/evas
-	x11-libs/ecore"
+	media-libs/evas
+	dev-libs/ecore"
 DEPEND="${RDEPEND}"

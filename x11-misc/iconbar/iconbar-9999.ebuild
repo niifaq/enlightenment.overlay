@@ -14,9 +14,9 @@ HOMEPAGE="http://www.rephorm.com/rephorm/code/iconbar/"
 IUSE=""
 
 DEPEND=">=dev-libs/eet-0.9.9
-	>=x11-libs/evas-0.9.9
+	>=media-libs/evas-0.9.9
 	>=media-libs/imlib2-1.2.0
-	>=x11-libs/ecore-0.9.9
+	>=dev-libs/ecore-0.9.9
 	>=media-libs/edje-0.5.0
 	>=x11-libs/esmart-0.9.0
 	>=x11-libs/ewl-0.0.4"

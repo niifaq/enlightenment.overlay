@@ -12,7 +12,7 @@ IUSE=""
 
 DEPEND="dev-libs/libxml2
 	>=dev-libs/eina-9999
-	>=x11-libs/ecore-9999[curl]"
+	>=dev-libs/ecore-9999[curl]"
 
 RDEPEND="${DEPEND}"
 

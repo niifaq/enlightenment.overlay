@@ -12,7 +12,7 @@ HOMEPAGE="http://watchwolf.fr/wiki/doku.php?id=enki"
 IUSE=""
 
 DEPEND=">=dev-libs/eet-9999
-	>=x11-libs/ecore-9999
+	>=dev-libs/ecore-9999
 	>=media-libs/edje-9999
 	>=media-libs/ethumb-9999
 	>=media-libs/libexif-0.6.16

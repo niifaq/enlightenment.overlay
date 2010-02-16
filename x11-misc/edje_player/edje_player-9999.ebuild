@@ -11,8 +11,8 @@ DESCRIPTION="EdjePlayer is a application to play standalone Edje files."
 
 IUSE=""
 
-DEPEND="x11-libs/ecore
-	x11-libs/evas
+DEPEND="dev-libs/ecore
+	media-libs/evas
 	media-libs/edje
 	x11-libs/etk
 	x11-wm/enlightenment"

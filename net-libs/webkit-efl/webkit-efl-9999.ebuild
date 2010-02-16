@@ -14,8 +14,8 @@ LICENSE="LGPL-2 LGPL-2.1 BSD"
 SLOT="0"
 IUSE="coverage debug gstreamer sqlite svg xslt"
 
-RDEPEND=">=x11-libs/evas-9999
-	>=x11-libs/ecore-9999
+RDEPEND=">=media-libs/evas-9999
+	>=dev-libs/ecore-9999
 	>=media-libs/edje-9999
 	>=x11-libs/cairo-1.6.4
 	>=media-libs/fontconfig-2.4.2

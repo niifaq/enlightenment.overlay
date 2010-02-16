@@ -13,9 +13,9 @@ DESCRIPTION="an e17 media player"
 IUSE=""
 
 DEPEND=">=dev-libs/eet-0.9.9
-	>=x11-libs/evas-0.9.9
+	>=media-libs/evas-0.9.9
 	>=media-libs/edje-0.5.0
-	>=x11-libs/ecore-0.9.9
+	>=dev-libs/ecore-0.9.9
 	>=dev-libs/embryo-0.9.0
 	>=media-libs/emotion-0.0.1"
 

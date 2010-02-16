@@ -11,9 +11,9 @@ DESCRIPTION="toolkit based on the EFL"
 
 IUSE="X fbcon"
 
-DEPEND=">=x11-libs/evas-9999[png]
+DEPEND=">=media-libs/evas-9999[png]
 	>=media-libs/edje-9999
-	>=x11-libs/ecore-9999[fbcon?,X?]"
+	>=dev-libs/ecore-9999[fbcon?,X?]"
 
 RDEPEND="${DEPEND}"
 

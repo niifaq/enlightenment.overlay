@@ -12,8 +12,8 @@ DESCRIPTION="Simple text editor using EFL and Esmart_Textarea"
 
 IUSE=""
 
-DEPEND="x11-libs/evas
-	x11-libs/ecore
+DEPEND="media-libs/evas
+	dev-libs/ecore
 	media-libs/edje
 	x11-libs/esmart"
 

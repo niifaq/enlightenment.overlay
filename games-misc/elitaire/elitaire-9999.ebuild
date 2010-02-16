@@ -14,8 +14,8 @@ IUSE=""
 DEPEND="x11-libs/ewl
 	media-libs/edje
 	dev-libs/eet
-	x11-libs/evas
-	x11-libs/ecore
+	media-libs/evas
+	dev-libs/ecore
 	x11-libs/esmart"
 
 RDEPEND="${DEPEND}"

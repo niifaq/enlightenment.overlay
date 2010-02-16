@@ -15,7 +15,7 @@ IUSE=""
 DEPEND=">=dev-libs/eet-0.9.0
 	>=dev-db/edb-1.0.5
 	>=x11-libs/ewl-0.0.4
-	>=x11-libs/ecore-0.9.9
+	>=dev-libs/ecore-0.9.9
 	sys-libs/readline"
 
 RDEPEND="${DEPEND}"

@@ -13,9 +13,9 @@ IUSE=""
 
 DEPEND=">=dev-libs/eina-9999
 	>=dev-libs/eet-9999
-	>=x11-libs/ecore-9999
+	>=dev-libs/ecore-9999
 	>=media-libs/enlil-9999
-	>=x11-libs/elementary-9999"
+	>=media-libs/elementary-9999"
 
 RDEPEND="${DEPEND}"
 

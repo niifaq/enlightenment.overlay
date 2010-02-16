@@ -10,11 +10,11 @@ DESCRIPTION="EFL based front end network manager"
 IUSE="+dhcp vpnc"
 
 DEPEND=">=dev-libs/eet-9999
-	>=x11-libs/ecore-9999
-	>=x11-libs/evas-9999
-	>=x11-libs/e_dbus-9999
+	>=dev-libs/ecore-9999
+	>=media-libs/evas-9999
+	>=dev-libs/e_dbus-9999
 	>=media-libs/edje-9999
-	>=x11-libs/elementary-9999
+	>=media-libs/elementary-9999
 	net-wireless/wpa_supplicant
 	dhcp? ( net-misc/dhcp )
 	vpnc? ( net-misc/vpnc )

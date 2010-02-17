@@ -1,13 +1,14 @@
 =app-admin/empower-9999 **
+=app-benchmarks/expedite-9999 **
 =app-editors/enscribe-9999 **
 =app-laptop/epbb-9999 **
 =app-misc/canola-daemon-9999 **
 =app-misc/entropy-9999 **
-=app-misc/evidence-9999 **
 =app-misc/examine-9999 **
-=app-misc/exchange-9999 **
 =app-text/epdf-9999 **
 =dev-db/edb-9999 **
+=dev-libs/ecore-9999 **
+=dev-libs/e_dbus-9999 **
 =dev-libs/eet-9999 **
 =dev-libs/efreet-9999 **
 =dev-libs/eina-9999 **
@@ -49,6 +50,7 @@
 =media-libs/atabake-9999 **
 =media-libs/canola-thumbnailer-9999 **
 =media-libs/edje-9999 **
+=media-libs/elementary-9999 **
 =media-libs/emage-9999 **
 =media-libs/emotion-9999 **
 =media-libs/enlil-9999 **
@@ -56,6 +58,7 @@
 =media-libs/epsilon-9999 **
 =media-libs/etch-9999 **
 =media-libs/ethumb-9999 **
+=media-libs/evas-9999 **
 =media-libs/imlib2-9999 **
 =media-libs/imlib2_loaders-9999 **
 =media-libs/lightmediascanner-9999 **
@@ -68,6 +71,7 @@
 =media-video/rage-9999 **
 =net-im/apathy-9999 **
 =net-im/express-9999 **
+=net-libs/exchange-9999 **
 =net-libs/libeweather-9999 **
 =net-libs/webkit-efl-9999 **
 =net-misc/eupnp-9999 **
@@ -77,14 +81,11 @@
 =sci-calculators/equate-9999 **
 =sci-misc/engycad-9999 **
 =sys-fs/evfs-9999 **
+=sys-libs/ememoa-9999 **
 =www-client/eve-9999 **
 =x11-apps/elapse-9999 **
-=x11-libs/ecore-9999 **
-=x11-libs/e_dbus-9999 **
-=x11-libs/elementary-9999 **
 =x11-libs/esmart-9999 **
 =x11-libs/etk-9999 **
-=x11-libs/evas-9999 **
 =x11-libs/ewl-9999 **
 =x11-misc/edje_player-9999 **
 =x11-misc/emprint-9999 **

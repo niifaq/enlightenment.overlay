@@ -17,7 +17,7 @@ if [[ "${PV}" == "9999" ]]; then
 	inherit subversion autotools
 
 	SRC_URI=""
-	ESVN_REPO_URI="http://ememoa.googlecode.com/svn/trunk/"
+	ESVN_REPO_URI="http://ememoa.googlecode.com/svn"
 	S="${WORKDIR}/trunk"
 	KEYWORDS=""
 else

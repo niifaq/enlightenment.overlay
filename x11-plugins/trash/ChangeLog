@@ -1,6 +1,9 @@
 # ChangeLog for x11-plugins/trash
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  17 Feb 2010; evadim <evadim@evadim.ru> trash-9999.ebuild:
+  fix google code urls
 
   25 Apr 2009; evadim <evadim@evadim.ru> trash-9999.ebuild:
   add "-I m4" fix to ebuild

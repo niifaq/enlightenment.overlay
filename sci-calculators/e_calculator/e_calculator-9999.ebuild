@@ -4,8 +4,7 @@
 
 EAPI="2"
 
-ESVN_REPO_URI="http://e17mods.googlecode.com/svn/trunk/GADGETS/calculator"
-ESVN_FETCH_CMD="svn checkout"
+ESVN_REPO_URI="http://e17mods.googlecode.com/svn/GADGETS/calculator"
 
 inherit subversion
 

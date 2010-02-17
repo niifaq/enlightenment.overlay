@@ -4,7 +4,7 @@
 
 EAPI="2"
 
-ESVN_SERVER="http://e17mods.googlecode.com/svn/trunk"
+ESVN_SERVER="http://e17mods.googlecode.com/svn"
 ESVN_SUB_PROJECT="MODULES"
 inherit enlightenment
 

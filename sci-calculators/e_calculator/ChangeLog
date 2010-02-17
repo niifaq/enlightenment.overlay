@@ -1,0 +1,7 @@
+# ChangeLog for sci-calculators/e_calculator
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  17 Feb 2010; evadim <evadim@evadim.ru> e_calculator-9999.ebuild:
+  fix google code urls
+

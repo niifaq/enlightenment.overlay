@@ -4,7 +4,7 @@
 
 EAPI="2"
 
-ESVN_SERVER="http://itask-module.googlecode.com/svn/trunk"
+ESVN_SERVER="http://itask-module.googlecode.com/svn"
 
 inherit enlightenment
 

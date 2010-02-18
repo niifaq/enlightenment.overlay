@@ -4,10 +4,23 @@
 
 EAPI="2"
 E_NO_NLS="1"
-inherit efl
+inherit efl flag-o-matic
 
 DESCRIPTION="load and control programs compiled in embryo language (small/pawn variant)"
 HOMEPAGE="http://trac.enlightenment.org/e/wiki/Embryo"
 IUSE=""
 
 RDEPEND=""
+
+src_configure() {
+	# embryo_amx.c will hang graphite when processed
+	# Probably we should post a bug on gcc
+	# But it's nearly impossible to understand what this one giant hack
+	# does.
+	# Maybe later, by now we will just filter this flags out.
+
+	einfo "Filtering -floop* CFLAGS"
+	filter-flags -floop*
+
+	efl_src_configure
+}

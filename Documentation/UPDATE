@@ -1,0 +1,6 @@
+To move categories of packages make the following:
+
+cd /path/to/overlay/
+cat Documentation/updates/1Q-2010 >> /usr/portage/profiles/updates/1Q-2010
+emerge --metadata
+

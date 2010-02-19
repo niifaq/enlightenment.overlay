@@ -4,3 +4,4 @@ move app-misc/exchange net-libs/exchange
 move x11-libs/ecore dev-libs/ecore
 move x11-libs/e_dbus dev-libs/e_dbus
 move x11-misc/expedite app-benchmarks/expedite
+move net-misc/eupnp net-libs/eupnp

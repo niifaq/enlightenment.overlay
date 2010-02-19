@@ -6,6 +6,15 @@
 =app-misc/entropy-9999 **
 =app-misc/examine-9999 **
 =app-text/epdf-9999 **
+=dev-cpp/ecorexx-9999 **
+=dev-cpp/edjexx-9999 **
+=dev-cpp/eetxx-9999 **
+=dev-cpp/eflxx-9999 **
+=dev-cpp/einaxx-9999 **
+=dev-cpp/elementaryxx-9999 **
+=dev-cpp/emotionxx-9999 **
+=dev-cpp/esmartxx-9999 **
+=dev-cpp/evasxx-9999 **
 =dev-db/edb-9999 **
 =dev-libs/ecore-9999 **
 =dev-libs/e_dbus-9999 **
@@ -71,10 +80,10 @@
 =media-video/rage-9999 **
 =net-im/apathy-9999 **
 =net-im/express-9999 **
+=net-libs/eupnp-9999 **
 =net-libs/exchange-9999 **
 =net-libs/libeweather-9999 **
 =net-libs/webkit-efl-9999 **
-=net-misc/eupnp-9999 **
 =net-misc/exalt-9999 **
 =net-misc/python-downloadmanager-9999 **
 =sci-calculators/e_calculator-9999 **

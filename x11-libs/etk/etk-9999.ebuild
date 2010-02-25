@@ -4,8 +4,9 @@
 
 EAPI="2"
 
+E_OLD_PROJECT="yes"
 ESVN_SUB_PROJECT="OLD"
-inherit enlightenment
+inherit efl
 
 DESCRIPTION="toolkit based on the EFL"
 
@@ -17,9 +18,9 @@ DEPEND=">=media-libs/evas-9999[png]
 
 RDEPEND="${DEPEND}"
 
-src_compile() {
-	export MY_ECONF="
-		$(use_enable nls)
-	"
-	enlightenment_src_compile
-}
+#src_configure() {
+#	export MY_ECONF="
+#		$(use_enable nls)
+#	"
+#	efl_src_compile
+#}

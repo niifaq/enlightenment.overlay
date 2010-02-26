@@ -1,6 +1,9 @@
 # ChangeLog for media-libs/edje
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  26 Feb 2010; evadim <evadim@evadim.ru> edje-9999.ebuild:
+  sync to e.org version
 
   10 Sep 2009; Andrian Nord <NightNord@niifaq.ru> edje-9999.ebuild:
   Added dev-lang/lua as hard dependency

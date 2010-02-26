@@ -1,6 +1,9 @@
-# ChangeLog for x11-libs/ecore
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# ChangeLog for dev-libs/ecore
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  26 Feb 2010; evadim <evadim@evadim.ru> ecore-9999.ebuild:
+  sync to e.org version
 
   30 Apr 2009; evadim <evadim@evadim.ru> x11-libs/ecore/ecore-9999.ebuild:
   add USE=gnutls

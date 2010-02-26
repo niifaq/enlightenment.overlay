@@ -9,6 +9,8 @@ inherit efl
 DESCRIPTION="Basic widget set, based on EFL with focus mobile touch-screen devices."
 HOMEPAGE="http://trac.enlightenment.org/e/wiki/Elementary"
 
+LICENSE="LGPL-2.1"
+
 IUSE="directfb fbcon opengl sdl X dbus xdg weather"
 
 RDEPEND="
@@ -20,3 +22,13 @@ RDEPEND="
 	weather? ( >=net-libs/libeweather-9999 )
 	"
 DEPEND="${RDEPEND}"
+
+src_configure() {
+	export MY_ECONF="
+	  ${MY_ECONF}
+	  $(use_enable dbus edbus)
+	  $(use_enable xdg efreet)
+	  $(use_enable weather eweather)
+	"
+	efl_src_configure
+}

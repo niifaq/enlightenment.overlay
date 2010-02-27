@@ -4,17 +4,17 @@
 
 EAPI="2"
 
+E_NO_NLS="yes"
+E_NO_DOC="yes"
 ESVN_SUB_PROJECT="PROTO"
-inherit enlightenment
+inherit efl
 
 DESCRIPTION="EdjePlayer is a application to play standalone Edje files."
 
 IUSE=""
 
-DEPEND="dev-libs/ecore
+DEPEND="dev-libs/ecore[evas]
 	media-libs/evas
-	media-libs/edje
-	x11-libs/etk
-	x11-wm/enlightenment"
+	media-libs/edje"
 
 RDEPEND="${DEPEND}"

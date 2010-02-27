@@ -208,8 +208,6 @@ efl_src_prepare() {
 									[[ "${WANT_AUTOTOOLS}" == "yes" ]]; then
 			local macro_regex='^[[:space:]]*AM_GNU_GETTEXT_VERSION'
 
-			local need_autopoint=false
-
 			if [[ -z "${E_NO_NLS}" ]]; then
 				local x=
 

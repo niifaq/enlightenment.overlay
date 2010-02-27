@@ -7,12 +7,13 @@
  <name>Enlightenment-Gentoo maintainers</name>
 </maintainer>
 <use>
+ <flag name="deprecated">Build ecore_txt and ecore_data support for some old packages</flag>
  <flag name="glib">Enable <pkg>dev-libs/glib</pkg> eventloop support</flag>
+ <flag name="evas">Provides easy to use canvas by gluing <pkg>media-libs/evas</pkg> and various input/output systems.</flag>
+ <flag name="inotify">Enable support for inotify</flag>
+ <flag name="tslib">Build with tslib support for touchscreen devices.</flag>
  <flag name="xim">Enable X11 XiM input method</flag>
  <flag name="xprint">Enable X11 Xprint support</flag>
- <flag name="inotify">Enable support for inotify</flag>
- <flag name="evas">Provides easy to use canvas by gluing <pkg>media-libs/evas</pkg> and various input/output systems.</flag>
- <flag name="tslib">Build with tslib support for touchscreen devices.</flag>
 </use>
 <longdescription>
 Ecore is a clean and tiny event loop library with many modules to do

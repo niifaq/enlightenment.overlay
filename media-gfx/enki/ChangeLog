@@ -1,6 +1,9 @@
 # ChangeLog for media-gfx/enki
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  27 Feb 2010; evadim <evadim@evadim.ru> enki-9999.ebuild:
+  moved to e.org repo
 
   14 Dec 2009; evadim <evadim@evadim.ru> enki-9999.ebuild:
   works now

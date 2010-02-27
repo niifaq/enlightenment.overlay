@@ -29,7 +29,9 @@ RDEPEND="
 	 >=dev-libs/e_dbus-9999[hal,connman?]
 	 >=media-libs/edje-9999
 	 >=media-libs/evas-9999[X,opengl?,eet,jpeg,png,safety-checks]"
-DEPEND="${RDEPEND}"
+DEPEND="${RDEPEND}
+	!x11-plugins/e_modules-configmenu
+"
 
 src_configure() {
 	# NOTE: mixer is plugin-able, but just alsa is provided atm.

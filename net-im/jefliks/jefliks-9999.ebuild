@@ -43,4 +43,3 @@ src_install() {
 
 	domenu jefliks.desktop
 }
-

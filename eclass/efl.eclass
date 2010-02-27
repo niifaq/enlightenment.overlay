@@ -57,7 +57,7 @@ if [[ ${PV/9999} != ${PV} ]] ; then
 	if [[ -z "${E_OLD_PROJECT}" ]]; then
 		ESVN_BRANCH="trunk"
 	else
-		ESVN_BRANCH=""
+		ESVN_BRANCH="OLD"
 	fi
 
 	ESVN_URI_BASE="${E_LIVE_SERVER}/${ESVN_BRANCH}"

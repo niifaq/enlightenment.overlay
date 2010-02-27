@@ -4,22 +4,29 @@
 
 EAPI="2"
 
-inherit enlightenment eutils
+inherit efl eutils
 
 DESCRIPTION="graphical sudo application"
 
 IUSE=""
 
-DEPEND="dev-libs/eet
-	dev-libs/ecore
+DEPEND="dev-libs/ecore
 	media-libs/evas
 	media-libs/edje
-	x11-libs/ewl"
+	media-libs/elementary"
 
 RDEPEND="${DEPEND}"
 
-src_prepare() {
-	epatch "${FILESDIR}"/${PN}-missing-aclocal_amflags.patch
+E_NO_DOC="yes"
 
-	enlightenment_src_prepare
+src_prepare() {
+	AT_M4DIR="-I m4"
+
+	efl_src_prepare
+}
+
+src_configure() {
+	MY_ECONF="--disable-ewl"
+
+	efl_src_configure
 }

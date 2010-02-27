@@ -4,18 +4,20 @@
 
 EAPI="2"
 
-inherit enlightenment
+E_NO_NLS="yes"
+E_NO_DOC="yes"
+
+inherit efl
 
 DESCRIPTION="Ephoto Image Viewer/Editor/Manipulator/Slideshow creator"
 
 IUSE=""
 
 DEPEND="media-libs/evas
-	dev-libs/ecore
-	x11-libs/ewl
+	dev-libs/ecore[evas,deprecated]
+	dev-libs/efreet
+	dev-libs/eina
 	media-libs/edje
-	media-libs/epsilon
-	media-libs/libexif
-	>=dev-db/sqlite-3"
+	media-libs/ethumb"
 
 RDEPEND="${DEPEND}"

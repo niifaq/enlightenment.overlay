@@ -208,9 +208,18 @@ efl_src_prepare() {
 									[[ "${WANT_AUTOTOOLS}" == "yes" ]]; then
 			local macro_regex='^[[:space:]]*AM_GNU_GETTEXT_VERSION'
 
-			[[ -z "${E_NO_NLS}" ]] && \
-				grep -qE "${macro_regex}" configure.{ac,in}	&& \
-					eautopoint -f
+			local need_autopoint=false
+
+			if [[ -z "${E_NO_NLS}" ]]; then
+				local x=
+
+				for x in configure.{ac,in}; do
+					if [[ -r ${x} ]] && grep -qE "${macro_regex}" ${x}; then
+						eautopoint -f
+						break;
+					fi
+				done
+			fi
 
 			# autotools expect README, when README.in is around, but README
 			# is created later in configure step

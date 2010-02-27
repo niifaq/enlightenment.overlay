@@ -19,12 +19,6 @@ RDEPEND="${DEPEND}"
 
 E_NO_DOC="yes"
 
-src_prepare() {
-	AT_M4DIR="-I m4"
-
-	efl_src_prepare
-}
-
 src_configure() {
 	MY_ECONF="--disable-ewl"
 

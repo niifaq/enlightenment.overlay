@@ -4,6 +4,7 @@
 
 EAPI="2"
 ESVN_SUB_PROJECT="TMP/st"
+E_NO_NLS="yes"
 inherit efl
 
 DESCRIPTION="Basic widget set, based on EFL with focus mobile touch-screen devices."

@@ -1,0 +1,7 @@
+# ChangeLog for media-libs/imlib2_loaders
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  28 Feb 2010; evadim <evadim@evadim.ru> imlib2_loaders-9999.ebuild:
+  drop edb dep
+

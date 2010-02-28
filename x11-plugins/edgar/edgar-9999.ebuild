@@ -4,22 +4,20 @@
 
 EAPI="2"
 
-ESVN_SERVER="http://e17mods.googlecode.com/svn"
-ESVN_SUB_PROJECT="MODULES"
-inherit enlightenment
+E_NO_DOC="yes"
+E_NO_NLS="yes"
+inherit efl
 
+ESVN_REPO_URI="http://e17mods.googlecode.com/svn/trunk/MODULES/edgar"
 DESCRIPTION="E17 Edgar Gadgets Loader"
 HOMEPAGE="http://code.google.com/p/e17mods/wiki/Edgar"
 
 LICENSE="GPL-2"
-SLOT="0"
-KEYWORDS=""
+
 IUSE=""
 
-DEPEND="
-	x11-wm/enlightenment
-	media-libs/edje
-"
+DEPEND="x11-wm/enlightenment:0.17
+	>=media-libs/edje-9999"
 
 RDEPEND="${DEPEND}"
 
@@ -27,6 +25,6 @@ src_unpack() {
 
 	AT_M4DIR="-I m4"
 
-	enlightenment_src_unpack
+	efl_src_unpack
 
 }

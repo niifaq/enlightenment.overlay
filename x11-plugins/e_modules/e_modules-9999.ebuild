@@ -4,7 +4,7 @@
 
 EAPI="2"
 
-inherit enlightenment
+inherit efl
 
 DESCRIPTION="e_modules meta package - merge this to pull in all e_modules"
 

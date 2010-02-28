@@ -4,15 +4,16 @@
 
 EAPI="2"
 
+E_NO_DOC="yes"
 ESVN_SUB_PROJECT="E-MODULES-EXTRA"
 ESVN_URI_APPEND="${PN#e_modules-}"
-inherit enlightenment
+inherit efl
 
 DESCRIPTION="exalt clent module for e17"
 
 IUSE=""
 
-DEPEND=">=x11-wm/enlightenment-0.16.999
+DEPEND="x11-wm/enlightenment:0.17
 	>=media-libs/edje-9999
 	>=net-misc/exalt-9999"
 

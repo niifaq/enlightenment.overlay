@@ -4,19 +4,16 @@
 
 EAPI="2"
 
+E_NO_DOC="yes"
 ESVN_SUB_PROJECT="E-MODULES-EXTRA"
 ESVN_URI_APPEND="${PN#e_modules-}"
-inherit enlightenment
+inherit efl
 
 DESCRIPTION="Emu is an exercise in Zen programming"
 
 IUSE=""
 
-DEPEND=">=x11-wm/enlightenment-0.16.999
-	media-libs/edje
-	dev-libs/ecore
-	media-libs/evas
-	x11-libs/esmart
-	dev-libs/eet"
+DEPEND="x11-wm/enlightenment:0.17
+	>=media-libs/edje-9999"
 
 RDEPEND="${DEPEND}"

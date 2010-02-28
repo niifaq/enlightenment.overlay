@@ -4,7 +4,7 @@
 
 EAPI="2"
 
-inherit git enlightenment multilib
+inherit git efl multilib
 
 EGIT_REPO_URI="git://github.com/jeffdameth/${PN}.git"
 
@@ -13,7 +13,7 @@ HOMEPAGE="http://code.google.com/p/itask-module/wiki/Stuff"
 
 IUSE=""
 
-DEPEND="=x11-wm/enlightenment-9999
+DEPEND="x11-wm/enlightenment:0.17
 	=media-libs/edje-9999
 	=x11-wm/ecomp-9999"
 
@@ -31,5 +31,5 @@ src_install() {
 		-e 's:/usr/lib/[^/]+/libGL.*":/usr/lib/libGL.so":' \
 		-i scripts/ecomp.sh
 
-	enlightenment_src_install
+	efl_src_install
 }

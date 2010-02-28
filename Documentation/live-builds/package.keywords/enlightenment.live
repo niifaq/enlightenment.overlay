@@ -12,8 +12,6 @@
 =dev-libs/eina-9999 **
 =dev-libs/embryo-9999 **
 =dev-libs/engrave-9999 **
-=dev-libs/exml-9999 **
-=dev-python/python-dispatcher-9999 **
 =dev-python/python-ecore-9999 **
 =dev-python/python-e_dbus-9999 **
 =dev-python/python-edje-9999 **
@@ -35,7 +33,6 @@
 =media-gfx/exquisite-9999 **
 =media-gfx/eyelight-9999 **
 =media-gfx/image-viewer-9999 **
-=media-gfx/imlib2_tools-9999 **
 =media-gfx/retina-9999 **
 =media-libs/atabake-9999 **
 =media-libs/canola-thumbnailer-9999 **
@@ -57,19 +54,17 @@
 =media-video/envision-9999 **
 =media-video/rage-9999 **
 =net-im/apathy-9999 **
+=net-im/elmdentica-9999 **
 =net-im/express-9999 **
 =net-im/jefliks-9999 **
 =net-libs/eupnp-9999 **
 =net-libs/exchange-9999 **
 =net-libs/libeweather-9999 **
-=net-libs/webkit-efl-9999 **
 =net-misc/exalt-9999 **
 =net-misc/python-downloadmanager-9999 **
-=sci-calculators/e_calculator-9999 **
 =sci-misc/engycad-9999 **
 =sys-fs/evfs-9999 **
 =sys-libs/ememoa-9999 **
-=www-client/eve-9999 **
 =x11-apps/elapse-9999 **
 =x11-libs/esmart-9999 **
 =x11-misc/edje_player-9999 **
@@ -84,7 +79,6 @@
 =x11-plugins/e_modules-9999 **
 =x11-plugins/e_modules-alarm-9999 **
 =x11-plugins/e_modules-calendar-9999 **
-=x11-plugins/e_modules-configmenu-9999 **
 =x11-plugins/e_modules-cpu-9999 **
 =x11-plugins/e_modules-deskshow-9999 **
 =x11-plugins/e_modules-diskio-9999 **

@@ -1,0 +1,10 @@
+# ChangeLog for x11-plugins/e_modules-quickaccess
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*e_modules-quickaccess-9999 (28 Feb 2010)
+
+  28 Feb 2010; evadim <evadim@evadim.ru> +e_modules-quickaccess-9999.ebuild,
+  +metadata.xml:
+  initial import
+

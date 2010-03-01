@@ -33,7 +33,6 @@
 =media-gfx/image-viewer-9999 **
 =media-gfx/retina-9999 **
 =media-libs/atabake-9999 **
-=media-libs/canola-thumbnailer-9999 **
 =media-libs/edje-9999 **
 =media-libs/elementary-9999 **
 =media-libs/emage-9999 **
@@ -67,7 +66,6 @@
 =x11-misc/edje_player-9999 **
 =x11-misc/emprint-9999 **
 =x11-misc/enthrall-9999 **
-=x11-misc/estickies-9999 **
 =x11-misc/expedite-9999 **
 =x11-misc/keys-9999 **
 =x11-misc/shellementary-9999 **

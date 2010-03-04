@@ -30,6 +30,7 @@ inherit eutils libtool flag-o-matic
 #	S           EURI_STATE
 #
 # E_OLD_PROJECT: if defined, fetch from OLD outside trunk
+# E_EXTERNAL: if defined, no scm autoconfiguration would be done
 # E_NO_NLS: if defined, the package do not support NLS (gettext)
 # E_NO_DOC: if defined, the package do not support documentation (doxygen)
 # E_NO_VISIBILITY: if defined, the package do not support -fvisibility=hidden
@@ -52,22 +53,25 @@ if [[ ${PV/9999} != ${PV} ]] ; then
 
 	[[ -n ${E_LIVE_OFFLINE} ]] && ESCM_OFFLINE="yes"
 
-	: ${E_LIVE_SERVER:=${E_LIVE_SERVER_DEFAULT}}
+	if [[ -z "${E_EXTERNAL}" ]]; then
 
-	if [[ -z "${E_OLD_PROJECT}" ]]; then
-		ESVN_BRANCH="trunk"
-	else
-		ESVN_BRANCH="OLD"
+		: ${E_LIVE_SERVER:=${E_LIVE_SERVER_DEFAULT}}
+
+		if [[ -z "${E_OLD_PROJECT}" ]]; then
+			ESVN_BRANCH="trunk"
+		else
+			ESVN_BRANCH="OLD"
+		fi
+
+		ESVN_URI_BASE="${E_LIVE_SERVER}/${ESVN_BRANCH}"
+		ESVN_URI_APPEND=${ESVN_URI_APPEND:-${PN}}
+
+		ESVN_PROJECT="enlightenment/${ESVN_BRANCH}/${ESVN_SUB_PROJECT}"
+
+		ESVN_REPO_URI=${ESVN_URI_BASE}/${ESVN_SUB_PROJECT}/${ESVN_URI_APPEND}
+
+		inherit subversion
 	fi
-
-	ESVN_URI_BASE="${E_LIVE_SERVER}/${ESVN_BRANCH}"
-	ESVN_URI_APPEND=${ESVN_URI_APPEND:-${PN}}
-
-	ESVN_PROJECT="enlightenment/${ESVN_BRANCH}/${ESVN_SUB_PROJECT}"
-
-	ESVN_REPO_URI=${ESVN_URI_BASE}/${ESVN_SUB_PROJECT}/${ESVN_URI_APPEND}
-
-	inherit subversion
 elif [[ -n ${E_SNAP_DATE} ]] ; then
 	E_STATE="snap"
 else

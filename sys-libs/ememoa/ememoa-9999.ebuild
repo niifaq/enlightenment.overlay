@@ -4,64 +4,50 @@
 
 EAPI="2"
 
-inherit eutils
+E_EXTERNAL="yes"
+E_NO_NLS="yes"
+E_NO_DOC="yes"
+inherit subversion efl
+
+ESVN_REPO_URI="http://ememoa.googlecode.com/svn/trunk"
 
 DESCRIPTION="Fast memory pool allocator"
 HOMEPAGE="http://code.google.com/p/ememoa/"
 LICENSE="BSD"
 SLOT="0"
 
-IUSE="debug doc threads"
-
-if [[ "${PV}" == "9999" ]]; then
-	inherit subversion autotools
-
-	SRC_URI=""
-	ESVN_REPO_URI="http://ememoa.googlecode.com/svn"
-	S="${WORKDIR}/trunk"
-	KEYWORDS=""
-else
+if [[ "${PV}" != "9999" ]]; then
 	KEYWORDS="~amd64 ~x86"
-	# TODO: project did not release any tarball or snapshot!
 fi
+
+IUSE="doc threads"
 
 RDEPEND=""
 DEPEND="
 	dev-util/pkgconfig
 	doc? ( app-doc/doxygen )"
 
-src_prepare() {
-	[[ "${PV}" == "9999" ]] && eautoreconf
-	epunt_cxx
-	elibtoolize
-}
-
 src_configure() {
-	if use debug; then
-		if ! hasq nostrip $FEATURES && ! hasq splitdebug $FEATURES; then
-			ewarn "Compiling with USE=debug but portage will strip binaries!"
-			ewarn "Please use portage FEATURES=nostrip or splitdebug"
-			ewarn "See http://www.gentoo.org/proj/en/qa/backtraces.xml"
-		fi
-	fi
-
-	export MY_ECONF="
-	  --disable-static
-	  $(use_enable debug)
+	MY_ECONF="
 	  $(use_enable threads pthread)
 	"
+	use doc || MY_ECONF+=" DOXYGEN=/bin/true"
 
-	if ! use doc; then
-		export MY_ECONF="${MY_ECONF} DOXYGEN=/bin/true"
-	fi
-	econf "${MY_ECONF}" || die "econf failed"
+	efl_src_configure
 }
 
 src_compile() {
-	emake || die "emake failed"
+	efl_src_compile
 
 	if use doc; then
 		(cd doc && doxygen doc.doxy) || die "doxygen doc.doxy"
-		dohtml doc/doxygen_html/*
+	fi
+}
+
+src_install() {
+	efl_src_install
+
+	if use doc; then
+		dohtml doc/doxygen_html/* || die "docs install failed"
 	fi
 }

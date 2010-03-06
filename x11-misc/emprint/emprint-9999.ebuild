@@ -15,6 +15,6 @@ RDEPEND="x11-libs/libX11
 	>=dev-libs/ecore-9999[X,evas]
 	>=media-libs/evas-9999
 	>=media-libs/edje-9999
-	>=media-libs/eina-9999"
+	>=dev-libs/eina-9999"
 DEPEND="${RDEPEND}
 	x11-proto/xproto"

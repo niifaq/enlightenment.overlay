@@ -15,7 +15,6 @@ IUSE=""
 
 DEPEND="x11-apps/xrandr
 	dev-libs/glib:2
-	gnome-base/gconf:2
 	dev-db/sqlite:3
 	dev-libs/libxml2:2
 	net-misc/curl

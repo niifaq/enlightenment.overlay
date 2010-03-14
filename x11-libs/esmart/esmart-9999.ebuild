@@ -4,7 +4,9 @@
 
 EAPI="2"
 
-inherit enlightenment
+E_OLD_PROJECT="yes"
+
+inherit efl
 
 DESCRIPTION="A collection of evas smart objects"
 

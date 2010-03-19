@@ -23,8 +23,7 @@ DEPEND="mp4? ( media-libs/libmp4v2 )
 	flac? ( media-libs/flac )
 	ogg? ( media-libs/libogg )
 "
-RDEPEND="dev-db/sqlite
-	 dev-util/git"
+RDEPEND="dev-db/sqlite"
 
 src_unpack() {
 	git_src_unpack

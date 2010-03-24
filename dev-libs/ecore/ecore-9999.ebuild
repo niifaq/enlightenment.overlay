@@ -8,7 +8,7 @@ inherit efl
 DESCRIPTION="Enlightenment's core event abstraction layer and OS abstraction layer"
 HOMEPAGE="http://trac.enlightenment.org/e/wiki/Ecore"
 
-IUSE="X curl deprecated directfb +evas fbcon glib gnutls +inotify opengl sdl ssl
+IUSE="X curl directfb +evas fbcon glib gnutls +inotify opengl sdl ssl
 							threads +tslib xcb +xim xinerama +xprint +xscreensaver"
 
 RDEPEND="
@@ -171,7 +171,6 @@ src_configure() {
 
 	export MY_ECONF="
 		${MY_ECONF}
-		--disable-ecore-txt
 		--disable-ecore-config
 		--enable-ecore-con
 		--enable-ecore-ipc
@@ -182,8 +181,6 @@ src_configure() {
 		--disable-ecore-win32
 		--disable-ecore-wince
 		$(use_enable curl)
-		$(use_enable deprecated ecore-txt)
-		$(use_enable deprecated ecore-data)
 		$(use_enable directfb ecore-directfb)
 		$(use_enable fbcon ecore-fb)
 		$(use_enable glib)

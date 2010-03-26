@@ -14,7 +14,7 @@ DESCRIPTION="Ephoto Image Viewer/Editor/Manipulator/Slideshow creator"
 IUSE=""
 
 DEPEND="media-libs/evas
-	dev-libs/ecore[evas,deprecated]
+	dev-libs/ecore[evas]
 	dev-libs/efreet
 	dev-libs/eina
 	media-libs/edje

@@ -4,7 +4,7 @@
 
 EAPI="2"
 
-inherit git enlightenment flag-o-matic
+inherit git efl flag-o-matic
 
 EGIT_REPO_URI="git://github.com/jeffdameth/${PN}.git"
 
@@ -51,5 +51,5 @@ src_configure() {
 		$(use_with max-desktops)
 	"
 
-	enlightenment_src_configure
+	efl_src_configure
 }

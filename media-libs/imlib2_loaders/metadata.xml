@@ -8,9 +8,4 @@
 	<longdescription>
 		Additional image library loaders for imlib2
 	</longdescription>
-	<use>
-		<flag name='edb'>
-			Build with <pkg>dev-db/edb</pkg> data storage support
-		</flag>
-	</use>
 </pkgmetadata>

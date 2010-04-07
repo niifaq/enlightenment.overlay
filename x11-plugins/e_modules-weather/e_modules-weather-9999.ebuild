@@ -17,9 +17,3 @@ DEPEND="x11-wm/enlightenment:0.17
 	>=media-libs/edje-9999"
 
 RDEPEND="${DEPEND}"
-
-src_prepare() {
-	sed -i '/^ACLOCAL_AMFLAGS/ d' Makefile.am
-
-	efl_src_prepare
-}

@@ -4,6 +4,7 @@
 
 EAPI="2"
 
+E_EXTERNAL="yes"
 inherit git efl multilib
 
 EGIT_REPO_URI="git://github.com/jeffdameth/${PN}.git"

@@ -5,7 +5,8 @@
 EAPI="2"
 
 EGIT_REPO_URI="git://github.com/rephorm/elicit.git"
-inherit git enlightenment
+E_EXTERNAL="yes"
+inherit git efl
 
 DESCRIPTION="tool for examining images on your desktop"
 HOMEPAGE="http://enlightenment.org/pages/elicit.html"
@@ -24,6 +25,4 @@ src_unpack() {
 	git_src_unpack
 
 	cd "${S}"
-
-	eautoreconf
 }

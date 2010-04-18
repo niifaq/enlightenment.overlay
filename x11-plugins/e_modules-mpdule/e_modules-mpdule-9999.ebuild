@@ -20,9 +20,3 @@ DEPEND="x11-wm/enlightenment:0.17
 	media-libs/libmpd"
 
 RDEPEND="${DEPEND}"
-
-src_prepare() {
-	epatch "${FILESDIR}"/remove_aclocal_amflags.patch
-
-	efl_src_prepare
-}

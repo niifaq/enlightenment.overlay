@@ -6,7 +6,6 @@
 =x11-plugins/e_modules-drawer-9999
 =x11-plugins/e_modules-efm_nav-9999
 =x11-plugins/e_modules-efm_path-9999
-=x11-plugins/e_modules-emu-9999
 =x11-plugins/e_modules-exalt-client-9999
 =x11-plugins/e_modules-execwatch-9999
 =x11-plugins/e_modules-flame-9999
@@ -38,4 +37,4 @@
 =x11-plugins/extramenu-9999
 =x11-plugins/itask-ng-9999
 =x11-plugins/trash-9999
-=x11-plugins/winlist_ng-9999
+=x11-plugins/winlist-ng-9999

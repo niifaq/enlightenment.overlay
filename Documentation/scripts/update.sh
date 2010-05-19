@@ -15,7 +15,7 @@ if [[ -z "${REPO_PATH}" ]]; then
 fi
 
 for update in "${REPO_PATH}"/Documentation/updates/*; do 
-	cat "${update}" >> "${portage_update_dir}/$(basename ${update})"
+	cat "${update}" >> "${portage_updates_dir}/$(basename ${update})"
 done
 
 emerge --metadata

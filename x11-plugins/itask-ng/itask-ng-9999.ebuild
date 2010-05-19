@@ -5,9 +5,9 @@
 EAPI="2"
 
 E_NO_DOC="yes"
+ESVN_SUB_PROJECT="E-MODULES-EXTRA"
 inherit efl
 
-ESVN_REPO_URI="http://itask-module.googlecode.com/svn/trunk/itask-ng"
 DESCRIPTION="Application launcher and taskbar based on the good old engage"
 HOMEPAGE="http://code.google.com/p/itask-module"
 

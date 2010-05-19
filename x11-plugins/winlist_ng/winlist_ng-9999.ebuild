@@ -5,9 +5,9 @@
 EAPI="2"
 
 E_NO_DOC="yes"
+ESVN_SUB_PROJECT="E-MODULES-EXTRA"
 inherit efl
 
-ESVN_REPO_URI="http://itask-module.googlecode.com/svn/trunk/winlist_ng"
 DESCRIPTION="This module - different e17 winlist"
 HOMEPAGE="http://code.google.com/p/itask-module"
 

@@ -62,10 +62,7 @@ src_configure() {
 		  --enable-e17
 		  --enable-tests
 		  --enable-coverage
-		  --enable-benchmark
-		  --disable-benchmark-evas
-		  --enable-benchmark-glib
-		"
+		  --enable-benchmark"
 	fi
 
 	if use static-modules; then

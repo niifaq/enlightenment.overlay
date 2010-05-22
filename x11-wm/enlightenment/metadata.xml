@@ -11,8 +11,36 @@
  <flag name="tracker">Enable the search plugin using <pkg>app-misc/tracker</pkg> in Everything launcher.</flag>
  <flag name="pm-utils">Integrate with <pkg>sys-power/pm-utils</pkg> to provide hibernate and suspend.</flag>
  <flag name="xinerama">Enable multiple screen setup (xinerama and xrandr).</flag>
- <flag name="connman">Enable <pkg>net-misc/connman</pkg> support to manage network connections.</flag>
  <flag name="bluetooth">Enable <pkg>net-wireless/bluez</pkg> support to manage bluetooth devices.</flag>
- <flag name="ofono">Enable <pkg>net-misc/ofono</pkg> support to manage telephony (GSM/UMTS).</flag>
+ <flag name="udev">Enable hadrware detection capabilities via udev</flag>
+ <flag name="enlightenment_conf_borders">Enable configuration Look-and-feel dialog for
+	 changing window border styles</flag>
+ <flag name="enlightenment_conf_colors">Enable configuration Look-and-feel dialog for changing theme colors</flag>
+ <flag name="enlightenment_conf_desklock">conf_desklock</flag>
+ <flag name="enlightenment_conf_desk">conf_desk</flag>
+ <flag name="enlightenment_conf_desks">conf_desks</flag>
+ <flag name="enlightenment_conf_dialogs">conf_dialogs</flag>
+ <flag name="enlightenment_conf_display">conf_display</flag>
+ <flag name="enlightenment_conf_dpms">conf_dpms</flag>
+ <flag name="enlightenment_conf_engine">conf_engine</flag>
+ <flag name="enlightenment_conf_fonts">conf_fonts</flag>
+ <flag name="enlightenment_conf_imc">conf_imc</flag>
+ <flag name="enlightenment_conf_intl">conf_intl</flag>
+ <flag name="enlightenment_conf_menus">conf_menus</flag>
+ <flag name="enlightenment_conf_mime">conf_mime</flag>
+ <flag name="enlightenment_conf_mouse">conf_mouse</flag>
+ <flag name="enlightenment_conf_paths">conf_paths</flag>
+ <flag name="enlightenment_conf_profiles">conf_profiles</flag>
+ <flag name="enlightenment_conf_scale">conf_scale</flag>
+ <flag name="enlightenment_conf_shelves">conf_shelves</flag>
+ <flag name="enlightenment_conf_startup">conf_startup</flag>
+ <flag name="enlightenment_conf_theme">conf_theme</flag>
+ <flag name="enlightenment_conf_winlist">conf_winlist</flag>
+ <flag name="enlightenment_everything_files">everything_files</flag>
+ <flag name="enlightenment_everything_apps">everything_apps</flag>
+ <flag name="enlightenment_everything_calc">everything_calc</flag>
+ <flag name="enlightenment_everything_aspell">everything_aspell</flag>
+ <flag name="enlightenment_everything_settings">everything_settings</flag>
+ <flag name="enlightenment_everything_windows">everything_windows</flag>
 </use>
 </pkgmetadata>

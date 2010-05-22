@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/e/!svn/ver/48441/trunk/packaging/gentoo/enlightenment-base/e_module-everything-pidgin
+END
+metadata.xml
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/e/!svn/ver/48441/trunk/packaging/gentoo/enlightenment-base/e_module-everything-pidgin/metadata.xml
+END
+Manifest
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/e/!svn/ver/48441/trunk/packaging/gentoo/enlightenment-base/e_module-everything-pidgin/Manifest
+END
+ChangeLog
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/e/!svn/ver/48441/trunk/packaging/gentoo/enlightenment-base/e_module-everything-pidgin/ChangeLog
+END
+e_module-everything-pidgin-9999.ebuild
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/e/!svn/ver/48441/trunk/packaging/gentoo/enlightenment-base/e_module-everything-pidgin/e_module-everything-pidgin-9999.ebuild
+END

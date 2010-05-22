@@ -4,13 +4,12 @@
 
 EAPI="2"
 ESVN_SUB_PROJECT="E-MODULES-EXTRA"
-ESVN_URI_APPEND="${PN#e_module-}"
+ESVN_URI_APPEND="${PN#e_modules-}"
 E_NO_DOC="1"
 inherit efl
 
-DESCRIPTION="everything-pidgin module for enlightenment"
+DESCRIPTION="everything-websearch module for enlightenment"
 IUSE=""
 
-RDEPEND=">=x11-wm/enlightenment-9999[everything]
-	net-im/pidgin"
+RDEPEND=">=x11-wm/enlightenment-9999[enlightenment_modules_everything]"
 DEPEND="${RDEPEND}"

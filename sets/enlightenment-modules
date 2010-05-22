@@ -1,3 +1,4 @@
+=x11-plugins/edgar-9999
 =x11-plugins/e_modules-alarm-9999
 =x11-plugins/e_modules-calendar-9999
 =x11-plugins/e_modules-cpu-9999
@@ -6,6 +7,12 @@
 =x11-plugins/e_modules-drawer-9999
 =x11-plugins/e_modules-efm_nav-9999
 =x11-plugins/e_modules-efm_path-9999
+=x11-plugins/e_modules-efm_pathbar-9999
+=x11-plugins/e_modules-everything-mpris-9999
+=x11-plugins/e_modules-everything-pidgin-9999
+=x11-plugins/e_modules-everything-tracker-9999
+=x11-plugins/e_modules-everything-websearch-9999
+=x11-plugins/e_modules-eweather-9999
 =x11-plugins/e_modules-exalt-client-9999
 =x11-plugins/e_modules-execwatch-9999
 =x11-plugins/e_modules-flame-9999
@@ -22,6 +29,7 @@
 =x11-plugins/e_modules-penguins-9999
 =x11-plugins/e_modules-photo-9999
 =x11-plugins/e_modules-places-9999
+=x11-plugins/e_modules-quickaccess-9999
 =x11-plugins/e_modules-rain-9999
 =x11-plugins/e_modules-screenshot-9999
 =x11-plugins/e_modules-slideshow-9999
@@ -33,7 +41,6 @@
 =x11-plugins/e_modules-weather-9999
 =x11-plugins/e_modules-winselector-9999
 =x11-plugins/e_modules-wlan-9999
-=x11-plugins/e_modules-efm_pathbar-9999
 =x11-plugins/extramenu-9999
 =x11-plugins/itask-ng-9999
 =x11-plugins/trash-9999

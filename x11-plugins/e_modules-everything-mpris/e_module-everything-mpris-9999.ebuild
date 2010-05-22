@@ -4,12 +4,12 @@
 
 EAPI="2"
 ESVN_SUB_PROJECT="E-MODULES-EXTRA"
-ESVN_URI_APPEND="${PN#e_module-}"
+ESVN_URI_APPEND="${PN#e_modules-}"
 E_NO_DOC="1"
 inherit efl
 
 DESCRIPTION="evry-mpris plugin is a frontend for mediaplayers that support mpris."
 IUSE=""
 
-RDEPEND=">=x11-wm/enlightenment-9999[everything]"
+RDEPEND=">=x11-wm/enlightenment-9999[enlightenment_modules_everything]"
 DEPEND="${RDEPEND}"

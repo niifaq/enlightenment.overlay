@@ -4,13 +4,13 @@
 
 EAPI="2"
 ESVN_SUB_PROJECT="E-MODULES-EXTRA"
-ESVN_URI_APPEND="${PN#e_module-}"
+ESVN_URI_APPEND="${PN#e_modules-}"
 E_NO_DOC="1"
 inherit efl
 
-DESCRIPTION="Tracker search for Everything. requires tracker 0.8"
+DESCRIPTION="everything-pidgin module for enlightenment"
 IUSE=""
 
-RDEPEND=">=x11-wm/enlightenment-9999[everything]
-	>=app-misc/tracker-0.6"
+RDEPEND=">=x11-wm/enlightenment-9999[enlightenment_modules_everything]
+	net-im/pidgin"
 DEPEND="${RDEPEND}"

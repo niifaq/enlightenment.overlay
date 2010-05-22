@@ -42,5 +42,26 @@
  <flag name="enlightenment_everything_aspell">everything_aspell</flag>
  <flag name="enlightenment_everything_settings">everything_settings</flag>
  <flag name="enlightenment_everything_windows">everything_windows</flag>
+ <flag name="enlightenment_modules_everything">modules_everything</flag>
+ <flag name="enlightenment_modules_fileman">modules_fileman</flag>
+ <flag name="enlightenment_modules_ibar">modules_ibar</flag>
+ <flag name="enlightenment_modules_ibox">modules_ibox</flag>
+ <flag name="enlightenment_modules_illume2">modules_illume2</flag>
+ <flag name="enlightenment_modules_illume">modules_illume</flag>
+ <flag name="enlightenment_modules_ofono">modules_ofono</flag>
+ <flag name="enlightenment_modules_pager">modules_pager</flag>
+ <flag name="enlightenment_modules_start">modules_start</flag>
+ <flag name="enlightenment_modules_syscon">modules_syscon</flag>
+ <flag name="enlightenment_modules_systray">modules_systray</flag>
+ <flag name="enlightenment_modules_temperature">modules_temperature</flag>
+ <flag name="enlightenment_modules_winlist">modules_winlist</flag>
+ <flag name="enlightenment_modules_wizard">modules_wizard</flag>
+ <flag name="enlightenment_modules_cpufreq">modules_cpufreq</flag>
+ <flag name="enlightenment_modules_dropshadow">modules_dropshadow</flag>
+ <flag name="enlightenment_modules_battery">modules_battery</flag>
+ <flag name="enlightenment_modules_clock">modules_clock</flag>
+ <flag name="enlightenment_modules_comp">modules_comp</flag>
+ <flag name="enlightenment_modules_conf">modules_conf</flag>
+ <flag name="enlightenment_modules_connman">modules_connman</flag>
 </use>
 </pkgmetadata>

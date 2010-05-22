@@ -62,10 +62,6 @@
 =x11-misc/shellementary-9999 **
 =x11-plugins/ecomorph-9999 **
 =x11-plugins/edgar-9999 **
-=x11-plugins/e_module-everything-mpris-9999 **
-=x11-plugins/e_module-everything-pidgin-9999 **
-=x11-plugins/e_module-everything-tracker-9999 **
-=x11-plugins/e_module-everything-websearch-9999 **
 =x11-plugins/e_modules-alarm-9999 **
 =x11-plugins/e_modules-calendar-9999 **
 =x11-plugins/e_modules-cpu-9999 **
@@ -75,6 +71,10 @@
 =x11-plugins/e_modules-efm_nav-9999 **
 =x11-plugins/e_modules-efm_path-9999 **
 =x11-plugins/e_modules-efm_pathbar-9999 **
+=x11-plugins/e_modules-everything-mpris-9999 **
+=x11-plugins/e_modules-everything-pidgin-9999 **
+=x11-plugins/e_modules-everything-tracker-9999 **
+=x11-plugins/e_modules-everything-websearch-9999 **
 =x11-plugins/e_modules-eweather-9999 **
 =x11-plugins/e_modules-exalt-client-9999 **
 =x11-plugins/e_modules-execwatch-9999 **

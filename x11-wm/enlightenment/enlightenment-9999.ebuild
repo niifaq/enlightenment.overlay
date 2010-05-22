@@ -68,6 +68,10 @@ IUSE_ENLIGHTENMENT_EVERYTHING="
 	settings
 	windows"
 
+for module in ${IUSE_ENLIGHTENMENT_MODULES}; do
+	IUSE="${IUSE} +enlightenment_modules_${module}"
+done
+
 for module in ${IUSE_ENLIGHTENMENT_CONF}; do
 	IUSE="${IUSE} +enlightenment_conf_${module}"
 done

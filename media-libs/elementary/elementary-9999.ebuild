@@ -3,6 +3,7 @@
 # $Header: $
 
 EAPI="2"
+E_NO_NLS="yes"
 ESVN_SUB_PROJECT="TMP/st"
 inherit efl
 

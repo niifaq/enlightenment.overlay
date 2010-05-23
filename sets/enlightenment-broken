@@ -19,3 +19,5 @@
 =media-libs/epsilon-9999
 =dev-libs/engrave-9999
 =dev-python/python-epsilon-9999
+=x11-wm/ecomp-9999
+=x11-plugins/ecomorph-9999

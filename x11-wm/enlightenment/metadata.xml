@@ -11,7 +11,6 @@
  <flag name="tracker">Enable the search plugin using <pkg>app-misc/tracker</pkg> in Everything launcher.</flag>
  <flag name="pm-utils">Integrate with <pkg>sys-power/pm-utils</pkg> to provide hibernate and suspend.</flag>
  <flag name="xinerama">Enable multiple screen setup (xinerama and xrandr).</flag>
- <flag name="bluetooth">Enable <pkg>net-wireless/bluez</pkg> support to manage bluetooth devices.</flag>
  <flag name="udev">Enable hadrware detection capabilities via udev</flag>
  <flag name="enlightenment_conf_borders">Enable configuration Look-and-feel dialog for
 	 changing window border styles</flag>
@@ -42,12 +41,14 @@
  <flag name="enlightenment_everything_aspell">everything_aspell</flag>
  <flag name="enlightenment_everything_settings">everything_settings</flag>
  <flag name="enlightenment_everything_windows">everything_windows</flag>
+ <flag name="enlightenment_modules_bluez">modules_bluez</flag>
  <flag name="enlightenment_modules_everything">modules_everything</flag>
  <flag name="enlightenment_modules_fileman">modules_fileman</flag>
  <flag name="enlightenment_modules_ibar">modules_ibar</flag>
  <flag name="enlightenment_modules_ibox">modules_ibox</flag>
  <flag name="enlightenment_modules_illume2">modules_illume2</flag>
  <flag name="enlightenment_modules_illume">modules_illume</flag>
+ <flag name="enlightenment_modules_mixer">modules_mixer</flag>
  <flag name="enlightenment_modules_ofono">modules_ofono</flag>
  <flag name="enlightenment_modules_pager">modules_pager</flag>
  <flag name="enlightenment_modules_start">modules_start</flag>

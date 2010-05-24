@@ -8,8 +8,7 @@ E_NO_DOC="yes"
 ESVN_SUB_PROJECT="E-MODULES-EXTRA"
 inherit efl
 
-DESCRIPTION="This module - different e17 winlist"
-HOMEPAGE="http://code.google.com/p/itask-module"
+DESCRIPTION="Application launcher and taskbar based on the good old engage"
 
 IUSE=""
 

@@ -18,6 +18,7 @@
 =x11-plugins/e_modules-flame-9999
 =x11-plugins/e_modules-forecasts-9999
 =x11-plugins/e_modules-iiirk-9999
+=x11-plugins/e_modules-itask-ng-9999
 =x11-plugins/e_modules-language-9999
 =x11-plugins/e_modules-mail-9999
 =x11-plugins/e_modules-mem-9999
@@ -39,9 +40,8 @@
 =x11-plugins/e_modules-tiling-9999
 =x11-plugins/e_modules-uptime-9999
 =x11-plugins/e_modules-weather-9999
+=x11-plugins/e_modules-winlist-ng-9999
 =x11-plugins/e_modules-winselector-9999
 =x11-plugins/e_modules-wlan-9999
 =x11-plugins/extramenu-9999
-=x11-plugins/itask-ng-9999
 =x11-plugins/trash-9999
-=x11-plugins/winlist-ng-9999

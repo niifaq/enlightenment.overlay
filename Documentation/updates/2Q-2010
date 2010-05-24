@@ -1,1 +1,3 @@
 move x11-plugins/winlist_ng x11-plugins/winlist-ng
+move x11-plugins/winlist-ng x11-plugins/e_modules-winlist-ng
+move x11-plugins/itask-ng x11-plugins/e_modules-itask-ng

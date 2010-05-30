@@ -6,6 +6,7 @@ EAPI="2"
 
 E_NO_DOC="yes"
 ESVN_SUB_PROJECT="E-MODULES-EXTRA"
+ESVN_URI_APPEND="${PN/e_modules-}"
 inherit efl
 
 DESCRIPTION="Application launcher and taskbar based on the good old engage"

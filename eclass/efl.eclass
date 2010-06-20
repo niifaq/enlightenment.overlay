@@ -121,7 +121,15 @@ if [[ -z "${E_NO_NLS}" ]]; then
 
 	# gettext (via `autopoint`) needs to run cvs #245073
 	if [[ ${E_STATE} == "live" ]] && [[ ${WANT_AUTOTOOLS} == "yes" ]]; then
-		DEPEND="${DEPEND} dev-util/cvs"
+		# Nasty hack, but I have no other choice...
+		gettext_version=$(gettext --version | head -n 1 | \
+										cut -d ' ' -f 4 | cut -d '.' -f 2)
+
+		if [[ "${gettext_version}" -ge 18 ]]; then
+			DEPEND="${DEPEND} dev-vcs/git"
+		else
+			DEPEND="${DEPEND} dev-vcs/cvs"
+		fi
 	fi
 fi
 

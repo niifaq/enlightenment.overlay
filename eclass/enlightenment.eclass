@@ -84,7 +84,7 @@ DEPEND="doc? ( app-doc/doxygen )"
 RDEPEND="nls? ( sys-devel/gettext )"
 
 # gettext (via `autopoint`) needs to run cvs #245073
-[[ ${E_STATE} == "live" ]] && DEPEND="${DEPEND} dev-util/cvs"
+#[[ ${E_STATE} == "live" ]] && DEPEND="${DEPEND} dev-util/cvs"
 
 case ${EURI_STATE:-${E_STATE}} in
 	release) S=${WORKDIR}/${P};;

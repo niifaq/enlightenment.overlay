@@ -19,6 +19,7 @@ DEPEND="x11-apps/xrandr
 	dev-libs/libxml2:2
 	net-misc/curl
 	dev-libs/openssl
+	dev-libs/json-c
 	>=media-libs/elementary-9999"
 
 RDEPEND="${DEPEND}"

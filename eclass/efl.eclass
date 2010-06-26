@@ -218,6 +218,12 @@ efl_src_prepare() {
 	if [[ -z "${E_PYTHON}" ]]; then
 		if [[ -e configure.ac || -e configure.in ]] && \
 									[[ "${WANT_AUTOTOOLS}" == "yes" ]]; then
+			if [[ -z "${E_EXTERNAL}" ]]; then
+				# Required for svn-version-autogeneration of evas/eina packages
+
+				export SVN_REPO_PATH="${ESVN_WC_PATH}"
+			fi
+
 			local macro_regex='^[[:space:]]*AM_GNU_GETTEXT_VERSION'
 
 			if [[ -z "${E_NO_NLS}" ]]; then

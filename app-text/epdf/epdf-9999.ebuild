@@ -16,3 +16,11 @@ RDEPEND="
 	>=media-libs/evas-9999
 	>=dev-libs/ecore-9999[evas]"
 DEPEND="${RDEPEND}"
+
+src_compile() {
+	emake -j1 || die "emake failed"
+
+	if use doc; then
+		emake doc || die "emake doc failed"
+	fi
+}

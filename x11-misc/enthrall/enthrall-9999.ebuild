@@ -3,16 +3,16 @@
 # $Header: $
 
 EAPI="2"
-
+E_OLD_PROJECT="yes"
 ESVN_SUB_PROJECT="MISC"
 
-inherit enlightenment
+inherit efl
 
 DESCRIPTION="Enthrall - screen capture application, built on Ecore and Imlib2"
 
 IUSE=""
 
-DEPEND=">=media-video/ffmpeg-9999
+DEPEND="media-video/ffmpeg
 	>=dev-libs/ecore-9999
 	>=media-libs/imlib2-9999"
 

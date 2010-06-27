@@ -4,9 +4,12 @@
 
 EAPI="2"
 
-ESVN_BRANCH="/"
-ESVN_SUB_PROJECT="OLD"
-inherit enlightenment
+E_NO_NLS="yes"
+E_NO_DOC="yes"
+
+E_OLD_PROJECT="yes"
+
+inherit efl
 
 DESCRIPTION="an e17 media player"
 

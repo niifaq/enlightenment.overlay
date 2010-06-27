@@ -4,7 +4,9 @@
 
 EAPI="2"
 
-inherit enlightenment
+E_NO_NLS="yes"
+E_NO_DOC="yes"
+inherit efl
 
 DESCRIPTION="Exquisite - EFL based psplash replacement"
 IUSE=""

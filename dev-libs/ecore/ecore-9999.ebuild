@@ -89,7 +89,7 @@ src_configure() {
 			--disable-ecore-evas-direct3d
 			--disable-ecore-evas-opengl-glew
 			--disable-ecore-evas-software-16-ddraw
-			--disable-ecore-evas-quartz
+			--disable-ecore-evas-cocoa
 			--disable-ecore-evas-software-16-wince
 			$(use_enable directfb ecore-evas-directfb)
 			$(use_enable fbcon ecore-evas-fb)
@@ -111,7 +111,7 @@ src_configure() {
 			--disable-ecore-evas-direct3d
 			--disable-ecore-evas-opengl-glew
 			--disable-ecore-evas-software-16-ddraw
-			--disable-ecore-evas-quartz
+			--disable-ecore-evas-cocoa
 			--disable-ecore-evas-software-16-wince
 			--disable-ecore-evas-directfb
 			--disable-ecore-evas-fb
@@ -177,7 +177,7 @@ src_configure() {
 		--enable-ecore-file
 		--enable-ecore-imf
 		--enable-ecore-input
-		--disable-ecore-quartz
+		--disable-ecore-cocoa
 		--disable-ecore-win32
 		--disable-ecore-wince
 		$(use_enable curl)

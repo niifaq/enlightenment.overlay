@@ -3,7 +3,10 @@
 # $Header: $
 
 EAPI="2"
-inherit enlightenment
+
+E_NO_NLS="yes"
+E_NO_DOC="yes"
+inherit efl
 
 DESCRIPTION="EFL based front end network manager"
 
@@ -24,10 +27,10 @@ RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/${PN}"
 
-src_compile() {
+src_configure() {
 	export MY_ECONF="$(use_with vpnc)"
 
-	enlightenment_src_compile
+	efl_src_configure
 }
 
 src_install() {
@@ -37,5 +40,5 @@ src_install() {
 	insinto /etc/dbus-1/system.d/
 	doins data/daemon/dbus/exalt.conf
 
-	enlightenment_src_install
+	efl_src_install
 }

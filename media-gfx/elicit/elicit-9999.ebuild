@@ -4,8 +4,12 @@
 
 EAPI="2"
 
+E_NO_NLS="yes"
+E_NO_DOC="yes"
+
 EGIT_REPO_URI="git://github.com/rephorm/elicit.git"
 E_EXTERNAL="yes"
+
 inherit git efl
 
 DESCRIPTION="tool for examining images on your desktop"

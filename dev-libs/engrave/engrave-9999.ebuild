@@ -4,9 +4,10 @@
 
 EAPI="2"
 
-ESVN_BRANCH="/"
-ESVN_SUB_PROJECT="OLD"
-inherit enlightenment
+E_OLD_PROJECT="yes"
+E_NO_NLS="yes"
+E_NO_DOC="yes"
+inherit efl
 
 DESCRIPTION="library for editing the contents of edje files"
 

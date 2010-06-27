@@ -4,9 +4,14 @@
 
 EAPI="2"
 
-ESVN_BRANCH="/"
-ESVN_SUB_PROJECT="OLD/MISC"
-inherit enlightenment
+E_NO_NLS="yes"
+E_NO_DOC="yes"
+E_NO_DISABLE_STATIC="yes"
+
+E_OLD_PROJECT="yes"
+ESVN_SUB_PROJECT="MISC"
+
+inherit efl
 
 DESCRIPTION="EFL powered clock"
 

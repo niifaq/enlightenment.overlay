@@ -4,6 +4,9 @@
 
 EAPI="2"
 
+E_NO_NLS="yes"
+E_NO_DOC="yes"
+
 E_OLD_PROJECT="yes"
 ESVN_SUB_PROJECT="MISC"
 

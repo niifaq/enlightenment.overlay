@@ -4,7 +4,9 @@
 
 EAPI="2"
 
-inherit enlightenment toolchain-funcs
+E_NO_NLS="yes"
+E_NO_DOC="yes"
+inherit efl toolchain-funcs
 
 MY_P=${P/_/-}
 DESCRIPTION="Version 2 of an advanced replacement library for libraries like libXpm"
@@ -24,13 +26,7 @@ DEPEND="=media-libs/freetype-2*
 
 RDEPEND="${DEPEND}"
 
-src_prepare() {
-	sed -i '/ACLOCAL_AMFLAGS/ d' Makefile.am
-
-	enlightenment_src_prepare
-}
-
-src_compile() {
+src_configure() {
 	# imlib2 has diff configure options for x86/amd64 mmx
 	local myconf=""
 	if [[ $(tc-arch) == "amd64" ]] ; then
@@ -52,9 +48,6 @@ src_compile() {
 		$(use_with mp3 id3) \
 		${myconf} \
 	"
-	enlightenment_src_compile
-}
 
-src_install() {
-	MAKEOPTS="-j1" enlightenment_src_install
+	efl_src_configure
 }

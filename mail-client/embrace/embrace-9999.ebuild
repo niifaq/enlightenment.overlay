@@ -4,13 +4,17 @@
 
 EAPI="2"
 
-ESVN_BRANCH="/"
-ESVN_SUB_PROJECT="OLD/MISC"
-inherit enlightenment
+E_NO_NLS="yes"
+E_NO_DOC="yes"
+
+E_OLD_PROJECT="yes"
+ESVN_SUB_PROJECT="MISC"
+
+inherit efl
 
 DESCRIPTION="mail-checker which is based on the EFL"
 
-IUSE="ssl mbox maildir imap"
+IUSE="mbox maildir imap"
 
 DEPEND="
 	dev-db/edb
@@ -18,18 +22,16 @@ DEPEND="
 	>=media-libs/evas-0.9.9
 	>=media-libs/edje-0.5.0
 	>=x11-libs/esmart-0.9.0
-	ssl? ( dev-libs/openssl )
 "
 
 RDEPEND="${DEPEND}"
 
-src_compile() {
+src_configure() {
 	export MY_ECONF="
-		$(use_enable ssl) \
 		$(use_with mbox) \
 		$(use_with maildir) \
-		--with-pop \
 		$(use_with imap) \
 	"
-	enlightenment_src_compile
+
+	efl_src_configure
 }

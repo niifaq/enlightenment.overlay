@@ -4,9 +4,13 @@
 
 EAPI="2"
 
+E_NO_NLS="yes"
+E_NO_DOC="yes"
+E_NO_DISABLE_STATIC="yes"
+
 ESVN_SUB_PROJECT="PROTO"
 
-inherit enlightenment
+inherit efl
 
 DESCRIPTION="An light-weight image viewer based on Elementary"
 
@@ -21,11 +25,11 @@ DEPEND=">=dev-libs/ecore-9999
 
 RDEPEND="${DEPEND}"
 
-src_compile() {
-
+src_configure() {
 	export MY_ECONF="
-		$(use_enable ethumb) \
-		$(use_enable experimental) \
-		"
-	enlightenment_src_compile
+		$(use_enable ethumb)
+		$(use_enable experimental)
+	"
+
+	efl_src_configure
 }

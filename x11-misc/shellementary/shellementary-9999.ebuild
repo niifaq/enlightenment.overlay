@@ -6,7 +6,7 @@ EAPI="2"
 
 NEED_PYTHON="2.4"
 ESVN_SUB_PROJECT="PROTO"
-inherit enlightenment python distutils
+inherit efl python distutils
 
 DESCRIPTION="Tool to display Elementary dialogs from the command line and shell scripts"
 
@@ -21,7 +21,7 @@ RDEPEND=">=dev-python/cython-0.9.8
 DEPEND="${RDEPEND}"
 
 src_unpack() {
-	enlightenment_src_unpack
+	efl_src_unpack
 }
 
 src_compile() {

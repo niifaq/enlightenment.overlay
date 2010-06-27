@@ -4,6 +4,7 @@
 
 EAPI="2"
 
+E_NO_DOC="yes"
 E_EXTERNAL="yes"
 inherit git efl flag-o-matic
 
@@ -12,7 +13,7 @@ EGIT_REPO_URI="git://github.com/jeffdameth/${PN}.git"
 DESCRIPTION="Patched compiz for use into enlightenment with ecomorph"
 HOMEPAGE="http://code.google.com/p/itask-module/wiki/Stuff"
 
-IUSE="inotify jpeg dbus max-desktops"
+IUSE="inotify jpeg max-desktops"
 
 # Most of depends taken from homepage. 
 # librsvg and libpng are commented into configure.ac
@@ -31,7 +32,6 @@ DEPEND="
 	dev-libs/libxml2
 	virtual/opengl
 	media-libs/mesa
-	dbus? ( sys-apps/dbus )
 	jpeg? ( media-libs/jpeg )"
 
 RDEPEND="${DEPEND}"
@@ -43,10 +43,7 @@ src_unpack() {
 }
 
 src_configure() {
-	filter-ldflags "-Wl,--as-needed"
-
 	export MY_ECONF="
-		$(use_enable dbus)
 		$(use_enable inotify)
 		$(use_enable jpeg)
 		$(use_with max-desktops)

@@ -6,7 +6,7 @@ EAPI="2"
 
 NEED_PYTHON="2.4"
 ESVN_SUB_PROJECT="PROTO"
-inherit enlightenment python distutils
+inherit efl python distutils
 
 DESCRIPTION="An On screen keyboard written in Python-EFL"
 
@@ -20,7 +20,7 @@ DEPEND="dev-libs/ecore
 RDEPEND="${DEPEND}"
 
 src_unpack() {
-	enlightenment_src_unpack
+	efl_src_unpack
 }
 
 src_compile() {

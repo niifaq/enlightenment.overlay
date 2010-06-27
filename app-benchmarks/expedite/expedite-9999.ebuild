@@ -3,8 +3,11 @@
 # $Header: $
 
 EAPI="2"
-E_NO_NLS="1"
-E_NO_DOC="1"
+
+E_NO_NLS="yes"
+E_NO_DOC="yes"
+E_NO_DISABLE_STATIC="yes"
+
 inherit efl
 
 DESCRIPTION="Comprehensive test and benchmark suite for Evas"

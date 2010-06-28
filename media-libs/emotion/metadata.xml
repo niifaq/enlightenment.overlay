@@ -8,6 +8,7 @@
 </maintainer>
 <use>
  <flag name="gstreamer">Enable media playback using <pkg>media-libs/gstreamer</pkg>.</flag>
+ <flag name="vlc">Enable media playback using <pkg>media-video/vlc</pkg>.</flag>
  <flag name="xine">Enable media playback using <pkg>media-libs/xine-lib</pkg>.</flag>
  <flag name="static-modules">Build modules built-in, avoiding dynamically loading and linking them.</flag>
 </use>

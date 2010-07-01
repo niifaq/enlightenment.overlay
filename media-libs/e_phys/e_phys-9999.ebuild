@@ -18,3 +18,9 @@ DEPEND=">=dev-libs/ecore-9999
 	>=media-libs/evas-9999"
 
 RDEPEND="${DEPEND}"
+
+src_prepare() {
+	epatch "${FILESDIR}"/add-explicit-visibility-for-api.patch
+
+	efl_src_prepare
+}

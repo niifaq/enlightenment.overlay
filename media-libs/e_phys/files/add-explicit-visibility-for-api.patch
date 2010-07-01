@@ -1,0 +1,241 @@
+diff --git a/src/lib/E_Phys.h b/src/lib/E_Phys.h
+index 637439c..d49e64a 100644
+--- a/src/lib/E_Phys.h
++++ b/src/lib/E_Phys.h
+@@ -11,6 +11,8 @@ extern "C" {
+ #include <stdio.h>
+ #include <math.h>
+ 
++#define EAPI __attribute__ ((visibility("default")))
++
+ /**
+  * Type definition of the point
+  */
+@@ -27,6 +29,7 @@ struct E_Phys_Point
+ /**
+  * Type definition of the vector
+  */
++
+ typedef E_Phys_Point E_Phys_Vector;
+ 
+ #include <e_phys_world.h>
+diff --git a/src/lib/e_phys_constraint.h b/src/lib/e_phys_constraint.h
+index 8ac8749..c83f4c8 100644
+--- a/src/lib/e_phys_constraint.h
++++ b/src/lib/e_phys_constraint.h
+@@ -22,11 +22,11 @@ struct E_Phys_Constraint
+   void (*free) (E_Phys_Constraint *con);
+ };
+ 
+-void e_phys_constraint_init(E_Phys_Constraint *con, E_Phys_World *world,
+-       void (*apply_func) (E_Phys_Constraint *con),
+-       void (*free_func) (E_Phys_Constraint *con));
+-void e_phys_constraint_del(E_Phys_Constraint *con);
+-void e_phys_constraint_free(E_Phys_Constraint *con);
++EAPI void e_phys_constraint_init(E_Phys_Constraint *con, E_Phys_World *world,
++				void (*apply_func) (E_Phys_Constraint *con),
++				void (*free_func) (E_Phys_Constraint *con));
++EAPI void e_phys_constraint_del(E_Phys_Constraint *con);
++EAPI void e_phys_constraint_free(E_Phys_Constraint *con);
+ 
+ /**
+  * Type definition of the boundary constraint
+@@ -49,7 +49,8 @@ struct E_Phys_Constraint_Boundary
+   Eina_List *exclusions;
+ };
+ 
+-E_Phys_Constraint_Boundary *e_phys_constraint_boundary_add(E_Phys_World *world);
++EAPI E_Phys_Constraint_Boundary *e_phys_constraint_boundary_add(
++							E_Phys_World *world);
+ 
+ /**
+  * Type definition of the stick constraint
+@@ -73,10 +74,10 @@ struct E_Phys_Constraint_Stick
+   float len;
+ };
+ 
+-E_Phys_Constraint_Stick    *e_phys_constraint_stick_add(
+-                              E_Phys_Particle *p1,
+-                              E_Phys_Particle *p2,
+-                              int len);
++EAPI E_Phys_Constraint_Stick *e_phys_constraint_stick_add(
++					E_Phys_Particle *p1,
++					E_Phys_Particle *p2,
++					int len);
+ 
+ /**
+  * Type definition of the anchor constraint
+@@ -99,7 +100,8 @@ struct E_Phys_Constraint_Anchor
+   E_Phys_Point pos;
+ };
+ 
+-E_Phys_Constraint_Anchor *e_phys_constraint_anchor_add(E_Phys_Particle *p, 
+-                            float x, float y);
++EAPI E_Phys_Constraint_Anchor *e_phys_constraint_anchor_add(
++					E_Phys_Particle *p,
++					float x, float y);
+ 
+ #endif
+diff --git a/src/lib/e_phys_force.h b/src/lib/e_phys_force.h
+index f23afff..6bb1bb2 100644
+--- a/src/lib/e_phys_force.h
++++ b/src/lib/e_phys_force.h
+@@ -47,7 +47,8 @@ struct E_Phys_Force_Gravity
+   float g;
+ };
+ 
+-E_Phys_Force_Gravity   *e_phys_force_gravity_add(E_Phys_World *world, float g);
++EAPI E_Phys_Force_Gravity *e_phys_force_gravity_add(E_Phys_World *world,
++								float g);
+ 
+ /**
+  * Type definition of the spring force
+@@ -73,10 +74,14 @@ struct E_Phys_Force_Spring
+   int modified;
+ };
+ 
+-E_Phys_Force_Spring    *e_phys_force_spring_add(E_Phys_World *world,
+-                          E_Phys_Particle *p1, E_Phys_Particle *p2, int k, int len);
+-E_Phys_Force_Spring    *e_phys_force_modified_spring_add(E_Phys_World *world,
+-                          E_Phys_Particle *p1, E_Phys_Particle *p2, int k, int len);
++EAPI E_Phys_Force_Spring *e_phys_force_spring_add(E_Phys_World *world,
++					E_Phys_Particle *p1,
++					E_Phys_Particle *p2,
++					int k, int len);
++EAPI E_Phys_Force_Spring *e_phys_force_modified_spring_add(E_Phys_World *world,
++					E_Phys_Particle *p1,
++					E_Phys_Particle *p2,
++					int k, int len);
+ 
+ /**
+  * Type definition of the collision force
+@@ -98,7 +103,7 @@ struct E_Phys_Force_Collision
+   float e; // elasticity?
+ };
+ 
+-E_Phys_Force_Collision *e_phys_force_collision_add(E_Phys_World *world);
++EAPI E_Phys_Force_Collision *e_phys_force_collision_add(E_Phys_World *world);
+ 
+ /**
+  * Type definition of the uniform force
+@@ -122,9 +127,9 @@ struct E_Phys_Force_Uniform
+   int is_acceleration;
+ };
+ 
+-E_Phys_Force_Uniform *e_phys_force_uniform_add(E_Phys_World *world, 
+-                        E_Phys_Vector (*force_func) (float t), 
+-                        int is_acceleration);
++EAPI E_Phys_Force_Uniform *e_phys_force_uniform_add(E_Phys_World *world,
++					E_Phys_Vector (*force_func) (float t), 
++					int is_acceleration);
+ 
+ /**
+  * Type definition of the constant force
+@@ -137,7 +142,8 @@ typedef E_Phys_Force_Uniform E_Phys_Force_Constant;
+  */
+ #define E_PHYS_FORCE_CONSTANT(force) ((E_Phys_Force_Constant *)(force))
+ 
+-E_Phys_Force_Constant *e_phys_force_constant_add(E_Phys_World *world, 
+-                         E_Phys_Vector force, int is_acceleration);
++EAPI E_Phys_Force_Constant *e_phys_force_constant_add(E_Phys_World *world, 
++					E_Phys_Vector force,
++					int is_acceleration);
+ 
+ #endif
+diff --git a/src/lib/e_phys_particle.h b/src/lib/e_phys_particle.h
+index 0729c20..16cc115 100644
+--- a/src/lib/e_phys_particle.h
++++ b/src/lib/e_phys_particle.h
+@@ -33,36 +33,35 @@ struct E_Phys_Particle
+   E_Phys_Particle *neighbor[E_PHYS_PARTICLE_DIRECTION_MAX];
+ };
+ 
+-E_Phys_Particle *e_phys_particle_add(E_Phys_World *world);
+-void             e_phys_particle_del(E_Phys_Particle *p);
+-void             e_phys_particle_free(E_Phys_Particle *p);
++EAPI E_Phys_Particle *e_phys_particle_add(E_Phys_World *world);
++EAPI void e_phys_particle_del(E_Phys_Particle *p);
++EAPI void e_phys_particle_free(E_Phys_Particle *p);
+ 
+-void             e_phys_particle_mass_set(E_Phys_Particle *p, float m);
+-float            e_phys_particle_mass_get(E_Phys_Particle *p);
++EAPI void e_phys_particle_mass_set(E_Phys_Particle *p, float m);
++EAPI float e_phys_particle_mass_get(E_Phys_Particle *p);
+ 
+-void             e_phys_particle_move(E_Phys_Particle *p, 
+-                   const E_Phys_Point *pos);
+-void             e_phys_particle_place(E_Phys_Particle *p,
+-                   const E_Phys_Point *pos);
+-E_Phys_Point     e_phys_particle_current_position_get(E_Phys_Particle *p);
+-E_Phys_Point     e_phys_particle_previous_position_get(E_Phys_Particle *p);
++EAPI void e_phys_particle_move(E_Phys_Particle *p, 
++					const E_Phys_Point *pos);
++EAPI void e_phys_particle_place(E_Phys_Particle *p,
++ 	      				const E_Phys_Point *pos);
++EAPI E_Phys_Point e_phys_particle_current_position_get(E_Phys_Particle *p);
++EAPI E_Phys_Point e_phys_particle_previous_position_get(E_Phys_Particle *p);
+ 
+ 
+-void             e_phys_particle_velocity_set(E_Phys_Particle *p, 
+-                   const E_Phys_Vector *v);
+-E_Phys_Vector    e_phys_partivle_velocity_get(E_Phys_Particle *p);
++EAPI void e_phys_particle_velocity_set(E_Phys_Particle *p,
++						const E_Phys_Vector *v);
++EAPI E_Phys_Vector e_phys_partivle_velocity_get(E_Phys_Particle *p);
+ 
+-void             e_phys_particle_force_add(E_Phys_Particle *p, 
+-                   const E_Phys_Vector *f);
+-void             e_phys_particle_force_set(E_Phys_Particle *p,
+-                   const E_Phys_Vector *f);
+-E_Phys_Vector    e_phys_particle_force_get(E_Phys_Particle *p);
++EAPI void e_phys_particle_force_add(E_Phys_Particle *p, 
++					const E_Phys_Vector *f);
++EAPI void e_phys_particle_force_set(E_Phys_Particle *p,
++					const E_Phys_Vector *f);
++EAPI E_Phys_Vector e_phys_particle_force_get(E_Phys_Particle *p);
+ 
+-void             e_phys_particle_size_set(E_Phys_Particle *p, float w, float h);
+-void             e_phys_particle_size_get(E_Phys_Particle *p, 
+-                   float *w, float *h);
++EAPI void e_phys_particle_size_set(E_Phys_Particle *p, float w, float h);
++EAPI void e_phys_particle_size_get(E_Phys_Particle *p, float *w, float *h);
+ 
+-E_Phys_Particle *e_phys_particle_map_insert(E_Phys_Particle *head,
+-                   E_Phys_Particle *p);
++EAPI E_Phys_Particle *e_phys_particle_map_insert(E_Phys_Particle *head,
++							E_Phys_Particle *p);
+ 
+ #endif
+diff --git a/src/lib/e_phys_world.h b/src/lib/e_phys_world.h
+index ba14156..3752c38 100644
+--- a/src/lib/e_phys_world.h
++++ b/src/lib/e_phys_world.h
+@@ -47,15 +47,18 @@ struct E_Phys_World
+   void *update_data;
+ };
+ 
+-E_Phys_World    *e_phys_world_add(void);
+-void             e_phys_world_free(E_Phys_World *world);
+-void             e_phys_world_go(E_Phys_World *world);
+-void             e_phys_world_stop(E_Phys_World *world);
+-void             e_phys_world_update_func_set(E_Phys_World *world,
+-                   void (*func) (void *data, E_Phys_World *world),
+-                   void *data);
+-void             e_phys_world_size_set(E_Phys_World *world, float w, float h);
+-E_Phys_Particle *e_phys_world_nearest_particle(E_Phys_World *world,
+-                   int x, int y);
++EAPI E_Phys_World *e_phys_world_add(void);
++
++EAPI void e_phys_world_free(E_Phys_World *world);
++EAPI void e_phys_world_go(E_Phys_World *world);
++EAPI void e_phys_world_stop(E_Phys_World *world);
++
++EAPI void e_phys_world_update_func_set(E_Phys_World *world,
++				void (*func) (void *data, E_Phys_World *world),
++				void *data);
++
++EAPI void e_phys_world_size_set(E_Phys_World *world, float w, float h);
++EAPI E_Phys_Particle *e_phys_world_nearest_particle(E_Phys_World *world,
++							int x, int y);
+ 
+ #endif

@@ -3,6 +3,15 @@
 =app-laptop/epbb-9999 **
 =app-misc/canola-daemon-9999 **
 =app-text/epdf-9999 **
+=dev-cpp/ecorexx-9999 **
+=dev-cpp/edjexx-9999 **
+=dev-cpp/eetxx-9999 **
+=dev-cpp/eflxx-9999 **
+=dev-cpp/einaxx-9999 **
+=dev-cpp/elementaryxx-9999 **
+=dev-cpp/emotionxx-9999 **
+=dev-cpp/esmartxx-9999 **
+=dev-cpp/evasxx-9999 **
 =dev-libs/ecore-9999 **
 =dev-libs/e_dbus-9999 **
 =dev-libs/eet-9999 **
@@ -55,7 +64,6 @@
 =sys-libs/ememoa-9999 **
 =x11-apps/elapse-9999 **
 =x11-libs/esmart-9999 **
-=x11-misc/edje_player-9999 **
 =x11-misc/emprint-9999 **
 =x11-misc/enthrall-9999 **
 =x11-misc/keys-9999 **
@@ -71,6 +79,7 @@
 =x11-plugins/e_modules-efm_nav-9999 **
 =x11-plugins/e_modules-efm_path-9999 **
 =x11-plugins/e_modules-efm_pathbar-9999 **
+=x11-plugins/e_modules-eooorg-9999 **
 =x11-plugins/e_modules-everything-mpris-9999 **
 =x11-plugins/e_modules-everything-pidgin-9999 **
 =x11-plugins/e_modules-everything-places-9999 **

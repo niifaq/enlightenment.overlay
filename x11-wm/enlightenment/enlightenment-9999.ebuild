@@ -14,7 +14,7 @@ SLOT="0.17"
 # FIXME: 'tracker' USE has no configure flag
 # FIXME: 'pm-utils' USE has no configure flag
 # FIXME: xinerama, xscreensaver and opengl USEs are indirect
-IUSE="exchange hal opengl pam pm-utils tracker +udev xinerama xscreensaver"
+IUSE="exchange hal opengl pam pm-utils +sysactions tracker +udev xinerama xscreensaver"
 
 IUSE_ENLIGHTENMENT_MODULES="
 	battery
@@ -137,6 +137,7 @@ src_configure() {
 	  $(use_enable hal device-hal)
 	  $(use_enable pam)
 	  $(use_enable udev device-udev)
+	  $(use_enable sysactions install-sysactions)
 	"
 
 	local module=

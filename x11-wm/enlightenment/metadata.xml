@@ -12,6 +12,7 @@
  <flag name="pm-utils">Integrate with <pkg>sys-power/pm-utils</pkg> to provide hibernate and suspend.</flag>
  <flag name="xinerama">Enable multiple screen setup (xinerama and xrandr).</flag>
  <flag name="udev">Enable hadrware detection capabilities via udev</flag>
+ <flag name="sysactions">Enable install sysactions.conf file</flag>
  <flag name="enlightenment_conf_borders">Enable configuration Look-and-feel dialog for
 	 changing window border styles</flag>
  <flag name="enlightenment_conf_colors">Enable configuration Look-and-feel dialog for changing theme colors</flag>

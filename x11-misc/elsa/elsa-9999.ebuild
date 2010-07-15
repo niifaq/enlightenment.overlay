@@ -4,7 +4,7 @@
 
 EAPI="2"
 ESVN_SUB_PROJECT="PROTO"
-E_NO_NLS="yes"
+E_NO_DISABLE_STATIC="yes"
 E_NO_DOC="yes"
 
 inherit efl

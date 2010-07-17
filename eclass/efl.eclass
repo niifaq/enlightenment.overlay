@@ -59,12 +59,12 @@ inherit eutils libtool flag-o-matic
 # @DESCRIPTION:
 # if defined, the package is Cython bindings (implies E_PYTHON)
 
-# @ECLASS-VARIABLE: EFL_PKG_IUSE
+# @ECLASS-VARIABLE: E_PKG_IUSE
 # @DESCRIPTION:
 # Use EFL_PKG_IUSE instead of IUSE for doc, examples, nls and test so that the
 # eclass can automagically add the needed dependencies and or perform the
 # required actions.
-IUSE="${EFL_PKG_IUSE}"
+IUSE="${E_PKG_IUSE}"
 
 # @ECLASS-VARIABLE: E_LIVE_SERVER_DEFAULT_SVN
 # @DESCRIPTION:
@@ -75,6 +75,7 @@ E_STATE="release"
 
 if [[ ${PV/9999} != ${PV} ]] ; then
 	E_STATE="live"
+
 	# TODO live is not a permitted token according to pms.
 	# Switch to the mechanism to denote live packages once decided upon and
 	# available.
@@ -82,32 +83,36 @@ if [[ ${PV/9999} != ${PV} ]] ; then
 
 	: ${WANT_AUTOTOOLS:=yes}
 
+# @ECLASS-VARIABLE: E_EXTERNAL
+# @DESCRIPTION:
+# If defined, efl.eclass will not automatically inherit subversion and do any
+# magic for it
+	if [[ -z "${E_EXTERNAL}" ]]; then
 # @ECLASS-VARIABLE: E_LIVE_OFFLINE
 # @DESCRIPTION:
 # Use ESCM_OFFLINE="yes" only for enlightenment packages. Usefull if you want to
 # have manual control over subversion revisions
-	[[ -n ${E_LIVE_OFFLINE} ]] && ESCM_OFFLINE="yes"
+		[[ -n ${E_LIVE_OFFLINE} ]] && ESCM_OFFLINE="yes"
 
 # @ECLASS-VARIABLE: E_LIVE_SERVER
 # @DESCRIPTION:
 # Use another server than the default svn repo
-	E_LIVE_SERVER=${E_LIVE_SERVER:-${E_LIVE_SERVER_DEFAULT_SVN}}
-	ESVN_URI_APPEND=${ESVN_URI_APPEND:-${PN}}
-	ESVN_PROJECT="enlightenment/${ESVN_BRANCH}/${ESVN_SUB_PROJECT}"
+		: ${E_LIVE_SERVER:=${E_LIVE_SERVER_DEFAULT_SVN}}
 
-	if [[ -z "${E_EXTERNAL}" ]]; then
-		E_S_APPEND=${ESVN_URI_APPEND}
-
-		if [[ -z "${E_OLD_PROJECT}" ]]; then
-			ESVN_BRANCH="trunk"
-		else
-			ESVN_BRANCH="OLD"
-		fi
-
-		ESVN_URI_BASE="${E_LIVE_SERVER}/${ESVN_BRANCH}"
+# @ECLASS-VARIABLE: ESVN_URI_APPEND
+# @DESCRIPTION:
+# This is addition to final default svn repo path, namely package name
 		ESVN_URI_APPEND=${ESVN_URI_APPEND:-${PN}}
 
-		S="${WORKDIR}/${E_S_APPEND}"
+# @ECLASS-VARIABLE: ESVN_SUB_PROJECT
+# @DESCRIPTION:
+# Sub-group into svn.enlightenment.org repository trunk
+		ESVN_URI_APPEND=${ESVN_URI_APPEND:-${PN}}
+
+		ESVN_PROJECT="enlightenment/${ESVN_SUB_PROJECT}"
+		ESVN_REPO_URI="${E_LIVE_SERVER}/${ESVN_SUB_PROJECT}/${ESVN_URI_APPEND}"
+
+		S="${WORKDIR}/${ESVN_URI_APPEND}"
 
 		inherit subversion
 	fi
@@ -236,28 +241,28 @@ efl_src_prepare() {
 
 	[[ -s gendoc ]] && chmod a+rx gendoc
 
-	if [[ -z "${E_PYTHON}" ]]; then
-		if [[ -e configure.ac || -e configure.in ]] && \
-								[[ "${WANT_AUTOTOOLS}" == "yes" ]]; then
-			local macro_regex='^[[:space:]]*AM_GNU_GETTEXT_VERSION'
+	[[ -z "${E_PYTHON}" ]] || return;
 
-			if has doc "${IUSE}" && use doc; then
-				local x=
+	if [[ -e configure.ac || -e configure.in ]] && [[ "${WANT_AUTOTOOLS}" == "yes" ]]; then
+		AM_OPTS="--foreign"
 
-				for x in configure.{ac,in}; do
-					if [[ -r ${x} ]] && grep -qE "${macro_regex}" ${x}; then
-						eautopoint -f
-						break;
-					fi
-				done
-			fi
+		local macro_regex='^[[:space:]]*AM_GNU_GETTEXT_VERSION'
 
-			AM_OPTS="--foreign"
-			eautoreconf
+		if has nls "${IUSE}" && use nls; then
+			local x=
+
+			for x in configure.{ac,in}; do
+				if [[ -r ${x} ]] && grep -qE "${macro_regex}" ${x}; then
+					eautopoint -f
+					break;
+				fi
+			done
 		fi
 
-		epunt_cxx
+		eautoreconf
 	fi
+
+	epunt_cxx
 }
 
 # @FUNCTION: efl_src_configure
@@ -265,17 +270,17 @@ efl_src_prepare() {
 # @DESCRIPTION:
 # efl's default src_configure
 efl_src_configure() {
-	if [[ -z "${E_PYTHON}" ]]; then
-		[[ -z "${E_EXTERNAL}" ]] && export SVN_REPO_PATH="${ESVN_WC_PATH}"
+	[[ -z "${E_PYTHON}" ]] || return;
 
-		if [[ -x ${ECONF_SOURCE:-.}/configure ]]; then
-			has nls "${IUSE}" && MY_ECONF="${MY_ECONF} $(use_enable nls)"
-			has doc "${IUSE}" && MY_ECONF="${MY_ECONF} $(use_enable doc)"
+	[[ -z "${E_EXTERNAL}" ]] && export SVN_REPO_PATH="${ESVN_WC_PATH}"
 
-			[[ -z "${E_NO_DISABLE_STATIC}" ]] && MY_ECONF="${MY_ECONF} --disable-static"
+	if [[ -x ${ECONF_SOURCE:-.}/configure ]]; then
+		has nls "${IUSE}" && MY_ECONF="${MY_ECONF} $(use_enable nls)"
+		has doc "${IUSE}" && MY_ECONF="${MY_ECONF} $(use_enable doc)"
 
-			econf ${MY_ECONF} || efl_die "configure failed"
-		fi
+		[[ -z "${E_NO_DISABLE_STATIC}" ]] && MY_ECONF="${MY_ECONF} --disable-static"
+
+		econf ${MY_ECONF} || efl_die "configure failed"
 	fi
 }
 
@@ -305,7 +310,6 @@ efl_src_compile() {
 # efl's default src_install
 efl_src_install() {
 	if [[ -z "${E_PYTHON}" ]]; then
-
 		emake install DESTDIR="${D}" || efl_die
 
 		find "${D}" -name '*.la' -delete

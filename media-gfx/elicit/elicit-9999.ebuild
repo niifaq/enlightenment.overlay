@@ -4,13 +4,7 @@
 
 EAPI="2"
 
-E_NO_NLS="yes"
-E_NO_DOC="yes"
-
-EGIT_REPO_URI="git://github.com/rephorm/elicit.git"
-E_EXTERNAL="yes"
-
-inherit git efl
+inherit efl
 
 DESCRIPTION="tool for examining images on your desktop"
 HOMEPAGE="http://enlightenment.org/pages/elicit.html"
@@ -24,9 +18,3 @@ DEPEND=">=media-libs/evas-0.9.9
 	>=media-libs/imlib2-1.2.0"
 
 RDEPEND="${DEPEND}"
-
-src_unpack() {
-	git_src_unpack
-
-	cd "${S}"
-}

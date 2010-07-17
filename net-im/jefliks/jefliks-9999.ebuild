@@ -3,6 +3,8 @@
 # $Header: $
 
 EAPI="2"
+
+E_PKG_IUSE="doc nls"
 EGIT_REPO_URI="git://jefliks.git.sourceforge.net/gitroot/jefliks/jefliks"
 
 inherit eutils git

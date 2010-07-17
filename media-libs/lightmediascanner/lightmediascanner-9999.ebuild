@@ -4,6 +4,8 @@
 
 EAPI="2"
 
+E_PKG_IUSE="doc nls"
+
 EGIT_REPO_URI="git://git.profusion.mobi/lightmediascanner.git"
 
 inherit autotools git

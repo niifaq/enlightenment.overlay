@@ -4,6 +4,8 @@
 
 EAPI="2"
 
+E_PKG_IUSE="doc nls"
+
 NEED_PYTHON="2.4"
 
 inherit python distutils bzr
@@ -33,7 +35,7 @@ RDEPEND="
 DEPEND=">=dev-python/setuptools-0.6_rc9"
 
 src_prepare() {
-	sed  's/update-desktop-database/echo \\;\\)/g' -i setup.py
+	sed  's/update-desktop-database/echo \;\)/g' -i setup.py
 }
 
 src_install() {

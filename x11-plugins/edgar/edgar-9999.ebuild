@@ -3,9 +3,6 @@
 # $Header: $
 
 EAPI="2"
-
-E_NO_DOC="yes"
-E_NO_NLS="yes"
 inherit efl
 
 ESVN_REPO_URI="http://e17mods.googlecode.com/svn/trunk/MODULES/edgar"

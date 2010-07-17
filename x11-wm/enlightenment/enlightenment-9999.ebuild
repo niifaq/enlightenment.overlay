@@ -3,6 +3,8 @@
 # $Header: $
 
 EAPI="2"
+
+E_PKG_IUSE="doc nls"
 ESVN_URI_APPEND="e"
 inherit efl
 

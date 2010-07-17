@@ -4,6 +4,8 @@
 
 EAPI="2"
 
+E_PKG_IUSE="nls"
+
 inherit efl eutils
 
 DESCRIPTION="graphical sudo application"
@@ -16,9 +18,6 @@ DEPEND="dev-libs/ecore
 	media-libs/elementary"
 
 RDEPEND="${DEPEND}"
-
-E_NO_DOC="yes"
-
 src_configure() {
 	MY_ECONF="--disable-ewl"
 

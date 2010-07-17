@@ -3,10 +3,7 @@
 # $Header: $
 
 EAPI="2"
-
 E_EXTERNAL="yes"
-E_NO_NLS="yes"
-E_NO_DOC="yes"
 inherit subversion efl
 
 ESVN_REPO_URI="http://ememoa.googlecode.com/svn/trunk"

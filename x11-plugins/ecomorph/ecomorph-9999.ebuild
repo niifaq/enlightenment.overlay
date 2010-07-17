@@ -4,7 +4,8 @@
 
 EAPI="2"
 
-E_NO_DOC="yes"
+E_PKG_IUSE="nls"
+
 E_EXTERNAL="yes"
 inherit git efl multilib
 

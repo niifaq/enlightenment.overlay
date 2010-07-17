@@ -4,6 +4,8 @@
 
 EAPI="2"
 
+E_PKG_IUSE="doc nls"
+
 inherit efl
 
 DESCRIPTION="tool for examining images on your desktop"

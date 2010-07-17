@@ -3,9 +3,6 @@
 # $Header: $
 
 EAPI="2"
-
-E_NO_NLS="yes"
-E_NO_DOC="yes"
 inherit efl
 
 DESCRIPTION="Exquisite - EFL based psplash replacement"

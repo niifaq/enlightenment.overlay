@@ -4,6 +4,8 @@
 
 EAPI="2"
 
+E_PKG_IUSE="doc nls"
+
 NEED_PYTHON="2.4"
 EGIT_REPO_URI="git://git.profusion.mobi/python-lightmediascanner.git"
 inherit git python distutils

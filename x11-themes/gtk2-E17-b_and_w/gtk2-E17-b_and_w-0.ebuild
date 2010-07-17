@@ -2,6 +2,9 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI="2"
+
+E_PKG_IUSE="doc nls"
 DESCRIPTION="GTK2 theme to match the default E17 Black & White"
 HOMEPAGE="http://www.gnome-look.org/content/show.php?content=95680"
 SRC_URI="http://www.gnome-look.org/CONTENT/content-files/95680-B_and_W.tar.bz2"

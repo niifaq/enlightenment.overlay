@@ -3,9 +3,8 @@
 # $Header: $
 
 EAPI="2"
+
 ESVN_SUB_PROJECT="PROTO"
-E_NO_NLS="1"
-E_NO_DOC="1"
 inherit efl
 
 DESCRIPTION="Enlightenment way to exchange contributed stuff"

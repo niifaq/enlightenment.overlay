@@ -3,6 +3,8 @@
 # $Header: $
 
 EAPI="2"
+
+E_PKG_IUSE="doc nls"
 NEED_PYTHON="2.4"
 inherit python distutils
 

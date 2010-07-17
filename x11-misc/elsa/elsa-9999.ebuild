@@ -3,9 +3,10 @@
 # $Header: $
 
 EAPI="2"
+
+E_PKG_IUSE="nls"
 ESVN_SUB_PROJECT="PROTO"
 E_NO_DISABLE_STATIC="yes"
-E_NO_DOC="yes"
 
 inherit efl
 

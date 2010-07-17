@@ -4,9 +4,6 @@
 
 EAPI="2"
 
-E_NO_NLS="yes"
-E_NO_DOC="yes"
-
 inherit efl
 
 DESCRIPTION="Ephoto Image Viewer/Editor/Manipulator/Slideshow creator"

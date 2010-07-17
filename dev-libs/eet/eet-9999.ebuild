@@ -3,7 +3,8 @@
 # $Header: $
 
 EAPI="2"
-E_NO_NLS="1"
+
+E_PKG_IUSE="doc"
 inherit efl
 
 DESCRIPTION="E file chunk reading/writing library"

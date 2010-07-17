@@ -4,6 +4,8 @@
 
 EAPI="2"
 
+E_PKG_IUSE="doc nls"
+
 inherit eutils flag-o-matic
 
 DESCRIPTION="Enna Media Center"

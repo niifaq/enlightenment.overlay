@@ -3,14 +3,20 @@
 # $Header: $
 
 EAPI="2"
-
 E_PKG_IUSE="doc"
+
 inherit efl
 
 DESCRIPTION="Enlightenment's (Ecore/Evas) video integration."
 HOMEPAGE="http://trac.enlightenment.org/e/wiki/Emotion"
+SRC_URI=""
 
-IUSE="gstreamer xine static-modules vlc"
+LICENSE="BSD"
+SLOT="0"
+KEYWORDS=""
+
+# vlc support is buggy, do not even expose it here
+IUSE="gstreamer xine static-modules"
 
 # TODO: remove edje dependency as soon as emotion is fixed to not build its test
 RDEPEND="
@@ -19,7 +25,6 @@ RDEPEND="
 	>=media-libs/evas-9999
 	>=media-libs/edje-9999
 	xine? ( >=media-libs/xine-lib-1.1.1 )
-	vlc? ( <=media-video/vlc-1.0.6 )
 	gstreamer? (
 		=media-libs/gstreamer-0.10*
 		=media-libs/gst-plugins-good-0.10*
@@ -43,7 +48,6 @@ src_configure() {
 	  ${MY_ECONF}
 	  $(use_enable xine xine $MODULE_ARGUMENT)
 	  $(use_enable gstreamer gstreamer $MODULE_ARGUMENT)
-	  $(use_enable vlc vlc $MODULE_ARGUMENT)
 	"
 
 	# work around GStreamer's desire to check registry, which by default

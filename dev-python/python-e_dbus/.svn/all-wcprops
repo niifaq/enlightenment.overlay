@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/e/!svn/ver/50293/trunk/packaging/gentoo/dev-python/python-e_dbus
+END
+metadata.xml
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/e/!svn/ver/45914/trunk/packaging/gentoo/dev-python/python-e_dbus/metadata.xml
+END
+python-e_dbus-9999.ebuild
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/e/!svn/ver/50293/trunk/packaging/gentoo/dev-python/python-e_dbus/python-e_dbus-9999.ebuild
+END
+Manifest
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/e/!svn/ver/50293/trunk/packaging/gentoo/dev-python/python-e_dbus/Manifest
+END
+ChangeLog
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/e/!svn/ver/45914/trunk/packaging/gentoo/dev-python/python-e_dbus/ChangeLog
+END

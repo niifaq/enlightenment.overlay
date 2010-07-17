@@ -4,21 +4,20 @@
 
 EAPI="2"
 
-E_PKG_IUSE="doc"
+E_PKG_IUSE="doc test"
 inherit efl
 
 DESCRIPTION="E file chunk reading/writing library"
 HOMEPAGE="http://trac.enlightenment.org/e/wiki/Eet"
 
-IUSE="+threads debug test gnutls ssl"
+IUSE="+threads debug gnutls ssl"
 
 RDEPEND="media-libs/jpeg
 	>=dev-libs/eina-9999
 	sys-libs/zlib
 	gnutls? ( net-libs/gnutls )
 	!gnutls? ( ssl? ( dev-libs/openssl ) )"
-DEPEND="${RDEPEND}
-	test? ( dev-libs/check )"
+DEPEND="${RDEPEND}"
 
 src_configure() {
 	local SSL_FLAGS="" DEBUG_FLAGS="" TEST_FLAGS=""
@@ -72,7 +71,7 @@ src_configure() {
 
 	export MY_ECONF="
 	  ${MY_ECONF}
-	  $(use_enable threads pthread)
+	  $(use_enable threads posix-threads)
 	  ${SSL_FLAGS}
 	  ${DEBUG_FLAGS}
 	  ${TEST_FLAGS}

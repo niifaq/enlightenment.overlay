@@ -3,15 +3,19 @@
 # $Header: $
 
 EAPI="2"
-
 E_PKG_IUSE="doc nls"
+
 inherit efl
 
 DESCRIPTION="Enlightenment's core event abstraction layer and OS abstraction layer"
 HOMEPAGE="http://trac.enlightenment.org/e/wiki/Ecore"
+SRC_URI=""
 
-IUSE="X curl directfb +evas fbcon glib gnutls +inotify opengl sdl ssl
-							threads +tslib xcb +xim xinerama +xprint +xscreensaver"
+LICENSE="BSD"
+SLOT="0"
+KEYWORDS=""
+
+IUSE="glib threads +xim curl gnutls ssl +inotify +evas directfb fbcon opengl sdl X xcb xinerama +xprint +xscreensaver +tslib"
 
 RDEPEND="
 	>=dev-libs/eina-9999
@@ -53,18 +57,18 @@ src_configure() {
 			ewarn "gnutls and not openssl for ecore-con support"
 		fi
 		SSL_FLAGS="
-			--disable-openssl
-			--enable-gnutls
+		  --disable-openssl
+		  --enable-gnutls
 		"
 	elif use ssl; then
 		SSL_FLAGS="
-			--enable-openssl
-			--disable-gnutls
+		  --enable-openssl
+		  --disable-gnutls
 		"
 	else
 		SSL_FLAGS="
-			--disable-openssl
-			--disable-gnutls
+		  --disable-openssl
+		  --disable-gnutls
 		"
 	fi
 
@@ -82,47 +86,46 @@ src_configure() {
 			die "Compile dev-libs/ecore with USE=X or xcb."
 		fi
 		EVAS_FLAGS="
-			--enable-ecore-evas
-			--enable-ecore-input-evas
-			--enable-ecore-imf-evas
-			--enable-ecore-evas-software-buffer
-			--disable-ecore-evas-software-gdi
-			--disable-ecore-evas-software-ddraw
-			--disable-ecore-evas-direct3d
-			--disable-ecore-evas-opengl-glew
-			--disable-ecore-evas-software-16-ddraw
-			--disable-ecore-evas-cocoa
-			--disable-ecore-evas-software-16-wince
-			$(use_enable directfb ecore-evas-directfb)
-			$(use_enable fbcon ecore-evas-fb)
-			$(use_enable sdl ecore-evas-software-sdl)
-			$(use_enable $x_or_xcb ecore-evas-software-x11)
-			$(use_enable $x_or_xcb ecore-evas-xrender-x11)
-			$(use_enable $x_or_xcb ecore-evas-software-16-x11)
-			$(use_enable xcb ecore-evas-xrender-xcb)
-			$(use_enable opengl ecore-evas-opengl-x11)
+		  --enable-ecore-evas
+		  --enable-ecore-input-evas
+		  --enable-ecore-imf-evas
+		  --enable-ecore-evas-software-buffer
+		  --disable-ecore-evas-software-gdi
+		  --disable-ecore-evas-software-ddraw
+		  --disable-ecore-evas-direct3d
+		  --disable-ecore-evas-opengl-glew
+		  --disable-ecore-evas-software-16-ddraw
+		  --disable-ecore-evas-software-16-wince
+		  $(use_enable directfb ecore-evas-directfb)
+		  $(use_enable fbcon ecore-evas-fb)
+		  $(use_enable sdl ecore-evas-software-sdl)
+		  $(use_enable $x_or_xcb ecore-evas-software-x11)
+		  $(use_enable $x_or_xcb ecore-evas-xrender-x11)
+		  $(use_enable $x_or_xcb ecore-evas-software-16-x11)
+		  $(use_enable xcb ecore-evas-xrender-xcb)
+		  $(use_enable opengl ecore-evas-opengl-x11)
 		"
 	else
 		EVAS_FLAGS="
-			--disable-ecore-evas
-			--disable-ecore-input-evas
-			--disable-ecore-imf-evas
-			--disable-ecore-evas-software-buffer
-			--disable-ecore-evas-software-gdi
-			--disable-ecore-evas-software-ddraw
-			--disable-ecore-evas-direct3d
-			--disable-ecore-evas-opengl-glew
-			--disable-ecore-evas-software-16-ddraw
-			--disable-ecore-evas-cocoa
-			--disable-ecore-evas-software-16-wince
-			--disable-ecore-evas-directfb
-			--disable-ecore-evas-fb
-			--disable-ecore-evas-software-sdl
-			--disable-ecore-evas-software-x11
-			--disable-ecore-evas-xrender-x11
-			--disable-ecore-evas-software-16-x11
-			--disable-ecore-evas-xrender-xcb
-			--disable-ecore-evas-opengl-x11
+		  --disable-ecore-evas
+		  --disable-ecore-input-evas
+		  --disable-ecore-imf-evas
+		  --disable-ecore-evas-software-buffer
+		  --disable-ecore-evas-software-gdi
+		  --disable-ecore-evas-software-ddraw
+		  --disable-ecore-evas-direct3d
+		  --disable-ecore-evas-opengl-glew
+		  --disable-ecore-evas-software-16-ddraw
+		  --disable-ecore-evas-quartz
+		  --disable-ecore-evas-software-16-wince
+		  --disable-ecore-evas-directfb
+		  --disable-ecore-evas-fb
+		  --disable-ecore-evas-software-sdl
+		  --disable-ecore-evas-software-x11
+		  --disable-ecore-evas-xrender-x11
+		  --disable-ecore-evas-software-16-x11
+		  --disable-ecore-evas-xrender-xcb
+		  --disable-ecore-evas-opengl-x11
 		"
 		if use opengl; then
 			ewarn "Ecore usage of OpenGL is dependent on media-libs/evas."
@@ -136,33 +139,33 @@ src_configure() {
 			ewarn "X as it's considered the most stable for ecore-x"
 		fi
 		X_FLAGS="
-			--enable-ecore-x
-			--disable-ecore-x-xcb
+		  --enable-ecore-x
+		  --disable-ecore-x-xcb
 		"
 
 	elif use xcb; then
 		X_FLAGS="
-			--enable-ecore-x
-			--enable-ecore-x-xcb
+		  --enable-ecore-x
+		  --enable-ecore-x-xcb
 		"
 	else
 		X_FLAGS="
-			--disable-ecore-x
-			--disable-ecore-x-xcb
+		  --disable-ecore-x
+		  --disable-ecore-x-xcb
 		"
 	fi
 
 	if [[ ! -z "$x_or_xcb" ]]; then
 		X_FLAGS+="
-			$(use_enable xinerama ecore-x-xinerama)
-			$(use_enable xprint ecore-x-xprint)
-			$(use_enable xscreensaver ecore-x-screensaver)
+		  $(use_enable xinerama ecore-x-xinerama)
+		  $(use_enable xprint ecore-x-xprint)
+		  $(use_enable xscreensaver ecore-x-screensaver)
 		"
 	else
 		X_FLAGS+="
-			--disable-ecore-x-xinerama
-			--disable-ecore-x-xprint
-			--disable-ecore-x-screensaver
+		  --disable-ecore-x-xinerama
+		  --disable-ecore-x-xprint
+		  --disable-ecore-x-screensaver
 		"
 	fi
 
@@ -172,29 +175,27 @@ src_configure() {
 	fi
 
 	export MY_ECONF="
-		${MY_ECONF}
-		--disable-ecore-config
-		--enable-ecore-con
-		--enable-ecore-ipc
-		--enable-ecore-file
-		--enable-ecore-imf
-		--enable-ecore-input
-		--disable-ecore-cocoa
-		--disable-ecore-win32
-		--disable-ecore-wince
-		$(use_enable curl)
-		$(use_enable directfb ecore-directfb)
-		$(use_enable fbcon ecore-fb)
-		$(use_enable glib)
-		$(use_enable inotify)
-		$(use_enable threads pthread)
-		$(use_enable tslib)
-		$(use_enable sdl ecore-sdl)
-		$(use_enable xim)
-		${SSL_FLAGS}
-		${EVAS_FLAGS}
-		${X_FLAGS}
+	  ${MY_ECONF}
+	  --disable-ecore-config
+	  --enable-ecore-con
+	  --enable-ecore-ipc
+	  --enable-ecore-file
+	  --enable-ecore-imf
+	  --enable-ecore-input
+	  --disable-ecore-win32
+	  --disable-ecore-wince
+	  $(use_enable glib)
+	  $(use_enable threads pthread)
+	  $(use_enable xim)
+	  $(use_enable curl)
+	  $(use_enable inotify)
+	  $(use_enable directfb ecore-directfb)
+	  $(use_enable fbcon ecore-fb)
+	  $(use_enable tslib)
+	  $(use_enable sdl ecore-sdl)
+	  ${SSL_FLAGS}
+	  ${EVAS_FLAGS}
+	  ${X_FLAGS}
 	"
-
 	efl_src_configure
 }

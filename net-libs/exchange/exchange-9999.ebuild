@@ -3,11 +3,18 @@
 # $Header: $
 
 EAPI="2"
-
 ESVN_SUB_PROJECT="PROTO"
+
 inherit efl
 
 DESCRIPTION="Enlightenment way to exchange contributed stuff"
+HOMEPAGE="http://www.enlightenment.org/"
+SRC_URI=""
+
+LICENSE="GPL-2"
+SLOT="0"
+KEYWORDS=""
+
 IUSE=""
 
 DEPEND="

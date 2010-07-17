@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/e/!svn/ver/50293/trunk/packaging/gentoo/dev-python/python-efl_utils
+END
+metadata.xml
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/e/!svn/ver/45914/trunk/packaging/gentoo/dev-python/python-efl_utils/metadata.xml
+END
+Manifest
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/e/!svn/ver/50293/trunk/packaging/gentoo/dev-python/python-efl_utils/Manifest
+END
+ChangeLog
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/e/!svn/ver/45914/trunk/packaging/gentoo/dev-python/python-efl_utils/ChangeLog
+END
+python-efl_utils-9999.ebuild
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/e/!svn/ver/50293/trunk/packaging/gentoo/dev-python/python-efl_utils/python-efl_utils-9999.ebuild
+END

@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/e/!svn/ver/50293/trunk/packaging/gentoo/dev-python/python-elementary
+END
+metadata.xml
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/e/!svn/ver/45914/trunk/packaging/gentoo/dev-python/python-elementary/metadata.xml
+END
+Manifest
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/e/!svn/ver/50293/trunk/packaging/gentoo/dev-python/python-elementary/Manifest
+END
+ChangeLog
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/e/!svn/ver/45914/trunk/packaging/gentoo/dev-python/python-elementary/ChangeLog
+END
+python-elementary-9999.ebuild
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/e/!svn/ver/50293/trunk/packaging/gentoo/dev-python/python-elementary/python-elementary-9999.ebuild
+END

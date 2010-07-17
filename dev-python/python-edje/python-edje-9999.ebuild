@@ -3,14 +3,21 @@
 # $Header: $
 
 EAPI="2"
-
+E_PKG_IUSE="examples"
 E_CYTHON="1"
 ESVN_SUB_PROJECT="BINDINGS/python"
 
 inherit efl
 
 DESCRIPTION="Python bindings for Edje"
-IUSE="examples"
+HOMEPAGE="http://www.enlightenment.org"
+SRC_URI=""
+
+LICENSE="LGPL-2.1"
+SLOT="0"
+KEYWORDS=""
+
+IUSE=""
 
 RDEPEND=">=media-libs/edje-9999"
 

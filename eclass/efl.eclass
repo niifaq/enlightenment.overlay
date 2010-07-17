@@ -244,6 +244,10 @@ efl_src_prepare() {
 	[[ -z "${E_PYTHON}" ]] || return;
 
 	if [[ -e configure.ac || -e configure.in ]] && [[ "${WANT_AUTOTOOLS}" == "yes" ]]; then
+		if [[ "${E_STATE}" == "live" ]] && [[ -z "${E_EXTERNAL}" ]]; then
+			export SVN_REPO_PATH="${ESVN_WC_PATH}"
+		fi
+
 		AM_OPTS="--foreign"
 
 		local macro_regex='^[[:space:]]*AM_GNU_GETTEXT_VERSION'
@@ -271,8 +275,6 @@ efl_src_prepare() {
 # efl's default src_configure
 efl_src_configure() {
 	[[ -z "${E_PYTHON}" ]] || return;
-
-	[[ -z "${E_EXTERNAL}" ]] && export SVN_REPO_PATH="${ESVN_WC_PATH}"
 
 	if [[ -x ${ECONF_SOURCE:-.}/configure ]]; then
 		has nls "${IUSE}" && MY_ECONF="${MY_ECONF} $(use_enable nls)"

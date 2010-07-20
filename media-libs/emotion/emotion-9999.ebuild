@@ -46,6 +46,7 @@ src_configure() {
 
 	export MY_ECONF="
 	  ${MY_ECONF}
+	  --disable-vlc
 	  $(use_enable xine xine $MODULE_ARGUMENT)
 	  $(use_enable gstreamer gstreamer $MODULE_ARGUMENT)
 	"

@@ -129,7 +129,7 @@ if [[ ! -z "${E_PYTHON}" ]]; then
 
 	E_NO_VISIBILITY="yes"
 
-	PYTHON_DEPEND="2.4"
+	PYTHON_DEPEND="*:2.4"
 
 	inherit python distutils
 fi

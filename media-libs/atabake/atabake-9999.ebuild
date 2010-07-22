@@ -6,7 +6,7 @@ EAPI="2"
 
 E_PKG_IUSE="doc nls"
 
-NEED_PYTHON="2.5"
+PYTHON_DEPEND="*:2.5"
 EGIT_REPO_URI="git://code.openbossa.org/${PN}/mainline.git"
 inherit git python distutils
 

@@ -6,7 +6,7 @@ EAPI="2"
 
 E_PKG_IUSE="doc nls"
 
-NEED_PYTHON="2.4"
+PYTHON_DEPEND="*:2.4"
 ESVN_SUB_PROJECT="PROTO"
 inherit efl python distutils
 

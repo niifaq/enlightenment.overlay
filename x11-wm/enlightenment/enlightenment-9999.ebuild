@@ -131,6 +131,8 @@ pkg_setup() {
 }
 
 src_configure() {
+	#remove useless startup checks since we know we have the deps
+	epatch "${FILESDIR}/quickstart.diff" || die
 	# NOTE: mixer is plugin-able, but just alsa is provided atm.
 	export MY_ECONF="
 	  ${MY_ECONF}

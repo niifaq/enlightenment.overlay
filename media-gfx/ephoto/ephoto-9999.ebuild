@@ -18,6 +18,7 @@ IUSE=""
 
 RDEPEND="
 	 >=dev-libs/eet-9999
+	 >=dev-libs/eio-9999
 	 >=dev-libs/efreet-9999
 	 >=dev-libs/eina-9999[safety-checks]
 	 >=dev-libs/embryo-9999

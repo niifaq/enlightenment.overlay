@@ -16,7 +16,8 @@ SLOT="0.17"
 # FIXME: 'tracker' USE has no configure flag
 # FIXME: 'pm-utils' USE has no configure flag
 # FIXME: xinerama, xscreensaver and opengl USEs are indirect
-IUSE="exchange hal opengl pam pm-utils +sysactions tracker +udev xinerama xscreensaver"
+IUSE="exchange hal illume +illume2 opengl pam pm-utils +sysactions tracker
+	+udev xinerama xscreensaver"
 
 IUSE_ENLIGHTENMENT_MODULES="
 	battery
@@ -31,8 +32,6 @@ IUSE_ENLIGHTENMENT_MODULES="
 	fileman
 	ibar
 	ibox
-	illume2
-	illume
 	mixer
 	ofono
 	pager
@@ -116,6 +115,8 @@ DEPEND="${RDEPEND}"
 pkg_setup() {
 	local x= prefix=IUSE_ENLIGHTENMENT
 
+	use illume && use illume2 && die "You may use only one illume version at once"
+
 	if ! use enlightenment_modules_everything; then
 		for x in ${IUSE_ENLIGHTENMENT_EVERYTHING}; do
 			use enlightenment_everything_${x} \
@@ -138,6 +139,8 @@ src_configure() {
 	  ${MY_ECONF}
 	  --disable-install-sysactions
 	  $(use_enable exchange)
+	  $(use_enable illume)
+	  $(use_enable illume2)
 	  $(use_enable hal device-hal)
 	  $(use_enable pam)
 	  $(use_enable udev device-udev)

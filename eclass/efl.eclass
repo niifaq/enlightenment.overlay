@@ -18,19 +18,6 @@
 #   src_compile src_install src_test
 #
 # Reqires EAPI 2 or later.
-#
-# @CODE
-# E_STATE's:
-#   release      [default]
-#
-#   snap
-#
-#   live         $PV has a 9999 marker
-#       S        $WORKDIR/$E_S_APPEND
-#
-# Overrides:
-#    S           EURI_STATE
-# @CODE
 
 # The elass expects the ebuilds to use EAPI 2 or later, so make sure this is
 # the case.

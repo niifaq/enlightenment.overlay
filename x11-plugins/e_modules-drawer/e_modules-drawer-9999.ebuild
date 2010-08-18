@@ -15,6 +15,7 @@ DESCRIPTION="A drawer module, which is/will be able to present different types o
 IUSE=""
 
 DEPEND="x11-wm/enlightenment:0.17
+	>=media-libs/ethumb-9999
 	>=media-libs/edje-9999"
 
 RDEPEND="${DEPEND}"

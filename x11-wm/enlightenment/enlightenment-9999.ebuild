@@ -99,7 +99,7 @@ RDEPEND="
 	>=dev-libs/eina-9999[safety-checks]
 	>=dev-libs/embryo-9999
 	>=dev-libs/ecore-9999[X,evas,opengl?,xinerama?,xscreensaver?,inotify,xim]
-	>=dev-libs/e_dbus-9999[hal]
+	>=dev-libs/e_dbus-9999
 	>=media-libs/edje-9999
 	>=media-libs/evas-9999[X,opengl?,eet,jpeg,png,safety-checks]
 	udev? ( dev-libs/eeze )

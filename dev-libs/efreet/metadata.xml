@@ -17,4 +17,7 @@ following specifications are included:
   * Icon Theme
   * Menu
 </longdescription>
+<use>
+ <flag name="cache">Enable icon cache.</flag>
+</use>
 </pkgmetadata>

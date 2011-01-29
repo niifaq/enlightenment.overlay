@@ -1,11 +1,11 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
 EAPI="2"
 
 E_PKG_IUSE="doc"
-ESVN_SUB_PROJECT="TMP/st"
+#ESVN_SUB_PROJECT="TMP/st"
 inherit efl
 
 DESCRIPTION="Basic widget set, based on EFL with focus mobile touch-screen devices."

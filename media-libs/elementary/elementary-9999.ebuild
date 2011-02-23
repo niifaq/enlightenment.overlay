@@ -4,8 +4,7 @@
 
 EAPI="2"
 
-E_PKG_IUSE="doc"
-#ESVN_SUB_PROJECT="TMP/st"
+E_PKG_IUSE="doc nls"
 inherit efl
 
 DESCRIPTION="Basic widget set, based on EFL with focus mobile touch-screen devices."

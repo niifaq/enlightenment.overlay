@@ -13,6 +13,6 @@ LICENSE="LGPL-2"
 IUSE="static-libs"
 
 RDEPEND="|| (	>=dev-libs/ecore-9999[gnutls]
-		>=dev-libs/ecore-9999[openssl] )"
+		>=dev-libs/ecore-9999[ssl] )"
 
 DEPEND="${RDEPEND}"

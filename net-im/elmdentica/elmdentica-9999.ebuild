@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -21,6 +21,7 @@ DEPEND="x11-apps/xrandr
 	net-misc/curl
 	dev-libs/openssl
 	dev-libs/json-c
+	=net-libs/azy-9999
 	>=media-libs/elementary-9999"
 
 RDEPEND="${DEPEND}"

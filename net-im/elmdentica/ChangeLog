@@ -1,6 +1,9 @@
 # ChangeLog for net-im/elmdentica
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  08 Mar 2011; evadim <evadim@evadim.ru> elmdentica-9999.ebuild:
+  new dep: azy
 
   07 Mar 2010; evadim <evadim@evadim.ru> elmdentica-9999.ebuild:
   elmdentica not need gconf any more

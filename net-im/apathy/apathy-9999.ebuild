@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -11,7 +11,7 @@ PYTHON_DEPEND="*:2.4"
 inherit python distutils bzr
 
 EBZR_REPO_URI="https://launchpad.net/apathy"
-
+HOMEPAGE="http://www.openapathy.org/"
 DESCRIPTION="Apathy is an IM client designed for mobile platform"
 
 IUSE=""

@@ -12,7 +12,6 @@ inherit autotools git
 
 DESCRIPTION="LightMediaScanner"
 HOMEPAGE="http://lms.garage.maemo.org/"
-SRC_URI=""
 
 LICENSE="LGPL-2.1"
 SLOT="0"
@@ -29,11 +28,8 @@ RDEPEND="dev-db/sqlite"
 
 src_unpack() {
 	git_src_unpack
-
 	cd "${S}"
-
 	AT_M4DIR="-I m4"
-
 	eautoreconf
 }
 

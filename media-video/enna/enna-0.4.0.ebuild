@@ -27,7 +27,6 @@ RDEPEND=">=media-libs/libplayer-1.0.0
 	>=dev-libs/e_dbus-0.5.0.063
 	nls? ( sys-devel/gettext )
 	cddb? ( media-libs/libcddb )
-	xrandr? ( x11-libs/libXrandr )
 	xml? ( dev-libs/libxml2 )
 	upnp? ( net-libs/gupnp )
 	curl? ( net-misc/curl )

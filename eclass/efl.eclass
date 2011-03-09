@@ -231,29 +231,17 @@ efl_src_prepare() {
 	[[ -z "${E_PYTHON}" ]] || return;
 
 	if [[ -e configure.ac || -e configure.in ]] && [[ "${WANT_AUTOTOOLS}" == "yes" ]]; then
-		if [[ "${E_STATE}" == "live" ]] && [[ -z "${E_EXTERNAL}" ]]; then
-			export SVN_REPO_PATH="${ESVN_WC_PATH}"
-		fi
-
-		AM_OPTS="--foreign"
-
-		local macro_regex='^[[:space:]]*AM_GNU_GETTEXT_VERSION'
+		export SVN_REPO_PATH="${ESVN_WC_PATH}"
 
 		if has nls "${IUSE}" && use nls; then
-			local x=
-
-			for x in configure.{ac,in}; do
-				if [[ -r ${x} ]] && grep -qE "${macro_regex}" ${x}; then
-					eautopoint -f
-					break;
-				fi
-			done
+			eautopoint -f
 		fi
 
 		eautoreconf
 	fi
 
 	epunt_cxx
+	elibtoolize
 }
 
 # @FUNCTION: efl_src_configure
@@ -264,9 +252,8 @@ efl_src_configure() {
 	[[ -z "${E_PYTHON}" ]] || return;
 
 	if [[ -x ${ECONF_SOURCE:-.}/configure ]]; then
-		has nls "${IUSE}" && MY_ECONF="${MY_ECONF} $(use_enable nls)"
-		has doc "${IUSE}" && MY_ECONF="${MY_ECONF} $(use_enable doc)"
-
+		has nls "${IUSE}" && MY_ECONF+=" $(use_enable nls)"
+		has doc "${IUSE}" && MY_ECONF+=" $(use_enable doc)"
 		[[ -z "${E_NO_DISABLE_STATIC}" ]] && MY_ECONF="${MY_ECONF} --disable-static"
 
 		econf ${MY_ECONF} || efl_die "configure failed"

@@ -3,6 +3,8 @@
 # $Header: $
 
 EAPI="2"
+
+E_PKG_IUSE="nls"
 inherit efl
 
 DESCRIPTION="EFL photo manager"

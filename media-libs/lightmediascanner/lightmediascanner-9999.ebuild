@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -16,7 +16,7 @@ HOMEPAGE="http://lms.garage.maemo.org/"
 LICENSE="LGPL-2.1"
 SLOT="0"
 KEYWORDS=""
-IUSE="mp4 png jpeg flac ogg"
+IUSE="+asf flac +id3 jpeg mp4 ogg +playlist png real static-libs"
 
 DEPEND="mp4? ( media-libs/libmp4v2 )
 	png? ( media-libs/libpng )
@@ -31,6 +31,23 @@ src_unpack() {
 	cd "${S}"
 	AT_M4DIR="-I m4"
 	eautoreconf
+}
+
+src_configure() {
+	econf \
+		--disable-static \
+		--enable-video-dummy \
+		--enable-audio-dummy \
+		$(use_enable jpeg) \
+		$(use_enable png) \
+		$(use_enable playlist m3u) \
+		$(use_enable ogg) \
+		$(use_enable playlist pls) \
+		$(use_enable asf) \
+		$(use_enable real rm) \
+		$(use_enable mp4) \
+		$(use_enable id3) \
+		$(use_enable flac)
 }
 
 src_install() {

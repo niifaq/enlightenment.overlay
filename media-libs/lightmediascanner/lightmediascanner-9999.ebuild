@@ -4,11 +4,9 @@
 
 EAPI="2"
 
-E_PKG_IUSE="doc nls"
-
 EGIT_REPO_URI="git://git.profusion.mobi/lightmediascanner.git"
 
-inherit autotools git
+inherit git efl
 
 DESCRIPTION="LightMediaScanner"
 HOMEPAGE="http://lms.garage.maemo.org/"
@@ -29,12 +27,15 @@ RDEPEND="dev-db/sqlite"
 src_unpack() {
 	git_src_unpack
 	cd "${S}"
+}
+
+src_prepare() {
 	AT_M4DIR="-I m4"
-	eautoreconf
+	efl_src_prepare
 }
 
 src_configure() {
-	econf \
+	MY_ECONF="
 		--disable-static \
 		--enable-video-dummy \
 		--enable-audio-dummy \
@@ -47,9 +48,7 @@ src_configure() {
 		$(use_enable real rm) \
 		$(use_enable mp4) \
 		$(use_enable id3) \
-		$(use_enable flac)
-}
+		$(use_enable flac)"
 
-src_install() {
-	emake DESTDIR="${D}" install || die "install failed"
+	efl_src_configure
 }

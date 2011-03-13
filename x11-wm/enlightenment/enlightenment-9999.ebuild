@@ -1,8 +1,8 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="2"
+EAPI="4"
 
 E_PKG_IUSE="doc nls"
 ESVN_URI_APPEND="e"
@@ -16,7 +16,10 @@ SLOT="0.17"
 # FIXME: 'tracker' USE has no configure flag
 # FIXME: 'pm-utils' USE has no configure flag
 # FIXME: xinerama, xscreensaver and opengl USEs are indirect
-IUSE="exchange hal illume +illume2 opengl pam pm-utils +sysactions tracker
+
+REQUIRED_USE="illume? ( !illume2 )"
+
+IUSE="exchange hal illume illume2 opengl pam pm-utils +sysactions tracker
 	+udev xinerama xscreensaver"
 
 IUSE_ENLIGHTENMENT_MODULES="
@@ -99,7 +102,7 @@ RDEPEND="
 	>=dev-libs/eina-9999[safety-checks]
 	>=dev-libs/embryo-9999
 	>=dev-libs/ecore-9999[X,evas,opengl?,xinerama?,xscreensaver?,inotify,xim]
-	>=dev-libs/e_dbus-9999
+	>=dev-libs/e_dbus-9999[libnotify]
 	>=media-libs/edje-9999
 	>=media-libs/evas-9999[X,opengl?,eet,jpeg,png,safety-checks]
 	udev? ( dev-libs/eeze )
@@ -114,8 +117,6 @@ DEPEND="${RDEPEND}"
 
 pkg_setup() {
 	local x= prefix=IUSE_ENLIGHTENMENT
-
-	use illume && use illume2 && die "You may use only one illume version at once"
 
 	if ! use enlightenment_modules_everything; then
 		for x in ${IUSE_ENLIGHTENMENT_EVERYTHING}; do

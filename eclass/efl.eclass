@@ -33,10 +33,6 @@ inherit eutils libtool flag-o-matic
 # @DESCRIPTION:
 # if defined, the package does not support -fvisibility=hidden
 
-# @ECLASS-VARIABLE: E_NO_DISABLE_STATIC
-# @DESCRIPTION:
-# if defined, do not append --disable-static
-
 # Python support:
 # @ECLASS-VARIABLE: E_PYTHON
 # @DESCRIPTION:
@@ -237,6 +233,8 @@ efl_src_prepare() {
 			eautopoint -f
 		fi
 
+		[[ -f README.in ]] && touch README
+
 		eautoreconf
 	fi
 
@@ -254,7 +252,12 @@ efl_src_configure() {
 	if [[ -x ${ECONF_SOURCE:-.}/configure ]]; then
 		has nls "${IUSE}" && MY_ECONF+=" $(use_enable nls)"
 		has doc "${IUSE}" && MY_ECONF+=" $(use_enable doc)"
-		[[ -z "${E_NO_DISABLE_STATIC}" ]] && MY_ECONF="${MY_ECONF} --disable-static"
+
+		if has static-libs ${IUSE}; then
+			MY_ECONF+=" $(use_enable static-libs static)"
+		else
+			MY_ECONF+=" --disable-static"
+		fi
 
 		econf ${MY_ECONF} || efl_die "configure failed"
 	fi

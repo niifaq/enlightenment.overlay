@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -13,9 +13,10 @@ DESCRIPTION="Gadget to control active keyboard, keyboard layout, and layout vari
 
 IUSE=""
 
-RDEPEND="dev-libs/ecore
-	dev-libs/libxml2
-	media-libs/edje"
+RDEPEND="x11-wm/enlightenment:0.17
+	>=dev-libs/ecore-9999
+	>=media-libs/edje-9999
+	dev-libs/libxml2"
 
 DEPEND="${RDEPEND}
 	x11-libs/libX11

@@ -4,8 +4,6 @@
 
 EAPI="2"
 
-E_PKG_IUSE="nls"
-
 E_EXTERNAL="yes"
 inherit git efl flag-o-matic
 

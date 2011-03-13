@@ -20,3 +20,14 @@ DEPEND="x11-wm/enlightenment:0.17
 	dev-libs/libxml2:2"
 
 RDEPEND="${DEPEND}"
+
+src_prepare() {
+	ewarn "HACK"
+	ewarn "HACK cp missing Makevars file"
+	ewarn "HACK"
+
+	eautopoint -f
+	cp po/Makevars.template po/Makevars || die "cp Makevars.template failed"
+
+	efl_src_prepare
+}

@@ -33,14 +33,15 @@ inherit eutils libtool flag-o-matic
 # @DESCRIPTION:
 # if defined, the package does not support -fvisibility=hidden
 
+# @ECLASS-VARIABLE: E_CYTHON
+# @DESCRIPTION:
+# if defined, the package is Cython bindings (implies E_PYTHON)
+
 # Python support:
 # @ECLASS-VARIABLE: E_PYTHON
 # @DESCRIPTION:
 # if defined, the package is Python/distutils
-
-# @ECLASS-VARIABLE: E_CYTHON
-# @DESCRIPTION:
-# if defined, the package is Cython bindings (implies E_PYTHON)
+: ${E_PYTHON:=${E_CYTHON}}
 
 # @ECLASS-VARIABLE: E_PKG_IUSE
 # @DESCRIPTION:
@@ -101,21 +102,11 @@ if [[ ${PV/9999} != ${PV} ]] ; then
 	fi
 fi
 
-if [[ ! -z "${E_CYTHON}" ]]; then
-	E_PYTHON="yes"
+if [[ -n "${E_PYTHON}" ]]; then
+	PYTHON_DEPEND="2:2.4"
+	inherit python
 fi
 
-if [[ ! -z "${E_PYTHON}" ]]; then
-	WANT_AUTOTOOLS="no"
-	WANT_AUTOCONF="no"
-	WANT_AUTOMAKE="no"
-
-	E_NO_VISIBILITY="yes"
-
-	PYTHON_DEPEND="*:2.4"
-
-	inherit python distutils
-fi
 
 if [[ ${WANT_AUTOTOOLS} == "yes" ]] ; then
 	: ${WANT_AUTOCONF:=${E_WANT_AUTOCONF:-latest}}
@@ -145,10 +136,6 @@ fi
 
 if [[ ! -z "${E_CYTHON}" ]]; then
 	DEPEND="${DEPEND} >=dev-python/cython-0.12.1"
-fi
-
-if [[ ! -z "${E_PYTHON}" ]]; then
-	DEPEND="${DEPEND} >=dev-python/setuptools-0.6_rc9"
 fi
 
 if [[ -z "${E_NO_VISIBILITY}" ]] && [[ $(gcc-major-version) -ge 4 ]]; then
@@ -224,8 +211,6 @@ efl_src_prepare() {
 
 	[[ -s gendoc ]] && chmod a+rx gendoc
 
-	[[ -z "${E_PYTHON}" ]] || return;
-
 	if [[ -e configure.ac || -e configure.in ]] && [[ "${WANT_AUTOTOOLS}" == "yes" ]]; then
 		export SVN_REPO_PATH="${ESVN_WC_PATH}"
 
@@ -247,8 +232,6 @@ efl_src_prepare() {
 # @DESCRIPTION:
 # efl's default src_configure
 efl_src_configure() {
-	[[ -z "${E_PYTHON}" ]] || return;
-
 	if [[ -x ${ECONF_SOURCE:-.}/configure ]]; then
 		has nls "${IUSE}" && MY_ECONF+=" $(use_enable nls)"
 		has doc "${IUSE}" && MY_ECONF+=" $(use_enable doc)"
@@ -268,16 +251,12 @@ efl_src_configure() {
 # @DESCRIPTION:
 # efl's default src_compile
 efl_src_compile() {
-	if [[ -z "${E_PYTHON}" ]]; then
-		emake || efl_die "emake failed"
-	else
-		distutils_src_compile
-	fi
+	emake || efl_die "emake failed"
 
 	if has doc "${IUSE}" && use doc; then
 		if [[ -x ./gendoc ]]; then
 			./gendoc || efl_die "gendoc failed"
-		elif [[ -z "${E_PYTHON}" ]]; then
+		else
 			emake doc || efl_die "emake doc failed"
 		fi
 	fi
@@ -288,22 +267,18 @@ efl_src_compile() {
 # @DESCRIPTION:
 # efl's default src_install
 efl_src_install() {
-	if [[ -z "${E_PYTHON}" ]]; then
-		emake install DESTDIR="${D}" || efl_die
+	emake install DESTDIR="${D}" || efl_die
 
-		find "${D}" -name '*.la' -delete
+	find "${D}" -name '*.la' -delete
 
-		local doc
-		for doc in AUTHORS ChangeLog NEWS README TODO ${EDOCS}; do
-			[[ -f ${doc} ]] && dodoc ${doc}
-		done
-	else
-		distutils_src_install
+	local doc
+	for doc in AUTHORS ChangeLog NEWS README TODO ${EDOCS}; do
+		[[ -f ${doc} ]] && dodoc ${doc}
+	done
 
-		if has examples "${IUSE}" && use examples; then
-			insinto /usr/share/doc/${PF}
-			doins -r examples
-		fi
+	if has examples "${IUSE}" && use examples; then
+		insinto /usr/share/doc/${PF}
+		doins -r examples
 	fi
 
 	if has doc "${IUSE}" && use doc && [[ -d doc ]]; then

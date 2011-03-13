@@ -3,8 +3,7 @@
 # $Header: $
 
 EAPI="2"
-E_NO_DISABLE_STATIC="yes"
-
+E_PKG_IUSE="static-libs"
 ESVN_SUB_PROJECT="PROTO"
 
 inherit efl

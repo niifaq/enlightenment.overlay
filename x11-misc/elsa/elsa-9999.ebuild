@@ -4,9 +4,8 @@
 
 EAPI="2"
 
-E_PKG_IUSE="nls"
+E_PKG_IUSE="nls static-libs"
 ESVN_SUB_PROJECT="PROTO"
-E_NO_DISABLE_STATIC="yes"
 
 inherit efl
 

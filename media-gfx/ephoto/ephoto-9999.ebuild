@@ -4,6 +4,7 @@
 
 EAPI="2"
 E_URI_APPEND="ephoto"
+E_PKG_IUSE="nls"
 inherit efl
 
 DESCRIPTION="EFL-based photo app"

@@ -4,7 +4,7 @@
 
 EAPI="2"
 
-E_PKG_IUSE="nls static-libs"
+E_PKG_IUSE="static-libs"
 ESVN_SUB_PROJECT="PROTO"
 
 inherit efl

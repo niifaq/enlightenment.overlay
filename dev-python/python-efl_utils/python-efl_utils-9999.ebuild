@@ -1,13 +1,14 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
 EAPI="2"
 E_PKG_IUSE="examples"
-E_PYTHON="1"
+E_PYTHON="yes"
 ESVN_SUB_PROJECT="BINDINGS/python"
+E_WANT_AUTOTOOLS="no"
 
-inherit efl
+inherit efl distutils
 
 DESCRIPTION="Utilities to work with EFL"
 HOMEPAGE="http://www.enlightenment.org"
@@ -22,3 +23,8 @@ IUSE=""
 RDEPEND="
 	>=dev-python/python-evas-9999
 	>=dev-python/python-ecore-9999"
+
+src_configure()
+{
+	:
+}

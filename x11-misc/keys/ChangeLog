@@ -1,7 +1,0 @@
-# ChangeLog for x11-misc/keys
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: $
-
-  19 Jul 2009; evadim <evadim@evadim.ru> keys-9999.ebuild:
-  fix keys
-

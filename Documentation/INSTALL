@@ -10,7 +10,7 @@ Add overlay:
 
 If this is your first overlay:
 
-# echo 'source /usr/local/portage/layman/make.conf' >> /etc/make.conf
+# echo 'source /var/lib/layman/make.conf' >> /etc/make.conf
 
 Installation:
 

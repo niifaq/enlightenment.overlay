@@ -12,7 +12,6 @@
 =x11-plugins/e_modules-elfe-9999
 =x11-plugins/e_modules-everything-mpris-9999
 =x11-plugins/e_modules-everything-pidgin-9999
-=x11-plugins/e_modules-everything-places-9999
 =x11-plugins/e_modules-everything-tracker-9999
 =x11-plugins/e_modules-everything-websearch-9999
 =x11-plugins/e_modules-everything-wallpaper-9999
@@ -33,7 +32,6 @@
 =x11-plugins/e_modules-notification-9999
 =x11-plugins/e_modules-penguins-9999
 =x11-plugins/e_modules-photo-9999
-=x11-plugins/e_modules-places-9999
 =x11-plugins/e_modules-quickaccess-9999
 =x11-plugins/e_modules-rain-9999
 =x11-plugins/e_modules-screenshot-9999

@@ -6,6 +6,7 @@
 =x11-plugins/e_modules-deskshow-9999
 =x11-plugins/e_modules-diskio-9999
 =x11-plugins/e_modules-drawer-9999
+=x11-plugins/e_modules-engage-9999
 =x11-plugins/e_modules-efm_nav-9999
 =x11-plugins/e_modules-efm_path-9999
 =x11-plugins/e_modules-efm_pathbar-9999
@@ -20,7 +21,6 @@
 =x11-plugins/e_modules-flame-9999
 =x11-plugins/e_modules-forecasts-9999
 =x11-plugins/e_modules-iiirk-9999
-=x11-plugins/e_modules-itask-ng-9999
 =x11-plugins/e_modules-language-9999
 =x11-plugins/e_modules-mail-9999
 =x11-plugins/e_modules-mem-9999

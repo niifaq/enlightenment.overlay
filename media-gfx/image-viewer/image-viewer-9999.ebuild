@@ -1,10 +1,10 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
 EAPI="2"
 E_PKG_IUSE="static-libs"
-ESVN_SUB_PROJECT="PROTO"
+ESVN_SUB_PROJECT="BROKEN"
 
 inherit efl
 

@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="2"
+EAPI="3"
 E_PKG_IUSE="examples"
 E_PYTHON="yes"
 ESVN_SUB_PROJECT="BINDINGS/python"

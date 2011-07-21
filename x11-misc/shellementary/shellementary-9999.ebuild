@@ -4,11 +4,11 @@
 
 EAPI="2"
 
-E_PKG_IUSE="doc nls"
+E_PKG_IUSE="nls"
 
 PYTHON_DEPEND="*:2.4"
 ESVN_SUB_PROJECT="PROTO"
-inherit efl python distutils
+inherit efl python
 
 DESCRIPTION="Tool to display Elementary dialogs from the command line and shell scripts"
 
@@ -27,12 +27,10 @@ src_unpack() {
 }
 
 src_compile() {
-	#distutils_src_compile
 	${python} setup.py build --prefix="${T}/usr"
 
 }
 
 src_install() {
-	#distutils_src_install
 	${python} setup.py install --prefix="${D}/usr"
 }

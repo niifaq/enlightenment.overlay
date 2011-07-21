@@ -122,15 +122,15 @@ SLOT="0"
 
 DEPEND="${DEPEND} dev-util/pkgconfig"
 
-if has nls "${IUSE}"; then
+if has nls ${IUSE}; then
 	DEPEND="${DEPEND} nls? ( sys-devel/gettext )"
 fi
 
-if has doc "${IUSE}"; then
+if has doc ${IUSE}; then
 	DEPEND="${DEPEND} doc? ( app-doc/doxygen )"
 fi
 
-if [[ -z "${E_PYTHON}" ]] && has test "${IUSE}"; then
+if [[ -z "${E_PYTHON}" ]] && has test ${IUSE}; then
 	DEPEND="${DEPEND} test? ( dev-libs/check )"
 fi
 
@@ -182,7 +182,7 @@ efl_src_test() {
 # @DESCRIPTION:
 # the stupid gettextize script prevents non-interactive mode, so we hax it
 gettext_modify() {
-	if has nls "${IUSE}" && use nls; then
+	if has nls ${IUSE} && use nls; then
 		cp $(type -P gettextize) "${T}"/ || die "could not copy gettextize"
 		sed -i \
 			-e 's:read dummy < /dev/tty::' \
@@ -214,7 +214,7 @@ efl_src_prepare() {
 	if [[ -e configure.ac || -e configure.in ]] && [[ "${WANT_AUTOTOOLS}" == "yes" ]]; then
 		export SVN_REPO_PATH="${ESVN_WC_PATH}"
 
-		if has nls "${IUSE}" && use nls; then
+		if has nls ${IUSE} && use nls; then
 			eautopoint -f
 		fi
 
@@ -233,8 +233,8 @@ efl_src_prepare() {
 # efl's default src_configure
 efl_src_configure() {
 	if [[ -x ${ECONF_SOURCE:-.}/configure ]]; then
-		has nls "${IUSE}" && MY_ECONF+=" $(use_enable nls)"
-		has doc "${IUSE}" && MY_ECONF+=" $(use_enable doc)"
+		has nls ${IUSE} && MY_ECONF+=" $(use_enable nls)"
+		has doc ${IUSE} && MY_ECONF+=" $(use_enable doc)"
 
 		if has static-libs ${IUSE}; then
 			MY_ECONF+=" $(use_enable static-libs static)"
@@ -253,7 +253,7 @@ efl_src_configure() {
 efl_src_compile() {
 	emake || efl_die "emake failed"
 
-	if has doc "${IUSE}" && use doc; then
+	if has doc ${IUSE} && use doc; then
 		if [[ -x ./gendoc ]]; then
 			./gendoc || efl_die "gendoc failed"
 		else
@@ -276,12 +276,12 @@ efl_src_install() {
 		[[ -f ${doc} ]] && dodoc ${doc}
 	done
 
-	if has examples "${IUSE}" && use examples; then
+	if has examples ${IUSE} && use examples; then
 		insinto /usr/share/doc/${PF}
 		doins -r examples
 	fi
 
-	if has doc "${IUSE}" && use doc && [[ -d doc ]]; then
+	if has doc ${IUSE} && use doc && [[ -d doc ]]; then
 		if [[ -d doc/html ]]; then
 			dohtml -r doc/html/*
 		else

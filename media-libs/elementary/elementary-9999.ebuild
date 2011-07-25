@@ -12,7 +12,7 @@ HOMEPAGE="http://trac.enlightenment.org/e/wiki/Elementary"
 
 LICENSE="LGPL-2.1"
 
-IUSE="fbcon opengl sdl X dbus xdg weather thumbnails xcb"
+IUSE="dbus fbcon opengl quicklaunch sdl static-libs thumbnails video weather X xcb xdg"
 
 RDEPEND="
 	>=dev-libs/ecore-9999[evas,fbcon?,opengl?,sdl?,X?,xcb?]
@@ -22,6 +22,7 @@ RDEPEND="
 	xdg? ( >=dev-libs/efreet-9999 )
 	weather? ( >=net-libs/libeweather-9999 )
 	thumbnails? ( >=media-libs/ethumb-9999[dbus?] )
+	video? ( >=media-libs/emotion-9999 )
 	"
 DEPEND="${RDEPEND}"
 
@@ -35,6 +36,9 @@ src_configure() {
 	  $(use_enable sdl ecore-sdl)
 	  $(use_enable X ecore-x)
 	  $(use_enable thumbnails ethumb)
+	  $(use_enable video emotion)
+	  $(use_enable quicklaunch quick-launch)
+	  --disable-build-examples
 	"
 	efl_src_configure
 }

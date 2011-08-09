@@ -12,13 +12,14 @@ HOMEPAGE="http://trac.enlightenment.org/e/wiki/Elementary"
 
 LICENSE="LGPL-2.1"
 
-IUSE="dbus fbcon opengl quicklaunch sdl static-libs thumbnails video weather X xcb xdg"
+IUSE="dbus emap fbcon opengl quicklaunch sdl static-libs thumbnails video weather X xcb xdg"
 
 RDEPEND="
 	>=dev-libs/ecore-9999[evas,fbcon?,opengl?,sdl?,X?,xcb?]
 	>=media-libs/evas-9999[fbcon?,opengl?,sdl?,X?,xcb?]
 	>=media-libs/edje-9999
 	dbus? ( >=dev-libs/e_dbus-9999 )
+	emap? ( >=sci-geosciences/emap-9999 )
 	xdg? ( >=dev-libs/efreet-9999 )
 	weather? ( >=net-libs/libeweather-9999 )
 	thumbnails? ( >=media-libs/ethumb-9999[dbus?] )
@@ -30,6 +31,7 @@ src_configure() {
 	export MY_ECONF="
 	  ${MY_ECONF}
 	  $(use_enable dbus edbus)
+	  $(use_enable emap emap)
 	  $(use_enable xdg efreet)
 	  $(use_enable weather eweather)
 	  $(use_enable fbcon ecore-fb)

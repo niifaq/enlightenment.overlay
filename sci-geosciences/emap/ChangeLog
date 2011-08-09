@@ -1,0 +1,9 @@
+# ChangeLog for sci-geosciences/emap
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*emap-9999 (09 Aug 2011)
+
+  09 Aug 2011; evadim <evadim@evadim.ru> +emap-9999.ebuild, +metadata.xml:
+  initilal import
+

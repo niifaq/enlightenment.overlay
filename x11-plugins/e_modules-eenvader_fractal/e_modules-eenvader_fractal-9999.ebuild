@@ -4,13 +4,11 @@
 
 EAPI="2"
 
-E_PKG_IUSE="nls"
-
 ESVN_SUB_PROJECT="E-MODULES-EXTRA"
 ESVN_URI_APPEND="eenvader.fractal"
 inherit efl
 
-DESCRIPTION="an animated wallpaper"
+DESCRIPTION="An animated wallpaper for E17 wm"
 
 IUSE=""
 
@@ -19,3 +17,12 @@ DEPEND="x11-wm/enlightenment:0.17
 	>=dev-libs/ecore-9999"
 
 RDEPEND="${DEPEND}"
+
+src_prepare() {
+	ewarn "HACK HACK HACK"
+	ewarn "Broken upstream Makefile.am, insisting on m4 dir!"
+
+	sed -r '/^[[:space:]]*ACLOCAL_AMFLAGS/ d' -i Makefile.am
+
+	efl_src_prepare
+}

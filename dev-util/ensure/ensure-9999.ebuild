@@ -3,7 +3,7 @@
 # $Header: $
 
 EAPI="2"
-inherit enlightenment
+inherit efl
 
 DESCRIPTION="EFL runtime checker"
 IUSE=""

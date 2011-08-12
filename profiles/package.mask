@@ -1,0 +1,5 @@
+# Andrian Nord <nightnord@gmail.com> (10 Aug 2011)
+# Masked for removal, as it was merged into x11-wm/enlightenment itself
+x11-plugins/e_modules-efm_nav
+x11-plugins/e_modules-efm_path
+x11-plugins/e_modules-efm_pathbar

@@ -4,3 +4,6 @@
 =x11-plugins/e_modules-exalt-client-9999
 =x11-plugins/e_modules-places-9999
 =dev-python/python-lightmediascanner-9999
+=x11-plugins/e_modules-efm_nav-9999
+=x11-plugins/e_modules-efm_path-9999
+=x11-plugins/e_modules-efm_pathbar-9999

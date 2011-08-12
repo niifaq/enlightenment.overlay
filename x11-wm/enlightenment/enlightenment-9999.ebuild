@@ -13,85 +13,66 @@ HOMEPAGE="http://www.enlightenment.org/"
 
 SLOT="0.17"
 
-# FIXME: 'tracker' USE has no configure flag
-# FIXME: 'pm-utils' USE has no configure flag
-# FIXME: xinerama, xscreensaver and opengl USEs are indirect
-
 REQUIRED_USE="illume? ( !illume2 )"
 
 IUSE="exchange hal illume illume2 opengl pam pm-utils +sysactions tracker
 	+udev xinerama xscreensaver"
 
 IUSE_ENLIGHTENMENT_MODULES="
-	battery
-	bluez
-	clock
-	comp
-	conf
-	connman
-	cpufreq
-	dropshadow
-	everything
-	fileman
-	ibar
-	ibox
-	mixer
-	ofono
-	pager
-	start
-	syscon
-	systray
-	temperature
-	winlist
-	wizard"
+	+battery
+	+bluez
+	+clock
+	+comp
+	+conf
+	+connman
+	+cpufreq
+	+dropshadow
+	+everything
+	+fileman
+	+ibar
+	+ibox
+	+mixer
+	+ofono
+	+pager
+	+start
+	+syscon
+	+systray
+	+temperature
+	+winlist
+	+wizard"
 
 IUSE_ENLIGHTENMENT_CONF="
-	borders
-	colors
-	desklock
-	desk
-	desks
-	dialogs
-	display
-	dpms
-	engine
-	fonts
-	imc
-	intl
-	menus
-	mime
-	mouse
-	paths
-	profiles
-	scale
-	shelves
-	startup
-	theme
-	winlist"
+	+borders
+	+colors
+	+desklock
+	+desk
+	+desks
+	+dialogs
+	+display
+	+dpms
+	+engine
+	+fonts
+	+imc
+	+intl
+	+menus
+	+mime
+	+mouse
+	+paths
+	+profiles
+	+scale
+	+shelves
+	+startup
+	+theme
+	+winlist"
 
 IUSE_ENLIGHTENMENT_EVERYTHING="
-	files
-	apps
-	calc
-	aspell
-	settings
-	windows"
+	+files
+	+apps
+	+calc
+	+aspell
+	+settings
+	+windows"
 
-for module in ${IUSE_ENLIGHTENMENT_MODULES}; do
-	IUSE+=" +enlightenment_modules_${module}"
-done
-
-for module in ${IUSE_ENLIGHTENMENT_CONF}; do
-	IUSE+=" +enlightenment_conf_${module}"
-done
-
-for plugin in ${IUSE_ENLIGHTENMENT_EVERYTHING}; do
-	IUSE+=" +enlightenment_everything_${plugin}"
-done
-
-# TODO: pm-utils changes /etc/enlightenment/sysactions.conf
-# TODO: patch to not require -i-really-know-what-i-am-doing-and-accept-full-responsibility-for-it
-# TODO: patch to make e17 "e_alert()" inform how to compile with debug in gentoo
 RDEPEND="
 	exchange? ( >=net-libs/exchange-9999 )
 	pam? ( sys-libs/pam )
@@ -115,22 +96,35 @@ RDEPEND="
 "
 DEPEND="${RDEPEND}"
 
-pkg_setup() {
-	local x= prefix=IUSE_ENLIGHTENMENT
+expand_iuse() {
+	local flags="$1" prefix="$2" requirement="$3"
 
-	if ! use enlightenment_modules_everything; then
-		for x in ${IUSE_ENLIGHTENMENT_EVERYTHING}; do
-			use enlightenment_everything_${x} \
-				&& die "${prefix}_EVERYTHING=${x} requires ${prefix}_MODULES=everything"
-		done
-	fi
-	if ! use enlightenment_modules_conf; then
-		for x in ${IUSE_ENLIGHTENMENT_CONF}; do
-			use enlightnement_conf_${x} \
-				&& die "${prefix}_CONF=${x} requires ${prefix}_MODULES=conf"
-		done
-	fi
+	local fullname= flag= is_default=""
+	local has_requirement=false
+
+	[[ -z "${requirement}" ]] || has_requirement=true
+
+	for flag in ${flags}; do
+		[[ "${flag#+}" == "${flag}" ]] && is_default="" || is_default="+"
+
+		fullname="${prefix}_${flag#+}"
+
+		IUSE+=" ${is_default}${fullname}"
+
+		${has_requirement} && REQUIRED_USE+="
+			${fullname}? ( ${requirement} )"
+	done
 }
+
+expand_iuse "${IUSE_ENLIGHTENMENT_MODULES}" "enlightenment_modules"
+
+expand_iuse "${IUSE_ENLIGHTENMENT_CONF}"		\
+			"enlightenment_conf"				\
+			"enlightenment_modules_conf"
+
+expand_iuse "${IUSE_ENLIGHTENMENT_EVERYTHING}"	\
+			"enlightenment_everything"			\
+			"enlightenment_modules_everything"
 
 src_configure() {
 	#remove useless startup checks since we know we have the deps
@@ -151,14 +145,17 @@ src_configure() {
 	local module=
 
 	for module in ${IUSE_ENLIGHTENMENT_MODULES}; do
+		module="${module#+}"
 		MY_ECONF+=" $(use_enable enlightenment_modules_${module} ${module})"
 	done
 
 	for module in ${IUSE_ENLIGHTENMENT_CONF}; do
+		module="${module#+}"
 		MY_ECONF+=" $(use_enable enlightenment_conf_${module} conf-${module})"
 	done
 
 	for module in ${IUSE_ENLIGHTENMENT_EVERYTHING}; do
+		module="${module#+}"
 		MY_ECONF+=" $(use_enable enlightenment_everything_${module} \
 														everything-${module})"
 	done

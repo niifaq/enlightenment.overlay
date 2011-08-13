@@ -3,3 +3,7 @@
 x11-plugins/e_modules-efm_nav
 x11-plugins/e_modules-efm_path
 x11-plugins/e_modules-efm_pathbar
+
+# evadim <evadim@evadim.ru> (13 Aug 2011)
+# Masked for removal, as it deleted by upstream
+media-libs/etch

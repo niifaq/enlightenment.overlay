@@ -15,6 +15,7 @@ IUSE=""
 
 DEPEND=">=dev-libs/eet-9999
 	>=dev-libs/ecore-9999
+	>=net-libs/azy-9999
 	>=media-libs/edje-9999
 	>=media-libs/ethumb-9999
 	>=media-libs/libexif-0.6.16

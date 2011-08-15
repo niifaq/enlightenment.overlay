@@ -1,6 +1,6 @@
 =app-admin/empower-9999 **
 =app-benchmarks/expedite-9999 **
-=app-misc/canola-daemon-9999 **
+=app-misc/excessive-9999 **
 =app-text/epdf-9999 **
 =dev-cpp/ecorexx-9999 **
 =dev-cpp/edjexx-9999 **
@@ -29,6 +29,7 @@
 =dev-python/python-evas-9999 **
 =dev-python/python-lightmediascanner-9999 **
 =dev-util/editje-9999 **
+=dev-util/ensure-9999 **
 =media-gfx/enki-9999 **
 =media-gfx/ephoto-9999 **
 =media-gfx/exquisite-9999 **
@@ -39,13 +40,13 @@
 =media-libs/emotion-9999 **
 =media-libs/enlil-9999 **
 =media-libs/e_phys-9999 **
-=media-libs/etch-9999 **
 =media-libs/ethumb-9999 **
 =media-libs/evas-9999 **
 =media-libs/imlib2-9999 **
 =media-libs/imlib2_loaders-9999 **
 =media-libs/lightmediascanner-9999 **
 =media-sound/enjoy-9999 **
+=media-video/espionnage-9999 **
 =media-video/rage-9999 **
 =net-im/apathy-9999 **
 =net-im/elmdentica-9999 **
@@ -81,6 +82,7 @@
 =x11-plugins/e_modules-everything-mpris-9999 **
 =x11-plugins/e_modules-everything-pidgin-9999 **
 =x11-plugins/e_modules-everything-places-9999 **
+=x11-plugins/e_modules-everything-shotgun-9999 **
 =x11-plugins/e_modules-everything-tracker-9999 **
 =x11-plugins/e_modules-everything-wallpaper-9999 **
 =x11-plugins/e_modules-everything-websearch-9999 **

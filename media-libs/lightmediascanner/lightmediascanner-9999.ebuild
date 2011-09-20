@@ -6,7 +6,7 @@ EAPI="2"
 
 EGIT_REPO_URI="git://git.profusion.mobi/lightmediascanner.git"
 
-inherit git efl
+inherit git-2 efl
 
 DESCRIPTION="LightMediaScanner"
 HOMEPAGE="http://lms.garage.maemo.org/"
@@ -25,7 +25,7 @@ DEPEND="mp4? ( media-libs/libmp4v2 )
 RDEPEND="dev-db/sqlite"
 
 src_unpack() {
-	git_src_unpack
+	git-2_src_unpack
 	cd "${S}"
 }
 

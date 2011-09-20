@@ -5,7 +5,7 @@
 EAPI="2"
 
 E_EXTERNAL="yes"
-inherit git efl flag-o-matic
+inherit git-2 efl flag-o-matic
 
 EGIT_REPO_URI="git://github.com/jeffdameth/${PN}.git"
 
@@ -36,7 +36,7 @@ DEPEND="
 RDEPEND="${DEPEND}"
 
 src_unpack() {
-	git_src_unpack
+	git-2_src_unpack
 
 	cd "${S}"
 }

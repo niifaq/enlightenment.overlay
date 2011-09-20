@@ -8,7 +8,7 @@ E_PKG_IUSE="doc nls"
 
 PYTHON_DEPEND="*:2.4"
 EGIT_REPO_URI="git://git.profusion.mobi/python-lightmediascanner.git"
-inherit git python distutils
+inherit git-2 python distutils
 
 DESCRIPTION="LightMediaScanner python bindings"
 HOMEPAGE="http://lms.garage.maemo.org/"
@@ -25,7 +25,7 @@ DEPEND=">=dev-python/setuptools-0.6_rc9
 	${RDEPEND}"
 
 src_unpack() {
-	git_src_unpack
+	git-2_src_unpack
 }
 
 src_install() {

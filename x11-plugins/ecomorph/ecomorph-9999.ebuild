@@ -7,7 +7,7 @@ EAPI="2"
 E_PKG_IUSE="nls"
 
 E_EXTERNAL="yes"
-inherit git efl multilib
+inherit git-2 efl multilib
 
 EGIT_REPO_URI="git://github.com/jeffdameth/${PN}.git"
 
@@ -23,7 +23,7 @@ DEPEND="x11-wm/enlightenment:0.17
 RDEPEND="${DEPEND}"
 
 src_unpack() {
-	git_src_unpack
+	git-2_src_unpack
 
 	cd "${S}"
 }

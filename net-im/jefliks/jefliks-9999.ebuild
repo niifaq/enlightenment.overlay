@@ -7,7 +7,7 @@ EAPI="2"
 E_PKG_IUSE="doc nls"
 EGIT_REPO_URI="git://jefliks.git.sourceforge.net/gitroot/jefliks/jefliks"
 
-inherit eutils git
+inherit eutils git-2
 
 DESCRIPTION="EFL-based tiny and fast Jabber client"
 HOMEPAGE="http://sourceforge.net/projects/jefliks"

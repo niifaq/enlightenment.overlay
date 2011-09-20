@@ -12,7 +12,7 @@ DESCRIPTION="Enna Media Center"
 HOMEPAGE="http://enna.geexbox.org/"
 SRC_URI="http://${PN}.geexbox.org/releases/${P}.tar.bz2"
 
-IUSE="nls cdda cddb dvd curl hal lirc upnp xml X"
+IUSE="nls cdda cddb dvd curl lirc upnp xml X"
 
 RDEPEND=">=media-libs/libplayer-1.0.0
 	>=media-libs/libvalhalla-1.0.0
@@ -31,7 +31,6 @@ RDEPEND=">=media-libs/libplayer-1.0.0
 	upnp? ( net-libs/gupnp )
 	curl? ( net-misc/curl )
 	lirc? ( app-misc/lirc )
-	hal? ( sys-apps/hal )
 "
 
 DEPEND="${RDEPEND}"
@@ -54,7 +53,6 @@ src_configure() {
 		$(use_enable nls)
 		$(use_enable cddb libcddb)
 		$(use_enable curl libcurl)
-		$(use_enable hal volume-hal)
 		$(use_enable dvd browser-dvd)
 		$(use_enable cdda browser-cdda)
 		$(use_enable upnp browser-upnp)

@@ -15,7 +15,7 @@ SLOT="0.17"
 
 REQUIRED_USE="illume? ( !illume2 )"
 
-IUSE="exchange hal illume illume2 opengl pam pm-utils +sysactions tracker
+IUSE="exchange illume illume2 opengl pam pm-utils +sysactions tracker
 	+udev xinerama xscreensaver"
 
 IUSE_ENLIGHTENMENT_MODULES="
@@ -136,7 +136,6 @@ src_configure() {
 	  $(use_enable exchange)
 	  $(use_enable illume)
 	  $(use_enable illume2)
-	  $(use_enable hal device-hal)
 	  $(use_enable pam)
 	  $(use_enable udev device-udev)
 	  $(use_enable sysactions install-sysactions)

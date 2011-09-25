@@ -15,8 +15,8 @@ SLOT="0.17"
 
 REQUIRED_USE="illume? ( !illume2 )"
 
-IUSE="exchange illume illume2 opengl pam pm-utils +sysactions tracker
-	+udev xinerama xscreensaver"
+IUSE="eeze exchange illume illume2 opengl pam pm-utils +sysactions tracker
+	+udev udisks xinerama xscreensaver"
 
 IUSE_ENLIGHTENMENT_MODULES="
 	+battery
@@ -139,7 +139,9 @@ src_configure() {
 	  $(use_enable illume)
 	  $(use_enable illume2)
 	  $(use_enable pam)
+	  $(use_enable eeze mount-eeze)
 	  $(use_enable udev device-udev)
+	  $(use_enable udisks mount-udisks)
 	  $(use_enable sysactions install-sysactions)
 	"
 

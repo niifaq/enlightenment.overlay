@@ -133,6 +133,8 @@ src_configure() {
 	export MY_ECONF="
 	  ${MY_ECONF}
 	  --disable-install-sysactions
+	  --disable-device-hal
+	  --disable-mount-hal
 	  $(use_enable exchange)
 	  $(use_enable illume)
 	  $(use_enable illume2)

@@ -32,6 +32,7 @@ IUSE_ENLIGHTENMENT_MODULES="
 	+ibar
 	+ibox
 	+mixer
+	+notification
 	+ofono
 	+pager
 	+start

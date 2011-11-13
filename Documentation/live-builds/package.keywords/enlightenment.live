@@ -35,7 +35,6 @@
 =media-gfx/enki-9999 **
 =media-gfx/ephoto-9999 **
 =media-gfx/exquisite-9999 **
-=media-gfx/image-viewer-9999 **
 =media-libs/atabake-9999 **
 =media-libs/edje-9999 **
 =media-libs/elementary-9999 **
@@ -77,9 +76,6 @@
 =x11-plugins/e_modules-e-tiling-9999 **
 =x11-plugins/e_modules-eenvader_fractal-9999 **
 =x11-plugins/e_modules-engage-9999 **
-=x11-plugins/e_modules-efm_nav-9999 **
-=x11-plugins/e_modules-efm_path-9999 **
-=x11-plugins/e_modules-efm_pathbar-9999 **
 =x11-plugins/e_modules-elfe-9999 **
 =x11-plugins/e_modules-eooorg-9999 **
 =x11-plugins/e_modules-everything-mpris-9999 **

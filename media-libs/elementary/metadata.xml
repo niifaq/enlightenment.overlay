@@ -11,6 +11,7 @@
  <flag name="emap">Enable integration with <pkg>sci-geosciences/emap</pkg>, a map manager</flag>
  <flag name="xdg">Enable integration with <pkg>dev-libs/efreet</pkg> for cross-desktop standards (freedesktop.org).</flag>
  <flag name="weather">Enable integration with <pkg>net-libs/libeweather</pkg> to provide weather widget.</flag>
+ <flag name="webkit">Enable integration with <pkg>net-libs/webkit-efl</pkg></flag>
  <flag name="thumbnails">Enable integration with <pkg>media-libs/ethumb</pkg> to generate and show thumbnails automatically.</flag>
  <flag name="video">Enable integration with <pkg>media-libs/emotion</pkg> to play media files.</flag>
  <flag name="quicklaunch">Enable building of quicklaunch functionality and related tests.</flag>

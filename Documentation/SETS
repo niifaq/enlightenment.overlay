@@ -16,12 +16,14 @@ Static sets:
 
 		@enlightenment = @enlightenment-modules + @enlightenment-wm
 		@enlightenment-extended = @enlightenment + @enlightenment-misc
+				+ @enlightenment-themes
 
 @enlightenment-wm	= Pure wm install with deps, no modules, no others.
 @enlightenment-modules	= All e-modules and all known to developers
 						third-party working modules.
 @enlightenment-misc	= Additional programs considered to be especially
 						useful.
+@enlightenment-themes	=	Additional themes for E17 and elementary
 @enlightenment-proto	= Programs considered to be prototypes or some testing
 				ground. Sometimes it will just not compile,
 				but sometimes it may contains something

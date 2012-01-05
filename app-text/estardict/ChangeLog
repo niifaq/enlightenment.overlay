@@ -1,0 +1,9 @@
+# ChangeLog for app-text/estardict
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*estardict-0.5 (05 Jan 2012)
+
+  05 Jan 2012; evadim <evadim@evadim.ru> +estardict-0.5.ebuild, +metadata.xml:
+  initial import
+

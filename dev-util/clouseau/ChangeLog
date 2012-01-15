@@ -1,9 +1,0 @@
-# ChangeLog for dev-util/clouseau
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: $
-
-*clouseau-9999 (29 Aug 2011)
-
-  29 Aug 2011; evadim <evadim@evadim.ru> +clouseau-9999.ebuild, +metadata.xml:
-  initial commit
-

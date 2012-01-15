@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-<herd>no-herd</herd>
 <maintainer>
  <email>enlightenment@gentoo.org</email>
  <name>Enlightenment-Gentoo maintainers</name>
@@ -68,5 +67,6 @@
  <flag name="enlightenment_modules_comp">modules_comp</flag>
  <flag name="enlightenment_modules_conf">modules_conf</flag>
  <flag name="enlightenment_modules_connman">modules_connman</flag>
+ <flag name="enlightenment_modules_notification">modules_notification</flag>
 </use>
 </pkgmetadata>

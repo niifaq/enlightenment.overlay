@@ -1,9 +1,0 @@
-# ChangeLog for app-admin/empower
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: $
-
-  07 Sep 2009; Andrian Nord <NightNord@niifaq.ru> empower-9999.ebuild,
-  +files/empower-missing-aclocal_amflags.patch, metadata.xml:
-  Patch for missing ACLOCAL_AMFLAGS
-  metadata.xml: longdescription added.
-

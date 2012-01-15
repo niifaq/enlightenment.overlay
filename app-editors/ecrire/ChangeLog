@@ -1,9 +1,0 @@
-# ChangeLog for app-editors/ecrire
-# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
-# $Header: $
-
-*ecrire-9999 (03 Jan 2012)
-
-  03 Jan 2012; evadim <evadim@evadim.ru> +ecrire-9999.ebuild, +metadata.xml:
-  initial commit
-

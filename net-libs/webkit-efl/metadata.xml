@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-<herd>no-herd</herd>
 <maintainer>
  <email>enlightenment@gentoo.org</email>
  <name>Enlightenment-Gentoo maintainers</name>
@@ -11,6 +10,7 @@
  <flag name="curl">Use <pkg>net-misc/curl</pkg> as network backend</flag>
  <flag name="soup">Use <pkg>net-libs/libsoup</pkg> as network backend</flag>
  <flag name="html5">Enable support of some HTML5 features</flag>
+ <flag name="xslt">Enable XSLT support</flag>
 </use>
 <longdescription>
 Webkit-EFL is the Enlightened variant of webkit

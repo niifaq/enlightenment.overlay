@@ -1,7 +1,0 @@
-# ChangeLog for x11-plugins/e_modules-photo
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: $
-
-  28 Feb 2010; evadim <evadim@evadim.ru> e_modules-photo-9999.ebuild:
-  move to efl.eclass
-

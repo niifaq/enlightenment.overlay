@@ -1,9 +1,0 @@
-# ChangeLog for x11-themes/efenniht
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: $
-
-*efenniht-9999 (12 Nov 2011)
-
-  12 Nov 2011; evadim <evadim@evadim.ru> +efenniht-9999.ebuild, +metadata.xml:
-  initial import
-

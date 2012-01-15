@@ -1,9 +1,0 @@
-# ChangeLog for app-misc/excessive
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: $
-
-*excessive-9999 (13 Aug 2011)
-
-  13 Aug 2011; evadim <evadim@evadim.ru> +excessive-9999.ebuild, +metadata.xml:
-  initial import
-

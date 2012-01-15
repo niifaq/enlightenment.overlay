@@ -16,7 +16,7 @@ DEPEND=">=media-libs/edje-9999"
 RDEPEND="${DEPEND}"
 
 src_compile() {
-	edje_cc -DVERSION="${ESVN_WC_REVISION}" -id . -fd . default.edc -o ${PN}.edj || die edje_cc failed
+	edje_cc -DVERSION="${ESVN_WC_REVISION}" -id images/ -fd . default.edc -o ${PN}.edj || die edje_cc failed
 }
 
 src_install() {

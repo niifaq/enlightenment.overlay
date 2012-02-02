@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="2"
+EAPI="4"
 
 E_PKG_IUSE="doc nls"
 
@@ -24,12 +24,16 @@ RDEPEND="
 	>=dev-python/python-e_dbus-9999
 	>=dev-python/python-evas-9999
 	>=dev-python/python-ecore-9999
+	>=dev-python/python-elementary-9999
 	dev-python/telepathy-python
 	net-libs/telepathy-farsight
+	net-im/telepathy-mission-control
+	net-im/telepathy-connection-managers
+	net-voip/telepathy-haze
 	net-libs/farsight2
 	dev-python/dbus-python
-	dev-python/gconf-python
 	dev-python/gst-python
+	dev-python/Babel
 "
 
 DEPEND=">=dev-python/setuptools-0.6_rc9"
@@ -38,8 +42,10 @@ src_prepare() {
 	sed  's/update-desktop-database/echo \;\)/g' -i setup.py
 }
 
-src_install() {
-	distutils_src_install
+#src_install() {
+#	distutils_src_install
 
-	domenu "${PN}.desktop"
-}
+#	domenu "${PN}.desktop"
+#	into /usr/share/icons
+#	dosym images/*
+#}

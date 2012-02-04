@@ -26,11 +26,11 @@ RDEPEND="
 	>=dev-python/python-ecore-9999
 	>=dev-python/python-elementary-9999
 	dev-python/telepathy-python
-	net-libs/telepathy-farsight
+	net-libs/telepathy-farsight[python]
 	net-im/telepathy-mission-control
 	net-im/telepathy-connection-managers
 	net-voip/telepathy-haze
-	net-libs/farsight2
+	net-libs/farsight2[python]
 	dev-python/dbus-python
 	dev-python/gst-python
 	dev-python/Babel

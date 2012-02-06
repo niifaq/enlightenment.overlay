@@ -28,7 +28,7 @@ RDEPEND="
 	!X? ( xcb? ( x11-libs/xcb-util ) )
 	eet? ( >=dev-libs/eet-9999 )
 	gif? ( media-libs/giflib )
-	jpeg? ( media-libs/jpeg )
+	jpeg? ( virtual/jpeg )
 	png? ( media-libs/libpng )
 	svg? (
 		>=gnome-base/librsvg-2.14.0

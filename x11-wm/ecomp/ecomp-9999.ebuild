@@ -31,7 +31,7 @@ DEPEND="
 	dev-libs/libxml2
 	virtual/opengl
 	media-libs/mesa
-	jpeg? ( media-libs/jpeg )"
+	jpeg? ( virtual/jpeg )"
 
 RDEPEND="${DEPEND}"
 

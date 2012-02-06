@@ -18,7 +18,7 @@ IUSE="+asf flac +id3 jpeg mp4 ogg +playlist png real static-libs"
 
 DEPEND="mp4? ( media-libs/libmp4v2 )
 	png? ( media-libs/libpng )
-	jpeg? ( media-libs/jpeg )
+	jpeg? ( virtual/jpeg )
 	flac? ( media-libs/flac )
 	ogg? ( media-libs/libogg )
 "

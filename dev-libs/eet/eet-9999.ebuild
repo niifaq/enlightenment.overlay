@@ -12,7 +12,7 @@ HOMEPAGE="http://trac.enlightenment.org/e/wiki/Eet"
 
 IUSE="+threads debug gnutls ssl"
 
-RDEPEND="media-libs/jpeg
+RDEPEND="virtual/jpeg
 	>=dev-libs/eina-9999
 	sys-libs/zlib
 	gnutls? ( net-libs/gnutls )

@@ -6,15 +6,15 @@ EAPI="4"
 
 E_PKG_IUSE="doc nls"
 
-PYTHON_DEPEND="*:2.4"
+PYTHON_DEPEND="*:2.7"
 
 inherit python distutils bzr
 
 EBZR_REPO_URI="https://launchpad.net/apathy"
 HOMEPAGE="http://www.openapathy.org/"
-DESCRIPTION="Apathy is an IM client designed for mobile platform"
+DESCRIPTION="Apathy is a Telepathy based IM client powered by EFL"
 
-IUSE=""
+IUSE="libnotify"
 
 LICENSE="GPL-3"
 SLOT="0"
@@ -25,6 +25,7 @@ RDEPEND="
 	>=dev-python/python-evas-9999
 	>=dev-python/python-ecore-9999
 	>=dev-python/python-elementary-9999
+	net-libs/telepathy-glib
 	dev-python/telepathy-python
 	net-libs/telepathy-farsight[python]
 	net-im/telepathy-mission-control
@@ -33,10 +34,11 @@ RDEPEND="
 	net-libs/farsight2[python]
 	dev-python/dbus-python
 	dev-python/gst-python
-	dev-python/Babel
+	libnotify? ( x11-libs/libnotify[introspection] )
 "
 
-DEPEND=">=dev-python/setuptools-0.6_rc9"
+DEPEND=">=dev-python/setuptools-0.6_rc9
+	dev-python/Babel"
 
 src_prepare() {
 	sed  's/update-desktop-database/echo \;\)/g' -i setup.py

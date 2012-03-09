@@ -1,8 +1,8 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="2"
+EAPI="4"
 
 E_PKG_IUSE="doc"
 inherit efl
@@ -17,6 +17,8 @@ RDEPEND="
 	>=dev-libs/ecore-9999
 	sys-apps/dbus
 	libnotify? ( >=media-libs/evas-9999 )
+	ofono? ( net-misc/ofono )
+	connman? ( <=net-misc/connman-0.78 )
 	ukit? ( sys-power/upower sys-fs/udisks )"
 DEPEND="${RDEPEND}"
 

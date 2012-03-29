@@ -25,8 +25,7 @@ RDEPEND="
 	>=dev-python/python-evas-9999
 	>=dev-python/python-ecore-9999
 	>=dev-python/python-elementary-9999
-	net-libs/telepathy-glib[introspection]
-	dev-python/telepathy-python
+	>=net-libs/telepathy-glib-0.17.6[introspection]
 	net-im/telepathy-mission-control
 	net-im/telepathy-connection-managers
 	net-voip/telepathy-haze

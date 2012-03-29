@@ -103,7 +103,7 @@ if [[ ${PV/9999} != ${PV} ]] ; then
 fi
 
 if [[ -n "${E_PYTHON}" ]]; then
-	PYTHON_DEPEND="2:2.4"
+	PYTHON_DEPEND="2:2.6"
 	inherit python
 fi
 

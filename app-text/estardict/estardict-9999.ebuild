@@ -4,33 +4,45 @@
 
 EAPI=2
 
-inherit autotools-utils eutils
-
-DESCRIPTION="An offline dictionary reader, made in C with Enlightenment Elementary UI"
-HOMEPAGE="http://www.vaudano.eu/wiki/en/estardict"
-SRC_URI="http://www.vaudano.eu/projects/${PN}/05/${P}.tar.gz"
-
-LICENSE="GPL-3"
-SLOT="0"
-KEYWORDS="~amd64 ~x86"
+E_EXTERNAL="yes"
+WANT_AUTOTOOLS="yes"
+E_NO_VISIBILITY="yes"
 
 IUSE="nls"
 
-DEPEND=">=media-libs/evas-1.1
-	>=media-libs/edje-1.1
-	>=media-libs/elementary-0.8"
+inherit bzr eutils efl
+
+DESCRIPTION="An offline dictionary reader, made in C with Enlightenment Elementary UI"
+HOMEPAGE="http://www.vaudano.eu/wiki/en/estardict"
+
+EBZR_REPO_URI="http://bazaar.launchpad.net/~vaudano/estardict/trunk"
+
+LICENSE="GPL-3"
+SLOT="0"
+KEYWORDS=""
+
+DEPEND=">=media-libs/evas-9999
+	>=media-libs/edje-9999
+	>=media-libs/elementary-9999"
 
 RDEPEND="${DEPEND}"
 
+src_unpack() {
+	bzr_src_unpack
+
+	cd "${S}" || die
+}
+
 src_configure() {
-	local  myeconfargs=(
+	export MY_ECONF="
 		$(use_enable nls)
-		)
-	autotools-utils_src_configure
+	"
+
+	efl_src_configure
 }
 
 src_install() {
 	strip-linguas -i po/
 
-	autotools-utils_src_install LINGUAS="${LINGUAS}"
+	efl_src_install LINGUAS="${LINGUAS}"
 }

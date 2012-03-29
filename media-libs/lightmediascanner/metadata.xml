@@ -4,4 +4,15 @@
 <maintainer>
  <email>enlightenment@gentoo.org</email>
 </maintainer>
+<use>
+	<flag name="real">Support Real Media metadata.</flag>
+	<flag name="id3">Support ID3v1 and ID3v2 tags of audio files.</flag>
+	<flag name="asf">Provide support for Microsoft's 'advanced systems format' media container.</flag>
+	<flag name="playlist">Add support for playlists (m3u and pls).</flag>
+</use>
+<longdescription>
+	LightMediaScanner is collection-builder for various media-players
+	out of metadata found in music files, allowing for artist, album or
+	genre browsing.
+</longdescription>
 </pkgmetadata>

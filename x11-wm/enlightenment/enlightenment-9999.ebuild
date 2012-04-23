@@ -83,10 +83,12 @@ RDEPEND="
 	>=dev-libs/efreet-9999
 	>=dev-libs/eina-9999[safety-checks]
 	>=dev-libs/embryo-9999
-	>=dev-libs/ecore-9999[X,evas,opengl?,xinerama?,xscreensaver?,inotify,xim]
 	>=dev-libs/e_dbus-9999[libnotify]
 	>=media-libs/edje-9999
-	>=media-libs/evas-9999[X,opengl?,eet,jpeg,png,safety-checks]
+	>=dev-libs/ecore-9999[evas,opengl?,xinerama?,xscreensaver?,inotify,xim]
+	>=media-libs/evas-9999[opengl?,eet,jpeg,png,safety-checks]
+	|| ( >=dev-libs/ecore-9999[X] >=dev-libs/ecore-9999[xcb] )
+	|| ( >=media-libs/evas-9999[X] >=media-libs/evas-9999[xcb] )
 	udev? ( dev-libs/eeze )
 	enlightenment_modules_bluez? ( net-wireless/bluez )
 	enlightenment_modules_mixer? ( media-libs/alsa-lib )

@@ -1,4 +1,4 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -96,8 +96,11 @@ RDEPEND="
 	enlightenment_modules_connman? ( >=dev-libs/e_dbus-9999[connman] )
 	enlightenment_everything_aspell? ( app-text/aspell )
 	enlightenment_everything_calc? ( sys-devel/bc )
-"
-DEPEND="${RDEPEND}"
+	"
+
+DEPEND="
+	!x11-plugins/e_modules-xkbswitch
+${RDEPEND}"
 
 expand_iuse() {
 	local flags="$1" prefix="$2" requirement="$3"

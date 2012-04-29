@@ -15,7 +15,7 @@ inherit bzr eutils efl
 DESCRIPTION="An offline dictionary reader, made in C with Enlightenment Elementary UI"
 HOMEPAGE="http://www.vaudano.eu/wiki/en/estardict"
 
-EBZR_REPO_URI="http://bazaar.launchpad.net/~vaudano/estardict/trunk"
+EBZR_REPO_URI="https://launchpad.net/estardict"
 
 LICENSE="GPL-3"
 SLOT="0"

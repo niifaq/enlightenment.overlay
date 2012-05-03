@@ -1,3 +1,7 @@
+# evadim <evadim@evadim.ru> (03 May 2012)
+# Masked for removal, as it was merged into x11-wm/enlightenment itself
+x11-plugins/e_modules-e-tiling
+
 # evadim <evadim@evadim.ru> (29 Apr 2012)
 # Masked for removal, as it was merged into x11-wm/enlightenment itself
 x11-plugins/e_modules-xkbswitch

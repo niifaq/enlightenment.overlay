@@ -1,0 +1,42 @@
+# Copyright 1999-2012 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Header: $
+
+EAPI=4
+
+inherit git-2 eutils autotools-utils
+
+DESCRIPTION="graphical application that display the periodic table of the elements"
+HOMEPAGE="http://eperiodique.sourceforge.net/"
+EGIT_REPO_URI="git://${PN}.git.sourceforge.net/gitroot/${PN}/${PN}"
+
+LICENSE=""
+SLOT="0"
+KEYWORDS=""
+
+IUSE="nls"
+
+RDEPEND=">=dev-libs/eina-9999
+	>=media-libs/evas-9999
+	>=media-libs/edje-9999
+	>=media-libs/elementary-9999"
+
+DEPEND="${RDEPEND}"
+
+src_prepare() {
+	eautoreconf
+}
+
+src_configure() {
+	local  myeconfargs=(
+		$(use_enable nls)
+		)
+		#$(use_enable pictures minimal)
+	autotools-utils_src_configure
+}
+
+src_install() {
+	strip-linguas -i po/
+
+	autotools-utils_src_install LINGUAS="${LINGUAS}"
+}

@@ -10,7 +10,7 @@ DESCRIPTION="graphical application that display the periodic table of the elemen
 HOMEPAGE="http://eperiodique.sourceforge.net/"
 EGIT_REPO_URI="git://${PN}.git.sourceforge.net/gitroot/${PN}/${PN}"
 
-LICENSE=""
+LICENSE="BSD-2"
 SLOT="0"
 KEYWORDS=""
 

@@ -18,7 +18,7 @@ RDEPEND="
 	sys-apps/dbus
 	libnotify? ( >=media-libs/evas-9999 )
 	ofono? ( net-misc/ofono )
-	connman? ( <=net-misc/connman-0.78 )
+	connman? ( net-misc/connman )
 	ukit? ( sys-power/upower sys-fs/udisks )"
 DEPEND="${RDEPEND}"
 

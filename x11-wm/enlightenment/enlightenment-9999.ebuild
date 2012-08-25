@@ -6,19 +6,19 @@ EAPI="4"
 
 E_PKG_IUSE="doc nls"
 ESVN_URI_APPEND="e"
-inherit efl
+inherit eutils efl
 
 DESCRIPTION="Enlightenment DR17 window manager"
 HOMEPAGE="http://www.enlightenment.org/"
 
 SLOT="0.17"
 
-REQUIRED_USE="illume? ( !illume2 )"
-
-IUSE="eeze exchange illume illume2 opengl pam pm-utils +sysactions tracker
+IUSE="eeze elementary exchange illume2 opengl pam pm-utils +sysactions tracker
 	+udev udisks xinerama xscreensaver"
 
 IUSE_ENLIGHTENMENT_MODULES="
+	+access
+	+backlight
 	+battery
 	+bluez
 	+clock
@@ -29,50 +29,45 @@ IUSE_ENLIGHTENMENT_MODULES="
 	+dropshadow
 	+everything
 	+fileman
+	+fileman_opinfo
+	+gadman
 	+ibar
 	+ibox
 	+mixer
+	+msgbus
 	+notification
 	+ofono
 	+pager
+	+physics
+	+quickaccess
+	+shot
 	+start
 	+syscon
 	+systray
+	+tasks
 	+temperature
+	+tiling
 	+winlist
-	+wizard"
+	+wizard
+	+xkbswitch"
 
 IUSE_ENLIGHTENMENT_CONF="
-	+borders
-	+colors
-	+desklock
-	+desk
-	+desks
+	+applications
 	+dialogs
 	+display
-	+dpms
-	+engine
-	+fonts
-	+imc
+	+edgebindings
+	+interaction
 	+intl
+	+keybindings
 	+menus
-	+mime
-	+mouse
 	+paths
-	+profiles
-	+scale
+	+performance
+	+randr
 	+shelves
-	+startup
 	+theme
-	+winlist"
-
-IUSE_ENLIGHTENMENT_EVERYTHING="
-	+files
-	+apps
-	+calc
-	+aspell
-	+settings
-	+windows"
+	+wallpaper2
+	+window_manipulation
+	+window_remembers"
 
 RDEPEND="
 	exchange? ( >=net-libs/exchange-9999 )
@@ -80,6 +75,7 @@ RDEPEND="
 	tracker? ( app-misc/tracker )
 	pm-utils? ( sys-power/pm-utils )
 	>=dev-libs/eet-9999
+	>=dev-libs/eio-9999
 	>=dev-libs/efreet-9999
 	>=dev-libs/eina-9999[safety-checks]
 	>=dev-libs/embryo-9999
@@ -89,13 +85,13 @@ RDEPEND="
 	>=media-libs/evas-9999[opengl?,eet,jpeg,png,safety-checks]
 	|| ( >=dev-libs/ecore-9999[X] >=dev-libs/ecore-9999[xcb] )
 	|| ( >=media-libs/evas-9999[X] >=media-libs/evas-9999[xcb] )
+	elementary? ( >=media-libs/elementary-9999 )
 	udev? ( dev-libs/eeze )
 	enlightenment_modules_bluez? ( net-wireless/bluez )
 	enlightenment_modules_mixer? ( media-libs/alsa-lib )
 	enlightenment_modules_ofono? ( >=dev-libs/e_dbus-9999[ofono] )
 	enlightenment_modules_connman? ( >=dev-libs/e_dbus-9999[connman] )
-	enlightenment_everything_aspell? ( app-text/aspell )
-	enlightenment_everything_calc? ( sys-devel/bc )
+	enlightenment_modules_everything? ( app-text/aspell sys-devel/bc )
 	"
 
 DEPEND="
@@ -129,13 +125,13 @@ expand_iuse "${IUSE_ENLIGHTENMENT_CONF}"		\
 			"enlightenment_conf"				\
 			"enlightenment_modules_conf"
 
-expand_iuse "${IUSE_ENLIGHTENMENT_EVERYTHING}"	\
-			"enlightenment_everything"			\
-			"enlightenment_modules_everything"
-
-src_configure() {
+src_prepare() {
 	#remove useless startup checks since we know we have the deps
 	epatch "${FILESDIR}/quickstart.diff" || die
+efl_src_prepare
+}
+
+src_configure() {
 	# NOTE: mixer is plugin-able, but just alsa is provided atm.
 	export MY_ECONF="
 	  ${MY_ECONF}
@@ -143,7 +139,7 @@ src_configure() {
 	  --disable-device-hal
 	  --disable-mount-hal
 	  $(use_enable exchange)
-	  $(use_enable illume)
+	  $(use_enable elementary)
 	  $(use_enable illume2)
 	  $(use_enable pam)
 	  $(use_enable eeze mount-eeze)
@@ -162,12 +158,6 @@ src_configure() {
 	for module in ${IUSE_ENLIGHTENMENT_CONF}; do
 		module="${module#+}"
 		MY_ECONF+=" $(use_enable enlightenment_conf_${module} conf-${module})"
-	done
-
-	for module in ${IUSE_ENLIGHTENMENT_EVERYTHING}; do
-		module="${module#+}"
-		MY_ECONF+=" $(use_enable enlightenment_everything_${module} \
-														everything-${module})"
 	done
 
 	efl_src_configure

@@ -6,5 +6,6 @@
 </maintainer>
 <use>
   <flag name="consolekit">Enables support for authorization using consolekit</flag>
+  <flag name="grub2">Enables support for grub2 reboot feature via <pkg>sys-boot/grub</pkg></flag>
 </use>
 </pkgmetadata>

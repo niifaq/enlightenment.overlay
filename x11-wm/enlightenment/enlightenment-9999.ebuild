@@ -95,6 +95,7 @@ RDEPEND="
 	"
 
 DEPEND="
+	!x11-plugins/e_modules-quickaccess
 	!x11-plugins/e_modules-xkbswitch
 	!x11-plugins/e_modules-tiling
 ${RDEPEND}"

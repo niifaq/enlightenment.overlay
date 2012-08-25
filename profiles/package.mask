@@ -1,3 +1,7 @@
+# evadim <evadim@evadim.ru> (25 Jul 2012)
+# Masked for removal, as it was merged into x11-wm/enlightenment itself
+x11-plugins/e_modules-quickaccess
+
 # evadim <evadim@evadim.ru> (19 Jun 2012)
 # Masked for removal, dropped by upstream
 x11-plugins/e_modules-e-tiling

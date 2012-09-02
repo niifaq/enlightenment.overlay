@@ -46,9 +46,9 @@
  <flag name="enlightenment_modules_temperature">Temperature monitor</flag>
  <flag name="enlightenment_modules_tiling">Positions/resizes your windows tilingly</flag>
  <flag name="enlightenment_modules_winlist">A module to show the list of client applications presently running</flag>
- <flag name="enlightenment_modules_wizard"></flag>
+ <flag name="enlightenment_modules_wizard">First Run Wizard</flag>
  <flag name="enlightenment_modules_xkbswitch">Keyboard layout configuration and switcher</flag>
- <flag name="enlightenment_modules_conf"></flag>
+ <flag name="enlightenment_modules_conf">General Enlightenment configuration panel</flag>
  <flag name="enlightenment_conf_applications">Allows configuration of Ibar, Restart, and Startup applications</flag>
  <flag name="enlightenment_conf_dialogs">Configure default dialog properties</flag>
  <flag name="enlightenment_conf_display">Used to configure your screen</flag>

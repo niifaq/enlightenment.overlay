@@ -120,7 +120,7 @@ HOMEPAGE="http://www.enlightenment.org/"
 LICENSE="BSD"
 SLOT="0"
 
-DEPEND="${DEPEND} dev-util/pkgconfig"
+DEPEND="${DEPEND} virtual/pkgconfig"
 
 if has nls ${IUSE}; then
 	DEPEND="${DEPEND} nls? ( sys-devel/gettext )"

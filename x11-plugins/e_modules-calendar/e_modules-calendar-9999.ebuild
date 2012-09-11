@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -6,10 +6,10 @@ EAPI="2"
 
 E_PKG_IUSE="nls"
 
-ESVN_SUB_PROJECT="E-MODULES-EXTRA"
 ESVN_URI_APPEND="${PN#e_modules-}"
 inherit efl
 
+ESVN_REPO_URI="http://svn.enlightenment.org/svn/e/OLD/E-MODULES-EXTRA/calendar/"
 DESCRIPTION="Calendar module for e17"
 
 IUSE=""

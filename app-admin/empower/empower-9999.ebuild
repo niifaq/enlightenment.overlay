@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -8,18 +8,16 @@ E_PKG_IUSE="nls"
 
 inherit efl eutils
 
-DESCRIPTION="graphical sudo application"
+DESCRIPTION="Elementary based PolicyKit authentication agent"
 
 IUSE=""
 
-DEPEND="dev-libs/ecore
-	media-libs/evas
-	media-libs/edje
-	media-libs/elementary"
+DEPEND=">=dev-libs/eina-9999
+	>=media-libs/evas-9999
+	>=dev-libs/ecore-9999[X]
+	>=media-libs/edje-9999
+	>=dev-libs/efreet-9999
+	>=dev-libs/e_dbus-9999
+	>=media-libs/elementary-9999"
 
 RDEPEND="${DEPEND}"
-src_configure() {
-	MY_ECONF="--disable-ewl"
-
-	efl_src_configure
-}

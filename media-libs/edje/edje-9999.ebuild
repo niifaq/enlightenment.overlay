@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -10,7 +10,7 @@ inherit efl elisp-common
 DESCRIPTION="graphical layout and animation library"
 HOMEPAGE="http://trac.enlightenment.org/e/wiki/Edje"
 
-IUSE="vim-syntax emacs experimental debug"
+IUSE="debug eio emacs experimental vim-syntax"
 
 RDEPEND="
 	dev-lang/lua
@@ -19,6 +19,7 @@ RDEPEND="
 	>=dev-libs/embryo-9999
 	>=dev-libs/ecore-9999
 	>=media-libs/evas-9999[jpeg,eet,png]
+	eio? ( >=dev-libs/eio-9999 )
 	emacs? ( virtual/emacs )"
 
 DEPEND="${RDEPEND}"
@@ -33,6 +34,7 @@ src_configure() {
 	  $(use_enable experimental edje-program-cache)
 	  $(use_enable experimental edje-calc-cache)
 	  $(use_with vim-syntax vim /usr/share/vim)
+	  $(use_enable eio eio)
 	"
 	efl_src_configure
 }

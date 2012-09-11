@@ -6,6 +6,7 @@
  <name>Enlightenment-Gentoo maintainers</name>
 </maintainer>
 <use>
+ <flag name="eio">Enable support of <pkg>dev-libs/eio</pkg></flag>
  <flag name="experimental">Enable experimental features such as calc and program caching.</flag>
 </use>
 <longdescription>

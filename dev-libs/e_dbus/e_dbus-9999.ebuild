@@ -19,7 +19,7 @@ RDEPEND="
 	libnotify? ( >=media-libs/evas-9999 )
 	ofono? ( net-misc/ofono )
 	connman? ( net-misc/connman )
-	ukit? ( sys-power/upower sys-fs/udisks )"
+	ukit? ( sys-power/upower sys-fs/udisks:0 )"
 DEPEND="${RDEPEND}"
 
 src_configure() {

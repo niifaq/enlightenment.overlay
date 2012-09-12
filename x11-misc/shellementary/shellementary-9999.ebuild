@@ -1,14 +1,13 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="2"
+EAPI="4"
 
 E_PKG_IUSE="nls"
 
-PYTHON_DEPEND="*:2.4"
 ESVN_SUB_PROJECT="PROTO"
-inherit efl python
+inherit efl
 
 DESCRIPTION="Tool to display Elementary dialogs from the command line and shell scripts"
 
@@ -23,14 +22,6 @@ RDEPEND=">=dev-python/cython-0.9.8
 DEPEND="${RDEPEND}"
 
 src_unpack() {
+	AT_M4DIR="-I m4"
 	efl_src_unpack
-}
-
-src_compile() {
-	${python} setup.py build --prefix="${T}/usr"
-
-}
-
-src_install() {
-	${python} setup.py install --prefix="${D}/usr"
 }

@@ -177,19 +177,6 @@ efl_src_test() {
 	emake -j1 check || die "Make check failed. see above for details"
 }
 
-# @FUNCTION: gettext_modify
-# @USAGE:
-# @DESCRIPTION:
-# the stupid gettextize script prevents non-interactive mode, so we hax it
-gettext_modify() {
-	if has nls ${IUSE} && use nls; then
-		cp $(type -P gettextize) "${T}"/ || die "could not copy gettextize"
-		sed -i \
-			-e 's:read dummy < /dev/tty::' \
-			"${T}"/gettextize
-	fi
-}
-
 # @FUNCTION: efl_src_unpack
 # @USAGE:
 # @DESCRIPTION:
@@ -205,10 +192,8 @@ efl_src_unpack() {
 # @FUNCTION: efl_src_prepare
 # @USAGE:
 # @DESCRIPTION:
-# Applys the gettext_modifiy hack and runs the autotools stuff.
+# Runs the autotools stuff.
 efl_src_prepare() {
-	gettext_modify
-
 	[[ -s gendoc ]] && chmod a+rx gendoc
 
 	if [[ -e configure.ac || -e configure.in ]] && [[ "${WANT_AUTOTOOLS}" == "yes" ]]; then

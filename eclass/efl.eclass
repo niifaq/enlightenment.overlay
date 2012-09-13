@@ -194,6 +194,8 @@ efl_src_unpack() {
 # @DESCRIPTION:
 # Runs the autotools stuff.
 efl_src_prepare() {
+	epatch_user
+
 	[[ -s gendoc ]] && chmod a+rx gendoc
 
 	if [[ -e configure.ac || -e configure.in ]] && [[ "${WANT_AUTOTOOLS}" == "yes" ]]; then

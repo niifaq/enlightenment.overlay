@@ -8,7 +8,7 @@ ESVN_SUB_PROJECT="PROTO"
 inherit efl
 
 DESCRIPTION="Library for games to manage scores, trohpies and unlockables"
-IUSE=""
+IUSE="static-libs"
 
 RDEPEND=">=media-libs/elementary-9999"
 DEPEND="${RDEPEND}"

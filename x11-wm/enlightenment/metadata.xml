@@ -6,7 +6,6 @@
  <name>Enlightenment-Gentoo maintainers</name>
 </maintainer>
 <use>
- <flag name="exchange">Enable Enlightenment's <pkg>net-libs/exchange</pkg> to get themes and wallpapers.</flag>
  <flag name="illume2">Illume2 - next generation of illume - special WM mode for embedded devices and set of plugins with same purpose</flag>
  <flag name="tracker">Enable the search plugin using <pkg>app-misc/tracker</pkg> in Everything launcher.</flag>
  <flag name="pm-utils">Integrate with <pkg>sys-power/pm-utils</pkg> to provide hibernate and suspend.</flag>

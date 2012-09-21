@@ -13,7 +13,7 @@ HOMEPAGE="http://www.enlightenment.org/"
 
 SLOT="0.17"
 
-IUSE="eeze elementary exchange illume2 opengl pam pm-utils +sysactions tracker
+IUSE="eeze elementary illume2 opengl pam pm-utils +sysactions tracker
 	+udev udisks xinerama xscreensaver"
 
 IUSE_ENLIGHTENMENT_MODULES="
@@ -70,7 +70,6 @@ IUSE_ENLIGHTENMENT_CONF="
 	+window_remembers"
 
 RDEPEND="
-	exchange? ( >=net-libs/exchange-9999 )
 	pam? ( sys-libs/pam )
 	tracker? ( app-misc/tracker )
 	pm-utils? ( sys-power/pm-utils )
@@ -140,7 +139,6 @@ src_configure() {
 	  --disable-install-sysactions
 	  --disable-device-hal
 	  --disable-mount-hal
-	  $(use_enable exchange)
 	  $(use_enable elementary)
 	  $(use_enable illume2)
 	  $(use_enable pam)

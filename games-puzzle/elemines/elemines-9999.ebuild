@@ -12,7 +12,6 @@ EGIT_REPO_URI="git://${PN}.git.sourceforge.net/gitroot/${PN}/${PN}"
 
 LICENSE="GPL-2 OFL"
 SLOT="0"
-KEYWORDS=""
 
 IUSE=""
 

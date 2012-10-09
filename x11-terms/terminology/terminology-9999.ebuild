@@ -16,6 +16,7 @@ RDEPEND="
 	>=dev-libs/eet-9999
 	>=media-libs/evas-9999
 	>=dev-libs/ecore-9999[xim]
+	>=dev-libs/efreet-9999
 	>=media-libs/edje-9999
 	>=media-libs/emotion-9999
 	>=media-libs/elementary-9999"

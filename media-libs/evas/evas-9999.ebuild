@@ -14,6 +14,7 @@ IUSE="debug mmx sse altivec +threads +fontconfig bidi +cserve directfb fbcon ope
 
 RDEPEND="
 	>=dev-libs/eina-9999
+	>=dev-libs/eobj-9999
 	>=media-libs/freetype-2.3.9
 	fontconfig? ( media-libs/fontconfig )
 	bidi? ( >=dev-libs/fribidi-0.19.1 )

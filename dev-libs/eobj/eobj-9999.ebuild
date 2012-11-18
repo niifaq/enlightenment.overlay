@@ -4,8 +4,7 @@
 
 EAPI=4
 E_PKG_IUSE="doc"
-ESVN_URI_APPEND="IN-EFL/eo"
-
+ESVN_SUB_PROJECT="PROTO"
 inherit efl
 
 DESCRIPTION="E object library"

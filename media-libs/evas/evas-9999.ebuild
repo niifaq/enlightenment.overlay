@@ -5,7 +5,10 @@
 EAPI="2"
 
 E_PKG_IUSE="doc"
+
 inherit efl
+
+ESVN_REPO_URI="http://svn.enlightenment.org/svn/e/branches/evas-1.7/"
 
 DESCRIPTION="hardware-accelerated retained canvas API"
 HOMEPAGE="http://trac.enlightenment.org/e/wiki/Evas"

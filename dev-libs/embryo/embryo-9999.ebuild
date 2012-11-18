@@ -5,7 +5,11 @@
 EAPI="2"
 
 E_PKG_IUSE="doc"
+ESVN_SUB_PROJECT="IN-EFL"
+
 inherit efl flag-o-matic
+
+ESVN_REPO_URI="http://svn.enlightenment.org/svn/e/branches/embryo-1.7/"
 
 DESCRIPTION="load and control programs compiled in embryo language (small/pawn variant)"
 HOMEPAGE="http://trac.enlightenment.org/e/wiki/Embryo"

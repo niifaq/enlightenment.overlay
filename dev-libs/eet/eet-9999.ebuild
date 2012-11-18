@@ -5,12 +5,15 @@
 EAPI="2"
 
 E_PKG_IUSE="doc test"
+
 inherit efl
+
+ESVN_REPO_URI="http://svn.enlightenment.org/svn/e/branches/eet-1.7/"
 
 DESCRIPTION="E file chunk reading/writing library"
 HOMEPAGE="http://trac.enlightenment.org/e/wiki/Eet"
 
-IUSE="+threads debug gnutls ssl"
+IUSE="debug gnutls ssl"
 
 RDEPEND="virtual/jpeg
 	>=dev-libs/eina-9999
@@ -25,12 +28,10 @@ src_configure() {
 	# ???: should we use 'use_enable' for these as well?
 	if use debug; then
 		DEBUG_FLAGS="
-		  --disable-amalgamation
 		  --enable-assert
 		"
 	else
 		DEBUG_FLAGS="
-		  --enable-amalgamation
 		  --disable-assert
 		"
 	fi
@@ -71,7 +72,6 @@ src_configure() {
 
 	export MY_ECONF="
 	  ${MY_ECONF}
-	  $(use_enable threads posix-threads)
 	  ${SSL_FLAGS}
 	  ${DEBUG_FLAGS}
 	  ${TEST_FLAGS}

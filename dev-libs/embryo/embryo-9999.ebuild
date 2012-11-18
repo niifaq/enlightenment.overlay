@@ -5,6 +5,7 @@
 EAPI="2"
 
 E_PKG_IUSE="doc"
+ESVN_SUB_PROJECT="IN-EFL"
 inherit efl flag-o-matic
 
 DESCRIPTION="load and control programs compiled in embryo language (small/pawn variant)"

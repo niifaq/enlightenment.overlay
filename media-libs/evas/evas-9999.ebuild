@@ -5,6 +5,7 @@
 EAPI="2"
 
 E_PKG_IUSE="doc"
+ESVN_SUB_PROJECT="IN-EFL"
 inherit efl
 
 DESCRIPTION="hardware-accelerated retained canvas API"

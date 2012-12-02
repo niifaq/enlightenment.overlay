@@ -38,7 +38,7 @@ IUSE_ENLIGHTENMENT_MODULES="
 	+notification
 	+ofono
 	+pager
-	+physics
+	physics
 	+quickaccess
 	+shot
 	+start

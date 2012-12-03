@@ -4,7 +4,7 @@
 
 EAPI="2"
 E_PKG_IUSE="doc nls"
-
+ESVN_SUB_PROJECT="IN-EFL"
 inherit efl
 
 DESCRIPTION="Enlightenment's core event abstraction layer and OS abstraction layer"

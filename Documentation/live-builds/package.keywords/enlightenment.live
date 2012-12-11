@@ -11,6 +11,7 @@
 =dev-libs/edbus-9999 **
 =dev-libs/eet-9999 **
 =dev-libs/eeze-9999 **
+=dev-libs/efl-9999 **
 =dev-libs/efreet-9999 **
 =dev-libs/efx-9999 **
 =dev-libs/eina-9999 **
@@ -81,6 +82,7 @@
 =x11-plugins/e_modules-elfe-9999 **
 =x11-plugins/e_modules-engage-9999 **
 =x11-plugins/e_modules-eooorg-9999 **
+=x11-plugins/e_modules-e-tiling-9999 **
 =x11-plugins/e_modules-everything-mpris-9999 **
 =x11-plugins/e_modules-everything-pidgin-9999 **
 =x11-plugins/e_modules-everything-places-9999 **
@@ -103,6 +105,7 @@
 =x11-plugins/e_modules-penguins-9999 **
 =x11-plugins/e_modules-photo-9999 **
 =x11-plugins/e_modules-places-9999 **
+=x11-plugins/e_modules-quickaccess-9999 **
 =x11-plugins/e_modules-rain-9999 **
 =x11-plugins/e_modules-rmb-9999 **
 =x11-plugins/e_modules-screenshot-9999 **
@@ -110,11 +113,13 @@
 =x11-plugins/e_modules-snow-9999 **
 =x11-plugins/e_modules-taskbar-9999 **
 =x11-plugins/e_modules-tclock-9999 **
+=x11-plugins/e_modules-tiling-9999 **
 =x11-plugins/e_modules-uptime-9999 **
 =x11-plugins/e_modules-weather-9999 **
 =x11-plugins/e_modules-winlist-ng-9999 **
 =x11-plugins/e_modules-winselector-9999 **
 =x11-plugins/e_modules-wlan-9999 **
+=x11-plugins/e_modules-xkbswitch-9999 **
 =x11-plugins/eplanet-9999 **
 =x11-plugins/extramenu-9999 **
 =x11-plugins/trash-9999 **

@@ -18,7 +18,10 @@ RDEPEND="virtual/jpeg
 	sys-libs/zlib
 	gnutls? ( net-libs/gnutls )
 	!gnutls? ( ssl? ( dev-libs/openssl ) )"
-DEPEND="${RDEPEND}"
+DEPEND="
+	!dev-libs/efl
+	${RDEPEND}
+"
 
 src_configure() {
 	local SSL_FLAGS="" DEBUG_FLAGS="" TEST_FLAGS=""

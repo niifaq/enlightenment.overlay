@@ -45,7 +45,10 @@ RDEPEND="
 		xscreensaver? ( x11-libs/libXScrnSaver )
 	)
 	!X? ( xcb? ( x11-libs/xcb-util ) )"
-DEPEND="${RDEPEND}"
+DEPEND="
+	!dev-libs/efl
+	${RDEPEND}
+"
 
 src_configure() {
 	local SSL_FLAGS="" EVAS_FLAGS="" X_FLAGS=""

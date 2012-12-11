@@ -12,9 +12,6 @@ HOMEPAGE="http://trac.enlightenment.org/e/wiki/Efreet"
 IUSE=""
 
 RDEPEND="
-	>=dev-libs/ecore-9999
-	>=dev-libs/eina-9999
-	>=dev-libs/eet-9999
-	>=dev-libs/edbus-9999
+	>=dev-libs/efl-9999
 	x11-misc/xdg-utils"
 DEPEND="${RDEPEND}"

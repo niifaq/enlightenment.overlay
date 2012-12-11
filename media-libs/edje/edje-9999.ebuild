@@ -10,7 +10,7 @@ inherit efl elisp-common
 DESCRIPTION="graphical layout and animation library"
 HOMEPAGE="http://trac.enlightenment.org/e/wiki/Edje"
 
-IUSE="debug eio emacs experimental vim-syntax"
+IUSE="debug eio emacs experimental +physics vim-syntax"
 
 RDEPEND="
 	dev-lang/lua
@@ -20,6 +20,7 @@ RDEPEND="
 	>=dev-libs/ecore-9999
 	>=media-libs/evas-9999[jpeg,eet,png]
 	eio? ( >=dev-libs/eio-9999 )
+	physics? ( >=dev-libs/ephysics-9999 )
 	emacs? ( virtual/emacs )"
 
 DEPEND="${RDEPEND}"
@@ -34,6 +35,7 @@ src_configure() {
 	  $(use_enable experimental edje-program-cache)
 	  $(use_enable experimental edje-calc-cache)
 	  $(use_with vim-syntax vim /usr/share/vim)
+	  $(use_enable physics ephysics)
 	  $(use_enable eio eio)
 	"
 	efl_src_configure

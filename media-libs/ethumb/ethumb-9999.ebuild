@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -19,7 +19,7 @@ RDEPEND="
 	>=dev-libs/ecore-9999[evas]
 	>=media-libs/edje-9999
 	>=media-libs/evas-9999
-	dbus? ( >=dev-libs/e_dbus-9999 )
+	dbus? ( >=dev-libs/edbus-9999 )
 	emotion? ( >=media-libs/emotion-9999 )
 	epdf? ( >=app-text/epdf-9999 )"
 

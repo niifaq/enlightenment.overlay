@@ -38,7 +38,10 @@ RDEPEND="
 		x11-libs/libsvg-cairo
 	)
 	tiff? ( media-libs/tiff )"
-DEPEND="${RDEPEND}"
+DEPEND="
+	!dev-libs/efl
+	${RDEPEND}
+"
 
 src_configure() {
 	local SAFETY_CHECKS_FLAGS="" X_FLAGS="" STATIC_FLAGS=""

@@ -18,7 +18,10 @@ KEYWORDS=""
 IUSE=""
 
 RDEPEND=">=dev-libs/ecore-9999"
-DEPEND="${RDEPEND}"
+DEPEND="
+	!dev-libs/efl
+	${RDEPEND}
+"
 
 src_configure() {
 	efl_src_configure

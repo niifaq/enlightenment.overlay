@@ -12,7 +12,10 @@ DESCRIPTION="load and control programs compiled in embryo language (small/pawn v
 HOMEPAGE="http://trac.enlightenment.org/e/wiki/Embryo"
 IUSE=""
 
-RDEPEND=">=dev-libs/eina-9999"
+RDEPEND="
+	!dev-libs/efl
+	>=dev-libs/eina-9999
+>"
 
 src_configure() {
 	# embryo_amx.c will hang graphite when processed

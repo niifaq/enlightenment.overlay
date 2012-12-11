@@ -10,11 +10,16 @@ inherit efl elisp-common
 DESCRIPTION="graphical layout and animation library"
 HOMEPAGE="http://trac.enlightenment.org/e/wiki/Edje"
 
-IUSE="debug emacs experimental +physics vim-syntax"
+IUSE="debug eio emacs experimental +physics vim-syntax"
 
 RDEPEND="
 	dev-lang/lua
-	>=dev-libs/efl-9999
+	>=dev-libs/eet-9999
+	>=dev-libs/eina-9999
+	>=dev-libs/embryo-9999
+	>=dev-libs/ecore-9999
+	>=media-libs/evas-9999[jpeg,eet,png]
+	eio? ( >=dev-libs/eio-9999 )
 	physics? ( >=dev-libs/ephysics-9999 )
 	emacs? ( virtual/emacs )"
 

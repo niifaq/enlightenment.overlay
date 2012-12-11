@@ -16,7 +16,10 @@ RDEPEND="
 "
 #	elementary? ( >=media-libs/elementary-9999 )
 
-DEPEND="${RDEPEND}"
+DEPEND="
+	!dev-libs/efl
+	${RDEPEND}
+"
 
 src_configure() {
 	export MY_ECONF="

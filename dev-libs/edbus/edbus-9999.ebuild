@@ -13,8 +13,7 @@ HOMEPAGE="http://enlightenment.org/"
 IUSE=""
 
 RDEPEND="
-	>=dev-libs/eina-9999
-	>=dev-libs/ecore-9999
+	>=dev-libs/efl-9999
 	sys-apps/dbus"
 
 DEPEND="${RDEPEND}"

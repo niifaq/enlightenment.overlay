@@ -73,17 +73,12 @@ RDEPEND="
 	pam? ( sys-libs/pam )
 	tracker? ( app-misc/tracker )
 	pm-utils? ( sys-power/pm-utils )
-	>=dev-libs/eet-9999
-	>=dev-libs/eio-9999
 	>=dev-libs/efreet-9999
-	>=dev-libs/eina-9999[safety-checks]
-	>=dev-libs/embryo-9999
-	>=dev-libs/e_dbus-9999[libnotify]
+	>=dev-libs/e_dbus-9999
 	>=media-libs/edje-9999
-	>=dev-libs/ecore-9999[evas,opengl?,xinerama?,xscreensaver?,inotify,xim]
-	>=media-libs/evas-9999[opengl?,eet,jpeg,png,safety-checks]
-	|| ( >=dev-libs/ecore-9999[X] >=dev-libs/ecore-9999[xcb] )
-	|| ( >=media-libs/evas-9999[X] >=media-libs/evas-9999[xcb] )
+	>=dev-libs/efl-9999[opengl?]
+
+	|| ( >=dev-libs/efl-9999[X] >=dev-libs/efl-9999[xcb] )
 	elementary? ( >=media-libs/elementary-9999 )
 	udev? ( dev-libs/eeze )
 	enlightenment_modules_bluez? ( net-wireless/bluez )
@@ -111,7 +106,7 @@ expand_iuse() {
 	for flag in ${flags}; do
 		[[ "${flag#+}" == "${flag}" ]] && is_default="" || is_default="+"
 
-		fullname="${prefix}_${flag#+}"
+		fullname="${prefix}${flag#+}"
 
 		IUSE+=" ${is_default}${fullname}"
 
@@ -120,10 +115,10 @@ expand_iuse() {
 	done
 }
 
-expand_iuse "${IUSE_ENLIGHTENMENT_MODULES}" "enlightenment_modules"
+expand_iuse "${IUSE_ENLIGHTENMENT_MODULES}" "enlightenment_modules_"
 
 expand_iuse "${IUSE_ENLIGHTENMENT_CONF}"		\
-			"enlightenment_conf"				\
+			"enlightenment_modules_conf-"			\
 			"enlightenment_modules_conf"
 
 src_prepare() {

@@ -22,6 +22,7 @@ RDEPEND="
 	mempool-ememoa-unknown? ( sys-libs/ememoa )"
 
 DEPEND="
+	!dev-libs/efl
 	${RDEPEND}
 	test? ( dev-libs/glib )"
 

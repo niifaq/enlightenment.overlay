@@ -7,4 +7,13 @@
 =x11-plugins/e_modules-tiling-9999
 =x11-plugins/e_modules-e-tiling-9999
 =x11-plugins/e_modules-quickaccess-9999
-=dev-libs/ephysics-9999
+=dev-libs/eet-9999
+=dev-libs/eio-9999
+=dev-libs/eina-9999
+=dev-libs/eobj-9999
+=dev-libs/ecore-9999
+=dev-libs/embryo-9999
+=media-libs/evas-9999
+=dev-python/python-ecore-9999
+=dev-python/python-evas-9999
+=x11-misc/shellementary-9999

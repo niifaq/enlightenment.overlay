@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="2"
+EAPI="4"
 
 E_PKG_IUSE="doc nls"
 inherit efl
@@ -16,22 +16,25 @@ IUSE="gnutls openssl glib
 	+fribidi +fontconfig harfbuzz
 	+curl +tslib
 	X xcb gles opengl
+	xim debug
 "
 
 # TODO: pixman with a bunch of options
 
-IUSE_REQUIREMENTS="
-	^^ ( openssl gnutls )
-	^^ ( X xcb )
-	^^ ( opengl gles )
+REQUIRED_USE="
+	openssl?	( !gnutls					)
+	X?			( !xcb						)
+	opengl?		( !gles						)
 
-	opengl? ||( X xcb sdl wayland )
-	gles? ||( X xcb sdl wayland )
+	opengl?		( || ( X xcb sdl wayland )	)
+	gles?		( || ( X xcb sdl wayland )	)
 
-	gles? ( egl )
-	xcb ? ( pixman )
-	sdl ? || ( opengl gles )
-	wayland ? ( egl || ( opengl gles ) )
+	gles?		( egl						)
+	xcb?		( pixman					)
+	sdl?		( || ( opengl gles )		)
+	wayland?	( egl || ( opengl gles )	)
+
+	xim?		( || ( X xcb )				)
 "
 
 RDEPEND="
@@ -113,6 +116,10 @@ DEPEND="
 "
 
 src_configure() {
+	local profile="release"
+
+	use debug && profile="debug"
+
 	local crypto="none"
 
 	use openssl && crypto="openssl"
@@ -137,7 +144,7 @@ src_configure() {
 
 	export MY_ECONF="
 	  ${MY_ECONF}
-	  --with-profile=release
+	  --with-profile=${profile}
 	  $(use_enable nls)
 	  $(use_enable doc)
 
@@ -152,6 +159,8 @@ src_configure() {
 
 	  $(use_enable egl)
 	  $(use_enable pixman)
+
+	  $(use_enable xim)
 
 	  $(use_enable gif image-loader-gif)
 	  $(use_enable tiff image-loader-tiff)

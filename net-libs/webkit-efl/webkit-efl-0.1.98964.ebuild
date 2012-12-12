@@ -26,20 +26,19 @@ RDEPEND="
 	glib? (
 			dev-libs/glib
 			net-libs/libsoup
-		)
+	)
 	!glib? ( net-misc/curl )
 	!curl? ( net-libs/libsoup )
 	sqlite? ( >=dev-db/sqlite-3 )
 	media-libs/edje
-	media-libs/evas[fontconfig]
-	dev-libs/ecore[X,glib?]
+	dev-libs/efl[fontconfig,glib?]
+	|| ( dev-libs/efl[X] dev-libs/efl[xcb] )
 	gstreamer? (
 			media-libs/gstreamer:0.10
 			>=media-libs/gst-plugins-base-0.10.25:0.10
 			dev-libs/glib
 		)
 	dev-libs/icu
-	dev-libs/eina
 "
 DEPEND="${RDEPEND}
 	>=sys-devel/flex-2.5.33

@@ -11,6 +11,6 @@ HOMEPAGE="http://www.enlightenment.org/pages/imlib2.html"
 IUSE=""
 
 RDEPEND=">=media-libs/imlib2-9999
-	>=dev-libs/eet-9999"
+	>=dev-libs/efl-9999"
 
 DEPEND="${RDEPEND}"

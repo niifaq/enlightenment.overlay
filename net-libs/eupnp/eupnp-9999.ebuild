@@ -15,9 +15,8 @@ IUSE="examples test"
 LICENSE="LGPL-3"
 
 RDEPEND="
-	>=dev-libs/eina-9999
+	>=dev-libs/efl-9999[curl]
 	dev-libs/libxml2
-	>=dev-libs/ecore-9999[curl]
 	examples? ( >=media-libs/elementary-9999 )"
 DEPEND="
 	${RDEPEND}

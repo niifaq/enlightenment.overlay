@@ -11,7 +11,7 @@ HOMEPAGE="http://www.enlightenment.org/pages/evas.html"
 
 IUSE="gstreamer raw svg postscript pdf"
 
-RDEPEND=">=dev-libs/eina-9999
+RDEPEND=">=dev-libs/efl-9999
 	pdf? ( app-text/poppler )
 	postscript? ( app-text/libspectre )
 	gstreamer? ( media-libs/gstreamer media-libs/gst-plugins-base )

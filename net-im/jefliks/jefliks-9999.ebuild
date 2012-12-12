@@ -18,10 +18,8 @@ KEYWORDS=""
 
 IUSE=""
 
-DEPEND=">=dev-libs/eina-9999
-	>=dev-libs/eet-9999
-	>=media-libs/evas-9999
-	>=dev-libs/ecore-9999
+DEPEND="
+	>=dev-libs/efl-9999
 	>=media-libs/edje-9999
 	>=media-libs/elementary-9999
 	net-libs/gnutls

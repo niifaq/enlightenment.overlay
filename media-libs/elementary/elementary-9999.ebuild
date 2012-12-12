@@ -15,8 +15,7 @@ LICENSE="LGPL-2.1"
 IUSE="dbus emap fbcon opengl quicklaunch sdl static-libs thumbnails video weather webkit X xcb xdg"
 
 RDEPEND="
-	>=dev-libs/ecore-9999[evas,fbcon?,opengl?,sdl?,X?,xcb?]
-	>=media-libs/evas-9999[fbcon?,opengl?,sdl?,X?,xcb?]
+	>=dev-libs/efl-9999[fbcon?,opengl?,sdl?,X?,xcb?]
 	>=media-libs/edje-9999
 	dbus? ( >=dev-libs/e_dbus-9999 )
 	emap? ( >=sci-geosciences/emap-9999 )

@@ -14,8 +14,6 @@ DESCRIPTION="Contentration game to improve you concentration and memory skills"
 LICENSE="LGPL-3 GPL-2 FDL-1.2"
 IUSE=""
 
-DEPEND=">=dev-libs/ecore-9999
-	>=media-libs/evas-9999
-	>=media-libs/edje-9999"
+DEPEND=">=dev-libs/efl-9999"
 
 RDEPEND="${DEPEND}"

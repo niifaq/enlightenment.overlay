@@ -13,11 +13,10 @@ DESCRIPTION="A library for 2D effects"
 
 IUSE="+test-gui"
 
-DEPEND=">=dev-libs/eina-9999
-	>=dev-libs/eet-9999
-	>=media-libs/evas-9999
-	>=dev-libs/ecore-9999[evas]
-	test-gui? ( >=media-libs/elementary-9999 )"
+DEPEND="
+	>=dev-libs/efl-9999
+	test-gui? ( >=media-libs/elementary-9999 )
+"
 
 DEPEND="${RDEPEND}"
 

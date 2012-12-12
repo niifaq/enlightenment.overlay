@@ -13,8 +13,7 @@ KEYWORDS="~amd64"
 IUSE=""
 
 DEPEND="
-	>=media-libs/evas-9999
-	>=dev-libs/ecore-9999
+	>=dev-libs/efl-9999
 	>=media-libs/edje-9999
 	>=media-libs/elementary-9999
 	>=dev-libs/ephysics-9999

@@ -14,8 +14,8 @@ IUSE=""
 
 RDEPEND="
 	>=app-text/poppler-0.12
-	>=media-libs/evas-9999
-	>=dev-libs/ecore-9999[evas]"
+	>=dev-libs/efl-9999
+"
 DEPEND="${RDEPEND}"
 
 src_compile() {

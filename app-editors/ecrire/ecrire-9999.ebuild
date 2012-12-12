@@ -13,7 +13,7 @@ DESCRIPTION="This is intended to be a text editor"
 IUSE=""
 
 DEPEND=">=dev-libs/efreet-9999
-	>=dev-libs/ecore-9999[X]
+	||( >=dev-libs/efl-9999[X] >=dev-libs/efl-9999[xcb] )
 	>=media-libs/edje-9999
 	>=media-libs/elementary-9999"
 

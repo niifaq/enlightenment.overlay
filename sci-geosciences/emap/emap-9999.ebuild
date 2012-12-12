@@ -13,7 +13,6 @@ DESCRIPTION="emap is a map manager"
 
 IUSE=""
 
-DEPEND=">=dev-libs/ecore-9999
-	>=dev-libs/eina-9999"
+DEPEND=">=dev-libs/efl-9999"
 
 RDEPEND="${DEPEND}"

@@ -15,7 +15,7 @@ IUSE=""
 RDEPEND="
 	!dev-libs/efl
 	>=dev-libs/eina-9999
->"
+"
 
 src_configure() {
 	# embryo_amx.c will hang graphite when processed

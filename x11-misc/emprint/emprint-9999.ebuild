@@ -11,9 +11,7 @@ IUSE=""
 
 RDEPEND="x11-libs/libX11
 	media-libs/imlib2
-	>=dev-libs/ecore-9999[X,evas]
-	>=media-libs/evas-9999
-	>=media-libs/edje-9999
-	>=dev-libs/eina-9999"
+	|| ( >=dev-libs/efl-9999[X] >=dev-libs/efl-9999[xcb] )
+	>=media-libs/edje-9999"
 DEPEND="${RDEPEND}
 	x11-proto/xproto"

@@ -12,9 +12,8 @@ DESCRIPTION="Elementary based PolicyKit authentication agent"
 
 IUSE=""
 
-DEPEND=">=dev-libs/eina-9999
-	>=media-libs/evas-9999
-	>=dev-libs/ecore-9999[X]
+DEPEND="
+	||( >=dev-libs/efl-9999[X] >=dev-libs/efl-9999[xcb] )
 	>=media-libs/edje-9999
 	>=dev-libs/efreet-9999
 	>=dev-libs/e_dbus-9999

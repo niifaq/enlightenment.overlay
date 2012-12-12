@@ -9,10 +9,7 @@ DESCRIPTION="Exquisite - EFL based psplash replacement"
 IUSE=""
 
 DEPEND="
-		=dev-libs/eet-9999
-		=media-libs/evas-9999
-		=dev-libs/ecore-9999
-		=dev-libs/embryo-9999
+		=dev-libs/efl-9999
 		=media-libs/edje-9999
 "
 

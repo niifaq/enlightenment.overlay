@@ -21,9 +21,10 @@ LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS=""
 
-DEPEND=">=media-libs/evas-9999
-	>=media-libs/edje-9999
-	>=media-libs/elementary-9999"
+DEPEND="
+	>=dev-libs/efl-9999
+	>=media-libs/elementary-9999
+"
 
 RDEPEND="${DEPEND}"
 

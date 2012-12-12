@@ -12,8 +12,7 @@ DESCRIPTION="Comprehensive test and benchmark suite for Evas"
 IUSE="directfb fbcon opengl sdl X xcb"
 
 RDEPEND="
-	>=dev-libs/eina-9999
-	>=media-libs/evas-9999[directfb?,fbcon?,opengl?,sdl?,X?,xcb?]
+	>=dev-libs/efl-9999[fbcon?,opengl?,sdl?,X?,xcb?]
 	opengl? ( virtual/opengl )
 	directfb? ( >=dev-libs/DirectFB-0.9.16 )
 	sdl? ( media-libs/libsdl )

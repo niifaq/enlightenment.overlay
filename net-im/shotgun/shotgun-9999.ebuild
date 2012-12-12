@@ -12,10 +12,8 @@ DESCRIPTION="xmpp client/library which uses EFL"
 LICENSE="BSD-2"
 IUSE="azy dbus libnotify"
 
-DEPEND=">=dev-libs/eina-9999
-	>=dev-libs/eet-9999
-	>=media-libs/evas-9999
-	>=dev-libs/ecore-9999[evas]
+DEPEND="
+	>=dev-libs/efl-9999
 	>=media-libs/edje-9999
 	>=media-libs/elementary-9999
 	>=dev-libs/efx-9999

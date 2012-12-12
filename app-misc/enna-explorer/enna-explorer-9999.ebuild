@@ -12,11 +12,8 @@ DESCRIPTION="EFL powered file explorer for phones and embedded devices"
 
 IUSE=""
 
-DEPEND=">=dev-libs/eina-9999
-	>=dev-libs/eet-9999
-	>=dev-libs/eio-9999
-	>=dev-libs/ecore-9999
-	>=media-libs/evas-9999
+DEPEND="
+	>=dev-libs/efl-9999
 	>=media-libs/edje-9999
 	>=dev-libs/efreet-9999
 	>=media-libs/emotion-9999

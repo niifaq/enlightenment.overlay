@@ -18,8 +18,7 @@ KEYWORDS=""
 IUSE=""
 
 DEPEND="
-	>=dev-libs/eina-9999
-	>=dev-libs/ecore-9999[curl,evas]
+	>=dev-libs/efl-9999[curl]
 	>=media-libs/edje-9999
 	dev-libs/libxml2
 "

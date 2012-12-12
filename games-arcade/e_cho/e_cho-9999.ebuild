@@ -12,11 +12,12 @@ DESCRIPTION="Echo is a game based on the classic game Simon Says, written using 
 LICENSE="LGPL-3"
 IUSE=""
 
-DEPEND=">=dev-libs/ecore-9999
-	>=media-libs/evas-9999
+DEPEND="
+	>=dev-libs/efl-9999
 	>=media-libs/edje-9999
 	>=dev-games/etrophy-9999
 	>=media-libs/elementary-9999
-	media-libs/libcanberra"
+	media-libs/libcanberra
+"
 
 RDEPEND="${DEPEND}"

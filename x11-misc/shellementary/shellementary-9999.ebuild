@@ -13,11 +13,12 @@ DESCRIPTION="Tool to display Elementary dialogs from the command line and shell 
 
 IUSE=""
 
-RDEPEND=">=dev-python/cython-0.9.8
-	>=dev-libs/ecore-9999
+RDEPEND="
+	>=dev-python/cython-0.9.8
+	>=dev-libs/efl-9999
 	>=dev-python/python-evas-9999
 	>=media-libs/elementary-9999
-	>=media-libs/edje-9999"
+"
 
 DEPEND="${RDEPEND}"
 

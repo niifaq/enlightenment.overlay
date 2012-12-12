@@ -13,12 +13,12 @@ HOMEPAGE="http://watchwolf.fr/wiki/doku.php?id=enki"
 
 IUSE=""
 
-DEPEND=">=dev-libs/eet-9999
-	>=dev-libs/ecore-9999
+DEPEND="
 	>=net-libs/azy-9999
 	>=media-libs/edje-9999
 	>=media-libs/ethumb-9999
 	>=media-libs/libexif-0.6.16
-	>=media-libs/libiptcdata-1.0.2"
+	>=media-libs/libiptcdata-1.0.2
+"
 
 RDEPEND="${DEPEND}"

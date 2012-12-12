@@ -19,8 +19,7 @@ IUSE="inotify jpeg max-desktops"
 # cairo used for wall plugin, but as automagic.
 DEPEND="
 	=x11-wm/enlightenment-9999
-	=dev-libs/eina-9999
-	=dev-libs/eet-9999
+	=dev-libs/efl-9999
 	x11-libs/libXcomposite
 	x11-libs/libXdamage
 	x11-libs/libXrandr

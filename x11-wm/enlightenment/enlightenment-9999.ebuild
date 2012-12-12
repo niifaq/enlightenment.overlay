@@ -14,13 +14,12 @@ HOMEPAGE="http://www.enlightenment.org/"
 SLOT="0.17"
 
 IUSE="eeze elementary illume2 opengl pam pm-utils +sysactions tracker
-	+udev udisks xinerama xscreensaver"
+		+udev udisks xinerama xscreensaver debug"
 
 IUSE_ENLIGHTENMENT_MODULES="
 	+access
 	+backlight
 	+battery
-	+bluez
 	+clock
 	+comp
 	+conf
@@ -36,7 +35,6 @@ IUSE_ENLIGHTENMENT_MODULES="
 	+mixer
 	+msgbus
 	+notification
-	+ofono
 	+pager
 	physics
 	+quickaccess
@@ -49,25 +47,25 @@ IUSE_ENLIGHTENMENT_MODULES="
 	+tiling
 	+winlist
 	+wizard
-	+xkbswitch"
+	+xkbswitch
 
-IUSE_ENLIGHTENMENT_CONF="
-	+applications
-	+dialogs
-	+display
-	+edgebindings
-	+interaction
-	+intl
-	+keybindings
-	+menus
-	+paths
-	+performance
-	+randr
-	+shelves
-	+theme
-	+wallpaper2
-	+window_manipulation
-	+window_remembers"
+	+conf-applications
+	+conf-dialogs
+	+conf-display
+	+conf-edgebindings
+	+conf-interaction
+	+conf-intl
+	+conf-keybindings
+	+conf-menus
+	+conf-paths
+	+conf-performance
+	+conf-randr
+	+conf-shelves
+	+conf-theme
+	+conf-wallpaper2
+	+conf-window_manipulation
+	+conf-window_remembers
+"
 
 RDEPEND="
 	pam? ( sys-libs/pam )
@@ -81,19 +79,20 @@ RDEPEND="
 	|| ( >=dev-libs/efl-9999[X] >=dev-libs/efl-9999[xcb] )
 	elementary? ( >=media-libs/elementary-9999 )
 	udev? ( dev-libs/eeze )
-	enlightenment_modules_bluez? ( net-wireless/bluez )
 	enlightenment_modules_mixer? ( media-libs/alsa-lib )
-	enlightenment_modules_ofono? ( >=dev-libs/e_dbus-9999[ofono] )
 	enlightenment_modules_physics? ( >=dev-libs/ephysics-9999 )
 	enlightenment_modules_connman? ( >=dev-libs/e_dbus-9999[connman] )
 	enlightenment_modules_everything? ( app-text/aspell sys-devel/bc )
-	"
+
+	debug? ( sys-devel/gdb )
+"
 
 DEPEND="
 	!x11-plugins/e_modules-quickaccess
 	!x11-plugins/e_modules-xkbswitch
 	!x11-plugins/e_modules-tiling
-${RDEPEND}"
+${RDEPEND}
+"
 
 expand_iuse() {
 	local flags="$1" prefix="$2" requirement="$3"
@@ -117,14 +116,11 @@ expand_iuse() {
 
 expand_iuse "${IUSE_ENLIGHTENMENT_MODULES}" "enlightenment_modules_"
 
-expand_iuse "${IUSE_ENLIGHTENMENT_CONF}"		\
-			"enlightenment_modules_conf-"			\
-			"enlightenment_modules_conf"
-
 src_prepare() {
 	#remove useless startup checks since we know we have the deps
 	epatch "${FILESDIR}/quickstart.diff" || die
-efl_src_prepare
+
+	efl_src_prepare
 }
 
 src_configure() {
@@ -150,16 +146,19 @@ src_configure() {
 		MY_ECONF+=" $(use_enable enlightenment_modules_${module} ${module})"
 	done
 
-	for module in ${IUSE_ENLIGHTENMENT_CONF}; do
-		module="${module#+}"
-		MY_ECONF+=" $(use_enable enlightenment_conf_${module} conf-${module})"
-	done
-
 	efl_src_configure
 }
 
 src_install() {
 	efl_src_install
 	insinto /etc/enlightenment
+
 	newins "${FILESDIR}/gentoo-sysactions.conf" sysactions.conf
+	
+	if use debug; then
+		einfo "Registering gdb into your /etc/enlightenment/sysactions.conf"
+
+		echo "action: gdb /usr/bin/gdb" >>				\
+							${D}/etc/enlightenment/sysactions.conf
+	fi
 }

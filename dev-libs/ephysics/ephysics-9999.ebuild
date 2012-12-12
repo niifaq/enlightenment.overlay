@@ -11,8 +11,7 @@ IUSE="test-gui"
 
 RDEPEND="
 	>=sci-physics/bullet-2.79
-	>=media-libs/evas-9999
-	>=dev-libs/ecore-9999
+	>=dev-libs/efl-9999
 	test-gui? ( >=media-libs/elementary-9999 )
 "
 DEPEND="${RDEPEND}"

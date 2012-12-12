@@ -10,7 +10,7 @@ inherit efl
 DESCRIPTION="xmpp client/library which uses EFL"
 
 LICENSE="BSD-2"
-IUSE="azy dbus libnotify"
+IUSE="azy dbus"
 
 DEPEND="
 	>=dev-libs/efl-9999
@@ -19,15 +19,15 @@ DEPEND="
 	>=dev-libs/efx-9999
 	azy? ( >=net-libs/azy-9999 )
 	dbus? ( >=dev-libs/e_dbus-9999 )
-	libnotify? ( >=dev-libs/e_dbus-9999[libnotify] )"
+"
 
 RDEPEND="${DEPEND}"
 
 src_configure() {
 	export MY_ECONF="
-	$(use_enable azy)
-	$(use_enable dbus edbus)
-	$(use_enable libnotify enotify)
+		$(use_enable azy)
+		$(use_enable dbus edbus)
+		--enable-enotify
 	"
 
 	efl_src_configure

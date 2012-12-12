@@ -2,7 +2,6 @@
 =net-im/jefliks-9999
 =net-misc/exalt-9999
 =x11-plugins/e_modules-exalt-client-9999
-=dev-python/python-lightmediascanner-9999
 =x11-plugins/e_modules-xkbswitch-9999
 =x11-plugins/e_modules-tiling-9999
 =x11-plugins/e_modules-e-tiling-9999
@@ -14,6 +13,15 @@
 =dev-libs/ecore-9999
 =dev-libs/embryo-9999
 =media-libs/evas-9999
-=dev-python/python-ecore-9999
-=dev-python/python-evas-9999
 =x11-misc/shellementary-9999
+=dev-python/python-e_dbus-9999
+=dev-python/python-ecore-9999
+=dev-python/python-edje-9999
+=dev-python/python-efl_utils-9999
+=dev-python/python-elementary-9999
+=dev-python/python-emotion-9999
+=dev-python/python-evas-9999
+=dev-python/python-lightmediascanner-9999
+=x11-misc/econnman-9999
+=net-im/apathy-9999
+=dev-util/editje-9999

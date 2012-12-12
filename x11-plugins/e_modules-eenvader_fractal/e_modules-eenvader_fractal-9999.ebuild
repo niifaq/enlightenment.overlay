@@ -17,12 +17,3 @@ DEPEND="x11-wm/enlightenment:0.17
 	>=dev-libs/efl-9999"
 
 RDEPEND="${DEPEND}"
-
-src_prepare() {
-	ewarn "HACK HACK HACK"
-	ewarn "Broken upstream Makefile.am, insisting on m4 dir!"
-
-	sed -r '/^[[:space:]]*ACLOCAL_AMFLAGS/ d' -i Makefile.am
-
-	efl_src_prepare
-}

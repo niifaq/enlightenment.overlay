@@ -49,7 +49,7 @@ RDEPEND="
 
 	fribidi? ( dev-libs/fribidi )
 
-	harfbuzz? ( dev-libs/harfbuzz )
+	harfbuzz? ( media-libs/harfbuzz )
 
 	pixman? ( x11-libs/pixman )
 

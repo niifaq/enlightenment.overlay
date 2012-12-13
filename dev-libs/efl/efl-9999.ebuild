@@ -16,7 +16,7 @@ IUSE="gnutls openssl glib
 	+fribidi +fontconfig harfbuzz
 	+curl +tslib
 	X xcb gles opengl
-	xim debug
+	+xim debug
 "
 
 # TODO: pixman with a bunch of options

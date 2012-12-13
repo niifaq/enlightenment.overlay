@@ -13,6 +13,14 @@
 =dev-libs/efreet-9999 **
 =dev-libs/efx-9999 **
 =dev-libs/ephysics-9999 **
+=dev-python/python-ecore-9999 **
+=dev-python/python-e_dbus-9999 **
+=dev-python/python-edje-9999 **
+=dev-python/python-efl_utils-9999 **
+=dev-python/python-elementary-9999 **
+=dev-python/python-emotion-9999 **
+=dev-python/python-evas-9999 **
+=dev-python/python-lightmediascanner-9999 **
 =dev-util/clouseau-9999 **
 =dev-util/ensure-9999 **
 =dev-util/geneet-9999 **

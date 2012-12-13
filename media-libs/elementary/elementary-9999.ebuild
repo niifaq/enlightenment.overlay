@@ -1,4 +1,4 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -12,7 +12,7 @@ HOMEPAGE="http://trac.enlightenment.org/e/wiki/Elementary"
 
 LICENSE="LGPL-2.1"
 
-IUSE="dbus emap fbcon opengl quicklaunch sdl static-libs thumbnails video weather webkit X xcb xdg"
+IUSE="dbus emap fbcon opengl quicklaunch sdl static-libs thumbnails video weather X xcb xdg"
 
 RDEPEND="
 	>=dev-libs/efl-9999[fbcon?,opengl?,sdl?,X?,xcb?]
@@ -21,7 +21,6 @@ RDEPEND="
 	emap? ( >=sci-geosciences/emap-9999 )
 	xdg? ( >=dev-libs/efreet-9999 )
 	weather? ( >=net-libs/libeweather-9999 )
-	webkit? ( >=net-libs/webkit-efl-0.1.96323 )
 	thumbnails? ( >=media-libs/ethumb-9999[dbus?] )
 	video? ( >=media-libs/emotion-9999 )
 	"
@@ -40,7 +39,7 @@ src_configure() {
 	  $(use_enable thumbnails ethumb)
 	  $(use_enable video emotion)
 	  $(use_enable quicklaunch quick-launch)
-	  $(use_enable webkit web)
+	  --with-elementary-web-backend=none
 	  --disable-build-examples
 	"
 	efl_src_configure

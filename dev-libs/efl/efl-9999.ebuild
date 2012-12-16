@@ -103,7 +103,8 @@ RDEPEND="
 
 	doc? ( app-doc/doxygen )
 "
-DEPEND="
+
+CORE_EFL_CONFLICTS="
 	!dev-libs/eet
 	!dev-libs/eina
 	!dev-libs/eobj
@@ -111,9 +112,30 @@ DEPEND="
 	!dev-libs/embryo
 	!dev-libs/eio
 	!media-libs/evas
+"
+DEPEND="
+	${CORE_EFL_CONFLICTS}
 
 	${RDEPEND}
 "
+
+pkg_pretend() {
+	local conflicts=""
+
+	for i in ${CORE_EFL_CONFLICTS}; do
+		has_version ${i#\!} && conflicts+=" ${i#\!}"
+	done
+
+	test -z "${conflicts}" && return
+
+	eerror "Portage is unable to automatically resolve conflict with EFL"
+	eerror "libraries merged into dev-libs/efl, so please remove them manually"
+	eerror
+	eerror "emerge -C ${conflicts}"
+	eerror
+
+	die "Run emerge  -C ${conflicts}"
+}
 
 src_configure() {
 	local profile="release"

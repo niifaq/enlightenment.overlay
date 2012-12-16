@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -16,7 +16,7 @@ IUSE="gnutls openssl glib
 	+fribidi +fontconfig harfbuzz
 	+curl +tslib
 	X xcb gles opengl
-	xim debug
+	+xim debug
 "
 
 # TODO: pixman with a bunch of options
@@ -49,7 +49,7 @@ RDEPEND="
 
 	fribidi? ( dev-libs/fribidi )
 
-	harfbuzz? ( dev-libs/harfbuzz )
+	harfbuzz? ( media-libs/harfbuzz )
 
 	pixman? ( x11-libs/pixman )
 
@@ -58,6 +58,7 @@ RDEPEND="
 
 	media-libs/libpng
 	tiff? ( media-libs/tiff )
+	tslib? ( x11-libs/tslib )
 	webp? ( media-libs/libwebp )
 
 	X? (

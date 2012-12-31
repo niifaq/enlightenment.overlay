@@ -5,6 +5,7 @@
 EAPI="4"
 
 E_PKG_IUSE="doc"
+ESVN_SUB_PROJECT="IN-EFL"
 inherit efl
 
 DESCRIPTION="library for handling of freedesktop.org specs (desktop/icon/theme/etc...)"

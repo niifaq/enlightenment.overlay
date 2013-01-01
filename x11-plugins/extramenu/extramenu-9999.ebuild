@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -13,8 +13,7 @@ LICENSE="GPL-2"
 IUSE=""
 
 DEPEND="x11-wm/enlightenment:0.17
-	>=media-libs/edje-9999
-	>=dev-libs/efreet-9999"
+	>=media-libs/edje-9999"
 
 RDEPEND="${DEPEND}"
 

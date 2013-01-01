@@ -15,7 +15,6 @@ IUSE=""
 DEPEND="
 	|| ( >=dev-libs/efl-9999[X] >=dev-libs/efl-9999[xcb] )
 	>=media-libs/edje-9999
-	>=dev-libs/efreet-9999
 	>=dev-libs/e_dbus-9999
 	>=media-libs/elementary-9999"
 

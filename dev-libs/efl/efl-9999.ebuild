@@ -14,7 +14,7 @@ IUSE="gnutls openssl glib
 	wayland fbcon sdl egl pixman
 	gif webp tiff
 	+fribidi +fontconfig harfbuzz
-	+curl +tslib
+	+curl +tslib +audio
 	X xcb gles opengl
 	+xim debug
 "
@@ -52,6 +52,8 @@ RDEPEND="
 	harfbuzz? ( media-libs/harfbuzz )
 
 	pixman? ( x11-libs/pixman )
+
+	audio? ( media-sound/pulseaudio )
 
 	virtual/jpeg
 	sys-libs/zlib
@@ -113,8 +115,6 @@ CORE_EFL_CONFLICTS="
 	!dev-libs/embryo
 	!dev-libs/eio
 	!media-libs/evas
-	!dev-libs/edbus
-	!dev-libs/efreet
 "
 DEPEND="
 	${CORE_EFL_CONFLICTS}
@@ -184,6 +184,8 @@ src_configure() {
 
 	  $(use_enable egl)
 	  $(use_enable pixman)
+
+	  $(use_enable audio)
 
 	  $(use_enable xim)
 

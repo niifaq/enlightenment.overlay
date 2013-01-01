@@ -7,6 +7,7 @@
 </maintainer>
 <use>
  <flag name="dbus">Enable integration with <pkg>dev-libs/e_dbus</pkg>.</flag>
+ <flag name="location">Enable integration with <pkg>dev-libs/elocation</pkg>, a small library that allows application to get some basic location awareness</flag>
  <flag name="emap">Enable integration with <pkg>sci-geosciences/emap</pkg>, a map manager</flag>
  <flag name="xdg">Enable integration with <pkg>dev-libs/efreet</pkg> for cross-desktop standards (freedesktop.org).</flag>
  <flag name="weather">Enable integration with <pkg>net-libs/libeweather</pkg> to provide weather widget.</flag>

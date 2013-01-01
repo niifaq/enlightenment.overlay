@@ -1,8 +1,8 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="2"
+EAPI="4"
 
 E_PKG_IUSE="doc nls"
 inherit efl
@@ -12,12 +12,13 @@ HOMEPAGE="http://trac.enlightenment.org/e/wiki/Elementary"
 
 LICENSE="LGPL-2.1"
 
-IUSE="dbus emap fbcon opengl quicklaunch sdl static-libs thumbnails video weather X xcb xdg"
+IUSE="dbus location emap fbcon opengl quicklaunch sdl static-libs thumbnails video weather X xcb xdg"
 
 RDEPEND="
 	>=dev-libs/efl-9999[fbcon?,opengl?,sdl?,X?,xcb?]
 	>=media-libs/edje-9999
 	dbus? ( >=dev-libs/e_dbus-9999 )
+	location? ( >=dev-libs/elocation-9999 )
 	emap? ( >=sci-geosciences/emap-9999 )
 	weather? ( >=net-libs/libeweather-9999 )
 	thumbnails? ( >=media-libs/ethumb-9999[dbus?] )
@@ -30,6 +31,7 @@ src_configure() {
 	  ${MY_ECONF}
 	  $(use_enable dbus edbus)
 	  $(use_enable emap emap)
+	  $(use_enable location elocation)
 	  $(use_enable xdg efreet)
 	  $(use_enable weather eweather)
 	  $(use_enable fbcon ecore-fb)

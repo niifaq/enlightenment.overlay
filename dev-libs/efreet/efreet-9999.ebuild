@@ -13,6 +13,6 @@ HOMEPAGE="http://trac.enlightenment.org/e/wiki/Efreet"
 IUSE=""
 
 RDEPEND="
-	>=dev-libs/efl-9999
+	!dev-libs/efreet
 	x11-misc/xdg-utils"
 DEPEND="${RDEPEND}"

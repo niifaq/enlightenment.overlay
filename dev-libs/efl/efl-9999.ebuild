@@ -114,6 +114,7 @@ CORE_EFL_CONFLICTS="
 	!dev-libs/ecore
 	!dev-libs/embryo
 	!dev-libs/eio
+	!dev-libs/efreet
 	!media-libs/evas
 "
 DEPEND="

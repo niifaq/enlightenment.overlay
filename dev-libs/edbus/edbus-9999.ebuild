@@ -14,7 +14,7 @@ HOMEPAGE="http://enlightenment.org/"
 IUSE=""
 
 RDEPEND="
-	>=dev-libs/efl-9999
+	!dev-libs/efl
 	sys-apps/dbus"
 
 DEPEND="${RDEPEND}"

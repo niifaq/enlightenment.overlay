@@ -119,6 +119,7 @@ CORE_EFL_CONFLICTS="
 	!dev-libs/embryo
 	!dev-libs/eio
 	!dev-libs/efreet
+	!dev-libs/edbus
 	!media-libs/evas
 "
 DEPEND="

@@ -14,7 +14,8 @@ IUSE="gnutls openssl glib
 	wayland fbcon sdl egl pixman
 	gif webp tiff
 	+fribidi +fontconfig harfbuzz
-	+curl +tslib +audio
+	+curl +tslib
+	audio pulseaudio
 	X xcb gles opengl
 	+xim debug
 "
@@ -25,6 +26,8 @@ REQUIRED_USE="
 	openssl?	( !gnutls					)
 	X?			( !xcb						)
 	opengl?		( !gles						)
+
+	pulseaudio?	( audio						)
 
 	opengl?		( || ( X xcb sdl wayland )	)
 	gles?		( || ( X xcb sdl wayland )	)
@@ -53,7 +56,8 @@ RDEPEND="
 
 	pixman? ( x11-libs/pixman )
 
-	audio? ( media-sound/pulseaudio )
+	audio? ( media-libs/sndfile )
+	pulseaudio? ( media-sound/pulseaudio )
 
 	virtual/jpeg
 	sys-libs/zlib
@@ -187,6 +191,7 @@ src_configure() {
 	  $(use_enable pixman)
 
 	  $(use_enable audio)
+	  $(use_enable pulseaudio)
 
 	  $(use_enable xim)
 

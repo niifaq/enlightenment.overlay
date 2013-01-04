@@ -79,7 +79,6 @@ RDEPEND="
 	udev? ( dev-libs/eeze )
 	enlightenment_modules_mixer? ( media-libs/alsa-lib )
 	enlightenment_modules_physics? ( >=dev-libs/ephysics-9999 )
-	enlightenment_modules_connman? ( >=dev-libs/e_dbus-9999[connman] )
 	enlightenment_modules_everything? ( app-text/aspell sys-devel/bc )
 
 	debug? ( sys-devel/gdb )

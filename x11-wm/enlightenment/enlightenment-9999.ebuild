@@ -71,7 +71,6 @@ RDEPEND="
 	pam? ( sys-libs/pam )
 	tracker? ( app-misc/tracker )
 	pm-utils? ( sys-power/pm-utils )
-	>=dev-libs/e_dbus-9999
 	>=media-libs/edje-9999
 	>=dev-libs/efl-9999[opengl?]
 

@@ -109,6 +109,8 @@ RDEPEND="
 	)
 
 	doc? ( app-doc/doxygen )
+
+	debug? ( dev-util/valgrind )
 "
 
 CORE_EFL_CONFLICTS="

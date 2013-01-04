@@ -56,7 +56,7 @@ RDEPEND="
 
 	pixman? ( x11-libs/pixman )
 
-	audio? ( media-libs/sndfile )
+	audio? ( media-libs/libsndfile )
 	pulseaudio? ( media-sound/pulseaudio )
 
 	virtual/jpeg

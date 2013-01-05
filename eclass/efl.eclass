@@ -19,11 +19,8 @@
 #
 # Reqires EAPI 2 or later.
 
-# The elass expects the ebuilds to use EAPI 2 or later, so make sure this is
-# the case.
-
 case "${EAPI}" in
-	2|3|4) ;;
+	2|3|4|5) ;;
 	*) die "EAPI 2 or later required";;
 esac
 

@@ -14,8 +14,9 @@ IUSE="gnutls openssl glib
 	wayland fbcon sdl egl pixman
 	gif webp tiff
 	+fribidi +fontconfig harfbuzz
-	+curl +tslib +physics
+	+curl +tslib
 	audio pulseaudio
+	+mount +physics
 	X xcb gles opengl
 	+xim debug
 "
@@ -46,7 +47,7 @@ RDEPEND="
 
 	glib? ( dev-libs/glib )
 
-	wayland? ( dev-libs/wayland )
+	wayland? ( dev-libs/wayland x11-libs/libxkbcommon )
 
 	fontconfig? ( media-libs/fontconfig )
 
@@ -59,7 +60,8 @@ RDEPEND="
 	audio? ( media-libs/libsndfile )
 	pulseaudio? ( media-sound/pulseaudio )
 
-	physics? ( >=sci-physics/bullet-2.79 )
+	mount? ( >=sys-apps/util-linux-2.20.0 )
+	physics? ( sci-physics/bullet )
 
 	virtual/jpeg
 	sys-libs/zlib
@@ -124,9 +126,10 @@ CORE_EFL_CONFLICTS="
 	!dev-libs/eio
 	!dev-libs/efreet
 	!dev-libs/edbus
-	!media-libs/evas
-	!media-libs/edje
 	!dev-libs/ephysics
+	!media-libs/edje
+	!dev-libs/eeze
+	!media-libs/evas
 "
 DEPEND="
 	${CORE_EFL_CONFLICTS}
@@ -200,7 +203,8 @@ src_configure() {
 	  $(use_enable audio)
 	  $(use_enable pulseaudio)
 
-	  $(use_enable physics )
+	  $(use_enable physics)
+	  $(use_enable mount)
 
 	  $(use_enable xim)
 

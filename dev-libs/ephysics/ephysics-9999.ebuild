@@ -12,7 +12,7 @@ IUSE="test-gui"
 
 RDEPEND="
 	>=sci-physics/bullet-2.79
-	>=dev-libs/efl-9999
+	!dev-libs/efl
 	test-gui? ( >=media-libs/elementary-9999 )
 "
 DEPEND="

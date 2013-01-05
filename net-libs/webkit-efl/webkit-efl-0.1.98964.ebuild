@@ -30,7 +30,6 @@ RDEPEND="
 	!glib? ( net-misc/curl )
 	!curl? ( net-libs/libsoup )
 	sqlite? ( >=dev-db/sqlite-3 )
-	media-libs/edje
 	dev-libs/efl[fontconfig,glib?]
 	|| ( dev-libs/efl[X] dev-libs/efl[xcb] )
 	gstreamer? (

@@ -15,7 +15,6 @@ IUSE=""
 
 DEPEND="
 	>=dev-libs/efl-9999
-	>=media-libs/edje-9999
 	>=media-libs/emotion-9999
 	>=media-libs/elementary-9999"
 

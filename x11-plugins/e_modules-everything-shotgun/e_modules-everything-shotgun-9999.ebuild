@@ -15,6 +15,6 @@ DESCRIPTION="Interface for Shotgun Instant Messanger"
 IUSE=""
 
 DEPEND=">=x11-wm/enlightenment-9999[enlightenment_modules_everything]
-		>=media-libs/edje-9999"
+		>=dev-libs/efl-9999"
 
 RDEPEND="${DEPEND}"

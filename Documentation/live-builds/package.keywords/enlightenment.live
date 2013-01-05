@@ -7,7 +7,6 @@
 =app-text/estardict-9999 **
 =dev-games/etrophy-9999 **
 =dev-libs/e_dbus-9999 **
-=dev-libs/eeze-9999 **
 =dev-libs/efl-9999 **
 =dev-libs/efx-9999 **
 =dev-libs/elocation-9999 **
@@ -17,14 +16,12 @@
 =dev-python/python-efl_utils-9999 **
 =dev-python/python-elementary-9999 **
 =dev-python/python-emotion-9999 **
-=dev-python/python-evas-9999 **
 =dev-python/python-lightmediascanner-9999 **
 =dev-util/clouseau-9999 **
 =dev-util/editje-9999 **
 =dev-util/ensure-9999 **
 =dev-util/geneet-9999 **
 =games-arcade/e_cho-9999 **
-=games-arcade/efbb-9999 **
 =games-puzzle/econcentration-9999 **
 =games-puzzle/elemines-9999 **
 =media-gfx/enki-9999 **
@@ -51,7 +48,7 @@
 =sci-geosciences/emap-9999 **
 =sys-libs/ememoa-9999 **
 =www-client/eve-9999 **
-=x11-misc/econnman-9999 **
+=x11-libs/libxkbcommon-9999 **
 =x11-misc/emprint-9999 **
 =x11-misc/entrance-9999 **
 =x11-misc/shellementary-9999 **

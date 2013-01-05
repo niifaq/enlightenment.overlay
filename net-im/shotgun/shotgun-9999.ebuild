@@ -14,7 +14,6 @@ IUSE="azy dbus"
 
 DEPEND="
 	>=dev-libs/efl-9999
-	>=media-libs/edje-9999
 	>=media-libs/elementary-9999
 	>=dev-libs/efx-9999
 	azy? ( >=net-libs/azy-9999 )

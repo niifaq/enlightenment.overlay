@@ -15,6 +15,6 @@ DESCRIPTION="This module act like a taskbar for selected applications only"
 IUSE=""
 
 DEPEND="x11-wm/enlightenment:0.17
-	>=media-libs/edje-9999"
+	>=dev-libs/efl-9999"
 
 RDEPEND="${DEPEND}"

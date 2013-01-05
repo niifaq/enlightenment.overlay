@@ -13,8 +13,8 @@ IUSE=""
 
 DEPEND="
 	>=dev-libs/efl-9999[physics]
-	>=media-libs/edje-9999
 	>=media-libs/elementary-9999
+	>=dev-libs/ephysics-9999
 	>=dev-games/etrophy-9999
 	>=dev-util/geneet-9999
 	media-libs/libcanberra

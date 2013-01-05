@@ -71,12 +71,13 @@ RDEPEND="
 	pam? ( sys-libs/pam )
 	tracker? ( app-misc/tracker )
 	pm-utils? ( sys-power/pm-utils )
-	>=media-libs/edje-9999
 	>=dev-libs/efl-9999[opengl?]
+	
+	eeze? ( >=dev-libs/efl-9999[mount] )
 
 	|| ( >=dev-libs/efl-9999[X] >=dev-libs/efl-9999[xcb] )
 	elementary? ( >=media-libs/elementary-9999 )
-	udev? ( dev-libs/eeze )
+	udev? ( sys-fs/udev )
 	enlightenment_modules_mixer? ( media-libs/alsa-lib )
 	enlightenment_modules_physics? ( >=dev-libs/efl-9999[physics] )
 	enlightenment_modules_everything? ( app-text/aspell sys-devel/bc )

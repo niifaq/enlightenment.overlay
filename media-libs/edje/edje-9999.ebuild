@@ -14,13 +14,11 @@ IUSE="debug emacs experimental +physics vim-syntax"
 
 RDEPEND="
 	dev-lang/lua
-	>=dev-libs/efl-9999
-	physics? ( >=dev-libs/efl-9999[physics] )
+	!dev-libs/efl
+	physics? ( >=dev-libs/ephysics-9999 )
 	emacs? ( virtual/emacs )"
 
-DEPEND="
-	!dev-libs/efl
-	${RDEPEND}"
+DEPEND="${RDEPEND}"
 
 SITEFILE=50${PN}-gentoo.el
 

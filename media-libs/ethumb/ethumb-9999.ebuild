@@ -16,7 +16,6 @@ IUSE="+dbus emotion epdf debug"
 
 RDEPEND="
 	>=dev-libs/efl-9999
-	>=media-libs/edje-9999
 	emotion? ( >=media-libs/emotion-9999 )
 	epdf? ( >=app-text/epdf-9999 )"
 

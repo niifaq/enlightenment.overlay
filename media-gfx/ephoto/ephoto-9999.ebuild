@@ -20,7 +20,6 @@ IUSE=""
 RDEPEND="
 	 >=dev-libs/efl-9999[xim]
 	 || ( >=dev-libs/efl-9999[X] >=dev-libs/efl-9999[xcb] )
-	 >=media-libs/edje-9999
 	 >=media-libs/elementary-9999[thumbnails,xdg]
 	 >=media-libs/ethumb-9999
 "

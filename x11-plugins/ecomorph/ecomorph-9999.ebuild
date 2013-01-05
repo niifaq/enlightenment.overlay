@@ -17,7 +17,7 @@ HOMEPAGE="http://code.google.com/p/itask-module/wiki/Stuff"
 IUSE=""
 
 DEPEND="x11-wm/enlightenment:0.17
-	=media-libs/edje-9999
+	=dev-libs/efl-9999
 	=x11-wm/ecomp-9999"
 
 RDEPEND="${DEPEND}"

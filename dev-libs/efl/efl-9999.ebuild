@@ -47,7 +47,7 @@ RDEPEND="
 
 	glib? ( dev-libs/glib )
 
-	wayland? ( dev-libs/wayland )
+	wayland? ( dev-libs/wayland x11-libs/libxkbcommon )
 
 	fontconfig? ( media-libs/fontconfig )
 

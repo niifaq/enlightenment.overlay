@@ -1,9 +1,10 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
 EAPI="4"
 E_PKG_IUSE="doc"
+ESVN_SUB_PROJECT="IN-EFL"
 inherit efl
 
 DESCRIPTION="wrapper between Bullet Physics and EFL to add physics effects in a simple way"
@@ -14,7 +15,9 @@ RDEPEND="
 	>=dev-libs/efl-9999
 	test-gui? ( >=media-libs/elementary-9999 )
 "
-DEPEND="${RDEPEND}"
+DEPEND="
+	!dev-libs/efl[physics]
+${RDEPEND}"
 
 src_configure() {
 	export MY_ECONF="

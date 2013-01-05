@@ -1,4 +1,4 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -14,7 +14,7 @@ IUSE="gnutls openssl glib
 	wayland fbcon sdl egl pixman
 	gif webp tiff
 	+fribidi +fontconfig harfbuzz
-	+curl +tslib
+	+curl +tslib +physics
 	audio pulseaudio
 	X xcb gles opengl
 	+xim debug
@@ -58,6 +58,8 @@ RDEPEND="
 
 	audio? ( media-libs/libsndfile )
 	pulseaudio? ( media-sound/pulseaudio )
+
+	physics? ( >=sci-physics/bullet-2.79 )
 
 	virtual/jpeg
 	sys-libs/zlib
@@ -123,6 +125,7 @@ CORE_EFL_CONFLICTS="
 	!dev-libs/efreet
 	!dev-libs/edbus
 	!media-libs/evas
+	!dev-libs/ephysics
 "
 DEPEND="
 	${CORE_EFL_CONFLICTS}
@@ -195,6 +198,8 @@ src_configure() {
 
 	  $(use_enable audio)
 	  $(use_enable pulseaudio)
+
+	  $(use_enable physics )
 
 	  $(use_enable xim)
 

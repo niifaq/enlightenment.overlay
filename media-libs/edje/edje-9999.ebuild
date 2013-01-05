@@ -1,4 +1,4 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -15,7 +15,7 @@ IUSE="debug emacs experimental +physics vim-syntax"
 RDEPEND="
 	dev-lang/lua
 	>=dev-libs/efl-9999
-	physics? ( >=dev-libs/ephysics-9999 )
+	physics? ( >=dev-libs/efl-9999[physics] )
 	emacs? ( virtual/emacs )"
 
 DEPEND="${RDEPEND}"

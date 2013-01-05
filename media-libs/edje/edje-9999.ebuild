@@ -18,7 +18,9 @@ RDEPEND="
 	physics? ( >=dev-libs/efl-9999[physics] )
 	emacs? ( virtual/emacs )"
 
-DEPEND="${RDEPEND}"
+DEPEND="
+	!dev-libs/efl
+	${RDEPEND}"
 
 SITEFILE=50${PN}-gentoo.el
 

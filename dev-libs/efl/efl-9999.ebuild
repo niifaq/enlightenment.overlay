@@ -125,6 +125,7 @@ CORE_EFL_CONFLICTS="
 	!dev-libs/efreet
 	!dev-libs/edbus
 	!media-libs/evas
+	!media-libs/edje
 	!dev-libs/ephysics
 "
 DEPEND="

@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -14,8 +14,8 @@ HOMEPAGE="http://watchwolf.fr/wiki/doku.php?id=enki"
 IUSE=""
 
 DEPEND="
-	>=net-libs/azy-9999
 	>=dev-libs/efl-9999
+	>=net-libs/azy-9999
 	>=media-libs/ethumb-9999
 	>=media-libs/libexif-0.6.16
 	>=media-libs/libiptcdata-1.0.2

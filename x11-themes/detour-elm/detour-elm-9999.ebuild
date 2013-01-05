@@ -11,7 +11,7 @@ DESCRIPTION="Detour theme: elementary version"
 
 IUSE=""
 
-DEPEND=">=media-libs/edje-9999"
+DEPEND=">=dev-libs/efl-9999"
 
 RDEPEND="${DEPEND}"
 

@@ -16,7 +16,6 @@ SLOT="0"
 IUSE=""
 
 RDEPEND=">=dev-libs/efl-9999
-	>=media-libs/edje-9999
 	>=media-libs/elementary-9999
 "
 DEPEND="${DEPEND}"

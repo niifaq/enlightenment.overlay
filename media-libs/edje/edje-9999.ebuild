@@ -14,7 +14,7 @@ IUSE="debug emacs experimental +physics vim-syntax"
 
 RDEPEND="
 	dev-lang/lua
-	>=dev-libs/efl-9999
+	!dev-libs/efl
 	physics? ( >=dev-libs/ephysics-9999 )
 	emacs? ( virtual/emacs )"
 

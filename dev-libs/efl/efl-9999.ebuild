@@ -16,6 +16,7 @@ IUSE="gnutls openssl glib
 	+fribidi +fontconfig harfbuzz
 	+curl +tslib
 	audio pulseaudio
+	+mount +physics
 	X xcb gles opengl
 	+xim debug
 "
@@ -58,6 +59,9 @@ RDEPEND="
 
 	audio? ( media-libs/libsndfile )
 	pulseaudio? ( media-sound/pulseaudio )
+
+	mount? ( >=sys-apps/util-linux-2.20.0 )
+	physics? ( sci-physics/bullet )
 
 	virtual/jpeg
 	sys-libs/zlib
@@ -122,6 +126,9 @@ CORE_EFL_CONFLICTS="
 	!dev-libs/eio
 	!dev-libs/efreet
 	!dev-libs/edbus
+	!dev-libs/ephysics
+	!media-libs/edje
+	!dev-libs/eeze
 	!media-libs/evas
 "
 DEPEND="
@@ -195,6 +202,9 @@ src_configure() {
 
 	  $(use_enable audio)
 	  $(use_enable pulseaudio)
+
+	  $(use_enable physics)
+	  $(use_enable mount)
 
 	  $(use_enable xim)
 

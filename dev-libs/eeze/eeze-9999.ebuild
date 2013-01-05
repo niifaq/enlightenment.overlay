@@ -13,7 +13,7 @@ HOMEPAGE="http://www.enlightenment.org"
 IUSE=""
 
 RDEPEND="
-	>=dev-libs/efl-9999
+	!dev-libs/efl
 	>=sys-fs/udev-141-r1
 "
 DEPEND="${RDEPEND}"

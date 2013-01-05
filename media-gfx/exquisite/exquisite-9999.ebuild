@@ -8,10 +8,7 @@ inherit efl
 DESCRIPTION="Exquisite - EFL based psplash replacement"
 IUSE=""
 
-DEPEND="
-		=dev-libs/efl-9999
-		=media-libs/edje-9999
-"
+DEPEND="=dev-libs/efl-9999"
 
 RDEPEND="${DEPEND}"
 

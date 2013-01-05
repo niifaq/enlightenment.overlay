@@ -20,8 +20,7 @@ RDEPEND="
 	>=dev-python/python-edje-9999
 	>=dev-python/python-elementary-9999"
 
-DEPEND="
-	>=media-libs/edje-9999"
+DEPEND=">=dev-libs/efl-9999"
 
 src_install() {
 	emake DESTDIR="${D}" install || die "Install failed"

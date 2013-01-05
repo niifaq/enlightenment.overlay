@@ -12,7 +12,6 @@ IUSE="+dhcp vpnc"
 DEPEND="
 	>=dev-libs/efl-9999
 	>=dev-libs/e_dbus-9999
-	>=media-libs/edje-9999
 	>=media-libs/elementary-9999
 	net-wireless/wpa_supplicant
 	dhcp? ( net-misc/dhcp )

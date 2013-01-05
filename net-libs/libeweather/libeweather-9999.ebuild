@@ -12,7 +12,5 @@ IUSE=""
 
 LICENSE="LGPL-2.1"
 
-RDEPEND="
-	>=dev-libs/efl-9999[curl]
-	>=media-libs/edje-9999"
+RDEPEND=">=dev-libs/efl-9999[curl]"
 DEPEND="${RDEPEND}"

@@ -21,7 +21,6 @@ IUSE="gstreamer xine static-modules"
 # TODO: remove edje dependency as soon as emotion is fixed to not build its test
 RDEPEND="
 	>=dev-libs/efl-9999
-	>=media-libs/edje-9999
 	xine? ( >=media-libs/xine-lib-1.1.1 )
 	gstreamer? (
 		=media-libs/gstreamer-0.10*

@@ -7,11 +7,9 @@
 =app-text/estardict-9999 **
 =dev-games/etrophy-9999 **
 =dev-libs/e_dbus-9999 **
-=dev-libs/eeze-9999 **
 =dev-libs/efl-9999 **
 =dev-libs/efx-9999 **
 =dev-libs/elocation-9999 **
-=dev-libs/ephysics-9999 **
 =dev-python/python-ecore-9999 **
 =dev-python/python-e_dbus-9999 **
 =dev-python/python-edje-9999 **
@@ -31,7 +29,6 @@
 =media-gfx/enki-9999 **
 =media-gfx/ephoto-9999 **
 =media-gfx/exquisite-9999 **
-=media-libs/edje-9999 **
 =media-libs/elementary-9999 **
 =media-libs/emotion-9999 **
 =media-libs/enlil-9999 **

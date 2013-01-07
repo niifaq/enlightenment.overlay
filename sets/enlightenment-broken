@@ -22,3 +22,8 @@
 =games-arcade/efbb-9999
 =x11-misc/econnman-9999
 =dev-python/python-evas-9999
+=x11-plugins/e_modules-everything-shotgun-9999
+=x11-plugins/e_modules-penguins-9999
+=x11-plugins/e_modules-everything-mpris-9999
+=x11-plugins/e_modules-everything-pidgin-9999
+=x11-plugins/e_modules-everything-tracker-9990

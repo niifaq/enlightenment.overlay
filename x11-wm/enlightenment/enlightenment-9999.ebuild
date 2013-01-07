@@ -1,4 +1,4 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -14,18 +14,20 @@ HOMEPAGE="http://www.enlightenment.org/"
 SLOT="0.17"
 
 IUSE="eeze elementary illume2 opengl pam pm-utils +sysactions tracker
-		+udev udisks xinerama xscreensaver debug"
+		+udev udisks wayland xinerama xscreensaver debug"
 
 IUSE_ENLIGHTENMENT_MODULES="
 	+access
+	+appmenu
 	+backlight
 	+battery
+	+bluez4
 	+clock
 	+comp
 	+conf
+	conf2
 	+connman
 	+cpufreq
-	+dropshadow
 	+everything
 	+fileman
 	+fileman_opinfo
@@ -34,9 +36,10 @@ IUSE_ENLIGHTENMENT_MODULES="
 	+ibox
 	+mixer
 	+msgbus
+	+music-control
 	+notification
 	+pager
-	physics
+	+physics
 	+quickaccess
 	+shot
 	+start
@@ -72,12 +75,13 @@ RDEPEND="
 	tracker? ( app-misc/tracker )
 	pm-utils? ( sys-power/pm-utils )
 	>=dev-libs/efl-9999[opengl?]
-	
+
 	eeze? ( >=dev-libs/efl-9999[mount] )
 
 	|| ( >=dev-libs/efl-9999[X] >=dev-libs/efl-9999[xcb] )
 	elementary? ( >=media-libs/elementary-9999 )
 	udev? ( sys-fs/udev )
+	wayland? ( dev-libs/efl[wayland?] )
 	enlightenment_modules_mixer? ( media-libs/alsa-lib )
 	enlightenment_modules_physics? ( >=dev-libs/efl-9999[physics] )
 	enlightenment_modules_everything? ( app-text/aspell sys-devel/bc )
@@ -122,12 +126,10 @@ src_prepare() {
 }
 
 src_configure() {
-	# NOTE: mixer is plugin-able, but just alsa is provided atm.
 	export MY_ECONF="
 	  ${MY_ECONF}
 	  --disable-install-sysactions
 	  --disable-device-hal
-	  --disable-mount-hal
 	  $(use_enable elementary)
 	  $(use_enable illume2)
 	  $(use_enable pam)
@@ -135,6 +137,7 @@ src_configure() {
 	  $(use_enable udev device-udev)
 	  $(use_enable udisks mount-udisks)
 	  $(use_enable sysactions install-sysactions)
+	  $(use_enable wayland wayland-clients)
 	"
 
 	local module=

@@ -52,7 +52,6 @@
 =x11-misc/emprint-9999 **
 =x11-misc/entrance-9999 **
 =x11-misc/shellementary-9999 **
-=x11-plugins/ecomorph-9999 **
 =x11-plugins/edgar-9999 **
 =x11-plugins/e_modules-alarm-9999 **
 =x11-plugins/e_modules-calendar-9999 **
@@ -110,5 +109,4 @@
 =x11-themes/detour-elm-9999 **
 =x11-themes/detourious-9999 **
 =x11-themes/efenniht-9999 **
-=x11-wm/ecomp-9999 **
 =x11-wm/enlightenment-9999 **

@@ -10,7 +10,6 @@ DESCRIPTION="Video frontend using the EFL"
 IUSE=""
 
 DEPEND="
-	>=dev-libs/efl-9999
-	>=media-libs/emotion-9999"
+	>=dev-libs/efl-9999"
 
 RDEPEND="${DEPEND}"

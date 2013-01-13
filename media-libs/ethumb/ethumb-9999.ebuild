@@ -5,6 +5,7 @@
 EAPI="2"
 
 E_PKG_IUSE="doc"
+ESVN_SUB_PROJECT="IN-EFL"
 inherit efl
 
 DESCRIPTION="Enlightenment's thumbnailing library"
@@ -16,10 +17,11 @@ IUSE="+dbus emotion epdf debug"
 
 RDEPEND="
 	>=dev-libs/efl-9999
-	emotion? ( >=media-libs/emotion-9999 )
 	epdf? ( >=app-text/epdf-9999 )"
 
-DEPEND="${RDEPEND}"
+DEPEND="
+	!dev-libs/efl
+	${RDEPEND}"
 
 src_configure() {
 	local DEBUG_FLAGS=""

@@ -13,7 +13,6 @@ IUSE=""
 
 RDEPEND="
 	>=dev-libs/efl-9999[xim]
-	>=media-libs/emotion-9999
 	>=media-libs/elementary-9999"
 
 DEPEND="${RDEPEND}"

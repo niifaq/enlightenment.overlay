@@ -1,4 +1,4 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -19,7 +19,7 @@ KEYWORDS=""
 
 IUSE=""
 
-RDEPEND=">=media-libs/emotion-9999"
+RDEPEND=">=dev-libs/efl-9999"
 
 # python-evas is just required to build as it includes some useful header files
 DEPEND="

@@ -13,6 +13,7 @@ HOMEPAGE="http://trac.enlightenment.org/e/wiki/EFL"
 IUSE="gnutls openssl glib
 	wayland fbcon sdl egl pixman
 	gif webp tiff
+	+gstreamer xine v4l2
 	+fribidi +fontconfig harfbuzz
 	+curl +tslib
 	audio pulseaudio
@@ -71,9 +72,18 @@ RDEPEND="
 	tslib? ( x11-libs/tslib )
 	webp? ( media-libs/libwebp )
 
+	xine? ( >=media-libs/xine-lib-1.1.1 )
+	gstreamer? (
+		=media-libs/gstreamer-0.10*
+		=media-libs/gst-plugins-good-0.10*
+		=media-plugins/gst-plugins-ffmpeg-0.10*
+		)
+
 	X? (
 		x11-libs/libX11
 		x11-libs/libXext
+		x11-libs/libXcursor
+		x11-libs/libXScrnSaver
 
 		opengl? (
 			x11-libs/libX11
@@ -118,19 +128,22 @@ RDEPEND="
 "
 
 CORE_EFL_CONFLICTS="
-	!dev-libs/eet
-	!dev-libs/eina
-	!dev-libs/eobj
 	!dev-libs/ecore
-	!dev-libs/embryo
-	!dev-libs/eio
-	!dev-libs/efreet
 	!dev-libs/edbus
+	!dev-libs/eet
+	!dev-libs/eeze
+	!dev-libs/efreet
+	!dev-libs/eina
+	!dev-libs/eio
+	!dev-libs/embryo
+	!dev-libs/eobj
 	!dev-libs/ephysics
 	!media-libs/edje
-	!dev-libs/eeze
+	!media-libs/emotion
+	!media-libs/ethumb
 	!media-libs/evas
 "
+
 DEPEND="
 	${CORE_EFL_CONFLICTS}
 
@@ -211,6 +224,10 @@ src_configure() {
 	  $(use_enable gif image-loader-gif)
 	  $(use_enable tiff image-loader-tiff)
 	  $(use_enable webp image-loader-webp)
+
+	  $(use_enable xine)
+	  $(use_enable gstreamer)
+	  $(use_enable v4l2)
 
 	  $(use_enable curl)
 	  $(use_enable tslib)

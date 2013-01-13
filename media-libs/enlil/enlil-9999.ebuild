@@ -16,7 +16,6 @@ IUSE=""
 DEPEND="
 	>=dev-libs/efl-9999
 	>=net-libs/azy-9999
-	>=media-libs/ethumb-9999
 	>=media-libs/libexif-0.6.16
 	>=media-libs/libiptcdata-1.0.2
 "

@@ -3,6 +3,7 @@
 # $Header: $
 
 EAPI="2"
+ESVN_SUB_PROJECT="IN-EFL"
 E_PKG_IUSE="doc"
 
 inherit efl
@@ -27,7 +28,9 @@ RDEPEND="
 		=media-libs/gst-plugins-good-0.10*
 		=media-plugins/gst-plugins-ffmpeg-0.10*
 	)"
-DEPEND="${RDEPEND}"
+DEPEND="
+	!dev-libs/efl
+	${RDEPEND}"
 
 src_configure() {
 	if ! use xine && ! use gstreamer; then

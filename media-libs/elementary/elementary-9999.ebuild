@@ -20,8 +20,6 @@ RDEPEND="
 	location? ( >=dev-libs/elocation-9999 )
 	emap? ( >=sci-geosciences/emap-9999 )
 	weather? ( >=net-libs/libeweather-9999 )
-	thumbnails? ( >=media-libs/ethumb-9999[dbus?] )
-	video? ( >=media-libs/emotion-9999 )
 	"
 DEPEND="${RDEPEND}"
 

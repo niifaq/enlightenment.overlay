@@ -23,7 +23,6 @@ IUSE_ENLIGHTENMENT_MODULES="
 	+battery
 	+bluez4
 	+clock
-	+comp
 	+conf
 	conf2
 	+connman
@@ -53,6 +52,7 @@ IUSE_ENLIGHTENMENT_MODULES="
 	+xkbswitch
 
 	+conf-applications
+	+conf-comp
 	+conf-dialogs
 	+conf-display
 	+conf-edgebindings

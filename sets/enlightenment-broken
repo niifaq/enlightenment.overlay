@@ -8,7 +8,6 @@
 =dev-libs/embryo-9999
 =dev-libs/eobj-9999
 =dev-libs/ephysics-9999
-=dev-python/python-evas-9999
 =games-arcade/efbb-9999
 =media-libs/edje-9999
 =media-libs/emotion-9999
@@ -18,7 +17,6 @@
 =net-im/apathy-9999
 =net-im/jefliks-9999
 =net-misc/exalt-9999
-=x11-misc/econnman-9999
 =x11-plugins/ecomorph-9999
 =x11-plugins/e_modules-e-tiling-9999
 =x11-plugins/e_modules-everything-mpris-9999

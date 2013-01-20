@@ -17,7 +17,7 @@ IUSE="gnutls openssl glib
 	+fribidi +fontconfig harfbuzz
 	+curl +tslib
 	audio pulseaudio
-	+mount +physics
+	+physics
 	X xcb gles opengl
 	+xim debug
 "
@@ -61,9 +61,9 @@ RDEPEND="
 	audio? ( media-libs/libsndfile )
 	pulseaudio? ( media-sound/pulseaudio )
 
-	mount? ( >=sys-apps/util-linux-2.20.0 )
 	physics? ( sci-physics/bullet )
 
+	>=sys-apps/util-linux-2.20.0
 	virtual/jpeg
 	sys-libs/zlib
 
@@ -217,7 +217,6 @@ src_configure() {
 	  $(use_enable pulseaudio)
 
 	  $(use_enable physics)
-	  $(use_enable mount)
 
 	  $(use_enable xim)
 

@@ -8,7 +8,7 @@ inherit git-2 efl
 
 DESCRIPTION="A minesweeper game base on efl"
 HOMEPAGE="http://elemines.sourceforge.net/"
-EGIT_REPO_URI="git://${PN}.git.sourceforge.net/gitroot/${PN}/${PN}"
+EGIT_REPO_URI="git://git.code.sf.net/p/${PN}/code"
 
 LICENSE="GPL-2 OFL"
 SLOT="0"
@@ -22,11 +22,4 @@ DEPEND="${DEPEND}"
 
 src_unpack() {
 	git-2_src_unpack
-}
-
-src_prepare() {
-	sed -i -e "s|Applications;||g" data/desktop/elemines.desktop || die
-	sed -i -e "/packaging/d" configure.ac || die
-	sed -i -e "s|packaging ||g" Makefile.am || die
-	efl_src_prepare
 }

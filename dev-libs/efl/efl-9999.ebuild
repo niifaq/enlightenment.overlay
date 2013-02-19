@@ -67,8 +67,11 @@ RDEPEND="
 	>=sys-apps/util-linux-2.20.0
 	virtual/jpeg
 	sys-libs/zlib
+	sys-apps/dbus
+	dev-lang/lua
 
 	media-libs/libpng
+	gif? ( media-libs/giflib )
 	tiff? ( media-libs/tiff )
 	tslib? ( x11-libs/tslib )
 	webp? ( media-libs/libwebp )

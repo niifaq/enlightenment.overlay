@@ -5,7 +5,8 @@
 EAPI="4"
 
 E_PKG_IUSE="doc nls"
-inherit efl
+EGIT_REPO_URI="git://git.enlightenment.org/core/${PN}.git"
+inherit efl git-2
 
 DESCRIPTION="Basic widget set, based on EFL with focus mobile touch-screen devices."
 HOMEPAGE="http://trac.enlightenment.org/e/wiki/Elementary"
@@ -22,6 +23,10 @@ RDEPEND="
 	weather? ( >=net-libs/libeweather-9999 )
 	"
 DEPEND="${RDEPEND}"
+
+src_unpack() {
+	git-2_src_unpack
+}
 
 src_configure() {
 	export MY_ECONF="

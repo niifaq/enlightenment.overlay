@@ -5,7 +5,7 @@
 EAPI="4"
 
 E_PKG_IUSE="doc nls"
-EGIT_REPO_URI="git://git.enlightenment.org/core/efl.git"
+EGIT_REPO_URI="git://git.enlightenment.org/core/${PN}.git"
 inherit git-2 efl
 
 DESCRIPTION="Enlightenment Foundation Libraries all-in-one package"

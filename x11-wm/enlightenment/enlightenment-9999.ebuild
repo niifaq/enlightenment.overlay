@@ -90,12 +90,7 @@ RDEPEND="
 	debug? ( sys-devel/gdb )
 "
 
-DEPEND="
-	!x11-plugins/e_modules-quickaccess
-	!x11-plugins/e_modules-xkbswitch
-	!x11-plugins/e_modules-tiling
-${RDEPEND}
-"
+DEPEND="${RDEPEND}"
 
 expand_iuse() {
 	local flags="$1" prefix="$2" requirement="$3"

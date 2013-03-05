@@ -5,8 +5,11 @@
 EAPI="4"
 
 E_PKG_IUSE="doc nls"
-EGIT_REPO_URI="git://git.enlightenment.org/core/${PN}.git"
-inherit git-2 efl
+
+EFL_USE_GIT="yes"
+EFL_GIT_REPO_CATEGORY="core"
+
+inherit efl
 
 DESCRIPTION="Enlightenment Foundation Libraries all-in-one package"
 HOMEPAGE="http://trac.enlightenment.org/e/wiki/EFL"
@@ -178,10 +181,6 @@ pkg_pretend() {
 	eerror
 
 	die "Run emerge  -C ${conflicts}"
-}
-
-src_unpack() {
-	git-2_src_unpack
 }
 
 src_configure() {

@@ -52,8 +52,52 @@ IUSE="${E_PKG_IUSE}"
 # Default svn repository to use.
 E_LIVE_SERVER_DEFAULT_SVN="http://svn.enlightenment.org/svn/e/trunk"
 
-E_STATE="release"
+# @ECLASS-VARIABLE: E_EXTERNAL
+# @DESCRIPTION:
+# If defined, efl.eclass will not automatically inherit subversion and do any
+# magic for it
+: ${E_EXTERNAL:=}
 
+# @ECLASS-VARIABLE: E_EXTERNAL
+# @DESCRIPTION:
+# If defined, efl.eclass will not automatically inherit subversion and do any
+# magic for it
+: ${E_GIT_PROJECT:=}
+
+# @ECLASS-VARIABLE: E_LIVE_OFFLINE
+# @DESCRIPTION:
+# Use ESCM_OFFLINE="yes" only for enlightenment packages. Usefull if you want to
+# have manual control over subversion revisions
+: ${E_LIVE_OFFLINE:=}
+
+# @ECLASS-VARIABLE: ESVN_URI_APPEND
+# @DESCRIPTION:
+# This is addition to final default svn repo path, namely package name
+: ${ESVN_URI_APPEND:=${PN}}
+
+# @ECLASS-VARIABLE: ESVN_SUB_PROJECT
+# @DESCRIPTION:
+# Sub-group into svn.enlightenment.org repository trunk
+: ${ESVN_SUB_PROJECT:=}
+
+# @ECLASS-VARIABLE: EFL_GIT_BASE_PATH
+# @DESCRIPTION:
+# Initial part of any official git repository url.
+# You may respecify it to use local mirror instead of official git server
+# Do NOT end it with slash '/'
+: ${EFL_GIT_BASE_PATH:="git://git.enlightenment.org"}
+
+# @ECLASS-VARIABLE: EFL_GIT_REPO_NAME
+# @DESCRIPTION:
+# Final part of git url, name of the repository. Default: ${PN}
+: ${EFL_GIT_REPO_NAME:=${PN}}
+
+# @ECLASS-VARIABLE: EFL_GIT_REPO_CATEGORY
+# @DESCRIPTION:
+# Middle part of git url, category of the repository. Default: None
+: ${EFL_GIT_REPO_CATEGORY:=}
+
+E_STATE="release"
 if [[ ${PV/9999} != ${PV} ]] ; then
 	E_STATE="live"
 
@@ -64,38 +108,23 @@ if [[ ${PV/9999} != ${PV} ]] ; then
 
 	: ${WANT_AUTOTOOLS:=yes}
 
-# @ECLASS-VARIABLE: E_EXTERNAL
-# @DESCRIPTION:
-# If defined, efl.eclass will not automatically inherit subversion and do any
-# magic for it
 	if [[ -z "${E_EXTERNAL}" ]]; then
-# @ECLASS-VARIABLE: E_LIVE_OFFLINE
-# @DESCRIPTION:
-# Use ESCM_OFFLINE="yes" only for enlightenment packages. Usefull if you want to
-# have manual control over subversion revisions
-		[[ -n ${E_LIVE_OFFLINE} ]] && ESCM_OFFLINE="yes"
+		if [[ -z "${EFL_USE_GIT}" ]]; then
+			[[ -n ${E_LIVE_OFFLINE} ]] && ESCM_OFFLINE="yes"
 
-# @ECLASS-VARIABLE: E_LIVE_SERVER
-# @DESCRIPTION:
-# Use another server than the default svn repo
-		: ${E_LIVE_SERVER:=${E_LIVE_SERVER_DEFAULT_SVN}}
+			E_LIVE_SERVER=${E_LIVE_SERVER_DEFAULT_SVN}
+			ESVN_PROJECT="enlightenment/${ESVN_SUB_PROJECT}"
+			ESVN_REPO_URI="${E_LIVE_SERVER}/${ESVN_SUB_PROJECT}/${ESVN_URI_APPEND}"
 
-# @ECLASS-VARIABLE: ESVN_URI_APPEND
-# @DESCRIPTION:
-# This is addition to final default svn repo path, namely package name
-		ESVN_URI_APPEND=${ESVN_URI_APPEND:-${PN}}
+			S="${WORKDIR}/${ESVN_URI_APPEND}"
 
-# @ECLASS-VARIABLE: ESVN_SUB_PROJECT
-# @DESCRIPTION:
-# Sub-group into svn.enlightenment.org repository trunk
-		ESVN_URI_APPEND=${ESVN_URI_APPEND:-${PN}}
+			inherit subversion
+		else
+			EGIT_REPO_URI="${EFL_GIT_BASE_PATH}/${EFL_GIT_REPO_CATEGORY}"
+			EGIT_REPO_URI="${EGIT_REPO_URI}/${EFL_GIT_REPO_NAME}.git"
 
-		ESVN_PROJECT="enlightenment/${ESVN_SUB_PROJECT}"
-		ESVN_REPO_URI="${E_LIVE_SERVER}/${ESVN_SUB_PROJECT}/${ESVN_URI_APPEND}"
-
-		S="${WORKDIR}/${ESVN_URI_APPEND}"
-
-		inherit subversion
+			inherit git-2
+		fi
 	fi
 fi
 
@@ -177,10 +206,14 @@ efl_src_test() {
 # @FUNCTION: efl_src_unpack
 # @USAGE:
 # @DESCRIPTION:
-# calls subversion_src_unpack for live packages otherwise default_src_unpack
+# calls <scm>_src_unpack for live packages otherwise default_src_unpack
 efl_src_unpack() {
-	if [[ "${E_STATE}" == "live" ]] ; then
-		subversion_src_unpack
+	if [[ "${E_STATE}" == "live" ]]; then
+		if [[ -z "${EFL_USE_GIT}" ]]; then
+			subversion_src_unpack
+		else
+			git-2_src_unpack
+		fi
 	else
 		default_src_unpack
 	fi
@@ -207,7 +240,6 @@ efl_src_prepare() {
 		eautoreconf
 	fi
 
-	epunt_cxx
 	elibtoolize
 }
 
@@ -227,7 +259,7 @@ efl_src_configure() {
 		fi
 
 		econf ${MY_ECONF} || efl_die "configure failed"
-	fi
+fi
 }
 
 # @FUNCTION: efl_src_compile
@@ -273,6 +305,7 @@ efl_src_install() {
 		fi
 	fi
 
+	# Needed only for subversion-1.6. Remove as soon as only 1.7 will remain
 	find "${D}" -name .svn -type d -exec rm -rf '{}' \; 2>/dev/null
 }
 

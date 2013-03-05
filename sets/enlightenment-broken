@@ -1,3 +1,5 @@
+=app-editors/ecrire-9999
+
 =dev-libs/ecore-9999
 =dev-libs/edbus-9999
 =dev-libs/eet-9999
@@ -8,6 +10,7 @@
 =dev-libs/embryo-9999
 =dev-libs/eobj-9999
 =dev-libs/ephysics-9999
+
 =media-libs/edje-9999
 =media-libs/emotion-9999
 =media-libs/etch-9999

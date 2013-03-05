@@ -6,7 +6,9 @@ EAPI=2
 
 E_PKG_IUSE="nls"
 
-inherit efl
+EFL_USE_GIT="yes"
+EFL_GIT_REPO_CATEGORY="apps"
+inherit cmake-utils efl
 
 DESCRIPTION="This is intended to be a text editor"
 
@@ -17,3 +19,8 @@ DEPEND="
 	>=media-libs/elementary-9999"
 
 RDEPEND="${DEPEND}"
+
+src_configure()
+{
+	cmake-utils_src_configure
+}

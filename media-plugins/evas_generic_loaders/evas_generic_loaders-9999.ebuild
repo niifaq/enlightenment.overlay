@@ -4,6 +4,8 @@
 
 EAPI="4"
 
+EFL_USE_GIT="yes"
+EFL_GIT_REPO_CATEGORY="core"
 inherit efl
 
 DESCRIPTION="Generic loaders for evas"

@@ -5,8 +5,9 @@
 EAPI="4"
 
 E_PKG_IUSE="doc nls"
-EGIT_REPO_URI="git://git.enlightenment.org/core/${PN}.git"
-inherit eutils efl git-2
+EFL_USE_GIT="yes"
+EFL_GIT_REPO_CATEGORY="core"
+inherit eutils efl
 
 DESCRIPTION="Enlightenment DR17 window manager"
 HOMEPAGE="http://www.enlightenment.org/"
@@ -95,10 +96,6 @@ DEPEND="
 	!x11-plugins/e_modules-tiling
 ${RDEPEND}
 "
-
-src_unpack() {
-	git-2_src_unpack
-}
 
 expand_iuse() {
 	local flags="$1" prefix="$2" requirement="$3"

@@ -4,6 +4,8 @@
 
 EAPI="4"
 
+EFL_USE_GIT="yes"
+EFL_GIT_REPO_CATEGORY="apps"
 inherit efl
 
 DESCRIPTION="EFL based terminal emulator"

@@ -1,12 +1,14 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="2"
+EAPI="5"
+EFL_USE_GIT="yes"
+EFL_GIT_REPO_CATEGORY="legacy"
 inherit efl toolchain-funcs
 
 MY_P=${P/_/-}
-DESCRIPTION="Version 2 of an advanced replacement library for libraries like libXpm"
+DESCRIPTION="Image loading, rendering, saving library"
 HOMEPAGE="http://www.enlightenment.org/"
 
 IUSE="X bzip2 gif jpeg mmx mp3 png tiff zlib"

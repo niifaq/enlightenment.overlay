@@ -1,10 +1,10 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="2"
-ESVN_SUB_PROJECT="PROTO"
-
+EAPI="5"
+EFL_USE_GIT="yes"
+EFL_GIT_REPO_CATEGORY="devs/discomfitor"
 inherit efl
 
 DESCRIPTION="EFL http client/server library"

@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="2"
+EAPI="5"
 
 E_PKG_IUSE="nls"
 inherit efl
@@ -12,7 +12,7 @@ IUSE="asf flac +id3 mp4 ogg +playlist real"
 
 RDEPEND="
 	 >=dev-libs/efl-9999
-	 >=media-libs/elementary-9999[thumbnails,dbus,xdg]
+	 >=media-libs/elementary-9999[thumbnails,xdg]
 	 >=media-libs/lightmediascanner-0.4.1.0[asf?,flac?,id3?,mp4?,ogg?,playlist?,real?]
 	 >=dev-db/sqlite-3.6
 "

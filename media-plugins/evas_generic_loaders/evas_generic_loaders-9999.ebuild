@@ -1,15 +1,15 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="4"
+EAPI="5"
 
 EFL_USE_GIT="yes"
 EFL_GIT_REPO_CATEGORY="core"
 inherit efl
 
-DESCRIPTION="Generic loaders for evas"
-HOMEPAGE="http://www.enlightenment.org/pages/evas.html"
+DESCRIPTION="Loaders for Evas using 'generic' module"
+HOMEPAGE="http://www.enlightenment.org"
 
 IUSE="gstreamer raw svg postscript pdf"
 

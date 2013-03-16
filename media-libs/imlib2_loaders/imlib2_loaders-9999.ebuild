@@ -1,11 +1,13 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="2"
+EAPI="5"
+EFL_USE_GIT="yes"
+EFL_GIT_REPO_CATEGORY="legacy"
 inherit efl
 
-DESCRIPTION="image loader plugins for Imlib 2"
+DESCRIPTION="Additional image loaders for imlib2"
 HOMEPAGE="http://www.enlightenment.org/pages/imlib2.html"
 
 IUSE=""

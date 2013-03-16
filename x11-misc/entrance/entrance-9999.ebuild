@@ -2,11 +2,10 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="2"
+EAPI="5"
 
-E_PKG_IUSE="static-libs"
-ESVN_SUB_PROJECT="PROTO"
-
+EFL_USE_GIT="yes"
+EFL_GIT_REPO_CATEGORY="misc"
 inherit efl
 
 DESCRIPTION="EFL based login manager"

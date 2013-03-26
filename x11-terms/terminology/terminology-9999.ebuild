@@ -9,7 +9,7 @@ EFL_GIT_REPO_CATEGORY="apps"
 inherit efl
 
 DESCRIPTION="EFL based terminal emulator"
-HOMEPAGE="http://www.enlightenment.org/"
+HOMEPAGE="http://www.enlightenment.org/p.php?p=about/terminology"
 
 IUSE=""
 

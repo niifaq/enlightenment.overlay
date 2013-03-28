@@ -1,13 +1,14 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=4
+EAPI=5
 
-ESVN_SUB_PROJECT="GAMES"
+EFL_USE_GIT="yes"
+EFL_GIT_REPO_CATEGORY="games"
 inherit efl
 
-DESCRIPTION="Echo is a game based on the classic game Simon Says, written using EFL"
+DESCRIPTION="Game based on Simon Says, written using EFL"
 
 LICENSE="LGPL-3"
 IUSE=""

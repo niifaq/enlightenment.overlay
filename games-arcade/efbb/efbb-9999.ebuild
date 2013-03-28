@@ -2,12 +2,13 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=4
+EAPI=5
 
-ESVN_SUB_PROJECT="GAMES"
+EFL_USE_GIT="yes"
+EFL_GIT_REPO_CATEGORY="games"
 inherit efl
 
-DESCRIPTION="Escape From Booty Bay"
+DESCRIPTION="Escape from Booty Bay is a physics game that explore EPhysics amazing features"
 
 IUSE=""
 

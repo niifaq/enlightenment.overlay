@@ -2,13 +2,14 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=4
+EAPI=5
 
-inherit git-2 efl
+EFL_USE_GIT="yes"
+EFL_GIT_REPO_CATEGORY="games"
+inherit efl
 
-DESCRIPTION="A minesweeper game base on efl"
+DESCRIPTION="An EFL minesweeper clone"
 HOMEPAGE="http://elemines.sourceforge.net/"
-EGIT_REPO_URI="git://git.code.sf.net/p/${PN}/code"
 
 LICENSE="GPL-2 OFL"
 SLOT="0"
@@ -19,7 +20,3 @@ RDEPEND=">=dev-libs/efl-9999
 	>=media-libs/elementary-9999
 "
 DEPEND="${DEPEND}"
-
-src_unpack() {
-	git-2_src_unpack
-}

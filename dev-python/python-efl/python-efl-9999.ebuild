@@ -5,8 +5,8 @@
 EAPI="5"
 E_PKG_IUSE="examples"
 E_PYTHON="yes"
-ESVN_SUB_PROJECT="BINDINGS/python"
-
+EFL_USE_GIT="yes"
+EFL_GIT_REPO_CATEGORY="bindings/python"
 inherit efl distutils
 
 DESCRIPTION="Python bindings for  EFL"
@@ -20,4 +20,5 @@ KEYWORDS=""
 IUSE=""
 
 RDEPEND="
+	>=dev-python/cython-0.17
 	>=dev-libs/efl-9999"

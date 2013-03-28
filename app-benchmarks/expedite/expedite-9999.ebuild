@@ -1,10 +1,12 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="2"
-E_PKG_IUSE="static-libs"
+EAPI="5"
 
+E_PKG_IUSE="static-libs"
+EFL_USE_GIT="yes"
+EFL_GIT_REPO_CATEGORY="tools"
 inherit efl
 
 DESCRIPTION="Comprehensive test and benchmark suite for Evas"
@@ -24,7 +26,7 @@ RDEPEND="
 	!X? ( xcb? ( x11-libs/xcb-util ) )"
 DEPEND="${RDEPEND}"
 
-src_configure() {
+pkg_pretend() {
 	local x_or_xcb=""
 
 	if ! use directfb && ! use fbcon && ! use sdl && ! use X && ! use xcb; then
@@ -42,22 +44,28 @@ src_configure() {
 		die "Expedite usage of OpenGL requires X11."
 		die "Compile app-benchmarks/expedite with USE=X or xcb."
 	fi
+}
 
+#TODO:
+#  --enable-opengl-sdl     enable OpenGL SDL engine
+#  --enable-wayland-egl    enable Wayland EGL engine
+#  --enable-wayland-shm    enable Wayland SHM engine
+
+src_configure() {
 	export MY_ECONF="
 	  ${MY_ECONF}
 	  --disable-software-gdi
 	  --disable-software-ddraw
+	  --disable-psl1ght
+	  --disable-directfb
 	  --disable-direct3d
-	  --disable-opengl-glew
-	  --disable-quartz
-	  --disable-software-16-ddraw
+	  --disable-opengl-cocoa
 	  --disable-software-16-wince
 	  $(use_enable directfb)
 	  $(use_enable fbcon fb)
 	  $(use_enable opengl opengl-x11)
 	  $(use_enable sdl software-sdl)
 	  $(use_enable X software-x11)
-	  $(use_enable X software-16-x11)
 	  $(use_enable X xrender-x11)
 	  $(use_enable xcb xrender-xcb)
 	"

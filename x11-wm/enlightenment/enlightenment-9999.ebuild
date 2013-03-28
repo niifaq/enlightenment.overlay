@@ -81,7 +81,7 @@ RDEPEND="
 
 	|| ( >=dev-libs/efl-9999[X] >=dev-libs/efl-9999[xcb] )
 	elementary? ( >=media-libs/elementary-9999 )
-	udev? ( sys-fs/udev )
+	udev? ( virtual/udev )
 	wayland? ( dev-libs/efl[wayland?] )
 	enlightenment_modules_mixer? ( media-libs/alsa-lib )
 	enlightenment_modules_physics? ( >=dev-libs/efl-9999[physics] )

@@ -3,11 +3,12 @@
 # $Header: $
 
 EAPI="5"
-
+EFL_USE_GIT="yes"
+EFL_GIT_REPO_CATEGORY="apps"
 E_PKG_IUSE="nls"
 inherit efl
 
-DESCRIPTION="EFL-based music player"
+DESCRIPTION="Music player written using the EFL"
 IUSE="asf flac +id3 mp4 ogg +playlist real"
 
 RDEPEND="

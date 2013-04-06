@@ -2,12 +2,13 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="2"
-E_URI_APPEND="ephoto"
+EAPI="5"
+EFL_USE_GIT="yes"
+EFL_GIT_REPO_CATEGORY="apps"
 E_PKG_IUSE="nls"
 inherit efl
 
-DESCRIPTION="EFL-based photo app"
+DESCRIPTION="EFL image viewer/editor/manipulator/slideshow creator"
 HOMEPAGE="http://www.enlightenment.org/"
 SRC_URI=""
 

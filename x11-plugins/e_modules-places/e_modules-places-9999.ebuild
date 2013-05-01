@@ -12,7 +12,7 @@ inherit efl
 
 DESCRIPTION="E17 Module that manage the mounting of volumes"
 
-IUSE="-eeze e_dbus +edbus"
+IUSE="eeze +e_dbus edbus"
 
 DEPEND="x11-wm/enlightenment:0.17
 	>=dev-libs/efl-9999

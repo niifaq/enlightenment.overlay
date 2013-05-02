@@ -20,5 +20,5 @@ KEYWORDS=""
 IUSE=""
 
 RDEPEND="
-	>=dev-python/cython-0.17
+	>=dev-python/cython-0.17.3
 	>=dev-libs/efl-9999"

@@ -7,6 +7,6 @@
 <use>
  <flag name="eeze">Enable eeze support (experimental)</flag>
  <flag name="e_dbus">Enable UDisks with e_dbus support</flag>
- <flag name="edbus">Enable UDisks with edbus2 support</flag>
+ <flag name="eldbus">Enable UDisks with edbus2 support</flag>
 </use>
 </pkgmetadata>

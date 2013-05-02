@@ -12,7 +12,7 @@ inherit efl
 
 DESCRIPTION="E17 Module that manage the mounting of volumes"
 
-IUSE="eeze +e_dbus edbus"
+IUSE="eeze e_dbus +eldbus"
 
 DEPEND="x11-wm/enlightenment:0.17
 	>=dev-libs/efl-9999
@@ -24,7 +24,7 @@ src_configure() {
 	export MY_ECONF="
 		$(use_enable eeze)
 		$(use_enable e_dbus udisks)
-		$(use_enable edbus edbus2)
+		$(use_enable eldbus eldbus)
 	"
 efl_src_configure
 }

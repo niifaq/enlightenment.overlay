@@ -2,9 +2,11 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="2"
-ESVN_SUB_PROJECT="E-MODULES-EXTRA"
-ESVN_URI_APPEND="${PN#e_modules-}"
+EAPI="5"
+
+EFL_USE_GIT="yes"
+EFL_GIT_REPO_CATEGORY="enlightenment/modules"
+EFL_GIT_REPO_NAME="${PN#e_modules-}"
 inherit efl
 
 DESCRIPTION="modules visualizes disk activity, green = read, red = write"

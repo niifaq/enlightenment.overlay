@@ -5,9 +5,9 @@
 EAPI="2"
 
 E_PKG_IUSE="nls"
-
-ESVN_SUB_PROJECT="E-MODULES-EXTRA"
-ESVN_URI_APPEND="${PN#e_modules-}"
+EFL_USE_GIT="yes"
+EFL_GIT_REPO_CATEGORY="enlightenment/modules"
+EFL_GIT_REPO_NAME="${PN#e_modules-}"
 inherit efl
 
 DESCRIPTION="EWeather gadget for e17"

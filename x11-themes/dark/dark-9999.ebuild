@@ -2,9 +2,10 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=2
+EAPI=5
 
-ESVN_SUB_PROJECT="THEMES"
+EFL_USE_GIT="yes"
+EFL_GIT_REPO_CATEGORY="themes"
 inherit efl
 
 DESCRIPTION="E17 theme: Dark"

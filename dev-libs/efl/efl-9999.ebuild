@@ -22,6 +22,7 @@ IUSE="gnutls openssl glib
 	+curl +tslib
 	audio pulseaudio
 	+physics
+	systemd
 	X xcb gles opengl
 	+xim debug
 "
@@ -66,6 +67,8 @@ RDEPEND="
 	pulseaudio? ( media-sound/pulseaudio )
 
 	physics? ( sci-physics/bullet )
+
+	systemd? ( sys-apps/systemd )
 
 	>=sys-apps/util-linux-2.20.0
 	virtual/jpeg
@@ -232,6 +235,8 @@ src_configure() {
 	  $(use_enable pulseaudio)
 
 	  $(use_enable physics)
+
+	  $(use_enable systemd)
 
 	  $(use_enable xim)
 

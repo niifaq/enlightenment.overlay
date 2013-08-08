@@ -14,7 +14,7 @@ HOMEPAGE="http://www.enlightenment.org/"
 
 SLOT="0.17"
 
-IUSE="eeze elementary illume2 opengl pam pm-utils +sysactions tracker
+IUSE="eeze elementary illume2 opengl pam pm-utils +sysactions systemd tracker
 		+udev udisks wayland xinerama xscreensaver debug"
 
 IUSE_ENLIGHTENMENT_MODULES="
@@ -81,6 +81,7 @@ RDEPEND="
 	|| ( >=dev-libs/efl-9999[X] >=dev-libs/efl-9999[xcb] )
 	elementary? ( >=media-libs/elementary-9999 )
 	udev? ( virtual/udev )
+	systemd? ( sys-apps/systemd )
 	wayland? ( dev-libs/efl[wayland?]
 		>=dev-libs/wayland-1.2.0
 		>=x11-libs/pixman-0.31.1

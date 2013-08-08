@@ -20,7 +20,7 @@ IUSE="gnutls openssl glib
 	+gstreamer xine v4l2
 	+fribidi +fontconfig harfbuzz
 	+curl +tslib
-	audio alsa pulseaudio
+	audio pulseaudio
 	+physics
 	systemd
 	X xcb gles opengl
@@ -35,7 +35,6 @@ REQUIRED_USE="
 	X?			( !xcb						)
 	opengl?		( !gles						)
 
-	alsa?		( audio						)
 	pulseaudio?	( audio						)
 
 	opengl?		( || ( X xcb sdl wayland )	)
@@ -237,7 +236,6 @@ src_configure() {
 	  $(use_enable pixman)
 
 	  $(use_enable audio)
-	  $(use_enable alsa)
 	  $(use_enable pulseaudio)
 
 	  $(use_enable physics)

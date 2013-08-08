@@ -20,11 +20,12 @@ IUSE="gnutls openssl glib
 	+gstreamer xine v4l2
 	+fribidi +fontconfig harfbuzz
 	+curl +tslib
-	audio pulseaudio
+	audio alsa pulseaudio
 	+physics
 	systemd
 	X xcb gles opengl
-	+xim debug
+	xim scim ibus
+	debug
 "
 
 # TODO: pixman with a bunch of options
@@ -34,6 +35,7 @@ REQUIRED_USE="
 	X?			( !xcb						)
 	opengl?		( !gles						)
 
+	alsa?		( audio						)
 	pulseaudio?	( audio						)
 
 	opengl?		( || ( X xcb sdl wayland )	)
@@ -140,6 +142,9 @@ RDEPEND="
 		virtual/opengl
 	)
 
+	scim?	( app-i18n/scim )
+	ibus?	( app-i18n/ibus )
+
 	doc? ( app-doc/doxygen )
 
 	debug? ( dev-util/valgrind )
@@ -232,6 +237,7 @@ src_configure() {
 	  $(use_enable pixman)
 
 	  $(use_enable audio)
+	  $(use_enable alsa)
 	  $(use_enable pulseaudio)
 
 	  $(use_enable physics)
@@ -239,6 +245,8 @@ src_configure() {
 	  $(use_enable systemd)
 
 	  $(use_enable xim)
+	  $(use_enable scim)
+	  $(use_enable ibus)
 
 	  $(use_enable gif image-loader-gif)
 	  $(use_enable tiff image-loader-tiff)

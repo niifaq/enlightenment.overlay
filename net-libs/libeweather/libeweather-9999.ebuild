@@ -2,9 +2,10 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="2"
+EAPI="4"
 
-ESVN_SUB_PROJECT="PROTO"
+EFL_USE_GIT="yes"
+EFL_GIT_REPO_CATEGORY="libs"
 inherit efl
 
 DESCRIPTION="Enlightenment's weather information fetching and parsing framework"

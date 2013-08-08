@@ -48,6 +48,7 @@ IUSE_ENLIGHTENMENT_MODULES="
 	+tasks
 	+temperature
 	+tiling
+	+wl-desktop-shell
 	+winlist
 	+wizard
 	+xkbswitch
@@ -56,10 +57,8 @@ IUSE_ENLIGHTENMENT_MODULES="
 	+conf-comp
 	+conf-dialogs
 	+conf-display
-	+conf-edgebindings
 	+conf-interaction
 	+conf-intl
-	+conf-keybindings
 	+conf-menus
 	+conf-paths
 	+conf-performance
@@ -82,10 +81,14 @@ RDEPEND="
 	|| ( >=dev-libs/efl-9999[X] >=dev-libs/efl-9999[xcb] )
 	elementary? ( >=media-libs/elementary-9999 )
 	udev? ( virtual/udev )
-	wayland? ( dev-libs/efl[wayland?] )
+	wayland? ( dev-libs/efl[wayland?]
+		>=dev-libs/wayland-1.2.0
+		>=x11-libs/pixman-0.31.1
+		>=x11-libs/libxkbcommon-0.3.1 )
 	enlightenment_modules_mixer? ( media-libs/alsa-lib )
 	enlightenment_modules_physics? ( >=dev-libs/efl-9999[physics] )
 	enlightenment_modules_everything? ( app-text/aspell sys-devel/bc )
+	enlightenment_modules_wl-desktop-shell? ( x11-wm/enlightenment[wayland?] )
 
 	debug? ( sys-devel/gdb )
 "

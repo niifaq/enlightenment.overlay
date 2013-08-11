@@ -14,7 +14,7 @@ HOMEPAGE="http://www.enlightenment.org/p.php?p=about/terminology"
 IUSE=""
 
 RDEPEND="
-	>=dev-libs/efl-9999[xim]
+	>=dev-libs/efl-9999
 	>=media-libs/elementary-9999"
 
 DEPEND="${RDEPEND}"

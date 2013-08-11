@@ -1,16 +1,16 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="4"
-
+EAPI="5"
+EFL_USE_GIT="yes"
+EFL_GIT_REPO_CATEGORY="devs/kuuko"
 E_PKG_IUSE="doc nls"
 
 PYTHON_DEPEND="*:2.7"
 
-inherit python distutils bzr
+inherit efl python distutils
 
-EBZR_REPO_URI="https://launchpad.net/apathy"
 HOMEPAGE="http://launchpad.net/apathy"
 DESCRIPTION="Apathy is a Telepathy based IM client powered by EFL"
 

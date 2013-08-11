@@ -23,7 +23,6 @@
 =dev-util/ensure-9999 **
 =dev-util/geneet-9999 **
 =games-arcade/e_cho-9999 **
-=games-arcade/efbb-9999 **
 =games-puzzle/econcentration-9999 **
 =games-puzzle/elemines-9999 **
 =media-gfx/enki-9999 **
@@ -48,7 +47,6 @@
 =sci-geosciences/emap-9999 **
 =sys-libs/ememoa-9999 **
 =www-client/eve-9999 **
-=x11-libs/libxkbcommon-9999 **
 =x11-misc/econnman-9999 **
 =x11-misc/emprint-9999 **
 =x11-misc/entrance-9999 **
@@ -68,7 +66,6 @@
 =x11-plugins/e_modules-engage-9999 **
 =x11-plugins/e_modules-eooorg-9999 **
 =x11-plugins/e_modules-everything-places-9999 **
-=x11-plugins/e_modules-everything-tracker-9999 **
 =x11-plugins/e_modules-everything-wallpaper-9999 **
 =x11-plugins/e_modules-everything-websearch-9999 **
 =x11-plugins/e_modules-eweather-9999 **

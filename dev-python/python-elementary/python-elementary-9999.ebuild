@@ -1,12 +1,12 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="4"
+EAPI="5"
 E_PKG_IUSE="examples"
 E_CYTHON="1"
-ESVN_SUB_PROJECT="BINDINGS/python"
-
+EFL_USE_GIT="yes"
+EFL_GIT_REPO_CATEGORY="legacy/bindings/python"
 inherit efl
 
 DESCRIPTION="Python bindigs for Elementary"

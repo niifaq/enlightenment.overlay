@@ -48,7 +48,7 @@ IUSE_ENLIGHTENMENT_MODULES="
 	+tasks
 	+temperature
 	+tiling
-	+wl-desktop-shell
+	wl-desktop-shell
 	+winlist
 	+wizard
 	+xkbswitch
@@ -89,10 +89,11 @@ RDEPEND="
 	enlightenment_modules_mixer? ( media-libs/alsa-lib )
 	enlightenment_modules_physics? ( >=dev-libs/efl-9999[physics] )
 	enlightenment_modules_everything? ( app-text/aspell sys-devel/bc )
-	enlightenment_modules_wl-desktop-shell? ( x11-wm/enlightenment[wayland?] )
 
 	debug? ( sys-devel/gdb )
 "
+
+REQUIRED_USE="enlightenment_modules_wl-desktop-shell? ( wayland )"
 
 DEPEND="${RDEPEND}"
 

@@ -18,7 +18,8 @@ RDEPEND="${DEPEND}"
 
 src_compile() {
 #E17
-edje_cc -DVERSION="${ESVN_WC_REVISION}" -id images/ -fd . ${PN}.edc -o ${PN}.edj || die edje_cc failed
+#edje_cc -DVERSION="${ESVN_WC_REVISION}" -id images/ -fd . ${PN}.edc -o ${PN}.edj || die edje_cc failed
+edje_cc -DVERSION="99999" -id images/ -fd . ${PN}.edc -o ${PN}.edj || die edje_cc failed
 #Elm
 cd "${S}/elm"
 #edje_cc -id . -fd ../fonts  ${PN}-desktop.edc ${PN}-elm-desktop.edj || die edje_cc failed

@@ -18,7 +18,7 @@ RDEPEND="${DEPEND}"
 
 src_compile() {
 cd "${S}/edje"
-edje_cc -id img/ ${PN}.edc ${PN}.edj || die edje_cc failed
+edje_cc -fastcomp -id img/ -sd snd/ -fd fnt/ ${PN}.edc ${PN}.edj || die edje_cc failed
 }
 
 src_install() {

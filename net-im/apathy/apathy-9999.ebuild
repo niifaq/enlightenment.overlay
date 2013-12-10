@@ -22,10 +22,7 @@ SLOT="0"
 RDEPEND="
 	>=dev-libs/efl-9999[glib]
 	>=media-libs/elementary-9999
-	>=dev-python/python-e_dbus-9999
-	>=dev-python/python-evas-9999
-	>=dev-python/python-ecore-9999
-	>=dev-python/python-elementary-9999
+	>=dev-python/python-efl-9999
 	>=net-libs/telepathy-glib-0.17.6[introspection]
 	net-im/telepathy-mission-control
 	net-im/telepathy-connection-managers

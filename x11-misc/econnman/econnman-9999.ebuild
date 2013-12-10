@@ -11,8 +11,7 @@ DESCRIPTION="ConnMan User Interface written using the EFL"
 
 IUSE=""
 
-DEPEND=">=dev-python/python-elementary-9999
-	>=dev-python/python-e_dbus-9999"
+DEPEND=">=dev-python/python-efl-9999"
 
 RDEPEND="
 	>=media-libs/elementary-9999

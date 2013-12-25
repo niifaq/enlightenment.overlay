@@ -1,15 +1,15 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="4"
+EAPI="5"
 
 inherit cmake-utils flag-o-matic enlightenment
 
 DESCRIPTION="Open source web browser engine (EFL version)"
 HOMEPAGE="http://trac.webkit.org/wiki/EFLWebKit"
 MY_PV="${PV/0.1.}"
-SRC_URI="http://packages.profusion.mobi/webkit-efl/${PN}-svn-r${MY_PV}.tar.bz2"
+SRC_URI="http://download.enlightenment.org/rel/libs/${PN}/${PN}-159807.tar.xz"
 E_STATE="snap"
 WANT_AUTOTOOLS="no"
 
@@ -28,13 +28,13 @@ RDEPEND="
 			net-libs/libsoup
 	)
 	!glib? ( net-misc/curl )
-	!curl? ( net-libs/libsoup )
+	!curl? ( >=net-libs/libsoup-2.42 )
 	sqlite? ( >=dev-db/sqlite-3 )
 	dev-libs/efl[fontconfig,glib?]
 	|| ( dev-libs/efl[X] dev-libs/efl[xcb] )
 	gstreamer? (
-			media-libs/gstreamer:0.10
-			>=media-libs/gst-plugins-base-0.10.25:0.10
+			>=media-libs/gstreamer-1.2:1.0
+			>=media-libs/gst-plugins-base-1.2:1.0
 			dev-libs/glib
 		)
 	dev-libs/icu
@@ -51,7 +51,7 @@ REQUIRED_USE="	gstreamer? ( glib )
 		^^ ( curl soup )"
 
 CMAKE_IN_SOURCE_BUILD="enable"
-S="${WORKDIR}/${PN}-svn-r${MY_PV}/Source"
+S="${WORKDIR}/${PN}/Source"
 
 src_configure() {
 	[[ gcc-major-version == 4 ]] && [[ gcc-minor-version == 4 ]] && append-flags -fno-strict-aliasing

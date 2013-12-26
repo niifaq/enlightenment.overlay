@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="4"
+EAPI="5"
 
 E_PKG_IUSE="doc nls"
 
@@ -20,7 +20,7 @@ IUSE="gnutls openssl glib
 	+gstreamer xine v4l2
 	+fribidi +fontconfig harfbuzz
 	+curl +tslib
-	audio pulseaudio
+	audio pulseaudio multisense
 	+physics
 	systemd
 	X xcb gles opengl
@@ -36,6 +36,7 @@ REQUIRED_USE="
 	opengl?		( !gles						)
 
 	pulseaudio?	( audio						)
+	multisense?	( pulseaudio					)
 
 	opengl?		( || ( X xcb sdl wayland )	)
 	gles?		( || ( X xcb sdl wayland )	)
@@ -85,9 +86,8 @@ RDEPEND="
 
 	xine? ( >=media-libs/xine-lib-1.1.1 )
 	gstreamer? (
-		=media-libs/gstreamer-0.10*
-		=media-libs/gst-plugins-good-0.10*
-		=media-plugins/gst-plugins-ffmpeg-0.10*
+		media-libs/gstreamer:1.0
+		media-libs/gst-plugins-good:1.0
 		)
 
 	X? (
@@ -237,6 +237,7 @@ src_configure() {
 
 	  $(use_enable audio)
 	  $(use_enable pulseaudio)
+	  $(use_enable multisense)
 
 	  $(use_enable physics)
 
@@ -251,7 +252,7 @@ src_configure() {
 	  $(use_enable webp image-loader-webp)
 
 	  $(use_enable xine)
-	  $(use_enable gstreamer)
+	  $(use_enable gstreamer gstreamer)
 	  $(use_enable v4l2)
 
 	  $(use_enable curl)
@@ -264,7 +265,10 @@ src_configure() {
 
 	  --with-opengl=${opengl}
 	  --with-glib=${glib}
+	  --enable-xinput22
+	  --disable-gstreamer1
 	"
+#	  --enable-gesture
 
 	efl_src_configure
 }

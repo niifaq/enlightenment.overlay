@@ -1,0 +1,43 @@
+diff -Naur Source/WebCore/platform/graphics/freetype/FontPlatformDataFreeType.cpp Source/WebCore/platform/graphics/freetype/FontPlatformDataFreeType.cpp
+--- Source/WebCore/platform/graphics/freetype/FontPlatformDataFreeType.cpp	2013-12-12 01:50:15.000000000 +0100
++++ Source/WebCore/platform/graphics/freetype/FontPlatformDataFreeType.cpp	2013-12-28 21:41:20.588843802 +0100
+@@ -29,7 +29,8 @@
+ #include <cairo-ft.h>
+ #include <cairo.h>
+ #include <fontconfig/fcfreetype.h>
+-#include <tttables.h>
++#include <ft2build.h>
++#include FT_TRUETYPE_TABLES_H
+ #include <wtf/text/WTFString.h>
+ 
+ #if !PLATFORM(EFL) && !PLATFORM(NIX)
+diff -Naur Source/WebCore/platform/graphics/freetype/SimpleFontDataFreeType.cpp Source/WebCore/platform/graphics/freetype/SimpleFontDataFreeType.cpp
+--- Source/WebCore/platform/graphics/freetype/SimpleFontDataFreeType.cpp	2013-12-12 01:50:15.000000000 +0100
++++ Source/WebCore/platform/graphics/freetype/SimpleFontDataFreeType.cpp	2013-12-28 21:40:58.092843267 +0100
+@@ -44,7 +44,8 @@
+ #include <cairo-ft.h>
+ #include <cairo.h>
+ #include <fontconfig/fcfreetype.h>
+-#include <tttables.h>
+-#include <tttags.h>
++#include <ft2build.h>
++#include FT_TRUETYPE_TAGS_H
++#include FT_TRUETYPE_TABLES_H
+ #include <unicode/normlzr.h>
+ #include <wtf/MathExtras.h>
+ #include <wtf/unicode/Unicode.h>
+diff -Naur Source/WebCore/platform/graphics/harfbuzz/HarfBuzzFaceCairo.cpp Source/WebCore/platform/graphics/harfbuzz/HarfBuzzFaceCairo.cpp
+--- Source/WebCore/platform/graphics/harfbuzz/HarfBuzzFaceCairo.cpp	2013-12-12 01:50:15.000000000 +0100
++++ Source/WebCore/platform/graphics/harfbuzz/HarfBuzzFaceCairo.cpp	2013-12-28 21:41:59.255844721 +0100
+@@ -39,7 +39,8 @@
+ #include "TextEncoding.h"
+ #include <cairo-ft.h>
+ #include <cairo.h>
+-#include <freetype.h>
+-#include <tttables.h>
++#include <freetype2/freetype/freetype.h>
++#include <ft2build.h>
++#include FT_TRUETYPE_TABLES_H
+ #include <hb.h>
+ #include <wtf/text/CString.h>
+ 

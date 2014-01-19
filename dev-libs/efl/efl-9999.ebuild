@@ -76,7 +76,7 @@ RDEPEND="
 	virtual/jpeg
 	sys-libs/zlib
 	sys-apps/dbus
-	dev-lang/lua
+	dev-lang/luajit:2
 
 	media-libs/libpng
 	gif? ( media-libs/giflib )

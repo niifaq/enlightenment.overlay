@@ -15,7 +15,7 @@ DESCRIPTION="Enlightenment Foundation Libraries all-in-one package"
 HOMEPAGE="http://trac.enlightenment.org/e/wiki/EFL"
 
 IUSE="gnutls openssl glib
-	wayland fbcon sdl egl pixman
+	wayland fbcon sdl egl -pixman
 	gif webp tiff
 	+gstreamer xine v4l2
 	+fribidi +fontconfig harfbuzz
@@ -23,8 +23,8 @@ IUSE="gnutls openssl glib
 	audio pulseaudio multisense
 	+physics
 	systemd
-	X xcb gles opengl
-	xim scim ibus
+	X -xcb gles opengl
+	+xim +scim ibus
 	debug
 "
 
@@ -252,7 +252,7 @@ src_configure() {
 	  $(use_enable webp image-loader-webp)
 
 	  $(use_enable xine)
-	  $(use_enable gstreamer gstreamer)
+	  $(use_enable gstreamer gstreamer1)
 	  $(use_enable v4l2)
 
 	  $(use_enable curl)
@@ -266,8 +266,9 @@ src_configure() {
 	  --with-opengl=${opengl}
 	  --with-glib=${glib}
 	  --enable-xinput22
-	  --disable-gstreamer1
-	"
+	  --disable-gstreamer
+#	"
+
 #	  --enable-gesture
 
 	efl_src_configure

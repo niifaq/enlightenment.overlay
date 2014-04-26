@@ -3,10 +3,11 @@
 # $Header: $
 
 EAPI=4
+E_PKG_IUSE="doc"
+EFL_USE_GIT="yes"
+EFL_GIT_REPO_CATEGORY="devs/discomfitor"
 
 inherit efl
-
-#E_PKG_IUSE="doc nls"
 
 DESCRIPTION="A library for 2D effects"
 

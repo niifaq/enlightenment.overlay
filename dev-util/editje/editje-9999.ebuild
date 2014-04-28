@@ -4,7 +4,9 @@
 
 EAPI="2"
 
-E_NO_VISIBILITY="1"
+#E_NO_VISIBILITY="1"
+EFL_USE_GIT="yes"
+EFL_GIT_REPO_CATEGORY="devs/kuuko"
 E_PKG_IUSE="static-libs"
 
 inherit efl

@@ -22,3 +22,13 @@ IUSE=""
 RDEPEND="
 	>=dev-python/cython-0.17.3
 	>=dev-libs/efl-9999"
+
+src_install() {
+
+	distutils_src_install
+
+	if use examples; then
+		insinto /usr/share/doc/${PF}
+		doins -r examples
+	fi
+}

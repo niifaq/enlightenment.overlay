@@ -14,7 +14,7 @@ HOMEPAGE="http://www.enlightenment.org/"
 
 SLOT="0.17"
 
-IUSE="eeze elementary illume2 opengl pam pm-utils +sysactions systemd tracker
+IUSE="eeze illume2 opengl pam pm-utils +sysactions systemd tracker
 		+udev udisks wayland xinerama xscreensaver debug"
 
 IUSE_ENLIGHTENMENT_MODULES="
@@ -79,7 +79,7 @@ RDEPEND="
 	eeze? ( >=dev-libs/efl-9999[mount] )
 
 	|| ( >=dev-libs/efl-9999[X] >=dev-libs/efl-9999[xcb] )
-	elementary? ( >=media-libs/elementary-9999 )
+	>=media-libs/elementary-9999
 	udev? ( virtual/udev )
 	systemd? ( sys-apps/systemd )
 	wayland? ( dev-libs/efl[wayland?]
@@ -131,7 +131,6 @@ src_configure() {
 	  ${MY_ECONF}
 	  --disable-install-sysactions
 	  --disable-device-hal
-	  $(use_enable elementary)
 	  $(use_enable illume2)
 	  $(use_enable pam)
 	  $(use_enable eeze mount-eeze)

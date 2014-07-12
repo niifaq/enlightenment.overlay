@@ -17,7 +17,8 @@ HOMEPAGE="https://launchpad.net/epour"
 
 IUSE=""
 
-DEPEND=">=dev-libs/efl-9999
+DEPEND="dev-python/python-distutils-extra
+	>=dev-libs/efl-9999
 	>=dev-python/python-efl-9999
 	dev-python/dbus-python
 	"

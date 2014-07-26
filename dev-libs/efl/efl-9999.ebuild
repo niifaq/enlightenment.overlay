@@ -1,4 +1,4 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -15,7 +15,7 @@ DESCRIPTION="Enlightenment Foundation Libraries all-in-one package"
 HOMEPAGE="http://trac.enlightenment.org/e/wiki/EFL"
 
 IUSE="gnutls openssl glib
-	wayland fbcon sdl egl -pixman
+	wayland fbcon sdl egl
 	gif webp tiff
 	+gstreamer xine v4l2
 	+fribidi +fontconfig harfbuzz
@@ -23,30 +23,27 @@ IUSE="gnutls openssl glib
 	audio pulseaudio multisense
 	+physics
 	systemd
-	X -xcb gles opengl
+	X gles opengl
 	+xim +scim ibus
 	debug
 "
-
-# TODO: pixman with a bunch of options
+# pixman removed due massive rendering bugs; Only "works" with XCB.
 
 REQUIRED_USE="
 	openssl?	( !gnutls					)
-	X?			( !xcb						)
 	opengl?		( !gles						)
 
 	pulseaudio?	( audio						)
 	multisense?	( pulseaudio					)
 
-	opengl?		( || ( X xcb sdl wayland )	)
-	gles?		( || ( X xcb sdl wayland )	)
+	opengl?		( || ( X sdl wayland )	)
+	gles?		( || ( X sdl wayland )	)
 
 	gles?		( egl						)
-	xcb?		( pixman					)
 	sdl?		( || ( opengl gles )		)
 	wayland?	( egl || ( opengl gles )	)
 
-	xim?		( || ( X xcb )				)
+	xim?		( X				)
 "
 
 RDEPEND="
@@ -62,8 +59,6 @@ RDEPEND="
 	fribidi? ( dev-libs/fribidi )
 
 	harfbuzz? ( media-libs/harfbuzz )
-
-	pixman? ( x11-libs/pixman )
 
 	audio? ( media-libs/libsndfile )
 	pulseaudio? ( media-sound/pulseaudio )
@@ -117,26 +112,8 @@ RDEPEND="
 		)
 	)
 
-	xcb? (
-		x11-libs/libxcb
-
-		opengl? (
-			x11-libs/libX11
-			x11-libs/libXrender
-			virtual/opengl
-			x11-libs/xcb-util-renderutil
-		)
-
-		gles? (
-			x11-libs/libX11
-			x11-libs/libXrender
-			virtual/opengl
-			x11-libs/xcb-util-renderutil
-		)
-	)
-
 	sdl? (
-		media-libs/libsdl
+		media-libs/libsdl2
 
 		virtual/opengl
 	)
@@ -204,9 +181,9 @@ src_configure() {
 	local enable_graphics=""
 
 	use X && x11="xlib"
-	use xcb && x11="xcb"
+#	use xcb && x11="xcb"
 
-	( use X || use xcb ) && enable_graphics="--with-x"
+#	( use X || use xcb ) && enable_graphics="--with-x"
 
 	local opengl="none"
 
@@ -233,7 +210,6 @@ src_configure() {
 	  $(use_enable harfbuzz)
 
 	  $(use_enable egl)
-	  $(use_enable pixman)
 
 	  $(use_enable audio)
 	  $(use_enable pulseaudio)
@@ -267,7 +243,8 @@ src_configure() {
 	  --with-glib=${glib}
 	  --enable-xinput22
 	  --disable-gstreamer
-#	"
+	  --disable-pixman
+	"
 
 #	  --enable-gesture
 

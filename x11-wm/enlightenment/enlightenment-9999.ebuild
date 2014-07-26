@@ -1,4 +1,4 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -78,7 +78,7 @@ RDEPEND="
 
 	eeze? ( >=dev-libs/efl-9999[mount] )
 
-	|| ( >=dev-libs/efl-9999[X] >=dev-libs/efl-9999[xcb] )
+	>=dev-libs/efl-9999[X]
 	>=media-libs/elementary-9999
 	udev? ( virtual/udev )
 	systemd? ( sys-apps/systemd )

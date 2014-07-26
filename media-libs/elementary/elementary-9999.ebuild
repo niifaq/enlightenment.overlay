@@ -1,4 +1,4 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -16,10 +16,10 @@ HOMEPAGE="http://trac.enlightenment.org/e/wiki/Elementary"
 
 LICENSE="LGPL-2.1"
 
-IUSE="emap fbcon location opengl quicklaunch sdl static-libs thumbnails video wayland weather X xcb xdg"
+IUSE="emap fbcon location opengl quicklaunch sdl static-libs thumbnails video wayland weather X xdg"
 
 RDEPEND="
-	>=dev-libs/efl-9999[fbcon?,opengl?,sdl?,wayland?,X?,xcb?]
+	>=dev-libs/efl-9999[fbcon?,opengl?,sdl?,wayland?,X?]
 	location? ( >=dev-libs/elocation-9999 )
 	emap? ( >=sci-geosciences/emap-9999 )
 	weather? ( >=net-libs/libeweather-9999 )

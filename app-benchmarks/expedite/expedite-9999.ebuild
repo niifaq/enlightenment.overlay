@@ -1,4 +1,4 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -11,10 +11,10 @@ inherit efl
 
 DESCRIPTION="Comprehensive test and benchmark suite for Evas"
 
-IUSE="directfb fbcon opengl sdl X xcb"
+IUSE="directfb fbcon opengl sdl X"
 
 RDEPEND="
-	>=dev-libs/efl-9999[fbcon?,opengl?,sdl?,X?,xcb?]
+	>=dev-libs/efl-9999[fbcon?,opengl?,sdl?,X?]
 	opengl? ( virtual/opengl )
 	directfb? ( >=dev-libs/DirectFB-0.9.16 )
 	sdl? ( media-libs/libsdl )
@@ -22,28 +22,28 @@ RDEPEND="
 		x11-libs/libX11
 		x11-libs/libXext
 		x11-libs/libXrender
-	)
-	!X? ( xcb? ( x11-libs/xcb-util ) )"
+	)"
 DEPEND="${RDEPEND}"
+REQUIRED_USE="opengl? ( X )"
 
 pkg_pretend() {
-	local x_or_xcb=""
+#	local x_or_xcb=""
 
-	if ! use directfb && ! use fbcon && ! use sdl && ! use X && ! use xcb; then
+	if ! use directfb && ! use fbcon && ! use sdl && ! use X; then
 		die "Expedite needs at least one output system to be useful!"
-		die "Compile app-benchmarks/expedite with USE=directfb, fbcon, sdl, X or xcb"
+		die "Compile app-benchmarks/expedite with USE=directfb, fbcon, sdl or X"
 	fi
 
-	if use X; then
-		x_or_xcb="X"
-	elif use xcb; then
-		x_or_xcb="xcb"
-	fi
+#	if use X; then
+#		x_or_xcb="X"
+#	elif use xcb; then
+#		x_or_xcb="xcb"
+#	fi
 
-	if use opengl && [[ -z "$x_or_xcb" ]]; then
-		die "Expedite usage of OpenGL requires X11."
-		die "Compile app-benchmarks/expedite with USE=X or xcb."
-	fi
+#	if use opengl && [[ -z "$x_or_xcb" ]]; then
+#		die "Expedite usage of OpenGL requires X11."
+#		die "Compile app-benchmarks/expedite with USE=X or xcb."
+#	fi
 }
 
 #TODO:
@@ -67,7 +67,6 @@ src_configure() {
 	  $(use_enable sdl software-sdl)
 	  $(use_enable X software-x11)
 	  $(use_enable X xrender-x11)
-	  $(use_enable xcb xrender-xcb)
 	"
 	efl_src_configure
 }

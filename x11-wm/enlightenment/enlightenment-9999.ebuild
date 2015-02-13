@@ -18,14 +18,12 @@ IUSE="eeze illume2 opengl pam pm-utils +sysactions systemd tracker
 		+udev udisks wayland xinerama xscreensaver debug"
 
 IUSE_ENLIGHTENMENT_MODULES="
-	+access
 	+appmenu
 	+backlight
 	+battery
 	+bluez4
 	+clock
 	+conf
-	conf2
 	+connman
 	+cpufreq
 	+everything
@@ -39,7 +37,6 @@ IUSE_ENLIGHTENMENT_MODULES="
 	+music-control
 	+notification
 	+pager
-	+physics
 	+quickaccess
 	+shot
 	+start
@@ -54,7 +51,6 @@ IUSE_ENLIGHTENMENT_MODULES="
 	+xkbswitch
 
 	+conf-applications
-	+conf-comp
 	+conf-dialogs
 	+conf-display
 	+conf-interaction
@@ -65,7 +61,6 @@ IUSE_ENLIGHTENMENT_MODULES="
 	+conf-randr
 	+conf-shelves
 	+conf-theme
-	+conf-wallpaper2
 	+conf-window_manipulation
 	+conf-window_remembers
 "
@@ -130,8 +125,6 @@ src_configure() {
 	export MY_ECONF="
 	  ${MY_ECONF}
 	  --disable-install-sysactions
-	  --disable-device-hal
-	  $(use_enable illume2)
 	  $(use_enable pam)
 	  $(use_enable eeze mount-eeze)
 	  $(use_enable udev device-udev)

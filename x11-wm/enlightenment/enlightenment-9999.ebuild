@@ -82,7 +82,6 @@ RDEPEND="
 		>=x11-libs/pixman-0.31.1
 		>=x11-libs/libxkbcommon-0.3.1 )
 	enlightenment_modules_mixer? ( media-libs/alsa-lib )
-	enlightenment_modules_physics? ( >=dev-libs/efl-9999[physics] )
 	enlightenment_modules_everything? ( app-text/aspell sys-devel/bc )
 
 	debug? ( sys-devel/gdb )

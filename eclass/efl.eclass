@@ -122,14 +122,14 @@ if [[ ${PV/9999} != ${PV} ]] ; then
 		else
 			EGIT_REPO_URI="${EFL_GIT_BASE_PATH}/${EFL_GIT_REPO_CATEGORY}"
 			EGIT_REPO_URI="${EGIT_REPO_URI}/${EFL_GIT_REPO_NAME}.git"
-
-			inherit git-2
+			EGIT_CLONE_TYPE=shallow
+			inherit git-r3
 		fi
 	fi
 fi
 
 if [[ -n "${E_PYTHON}" ]]; then
-	PYTHON_DEPEND="2:2.6"
+	PYTHON_DEPEND="2"
 	inherit python
 fi
 
@@ -212,7 +212,7 @@ efl_src_unpack() {
 		if [[ -z "${EFL_USE_GIT}" ]]; then
 			subversion_src_unpack
 		else
-			git-2_src_unpack
+			git-r3_src_unpack
 		fi
 	else
 		default_src_unpack

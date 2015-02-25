@@ -71,7 +71,7 @@ RDEPEND="
 	pm-utils? ( sys-power/pm-utils )
 	>=dev-libs/efl-9999[opengl?]
 
-	eeze? ( >=dev-libs/efl-9999[mount] )
+	eeze? ( >=dev-libs/efl-9999 )
 
 	>=dev-libs/efl-9999[X]
 	>=media-libs/elementary-9999

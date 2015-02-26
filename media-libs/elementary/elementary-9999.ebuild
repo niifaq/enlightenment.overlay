@@ -20,7 +20,7 @@ IUSE="emap fbcon location opengl quicklaunch sdl static-libs thumbnails video wa
 
 RDEPEND="
 	>=dev-libs/efl-9999[fbcon?,opengl?,sdl?,wayland?,X?]
-	location? ( >=dev-libs/elocation-9999 )
+	location? ( >=dev-libs/efl-9999 )
 	emap? ( >=sci-geosciences/emap-9999 )
 	weather? ( >=net-libs/libeweather-9999 )
 	"

@@ -14,7 +14,8 @@ DESCRIPTION="Webcam testing application"
 IUSE=""
 
 DEPEND="
-	>=dev-libs/efl-9999
-	>=media-libs/elementary-9999"
+	>=dev-libs/efl-1.11.2
+	>=media-libs/elementary-1.11.2
+"
 
 RDEPEND="${DEPEND}"

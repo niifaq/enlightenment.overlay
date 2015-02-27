@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=2
+EAPI=5
 
 E_PKG_IUSE="nls"
 
@@ -15,8 +15,9 @@ DESCRIPTION="This is intended to be a text editor"
 IUSE=""
 
 DEPEND="
-	|| ( >=dev-libs/efl-9999[X] >=dev-libs/efl-9999[xcb] )
-	>=media-libs/elementary-9999"
+	|| ( >=dev-libs/efl-1.11.2[X] >=dev-libs/efl-1.11.2[xcb] )
+	>=media-libs/elementary-1.11.2
+"
 
 RDEPEND="${DEPEND}"
 

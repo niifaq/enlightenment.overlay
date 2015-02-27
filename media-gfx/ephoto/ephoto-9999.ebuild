@@ -19,8 +19,9 @@ KEYWORDS=""
 IUSE=""
 
 RDEPEND="
-	 >=dev-libs/efl-9999
-	 || ( >=dev-libs/efl-9999[X] >=dev-libs/efl-9999[xcb] )
-	 >=media-libs/elementary-9999[thumbnails,xdg]
+	 >=dev-libs/efl-1.11.2
+	 || ( >=dev-libs/efl[X] >=dev-libs/efl[xcb] )
+	 >=media-libs/elementary-1.11.2
 "
+#	 [thumbnails,xdg]
 DEPEND="${RDEPEND}"

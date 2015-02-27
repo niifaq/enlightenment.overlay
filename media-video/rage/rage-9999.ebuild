@@ -14,6 +14,7 @@ DESCRIPTION="Video frontend using the EFL"
 IUSE=""
 
 DEPEND="
-	>=dev-libs/efl-9999"
+	>=dev-libs/efl-1.11.2
+"
 
 RDEPEND="${DEPEND}"

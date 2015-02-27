@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="2"
+EAPI="5"
 
 E_PKG_IUSE="doc"
 ESVN_SUB_PROJECT="PROTO"
@@ -14,7 +14,7 @@ IUSE=""
 
 RDEPEND="
 	>=app-text/poppler-0.12
-	>=dev-libs/efl-9999
+	>=dev-libs/efl-1.11.2
 "
 DEPEND="${RDEPEND}"
 

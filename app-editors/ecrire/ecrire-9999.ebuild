@@ -8,7 +8,7 @@ E_PKG_IUSE="nls"
 
 EFL_USE_GIT="yes"
 EFL_GIT_REPO_CATEGORY="apps"
-inherit cmake-utils efl
+inherit efl cmake-utils
 
 DESCRIPTION="This is intended to be a text editor"
 
@@ -21,7 +21,3 @@ DEPEND="
 
 RDEPEND="${DEPEND}"
 
-src_configure()
-{
-	cmake-utils_src_configure
-}

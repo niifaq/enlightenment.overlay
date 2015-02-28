@@ -20,6 +20,8 @@ IUSE=""
 RDEPEND="${PYTHON_DEPS}
 	>=dev-libs/efl-1.8.1:0
 	>=media-libs/elementary-1.8.0:0
-	>=dev-python/dbus-python-0.83.0:0[${PYTHON_USEDEP}]"
+	>=dev-python/dbus-python-0.83.0:0[${PYTHON_USEDEP}]
+	>=dev-python/cython-2.22
+"
 DEPEND="${RDEPEND}
 	virtual/pkgconfig"

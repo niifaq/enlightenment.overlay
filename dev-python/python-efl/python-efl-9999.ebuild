@@ -20,7 +20,7 @@ KEYWORDS=""
 IUSE=""
 
 RDEPEND="
-	>=dev-python/cython-0.17.3
+	>=dev-python/cython-0.22
 	dev-python/dbus-python
 	>=dev-libs/efl-9999"
 

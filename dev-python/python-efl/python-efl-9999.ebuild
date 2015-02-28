@@ -22,7 +22,7 @@ IUSE=""
 RDEPEND="
 	>=dev-python/cython-0.17.3
 	dev-python/dbus-python
-	dev-libs/efl-1.11.2"
+	>=dev-libs/efl-1.11.2"
 
 src_install() {
 

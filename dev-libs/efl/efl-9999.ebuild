@@ -1,4 +1,4 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -19,7 +19,7 @@ IUSE="gnutls openssl glib
 	gif webp tiff
 	+gstreamer xine v4l2
 	+fribidi +fontconfig harfbuzz
-	+curl +tslib
+	+tslib
 	audio pulseaudio multisense
 	+physics
 	systemd
@@ -231,7 +231,6 @@ src_configure() {
 	  $(use_enable gstreamer gstreamer1)
 	  $(use_enable v4l2)
 
-	  $(use_enable curl)
 	  $(use_enable tslib)
 
 	  --with-crypto=${crypto}

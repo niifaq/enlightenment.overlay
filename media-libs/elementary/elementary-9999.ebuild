@@ -16,7 +16,7 @@ HOMEPAGE="http://trac.enlightenment.org/e/wiki/Elementary"
 
 LICENSE="LGPL-2.1"
 
-IUSE="emap fbcon location opengl quicklaunch sdl static-libs thumbnails video wayland weather X xdg"
+IUSE="emap fbcon location opengl quicklaunch sdl static-libs wayland weather X"
 
 RDEPEND="
 	>=dev-libs/efl-9999[fbcon?,opengl?,sdl?,wayland?,X?]
@@ -31,14 +31,11 @@ src_configure() {
 	  ${MY_ECONF}
 	  $(use_enable emap emap)
 	  $(use_enable location elocation)
-	  $(use_enable xdg efreet)
 	  $(use_enable weather eweather)
 	  $(use_enable fbcon ecore-fb)
 	  $(use_enable sdl ecore-sdl)
 	  $(use_enable wayland ecore-wayland)
 	  $(use_enable X ecore-x)
-	  $(use_enable thumbnails ethumb)
-	  $(use_enable video emotion)
 	  $(use_enable quicklaunch quick-launch)
 	  --with-elementary-web-backend=none
 	  --disable-build-examples

@@ -7,9 +7,11 @@ EFL_USE_GIT="yes"
 EFL_GIT_REPO_CATEGORY="devs/kuuko"
 E_PKG_IUSE="doc nls"
 
-PYTHON_DEPEND="*:2.7"
+#PYTHON_COMPAT="python2_7"
 
-inherit efl python distutils
+E_PYTHON="yes"
+
+inherit efl distutils-r1
 
 HOMEPAGE="http://launchpad.net/apathy"
 DESCRIPTION="Apathy is a Telepathy based IM client powered by EFL"
@@ -20,9 +22,9 @@ LICENSE="GPL-3"
 SLOT="0"
 
 RDEPEND="
-	>=dev-libs/efl-1.11.2[glib]
-	>=media-libs/elementary-1.11.2
-	dev-python/python-efl
+	>=dev-libs/efl-9999[glib]
+	>=media-libs/elementary-9999
+	>=dev-python/python-efl-9999
 	>=net-libs/telepathy-glib-0.17.6[introspection]
 	net-im/telepathy-mission-control
 	net-im/telepathy-connection-managers

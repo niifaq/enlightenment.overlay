@@ -7,7 +7,7 @@ E_PKG_IUSE="examples"
 E_PYTHON="yes"
 EFL_USE_GIT="yes"
 EFL_GIT_REPO_CATEGORY="bindings/python"
-inherit efl distutils
+inherit efl distutils-r1
 
 DESCRIPTION="Python bindings for  EFL"
 HOMEPAGE="http://www.enlightenment.org"
@@ -22,11 +22,11 @@ IUSE=""
 RDEPEND="
 	>=dev-python/cython-0.22
 	dev-python/dbus-python
-	>=dev-libs/efl-9999"
+	>=dev-libs/efl-9999
+"
 
 src_install() {
-
-	distutils_src_install
+	distutils-r1_src_install
 
 	if use examples; then
 		insinto /usr/share/doc/${PF}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer>
+		<email>enlightenment@gentoo.org</email>
+	</maintainer>
+	<longdescription lang="en">
+		Apathy is a free software communications client designed for mobile
+		platforms. It offers instant messaging, voice over IP, SMS and GSM
+		communications based on the telepathy framework. It is designed for use
+		on the OpenMoko software platform, although it can also be used in a
+		desktop environment.
+	</longdescription>
+</pkgmetadata>
+

@@ -129,8 +129,8 @@ if [[ ${PV/9999} != ${PV} ]] ; then
 fi
 
 if [[ -n "${E_PYTHON}" ]]; then
-	PYTHON_DEPEND="2"
-	inherit python
+	PYTHON_COMPAT=( python{2_7,3_2,3_3,3_4} )
+	inherit python-r1
 fi
 
 

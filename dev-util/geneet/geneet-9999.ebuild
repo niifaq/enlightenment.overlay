@@ -7,7 +7,7 @@ EAPI=5
 E_PYTHON="1"
 EFL_USE_GIT="yes"
 EFL_GIT_REPO_CATEGORY="tools"
-inherit efl distutils
+inherit efl distutils-r1
 
 DESCRIPTION="Generator for EFL's pickler/unpickler library, EET"
 HOMEPAGE="http://git.profusion.mobi/~leandro/geneet.html"
@@ -18,7 +18,7 @@ DEPEND="virtual/pyparsing"
 RDEPEND="${DEPEND}"
 
 src_install() {
-	distutils_src_install
+	distutils-r1_src_install
 
 	if use examples; then
 		insinto /usr/share/doc/${PF}

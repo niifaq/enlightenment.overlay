@@ -8,7 +8,7 @@ E_PYTHON="yes"
 EFL_USE_GIT="yes"
 EFL_GIT_REPO_CATEGORY="apps"
 
-inherit efl distutils
+inherit efl distutils-r1
 
 #E_PKG_IUSE="doc nls"
 

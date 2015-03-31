@@ -2,12 +2,12 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="2"
+EAPI="5"
 
 E_PKG_IUSE="doc nls"
 EGIT_REPO_URI="git://jefliks.git.sourceforge.net/gitroot/jefliks/jefliks"
 
-inherit eutils git-2
+inherit eutils git-r3
 
 DESCRIPTION="EFL-based tiny and fast Jabber client"
 HOMEPAGE="http://sourceforge.net/projects/jefliks"
@@ -19,10 +19,11 @@ KEYWORDS=""
 IUSE=""
 
 DEPEND="
-	>=dev-libs/efl-9999
-	>=media-libs/elementary-9999
+	>=dev-libs/efl-1.11.2
+	>=media-libs/elementary-1.11.2
 	net-libs/gnutls
-	dev-libs/iksemel"
+	dev-libs/iksemel
+"
 
 RDEPEND="${DEPEND}"
 

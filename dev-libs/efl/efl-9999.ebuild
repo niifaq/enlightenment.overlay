@@ -71,7 +71,7 @@ RDEPEND="
 	virtual/jpeg
 	sys-libs/zlib
 	sys-apps/dbus
-	dev-lang/luajit:2
+	>=dev-lang/luajit-2.0
 
 	media-libs/libpng
 	gif? ( media-libs/giflib )
@@ -136,6 +136,8 @@ CORE_EFL_CONFLICTS="
 	!dev-libs/eio
 	!dev-libs/embryo
 	!dev-libs/eobj
+	!dev-libs/e_dbus
+	!dev-libs/elocation
 	!dev-libs/ephysics
 	!media-libs/edje
 	!media-libs/emotion

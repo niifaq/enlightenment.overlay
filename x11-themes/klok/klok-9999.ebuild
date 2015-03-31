@@ -8,7 +8,7 @@ EFL_USE_GIT="yes"
 EFL_GIT_REPO_CATEGORY="themes"
 inherit efl
 
-DESCRIPTION="E17 theme: Dark"
+DESCRIPTION="E17 theme: klok"
 
 IUSE=""
 
@@ -16,12 +16,13 @@ DEPEND=">=dev-libs/efl-9999"
 
 RDEPEND="${DEPEND}"
 
-src_compile() {
-cd "${S}/edje"
-edje_cc -fastcomp -id img/ -sd snd/ -fd fnt/ ${PN}.edc ${PN}.edj || die edje_cc failed
-}
+#src_compile() {
+#cd "${S}/edje"
+#edje_cc -fastcomp -id img/ -sd snd/ -fd fnt/ ${PN}.edc ${PN}.edj || die edje_cc failed
+#}
 
 src_install() {
-insinto /usr/share/enlightenment/data/themes
-doins "${S}"/edje/${PN}.edj
+#	emake install-system
+	insinto /usr/share/enlightenment/data/backgrounds
+	doins "${S}"/${PN}.edj
 }

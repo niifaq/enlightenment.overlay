@@ -1,4 +1,4 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -19,8 +19,7 @@ KEYWORDS=""
 IUSE=""
 
 RDEPEND="
-	 >=dev-libs/efl-1.11.2
-	 || ( >=dev-libs/efl[X] >=dev-libs/efl[xcb] )
+	 >=dev-libs/efl-1.11.2[X]
 	 >=media-libs/elementary-1.11.2
 "
 #	 [thumbnails,xdg]

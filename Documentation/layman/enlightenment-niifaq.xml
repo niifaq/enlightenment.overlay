@@ -2,8 +2,8 @@
 <layman>
 	<overlay
 		type	= "git"
-		src	= "git://vcs.niifaq.ru/e17"
-		contact	= "xmpp:e17@conference.gentoo.ru"
+		src	= "https://github.com/niifaq/enlightenment.overlay"
+		contact	= "xmpp:e17@conference.gentoo.ru?join"
 		name	= "enlightenment-niifaq">
 			<link>https://projects.niifaq.ru/projects/enlightenment</link>
 			<description>Enlightenment DR17 NiiFAQ Project overlay</description>

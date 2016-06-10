@@ -5,9 +5,7 @@
 # Add overlay
 
 ```
-layman -o \
-	'https://raw.githubusercontent.com/niifaq/enlightenment.overlay/master/Documentation/layman/enlightenment-niifaq.xml' \
-	-f -k -a enlightenment-niifaq
+layman -o 'https://git.io/voZEs' -f -k -a enlightenment-niifaq
 ```
 
 # Installation:

@@ -1,25 +1,24 @@
-Install layman:
+# Install layman
 	If you still hasn't it:
-	USE="git" emerge layman
+	`USE="git" emerge layman`
 
-Add overlay:
+# Add overlay
 
-# layman -o \
-	'http://git.niifaq.ru/enlightenment-niifaq/plain/Documentation/layman/enlightenment-niifaq.xml' \
+```
+layman -o \
+	'https://raw.githubusercontent.com/niifaq/enlightenment.overlay/master/Documentation/layman/enlightenment-niifaq.xml' \
 	-f -k -a enlightenment-niifaq
+```
 
-If this is your first overlay:
-
-# echo 'source /var/lib/layman/make.conf' >> /etc/make.conf
-
-Installation:
+# Installation:
 
 Use one of the sets, that are documented into SETS file
 
-Hints:
-	Usage of portage-2.2* recommended
-	Always use --keep-going when rebuilding if you don't want to end up
-		with broken wm
+# Hints
 
+- Usage of `>=portage-2.2` is recommended
+- Always use --keep-going when rebuilding if you don't want to end up with broken wm
 
-# vim: ft=text textwidth=78
+```
+#vim: ft=markdown textwidth=78
+```

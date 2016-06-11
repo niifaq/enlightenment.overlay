@@ -21,7 +21,7 @@ KEYWORDS=""
 IUSE=""
 
 RDEPEND="
-	dev-libs/python-efl
+	dev-python/python-efl
 "
 
 src_compile() { :; }

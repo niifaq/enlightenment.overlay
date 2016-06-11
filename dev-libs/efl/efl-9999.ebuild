@@ -63,6 +63,8 @@ RDEPEND="
 	pixman? ( x11-libs/pixman )
 	png? ( media-libs/libpng:0= )
 	pulseaudio? ( media-sound/pulseaudio )
+	postscript? ( app-text/libspectre )
+	raw? ( media-libs/libraw )
 	scim? ( app-i18n/scim )
 	sdl? (
 		media-libs/libsdl2
@@ -224,6 +226,8 @@ src_configure() {
 		$(use_enable ppm image-loader-pmaps)
 		$(use_enable psd image-loader-psd)
 		$(use_enable pulseaudio)
+		$(use_enable postscript spectre)
+		$(use_enable raw libraw)
 		$(use_enable apulse pulseaudio)
 		$(use_enable scim)
 		$(use_enable sdl)

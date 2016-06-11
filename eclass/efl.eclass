@@ -20,8 +20,8 @@
 # Reqires EAPI 2 or later.
 
 case "${EAPI}" in
-	2|3|4|5) ;;
-	*) die "EAPI 2 or later required";;
+	2|3|4|5|6) ;;
+	*) die "Unknown EAPI for efl eclass";;
 esac
 
 inherit eutils libtool flag-o-matic
@@ -129,7 +129,7 @@ if [[ ${PV/9999} != ${PV} ]] ; then
 fi
 
 if [[ -n "${E_PYTHON}" ]]; then
-	PYTHON_COMPAT=( python{2_7,3_2,3_3,3_4} )
+	PYTHON_COMPAT=( python{2_7,3_{4,5}} )
 	inherit python-r1
 fi
 
@@ -224,7 +224,11 @@ efl_src_unpack() {
 # @DESCRIPTION:
 # Runs the autotools stuff.
 efl_src_prepare() {
-	epatch_user
+	if [[ ${EAPI} -ge 6 ]]; then
+		eapply_user
+	else
+		epatch_user
+	fi
 
 	[[ -s gendoc ]] && chmod a+rx gendoc
 

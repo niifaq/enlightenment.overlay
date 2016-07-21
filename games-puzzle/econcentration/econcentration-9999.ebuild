@@ -18,7 +18,6 @@ IUSE=""
 DEPEND="
 	>=dev-libs/efl-9999
 	>=dev-games/etrophy-9999
-	>=media-libs/elementary-9999
 "
 
 RDEPEND="${DEPEND}"

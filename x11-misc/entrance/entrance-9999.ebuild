@@ -13,7 +13,7 @@ DESCRIPTION="EFL based login manager"
 IUSE="consolekit +grub2 pam"
 
 DEPEND="
-	>=media-libs/elementary-9999
+	>=dev-libs/efl-9999
 	consolekit? ( sys-auth/consolekit )
 	grub2? ( sys-boot/grub:2 )
 	pam? ( virtual/pam )

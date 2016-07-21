@@ -18,5 +18,5 @@ DEPEND=">=dev-python/python-efl-9999
 # json?
 
 RDEPEND="
-	>=media-libs/elementary-9999
+	>=dev-libs/efl-9999
 	${DEPEND}"

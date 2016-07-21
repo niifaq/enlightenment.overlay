@@ -17,7 +17,6 @@ LICENSE="LGPL-3"
 RDEPEND="
 	>=dev-libs/efl-9999[curl]
 	dev-libs/libxml2
-	examples? ( >=media-libs/elementary-9999 )"
 DEPEND="
 	${RDEPEND}
 	test? ( dev-libs/check )"

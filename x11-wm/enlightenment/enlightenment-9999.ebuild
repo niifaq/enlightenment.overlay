@@ -74,7 +74,6 @@ RDEPEND="
 	eeze? ( >=dev-libs/efl-9999 )
 
 	>=dev-libs/efl-9999[X]
-	>=media-libs/elementary-9999
 	udev? ( virtual/udev )
 	systemd? ( sys-apps/systemd )
 	wayland? ( dev-libs/efl[wayland?]

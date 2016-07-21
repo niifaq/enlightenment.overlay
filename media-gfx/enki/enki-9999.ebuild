@@ -13,7 +13,6 @@ HOMEPAGE="http://watchwolf.fr/wiki/doku.php?id=enki"
 IUSE=""
 
 DEPEND=">=dev-libs/efl-9999
-	>=media-libs/enlil-9999
-	>=media-libs/elementary-9999"
+	>=media-libs/enlil-9999"
 
 RDEPEND="${DEPEND}"

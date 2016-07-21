@@ -10,5 +10,5 @@ inherit efl
 DESCRIPTION="EFL UI debugging tool"
 IUSE=""
 
-RDEPEND=" >=media-libs/elementary-9999 "
+RDEPEND=" >=dev-libs/efl-9999 "
 DEPEND="${RDEPEND}"

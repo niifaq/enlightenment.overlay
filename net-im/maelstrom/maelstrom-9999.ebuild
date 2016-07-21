@@ -19,7 +19,6 @@ SLOT="0"
 
 RDEPEND="
 	>=dev-libs/efl-9999
-	>=media-libs/elementary-9999
 "
 
 src_configure() {

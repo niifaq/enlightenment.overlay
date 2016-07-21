@@ -22,6 +22,6 @@ DEPEND="x11-apps/xrandr
 	dev-libs/openssl
 	dev-libs/json-c
 	=net-libs/azy-9999
-	>=media-libs/elementary-9999"
+	>=dev-libs/efl-9999"
 
 RDEPEND="${DEPEND}"

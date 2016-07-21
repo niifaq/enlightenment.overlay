@@ -15,7 +15,6 @@ IUSE="+test-gui"
 
 DEPEND="
 	>=dev-libs/efl-9999
-	test-gui? ( >=media-libs/elementary-9999 )
 "
 
 DEPEND="${RDEPEND}"

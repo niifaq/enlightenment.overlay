@@ -17,7 +17,6 @@ RDEPEND="
 	>=dev-python/cython-0.9.8
 	>=dev-libs/efl-9999
 	>=dev-python/python-efl-9999
-	>=media-libs/elementary-9999
 "
 
 DEPEND="${RDEPEND}"

@@ -129,6 +129,7 @@ RDEPEND="
 	!media-libs/emotion
 	!media-libs/ethumb
 	!media-libs/evas
+	!media-libs/elementary
 "
 #external lz4 support currently broken because of unstable ABI/API
 #	app-arch/lz4

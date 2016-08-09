@@ -15,13 +15,13 @@ LICENSE="BSD-2 GPL-2 LGPL-2.1 ZLIB"
 IUSE="apulse +bmp debug drm +eet egl fbcon +fontconfig fribidi gesture gif gles glib gnutls gstreamer gstreamer010 harfbuzz +ico ibus jpeg2k libressl +multisense neon oldlua opengl ssl physics pixman +png postscript +ppm +psd pulseaudio raw scim sdl sound systemd tga tiff tslib v4l valgrind wayland webp X xim xine xpm"
 
 REQUIRED_USE="
+	egl?		( gles )
 	multisense? ( pulseaudio )
 	pulseaudio?	( sound )
-	opengl?		( || ( X sdl wayland ) )
-	gles?		( || ( X sdl wayland ) )
-	gles?		( egl )
-	sdl?		( || ( opengl gles ) )
-	wayland?	( egl || ( opengl gles ) )
+	opengl?		( !gles !egl || ( X sdl wayland ) )
+	gles?		( !opengl || ( X wayland ) )
+	sdl?		( opengl !gles )
+	wayland?	( || ( opengl gles ) )
 	xim?		( X )
 "
 

@@ -18,7 +18,7 @@ KEYWORDS=""
 IUSE=""
 
 DEPEND="
-	>=dev-libs/efl-9999[curl]
+	>=dev-libs/efl-9999
 	dev-libs/libxml2
 "
 

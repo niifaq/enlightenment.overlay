@@ -13,6 +13,6 @@ IUSE=""
 
 LICENSE="LGPL-2.1"
 
-RDEPEND=">=dev-libs/efl-9999[curl]"
+RDEPEND=">=dev-libs/efl-9999"
 
 DEPEND="${RDEPEND}"

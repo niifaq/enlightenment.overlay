@@ -19,6 +19,5 @@ IUSE=""
 
 RDEPEND="
 	 >=dev-libs/efl-1.11.2[X]
-	 >=media-libs/elementary-1.11.2
 "
 DEPEND="${RDEPEND}"

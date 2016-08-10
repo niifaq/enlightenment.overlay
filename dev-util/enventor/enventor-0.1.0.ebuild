@@ -1,4 +1,4 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -14,8 +14,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="static-libs"
 
 RDEPEND="
-	>=dev-libs/efl-1.8.1
-	>=media-libs/elementary-1.8.0"
+	>=dev-libs/efl-1.8.1"
 DEPEND="${RDEPEND}
 	virtual/pkgconfig"
 

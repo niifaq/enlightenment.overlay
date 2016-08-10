@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -16,15 +16,8 @@ IUSE="nls cdda cddb dvd curl lirc upnp xml X"
 
 RDEPEND=">=media-libs/libplayer-1.0.0
 	>=media-libs/libvalhalla-1.0.0
-	>=dev-libs/eina-0.9.9.063
-	>=dev-libs/eet-1.2.2
-	>=media-libs/evas-0.9.9.063
-	>=dev-libs/ecore-0.9.9.063
-	>=dev-libs/embryo-0.9.9.063
-	>=media-libs/edje-0.9.93.063
-	>=media-libs/elementary-0.6.0.063
-	>=dev-libs/efreet-0.5.0.063
-	>=dev-libs/e_dbus-0.5.0.063
+	>=dev-libs/efl-9999
+	>=dev-libs/e_dbus-9999
 	nls? ( sys-devel/gettext )
 	cddb? ( media-libs/libcddb )
 	xml? ( dev-libs/libxml2 )

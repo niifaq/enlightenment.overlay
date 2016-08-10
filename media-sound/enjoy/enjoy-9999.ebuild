@@ -1,4 +1,4 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -13,7 +13,6 @@ IUSE="asf flac +id3 mp4 ogg +playlist real"
 
 RDEPEND="
 	 >=dev-libs/efl-1.11.2
-	 >=media-libs/elementary-1.11.2
 	 >=media-libs/lightmediascanner-0.4.1.0[asf?,flac?,id3?,mp4?,ogg?,playlist?,real?]
 	 >=dev-db/sqlite-3.6
 "

@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -20,7 +20,6 @@ IUSE=""
 
 DEPEND="
 	>=dev-libs/efl-1.11.2
-	>=media-libs/elementary-1.11.2
 	net-libs/gnutls
 	dev-libs/iksemel
 "

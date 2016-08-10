@@ -16,7 +16,8 @@ LICENSE="LGPL-3"
 
 RDEPEND="
 	>=dev-libs/efl-9999[curl]
-	dev-libs/libxml2
+	dev-libs/libxml2"
+
 DEPEND="
 	${RDEPEND}
 	test? ( dev-libs/check )"

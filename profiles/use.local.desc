@@ -8,14 +8,6 @@ dev-libs/e_dbus:libnotify - Enable interfacing with x11-libs/libnotify DBus API.
 dev-libs/e_dbus:ofono - Enable interfacing with net-misc/ofono DBus API.
 dev-libs/e_dbus:ukit - Enable interfacing with sys-power/upower and sys-fs/udisks DBus API.
 dev-libs/efx:test-gui - Enable building of test applications
-media-libs/elementary:dbus - Enable integration with dev-libs/e_dbus.
-media-libs/elementary:emap - Enable integration with sci-geosciences/emap, a map manager
-media-libs/elementary:location - Enable integration with dev-libs/elocation, a small library that allows application to get some basic location awareness
-media-libs/elementary:quicklaunch - Enable building of quicklaunch functionality and related tests.
-media-libs/elementary:thumbnails - Enable integration with media-libs/ethumb to generate and show thumbnails automatically.
-media-libs/elementary:video - Enable integration with media-libs/emotion to play media files.
-media-libs/elementary:weather - Enable integration with net-libs/libeweather to provide weather widget.
-media-libs/elementary:xdg - Enable integration with dev-libs/efreet for cross-desktop standards (freedesktop.org).
 media-libs/libplayer:mplayer - Enables media-video/mplayer support as backend
 media-libs/libplayer:vlc - Enables media-video/vlc support as backend
 media-libs/libplayer:xine - Enables media-libs/xine-lib support as backend
@@ -23,7 +15,6 @@ media-libs/lightmediascanner:asf - Provide support for Microsoft's 'advanced sys
 media-libs/lightmediascanner:id3 - Support ID3v1 and ID3v2 tags of audio files.
 media-libs/lightmediascanner:playlist - Add support for playlists (m3u and pls).
 media-libs/lightmediascanner:real - Support Real Media metadata.
-media-plugins/evas_generic_loaders:postscript - enable PostScript support via app-text/libspectre
 media-sound/enjoy:asf - Provide support for Microsoft's 'advanced systems format' media container.
 media-sound/enjoy:id3 - Support ID3v1 and ID3v2 tags of audio files.
 media-sound/enjoy:playlist - Add support for playlists (m3u and pls).

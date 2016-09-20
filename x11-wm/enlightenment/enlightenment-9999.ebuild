@@ -28,29 +28,42 @@ IUSE_ENLIGHTENMENT_MODULES="
 	+cpufreq
 	+everything
 	+fileman
-	+fileman_opinfo
+	+fileman-opinfo
 	+gadman
+	+geolocation
 	+ibar
 	+ibox
+	+lokker
 	+mixer
 	+msgbus
 	+music-control
 	+notification
+	packagekit
 	+pager
+	+pager-plain
+	policy-mobile
 	+quickaccess
 	+shot
 	+start
 	+syscon
 	+systray
 	+tasks
+	teamwork
 	+temperature
 	+tiling
 	wl-desktop-shell
+	wl-drm
+	wl-text-input
+	wl-weekeyboard
+	wl-wl
+	wl-x11
+	xwayland
 	+winlist
 	+wizard
 	+xkbswitch
 
 	+conf-applications
+	+conf-bindings
 	+conf-dialogs
 	+conf-display
 	+conf-interaction
@@ -61,8 +74,8 @@ IUSE_ENLIGHTENMENT_MODULES="
 	+conf-randr
 	+conf-shelves
 	+conf-theme
-	+conf-window_manipulation
-	+conf-window_remembers
+	+conf-window-manipulation
+	+conf-window-remembers
 "
 
 RDEPEND="
@@ -76,7 +89,7 @@ RDEPEND="
 	>=dev-libs/efl-9999[X]
 	udev? ( virtual/udev )
 	systemd? ( sys-apps/systemd )
-	wayland? ( dev-libs/efl[wayland?]
+	wayland? ( dev-libs/efl[wayland]
 		>=dev-libs/wayland-1.2.0
 		>=x11-libs/pixman-0.31.1
 		>=x11-libs/libxkbcommon-0.3.1 )

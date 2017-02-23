@@ -1,12 +1,13 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="2"
+EAPI="6"
+EFL_USE_GIT="yes"
+EFL_GIT_BASE_PATH="https://github.com"
+EFL_GIT_REPO_CATEGORY="profusion"
 
-EGIT_REPO_URI="git://git.profusion.mobi/lightmediascanner.git"
-
-inherit git-2 efl
+inherit efl
 
 DESCRIPTION="LightMediaScanner"
 HOMEPAGE="http://lms.garage.maemo.org/"
@@ -23,16 +24,6 @@ DEPEND="mp4? ( media-libs/libmp4v2 )
 	ogg? ( media-libs/libogg )
 "
 RDEPEND="dev-db/sqlite"
-
-src_unpack() {
-	git-2_src_unpack
-	cd "${S}"
-}
-
-src_prepare() {
-	AT_M4DIR="-I m4"
-	efl_src_prepare
-}
 
 src_configure() {
 	MY_ECONF="

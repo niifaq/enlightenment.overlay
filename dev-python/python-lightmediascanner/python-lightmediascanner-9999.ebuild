@@ -1,14 +1,13 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="4"
+EAPI="5"
 
 E_PKG_IUSE="doc nls"
 
-PYTHON_DEPEND="*:2.4"
 EGIT_REPO_URI="git://git.profusion.mobi/python-lightmediascanner.git"
-inherit git-2 python distutils
+inherit git-2 python-r1 distutils-r1
 
 DESCRIPTION="LightMediaScanner python bindings"
 HOMEPAGE="http://lms.garage.maemo.org/"

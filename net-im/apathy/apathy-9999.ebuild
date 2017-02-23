@@ -7,8 +7,6 @@ EFL_USE_GIT="yes"
 EFL_GIT_REPO_CATEGORY="devs/kuuko"
 E_PKG_IUSE="doc nls"
 
-#PYTHON_COMPAT="python2_7"
-
 E_PYTHON="yes"
 
 inherit efl distutils-r1

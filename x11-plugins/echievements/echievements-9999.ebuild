@@ -4,7 +4,7 @@
 
 EAPI=5
 E_PKG_IUSE="nls"
-EGIT_REPO_URI="git://github.com/zmike/echievements.git"
+EGIT_REPO_URI="https://github.com/zmike/echievements.git"
 
 inherit git-2 efl
 

@@ -8,7 +8,7 @@ inherit git-2 eutils autotools-utils
 
 DESCRIPTION="graphical application that display the periodic table of the elements"
 HOMEPAGE="http://eperiodique.sourceforge.net/"
-EGIT_REPO_URI="git://${PN}.git.sourceforge.net/gitroot/${PN}/${PN}"
+EGIT_REPO_URI="https://${PN}.git.sourceforge.net/gitroot/${PN}/${PN}"
 
 LICENSE="BSD-2"
 SLOT="0"

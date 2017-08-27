@@ -85,7 +85,7 @@ E_LIVE_SERVER_DEFAULT_SVN="http://svn.enlightenment.org/svn/e/trunk"
 # Initial part of any official git repository url.
 # You may respecify it to use local mirror instead of official git server
 # Do NOT end it with slash '/'
-: ${EFL_GIT_BASE_PATH:="git://git.enlightenment.org"}
+: ${EFL_GIT_BASE_PATH:="https://git.enlightenment.org"}
 
 # @ECLASS-VARIABLE: EFL_GIT_REPO_NAME
 # @DESCRIPTION:

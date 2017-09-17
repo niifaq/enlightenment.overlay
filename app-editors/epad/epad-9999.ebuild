@@ -4,7 +4,6 @@
 
 EAPI="6"
 
-E_NO_VISIBILITY="1"
 E_PYTHON="yes"
 EFL_USE_GIT="yes"
 EFL_GIT_BASE_PATH="https://github.com"

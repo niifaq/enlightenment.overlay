@@ -5,9 +5,6 @@
 =app-misc/enna-explorer-9999 **
 =app-misc/excessive-9999 **
 =app-misc/jesus-9999 **
-=app-text/envision-9999 **
-=app-text/epdf-9999 **
-=app-text/estardict-9999 **
 =dev-games/etrophy-9999 **
 =dev-libs/e_dbus-9999 **
 =dev-libs/efl-9999 **
@@ -15,8 +12,6 @@
 =dev-libs/esskyuehl-9999 **
 =dev-python/python-efl-9999 **
 =dev-python/python-elm-extensions-9999 **
-=dev-python/python-lightmediascanner-9999 **
-=dev-util/clouseau-9999 **
 =dev-util/editje-9999 **
 =dev-util/ensure-9999 **
 =dev-util/enventor-9999 **
@@ -29,7 +24,6 @@
 =media-gfx/ephoto-9999 **
 =media-gfx/ev-9999 **
 =media-gfx/exquisite-9999 **
-=media-libs/elementary-9999 **
 =media-libs/enlil-9999 **
 =media-libs/imlib2-9999 **
 =media-libs/imlib2_loaders-9999 **
@@ -49,7 +43,6 @@
 =net-p2p/epour-9999 **
 =sci-chemistry/eperiodique-9999 **
 =sci-geosciences/emap-9999 **
-=sys-libs/ememoa-9999 **
 =www-client/eve-9999 **
 =x11-misc/econnman-9999 **
 =x11-misc/emprint-9999 **
@@ -100,15 +93,12 @@
 =x11-plugins/e_modules-winlist-ng-9999 **
 =x11-plugins/e_modules-winselector-9999 **
 =x11-plugins/e_modules-wlan-9999 **
-=x11-plugins/eplanet-9999 **
 =x11-plugins/extramenu-9999 **
-=x11-plugins/trash-9999 **
 =x11-terms/terminology-9999 **
 =x11-themes/23oz-9999 **
 =x11-themes/blingbling-9999 **
 =x11-themes/darkness-9999 **
 =x11-themes/detour-elm-9999 **
 =x11-themes/detourious-9999 **
-=x11-themes/efenniht-9999 **
 =x11-themes/klok-9999 **
 =x11-wm/enlightenment-9999 **

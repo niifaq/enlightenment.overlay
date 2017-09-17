@@ -164,13 +164,6 @@ if [[ ! -z "${E_CYTHON}" ]]; then
 	DEPEND="${DEPEND} >=dev-python/cython-0.12.1"
 fi
 
-if [[ -z "${E_NO_VISIBILITY}" ]] && [[ $(gcc-major-version) -ge 4 ]]; then
-	# FIXME: This IS hack. It should be enabled by configures, not by ebuilds.
-	# Portage will be unhappy with this line
-
-	append-flags -fvisibility=hidden
-fi
-
 # @FUNCTION: efl_warning_msg
 # @USAGE:
 # @DESCRIPTION:

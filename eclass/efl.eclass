@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -25,10 +25,6 @@ case "${EAPI}" in
 esac
 
 inherit eutils libtool flag-o-matic
-
-# @ECLASS-VARIABLE: E_NO_VISIBILITY
-# @DESCRIPTION:
-# if defined, the package does not support -fvisibility=hidden
 
 # @ECLASS-VARIABLE: E_CYTHON
 # @DESCRIPTION:

@@ -1,13 +1,12 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
-EAPI="4"
+EAPI="6"
 
 E_PKG_IUSE="doc nls"
 EFL_USE_GIT="yes"
 EFL_GIT_REPO_CATEGORY="core"
-inherit eutils efl
+inherit eutils efl meson
 
 DESCRIPTION="Enlightenment DR17 window manager"
 HOMEPAGE="http://www.enlightenment.org/"
@@ -17,13 +16,13 @@ SLOT="0.17"
 IUSE="eeze illume2 opengl pam pm-utils +sysactions systemd tracker
 		+udev udisks wayland xinerama xscreensaver debug"
 
+# grep module ./meson_options.txt | awk -F' ' '{print "    +"$3}'
 IUSE_ENLIGHTENMENT_MODULES="
 	+appmenu
 	+backlight
 	+battery
 	+bluez4
 	+clock
-	+conf
 	+connman
 	+cpufreq
 	+everything
@@ -34,34 +33,32 @@ IUSE_ENLIGHTENMENT_MODULES="
 	+ibar
 	+ibox
 	+lokker
+	+luncher
 	+mixer
 	+msgbus
 	+music-control
 	+notification
-	packagekit
+	+packagekit
 	+pager
 	+pager-plain
-	policy-mobile
 	+quickaccess
-	+shot
 	+start
+	+shot
 	+syscon
+	+sysinfo
 	+systray
 	+tasks
-	teamwork
+	+teamwork
 	+temperature
 	+tiling
-	wl-desktop-shell
-	wl-drm
-	wl-text-input
-	wl-weekeyboard
-	wl-wl
-	wl-x11
-	xwayland
+	+time
 	+winlist
+	+wireless
 	+wizard
 	+xkbswitch
+	+vkbd
 
+	+conf
 	+conf-applications
 	+conf-bindings
 	+conf-dialogs
@@ -76,6 +73,14 @@ IUSE_ENLIGHTENMENT_MODULES="
 	+conf-theme
 	+conf-window-manipulation
 	+conf-window-remembers
+
+	wl-buffer
+	wl-drm
+	wl-wl
+	wl-x11
+	wl-desktop-shell
+	wl-text-input
+	wl-weekeyboard
 "
 
 RDEPEND="
@@ -133,29 +138,29 @@ src_prepare() {
 }
 
 src_configure() {
-	export MY_ECONF="
-	  ${MY_ECONF}
-	  --disable-install-sysactions
-	  $(use_enable pam)
-	  $(use_enable eeze mount-eeze)
-	  $(use_enable udev device-udev)
-	  $(use_enable udisks mount-udisks)
-	  $(use_enable sysactions install-sysactions)
-	  $(use_enable wayland wayland-clients)
-	"
+	local emesonargs=(
+	    -Dpam=$(usex pam true false)
+	    -Dsystemd=$(usex systemd true false)
+	    -Dmount-eeze=$(usex eeze true false)
+	    -Ddevice-udev=$(usex udev true false)
+	    -Dmount-udisks=$(usex udisks true false)
+	    -Dinstall-sysactions=$(usex sysactions true false)
+	    -Dwayland=$(usex wayland true false)
+	    -Dxwayland=$(usex wayland true false)
+	    -Dxwayland-bin=$(usex wayland true false)
+	)
+	meson_src_configure
 
 	local module=
 
 	for module in ${IUSE_ENLIGHTENMENT_MODULES}; do
 		module="${module#+}"
-		MY_ECONF+=" $(use_enable enlightenment_modules_${module} ${module})"
+		emesonargs+=" -D${module}=$(usex enlightenment_modules_${module} true false)"
 	done
-
-	efl_src_configure
 }
 
 src_install() {
-	efl_src_install
+	meson_src_install
 	insinto /etc/enlightenment
 
 	newins "${FILESDIR}/gentoo-sysactions.conf" sysactions.conf

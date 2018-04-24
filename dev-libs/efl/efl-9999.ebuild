@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="6"
@@ -12,7 +12,7 @@ inherit efl pax-utils
 DESCRIPTION="Enlightenment Foundation Libraries all-in-one package"
 
 LICENSE="BSD-2 GPL-2 LGPL-2.1 ZLIB"
-IUSE="apulse +bmp debug drm +eet egl fbcon +fontconfig fribidi gesture gif gles glib gnutls gstreamer gstreamer010 harfbuzz +ico ibus jpeg2k libressl +multisense neon oldlua opengl ssl physics pixman +png postscript +ppm +psd pulseaudio raw scim sdl sound systemd tga tiff tslib v4l valgrind wayland webp X xim xine xpm"
+IUSE="apulse +bmp debug drm +eet egl fbcon +fontconfig fribidi gesture gif gles glib gnutls gstreamer gstreamer010 harfbuzz +ico ibus jpeg2k libressl +multisense neon oldlua opengl ssl +physics pixman +png postscript +ppm +psd pulseaudio raw scim sdl sound systemd tga tiff tslib v4l valgrind wayland webp X xim xine xpm"
 
 REQUIRED_USE="
 	egl?		( gles )
@@ -89,7 +89,6 @@ RDEPEND="
 		x11-libs/libXext
 		x11-libs/libXfixes
 		x11-libs/libXinerama
-		x11-libs/libXp
 		x11-libs/libXrandr
 		x11-libs/libXrender
 		x11-libs/libXtst
@@ -226,13 +225,10 @@ src_configure() {
 		$(use_enable png image-loader-png)
 		$(use_enable ppm image-loader-pmaps)
 		$(use_enable psd image-loader-psd)
-		$(use_enable pulseaudio)
 		$(use_enable postscript spectre)
 		$(use_enable raw libraw)
-		$(use_enable apulse pulseaudio)
 		$(use_enable scim)
 		$(use_enable sdl)
-		$(use_enable sound audio)
 		$(use_enable systemd)
 		$(use_enable tga image-loader-tga)
 		$(use_enable tiff image-loader-tiff)
@@ -251,7 +247,7 @@ src_configure() {
 
 		--disable-tizen
 		--enable-xinput2
-		--disable-xinput22
+		--enable-xinput22
 		--enable-libmount
 	"
 		# external lz4 support currently broken because of unstable ABI/API

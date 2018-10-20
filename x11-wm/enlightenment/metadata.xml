@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-<maintainer>
+<maintainer type="project">
  <email>enlightenment@gentoo.org</email>
- <name>Enlightenment-Gentoo maintainers</name>
+ <name>Enlightenment NIIFAQ overlay maintainers</name>
 </maintainer>
 <use>
  <flag name="illume2">Illume2 - next generation of illume - special WM mode for embedded devices and set of plugins with same purpose</flag>

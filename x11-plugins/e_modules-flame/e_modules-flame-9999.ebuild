@@ -1,18 +1,17 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
-EAPI="2"
+EAPI="6"
 
 E_PKG_IUSE="nls"
 
-ESVN_SUB_PROJECT="E-MODULES-EXTRA"
-ESVN_URI_APPEND="${PN#e_modules-}"
+EFL_USE_GIT="yes"
+EFL_GIT_REPO_CATEGORY="devs/ajwillia-ms"
+EFL_GIT_REPO_NAME="${PN#e_modules-}"
+
 inherit efl
 
 DESCRIPTION="A module to display flames on the desktop"
-
-IUSE=""
 
 DEPEND="x11-wm/enlightenment:0.17
 	>=dev-libs/efl-9999"

@@ -125,7 +125,7 @@ if [[ ${PV/9999} != ${PV} ]] ; then
 fi
 
 if [[ -n "${E_PYTHON}" ]]; then
-	PYTHON_COMPAT=( python{2_7,3_{4,5}} )
+	PYTHON_COMPAT=( python{2_7,3_{4,5,6}} )
 	inherit python-r1
 fi
 

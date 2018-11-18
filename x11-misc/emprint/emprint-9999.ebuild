@@ -1,8 +1,7 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
-EAPI="5"
+EAPI="6"
 EFL_USE_GIT="yes"
 EFL_GIT_REPO_CATEGORY="apps"
 inherit efl
@@ -16,5 +15,4 @@ RDEPEND="x11-libs/libX11
 	|| ( >=dev-libs/efl-9999[X] >=dev-libs/efl-9999[xcb] )
 "
 
-DEPEND="${RDEPEND}
-	x11-proto/xproto"
+DEPEND="${RDEPEND}"

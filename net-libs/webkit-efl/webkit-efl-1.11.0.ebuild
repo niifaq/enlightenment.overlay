@@ -20,7 +20,7 @@ KEYWORDS="~amd64 ~x86"
 RDEPEND="
 	xslt? ( dev-libs/libxslt )
 	virtual/jpeg:0
-	media-libs/libpng
+	media-libs/libpng:0
 	x11-libs/cairo
 	glib? (
 			dev-libs/glib

@@ -23,7 +23,7 @@ KEYWORDS=""
 RDEPEND="
 	xslt? ( dev-libs/libxslt )
 	virtual/jpeg:0
-	media-libs/libpng
+	media-libs/libpng:0
 	x11-libs/cairo[opengl=]
 	gles? ( x11-libs/cairo[gles2] )
 	glib? (

@@ -19,7 +19,7 @@ RDEPEND="
 		X? ( x11-libs/libX11 )
 		)
 	vlc?	( media-video/vlc )
-	python?	( dev-lang/python )
+	python?	( dev-lang/python:* )
 	xine?	( media-libs/xine-lib
 		X? ( x11-libs/libX11 )
 		)"

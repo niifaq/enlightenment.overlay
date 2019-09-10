@@ -20,7 +20,7 @@ DEPEND="x11-apps/xrandr
 	net-misc/curl
 	dev-libs/openssl
 	dev-libs/json-c
-	=net-libs/azy-9999
-	>=dev-libs/efl-9999"
+	~net-libs/azy-9999
+	~dev-libs/efl-9999"
 
 RDEPEND="${DEPEND}"

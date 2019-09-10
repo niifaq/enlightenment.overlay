@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="6"
@@ -9,7 +9,7 @@ EFL_GIT_REPO_CATEGORY="JeffHoogland"
 
 inherit efl
 
-DESCRIPTION="A library that contains a few more complex elementary objects for easy importing/usage."
+DESCRIPTION="Contains a few more complex elementary objects for easy importing/usage."
 HOMEPAGE="http://www.enlightenment.org"
 EGIT_REPO_URI="https://github.com/JeffHoogland/python-elm-extensions"
 SRC_URI=""

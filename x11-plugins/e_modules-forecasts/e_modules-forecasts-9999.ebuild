@@ -1,6 +1,5 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
 EAPI="5"
 
@@ -10,7 +9,7 @@ EFL_GIT_REPO_CATEGORY="enlightenment/modules"
 EFL_GIT_REPO_NAME="${PN#e_modules-}"
 inherit efl
 
-DESCRIPTION="The forecasts gadget will display the current weather conditions plus a few days forecast"
+DESCRIPTION="The forecasts gadget will display weather conditions and forecast"
 
 IUSE=""
 

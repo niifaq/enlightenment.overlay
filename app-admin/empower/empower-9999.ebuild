@@ -1,12 +1,11 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
-EAPI="2"
+EAPI="6"
 
 E_PKG_IUSE="nls"
 
-inherit efl eutils
+inherit efl
 
 DESCRIPTION="Elementary based PolicyKit authentication agent"
 

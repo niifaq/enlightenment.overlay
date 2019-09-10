@@ -2,7 +2,7 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 <maintainer>
- <email>enlightenment@gentoo.org</email>
+    <email>enlightenment@gentoo.org</email>
 </maintainer>
 <use>
 	<flag name="real">Support Real Media metadata.</flag>

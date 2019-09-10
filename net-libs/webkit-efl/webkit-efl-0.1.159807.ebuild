@@ -1,6 +1,6 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
+
 
 EAPI="5"
 
@@ -45,7 +45,7 @@ DEPEND="${RDEPEND}
 	sys-devel/bison
 	sys-devel/gettext
 	dev-util/gperf
-	dev-util/pkgconfig
+	virtual/pkgconfig
 "
 REQUIRED_USE="	gstreamer? ( glib )
 		glib? ( soup )

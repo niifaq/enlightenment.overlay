@@ -1,6 +1,5 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
 # Author: vapier@gentoo.org
 # Modified: barbieri@profusion.mobi
@@ -17,10 +16,10 @@
 # Exports ebuild phase functions: src_unpack src_prepare src_configure
 #   src_compile src_install src_test
 #
-# Reqires EAPI 2 or later.
+# Reqires EAPI 4 or later.
 
 case "${EAPI}" in
-	2|3|4|5|6) ;;
+	4|5|6|7) ;;
 	*) die "Unknown EAPI for efl eclass";;
 esac
 

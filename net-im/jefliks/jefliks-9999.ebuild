@@ -9,7 +9,7 @@ EGIT_REPO_URI="https://jefliks.git.sourceforge.net/gitroot/jefliks/jefliks"
 inherit eutils git-r3
 
 DESCRIPTION="EFL-based tiny and fast Jabber client"
-HOMEPAGE="http://sourceforge.net/projects/jefliks"
+HOMEPAGE="https://sourceforge.net/projects/jefliks"
 
 LICENSE="GPL-3"
 SLOT="0"

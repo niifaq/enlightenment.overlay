@@ -9,7 +9,7 @@ EFL_GIT_REPO_CATEGORY="bindings/python"
 inherit efl distutils-r1
 
 DESCRIPTION="Python bindings for  EFL"
-HOMEPAGE="http://www.enlightenment.org"
+HOMEPAGE="https://www.enlightenment.org"
 SRC_URI=""
 
 LICENSE="LGPL-2.1"

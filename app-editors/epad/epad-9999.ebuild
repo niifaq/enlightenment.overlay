@@ -14,7 +14,7 @@ inherit efl
 DESCRIPTION="A simple text editor written in Python and EFL"
 IUSE=""
 
-LICENSE="BSD-3"
+LICENSE="GPL-3"
 
 RDEPEND="
 	dev-python/python-efl

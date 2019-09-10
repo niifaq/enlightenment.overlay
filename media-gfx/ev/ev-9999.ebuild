@@ -8,7 +8,7 @@ EFL_GIT_REPO_CATEGORY="devs/discomfitor"
 inherit efl
 
 DESCRIPTION="xv image viewer replacment using EFL"
-HOMEPAGE="http://www.enlightenment.org/"
+HOMEPAGE="https://www.enlightenment.org/"
 SRC_URI=""
 
 LICENSE="LGPL-2.1"

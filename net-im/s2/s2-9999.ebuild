@@ -7,7 +7,7 @@ EFL_GIT_REPO_CATEGORY="devs/discomfitor"
 
 inherit efl
 
-HOMEPAGE="http://enlightenment.org"
+HOMEPAGE="https://enlightenment.org"
 DESCRIPTION="Next-gen modular XMPP application framework"
 
 IUSE=""
@@ -19,4 +19,3 @@ RDEPEND="
 	>=dev-libs/efl-9999
 	>=net-im/maelstrom-9999
 "
-

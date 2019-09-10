@@ -7,7 +7,7 @@ EFL_GIT_REPO_CATEGORY="legacy"
 inherit efl
 
 DESCRIPTION="Additional image loaders for imlib2"
-HOMEPAGE="http://www.enlightenment.org/pages/imlib2.html"
+HOMEPAGE="https://www.enlightenment.org/pages/imlib2.html"
 
 IUSE=""
 

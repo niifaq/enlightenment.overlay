@@ -7,7 +7,7 @@ ESVN_SUB_PROJECT="PROTO"
 inherit efl
 
 DESCRIPTION="Enlightenment way to exchange contributed stuff"
-HOMEPAGE="http://www.enlightenment.org/"
+HOMEPAGE="https://www.enlightenment.org/"
 SRC_URI=""
 
 LICENSE="GPL-2"

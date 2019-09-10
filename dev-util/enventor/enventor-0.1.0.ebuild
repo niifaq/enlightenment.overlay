@@ -4,7 +4,7 @@
 EAPI=5
 
 DESCRIPTION="An EDC editor"
-HOMEPAGE="http://www.enlightenment.org/"
+HOMEPAGE="https://www.enlightenment.org/"
 SRC_URI="http://download.enlightenment.org/rel/apps/${PN}/${P%.0}.tar.bz2"
 
 LICENSE="GPL-3"

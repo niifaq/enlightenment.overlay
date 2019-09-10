@@ -8,7 +8,7 @@ E_PKG_IUSE="doc"
 
 inherit efl
 
-HOMEPAGE="http://enlightenment.org"
+HOMEPAGE="https://enlightenment.org"
 DESCRIPTION="A whirling maelstrom of network libraries"
 
 IUSE="+maelstrom_modules_email +maelstrom_modules_shotgun +maelstrom_modules_azy cpu_flags_x86_sse cpu_flags_x86_sse4"

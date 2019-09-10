@@ -9,7 +9,7 @@ EFL_GIT_REPO_CATEGORY="libs"
 inherit efl
 
 DESCRIPTION="Your one-stop shop for all things E and SQL!"
-HOMEPAGE="http://enlightenment.org"
+HOMEPAGE="https://enlightenment.org"
 
 IUSE=""
 
@@ -20,4 +20,3 @@ RDEPEND="
 DEPEND="
 	${RDEPEND}
 "
-

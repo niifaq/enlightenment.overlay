@@ -8,7 +8,7 @@ E_PKG_IUSE="nls"
 inherit efl meson
 
 DESCRIPTION="EFL image viewer/editor/manipulator/slideshow creator"
-HOMEPAGE="http://www.enlightenment.org/"
+HOMEPAGE="https://www.enlightenment.org/"
 SRC_URI=""
 
 LICENSE="BSD"

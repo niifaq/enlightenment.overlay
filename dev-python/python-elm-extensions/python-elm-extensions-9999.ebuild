@@ -10,7 +10,7 @@ EFL_GIT_REPO_CATEGORY="JeffHoogland"
 inherit efl
 
 DESCRIPTION="Contains a few more complex elementary objects for easy importing/usage."
-HOMEPAGE="http://www.enlightenment.org"
+HOMEPAGE="https://www.enlightenment.org"
 EGIT_REPO_URI="https://github.com/JeffHoogland/python-elm-extensions"
 SRC_URI=""
 

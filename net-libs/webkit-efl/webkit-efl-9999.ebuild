@@ -1,7 +1,6 @@
 # Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-
 EAPI="5"
 
 EFL_USE_GIT="yes"
@@ -102,7 +101,6 @@ src_configure() {
 		$(cmake-utils_use_enable opengl CANVAS_PROXY)
 		"
 
-
 #		$(cmake-utils_use_enable html5 DATA_TRANSFER_ITEMS)
 #		$(cmake-utils_use_enable html5 CSS3_CONDITIONAL_RULES)
 #		$(cmake-utils_use_enable html5 CSS3_TEXT_LINE_BREAK)
@@ -145,7 +143,6 @@ src_configure() {
 
 		cmake-utils_src_configure
 }
-
 
 #ENABLE_3D_RENDERING ......................... ON
 #ENABLE_ACCELERATED_2D_CANVAS                  OFF
